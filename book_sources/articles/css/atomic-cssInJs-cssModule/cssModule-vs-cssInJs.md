@@ -142,9 +142,10 @@ const ButtonDefault = (props) => css`
 `
 ```
 
-而且當兩個以上的 props 都會影響一個 property 的時候，還會變得更醜。
+**而且當兩個以上的 props 都會影響同一個 property 的時候，還會變得更醜。**<br>
 
-既然如此，那我們來試試 Emotion 官方提供的另一種 css prop 的實作方式吧:
+既然如此，那我們不要全部寫在同個 class 裡面，把他分開怎麼樣？就像 CSS module 分開定義 class 那樣！<br>
+這次來試試看用 Emotion 官方提供的另一種 css prop 語法實作:
 
 ```
 import { css } from '@emotion/react'
@@ -162,15 +163,15 @@ const PrimaryButtonCSS = css({
   backgroundColor: 'black'
 }, buttonCSS)
 
-const PrimaryBigButtonCSS = css({
-  width: '200px',
-  height: '50px',
-}, PrimaryButtonCSS)
-
 const BigButtonCSS = css({
   width: '200px',
   height: '50px',
 }, buttonCSS)
+
+const PrimaryBigButtonCSS = css({
+  width: '200px',
+  height: '50px',
+}, PrimaryButtonCSS)
 
 export function MyButton({ variant, size, status }) {
   if (variant === 'primary') {
@@ -203,8 +204,8 @@ export function MyButton({ variant, size, status }) {
 <MyButton variant="primary" size="big"/>
 ```
 
-基本上跟 styled components 差不多，要馬使用多個三元表達式寫在一起，要馬 if else 直接硬幹，但都沒辦法很優雅的應對持續增加 props 的情況，我認為這是所有 **css-in-js** 的硬傷：**一旦當我們需要 apply 多個相依於 props 的 class，事情就容易變得很複雜**。
+結果跟 styled components 差不多，要馬使用多個三元表達式寫在一起，要馬 if else 直接展開硬幹，共同問題就是**沒辦法很優雅的應對增加 props 的情況**，我認為這是所有 **css-in-js** 的通病：**一旦當我們需要 apply 多個相依於 props 的 class，事情就容易變得很複雜**。
 
-以上，對於 **CSS module** 以及 **styled components** 的介紹就先點到為止，相信讀者已經有點感覺了，我知道忽略了很多面相，但我暫時不想讓討論太發散，還請各位保持耐心。
+以上，對於 **CSS module** 以及 **styled components** 的介紹就先點到為止，相信讀者已經有點感覺了，我知道忽略了很多面相，這是因為暫時不想讓討論太發散，還請各位保持耐心。
 
 下一篇同樣會以這個例子來著重講講 **Atomic css**。
