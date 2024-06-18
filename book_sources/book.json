@@ -2,7 +2,7 @@
   "styles": {
     "website": "styles/website.css"
   },
-  "plugins": ["anchor-navigation-ex", "edit-link", "copy-code-button", "ga"],
+  "plugins": ["anchor-navigation-ex", "edit-link", "copy-code-button", "ga", "chapter-fold"],
     "pluginsConfig": {
       "fontSettings": {
         "theme": "night",
