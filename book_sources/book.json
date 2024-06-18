@@ -1,12 +1,15 @@
 {
-    "plugins": [  "anchor-navigation-ex", "edit-link", "copy-code-button", "theme-comscore", "ga" ],
+  "styles": {
+    "website": "./index.css"
+  },
+  "plugins": ["anchor-navigation-ex", "edit-link", "copy-code-button", "ga"],
     "pluginsConfig": {
       "fontSettings": {
         "theme": "night",
         "family": "sans"
       },
       "theme-default": {
-        "showLevel": false
+        "showLevel": true
       },
       "anchor-navigation-ex": {
           "showLevel": false,
