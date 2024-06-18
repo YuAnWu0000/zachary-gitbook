@@ -112,9 +112,9 @@ const BigButton = styled.div`
 
 ---
 
-你會發現 css in js 不再需要額外透過一些技巧綁定 classname 了，因為他的 css 定義在 js 內，所以可以直接拿 props 來判斷屬性值就好。
+你會發現 css in js 不再需要額外透過一些技巧綁定 classname 了，因為他的 css 定義在 js 內，所以可以**直接拿 props 來判斷屬性值就好。**
 
-以開發體驗來說，**styled components** 少了一些思考如何 **binding classname** 的心智煩惱，也多了更多的 js 特性可以作為武器使用 (ex: 三元、Object)，看起來太棒了！
+以開發體驗來說，**styled components** 少了一些思考如何 **binding classname** 的心智煩惱，也多了更多的 js 特性可以作為武器使用 (ex: 三元、Object)，看起來簡直完美！
 
 但眼尖的讀者應該有發現，這邊的寫法跟 CSS module 有些許不同。
 
@@ -124,12 +124,27 @@ const BigButton = styled.div`
 <BigButton isDisable={true} />
 ```
 
-> **現在我們的 `button` 不能同時是 `primary` 也是 `big` 了。**
+**現在我們的 `button` 不能同時是 `primary` 也是 `big` 了。**
 
 這是因為我們把 `PrimaryButton` 與 `BigButton` 分開定義的緣故。<br>
-如果你想要做出 CSS module 那種 `class="button button-primary button-big"` 的效果，這種寫法有可能會需要多個三元表達式 (因為 `size="big"` 會同時影響 `width`, `height` 等多個屬性)。<br>
+如果你想要做出 CSS module 那種 `class="button button-primary button-big"` 的效果，這種寫法有可能會需要多個三元表達式，因為 `size="big"` 會同時影響 `width`, `height` 等多個屬性。<br>
 
-既然如此，那我們來試試 Emotion 官方提供的另一種 css prop 的實作方式:
+例如下面這樣:
+
+```
+const ButtonDefault = (props) => css`
+  width: ${props.isBig ? '200px' : '120px'};
+  height: ${props.isBig ? '50px' : '30px'};
+  fontSize: ${props.isBig ? '16px' : '14px'};
+  fontWeight: 500;
+  color: white;
+  pointer-events: ${props.isDisable ? 'none' : 'auto'};
+`
+```
+
+而且當兩個以上的 props 都會影響一個 property 的時候，還會變得更醜。
+
+既然如此，那我們來試試 Emotion 官方提供的另一種 css prop 的實作方式吧:
 
 ```
 import { css } from '@emotion/react'
@@ -188,7 +203,7 @@ export function MyButton({ variant, size, status }) {
 <MyButton variant="primary" size="big"/>
 ```
 
-還是跟 styled components 有一模一樣的問題，當你想要同時 apply 多個 class 的時候就會變得很麻煩，**尤其是當那些 class 是相依於 props 的, 且每個 props 會影響的屬性不只一個**。
+基本上跟 styled components 差不多，要馬使用多個三元表達式寫在一起，要馬 if else 直接硬幹，但都沒辦法很優雅的應對持續增加 props 的情況，我認為這是所有 **css-in-js** 的硬傷：**一旦當我們需要 apply 多個相依於 props 的 class，事情就容易變得很複雜**。
 
 以上，對於 **CSS module** 以及 **styled components** 的介紹就先點到為止，相信讀者已經有點感覺了，我知道忽略了很多面相，但我暫時不想讓討論太發散，還請各位保持耐心。
 
