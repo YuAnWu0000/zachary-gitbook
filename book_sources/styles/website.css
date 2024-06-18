@@ -7,3 +7,6 @@ body .book .book-summary, body .book .book-body {
 body .book .book-summary {
   font-weight: 500;
 }
+.book .book-body .markdown-section pre>code  {
+  font-size: 12px;
+}
