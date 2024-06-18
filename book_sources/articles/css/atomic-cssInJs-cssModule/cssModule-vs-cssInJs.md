@@ -1,6 +1,6 @@
 # CSS Framework 到底怎麼選？Tailwind css ? styled components ? CSS Module ?
 
-#### 對於我這種選擇障礙來說，看到這麼多選項只覺得頭昏眼花，不然就...
+對於我這種選擇障礙來說，看到這麼多選項只覺得頭昏眼花，不然就...
 
 ### 與其攤開表格來比較各項優缺，我更喜歡直接用實作場景來切入...
 
@@ -28,7 +28,7 @@ function MyButton() {
 
 ### 就組件管理而言, 如何將組件的 props 跟 style 綁定一直是個重大課題
 
-#### 對於這點 CSS module 可以透過一些技巧來綁定對應的 class:
+##### 對於這點 CSS module 可以透過一些技巧來綁定對應的 class:
 
 ```
 // jsx
@@ -66,7 +66,7 @@ function MyButton({ variant, size, status }) {
 
 覆蓋順序是相當直觀的後蓋前，也就是如果 `button-primary` 跟 `button-disable` 有重複的 style，會是後宣告的 `button-disable` 贏。
 
-#### 而 styled components (emotion) 則是:
+##### 而 styled components (emotion) 則是:
 
 ```
 // jsx
@@ -95,15 +95,15 @@ const BigButton = styled.div`
 <PrimaryButton isDisable={true} />
 ```
 
-> #### _你可能會納悶，為什麼要把 CSS 的事情挪到 JS 裡面來做呢？你看他到頭來還是寫 css syntax 呀？_
+> ##### _你可能會納悶，為什麼要把 CSS 的事情挪到 JS 裡面來做呢？你看他到頭來還是寫 css syntax 呀？_
 
 ### 其實所有的 css in js 解決方案本質上只有一個目的，那就是利用 JS 的特性來更好的管理、抽換 style
 
 以上面的例子來說，因為 `button` 的 `disable` 狀態是父組件決定的，所以兩種方案的順序會是：<br>
 
-**_CSS module: 新增 `.button-disable` 的 class -> 透過 button-${props.status} 的方式來綁定 classname -> props 可連動 classname_**<br>
+**CSS module： 新增 `.button-disable` 的 class -> 透過 button-${props.status} 的方式來綁定 classname -> props 可連動 classname**<br>
 
-**_styled components: 在原本 `button` 的 class 內部新增一行三元判斷 -> props 即可連動該 `pointer-events` 屬性_**
+**styled components： 在原本 `button` 的 class 內部新增一行三元判斷 -> props 即可連動該 `pointer-events` 屬性**
 
 你會發現 css in js 不再需要額外透過一些技巧綁定 classname 了，因為他的 css 定義在 js 內，所以可以直接拿 props 來做判斷就好。
 

@@ -1,6 +1,6 @@
 {
   "styles": {
-    "website": "./index.css"
+    "website": "website/website.css"
   },
   "plugins": ["anchor-navigation-ex", "edit-link", "copy-code-button", "ga"],
     "pluginsConfig": {
