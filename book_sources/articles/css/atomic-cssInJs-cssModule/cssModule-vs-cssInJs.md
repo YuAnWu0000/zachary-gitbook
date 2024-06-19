@@ -1,6 +1,6 @@
 # CSS Framework 到底怎麼選？Tailwind css ? styled components ? CSS Module ? (1)
 
-對於我這種選擇障礙來說，看到這麼多選項只覺得頭昏眼花，不然就...
+對於我這種選擇障礙來說，看到這麼多選項只覺得頭昏眼花，不如就...
 
 ### 與其攤開表格來比較各項優缺，我更喜歡直接用實作場景來切入...
 
@@ -152,7 +152,7 @@ const ButtonDefault = (props) => css`
 但**在實務上設計師的 design guideline 往往不見得會符合工程化的需求就是了。**
 
 既然如此，那我們不要全部寫在同個 class 裡面，把他分開怎麼樣？就像 CSS module 分開定義 class 那樣！<br>
-這次來試試看用 Emotion 官方提供的另一種 css prop 語法實作:
+於是我們來試試看用 Emotion 官方提供的另一種 css prop 語法實作:
 
 ```
 /** @jsxImportSource @emotion/react */
