@@ -58,6 +58,7 @@ export function MyButton({ variant, size, status }) {
   &-primary: {
     font-weight: bold;
     background-color: green;
+    border-radius: 10px;
   }
   &-big {
     width: 200px;
@@ -65,7 +66,6 @@ export function MyButton({ variant, size, status }) {
   }
   &-disable {
     pointer-events: none;
-    background-color: gray;
   }
 }
 ```
@@ -105,7 +105,7 @@ const BigButton = styled.div`
 
 > ##### _你可能會納悶，為什麼要把 CSS 的事情挪到 JS 裡面來做呢？你看他到頭來還是寫 css syntax 呀？_
 
-### 其實所有的 css in js 解決方案本質上只有一個目的，那就是利用 JS 的特性來更好的管理、抽換 style
+### 其實所有的 css-in-js 解決方案本質上只有一個目的，那就是利用 JS 的特性來更好的管理、抽換 style
 
 以上面的例子來說，假設我們今天需要 `button` 多一種 `disable` 的狀態，那兩種方案的順序會是：<br>
 
@@ -115,7 +115,7 @@ const BigButton = styled.div`
 
 ---
 
-你會發現 css in js 不再需要額外透過一些技巧綁定 classname 了，因為他的 css 定義在 js 內，所以可以**直接拿 props 來判斷屬性值就好。**
+你會發現 css-in-js 不再需要額外透過一些技巧綁定 classname 了，因為他的 css 定義在 js 內，所以可以**直接拿 props 來判斷屬性值就好。**
 
 以開發體驗來說，**styled components** 少了一些思考如何 **binding classname** 的心智煩惱，也多了更多的 js 特性可以作為武器使用 (ex: 三元、Object)，看起來簡直完美！
 
@@ -123,16 +123,16 @@ const BigButton = styled.div`
 
 ```
 // how to use
-<PrimaryButton isDisable={true} />
-<BigButton isDisable={true} />
+<PrimaryButton isDisable={true}>Button</PrimaryButton>
+<BigButton isDisable={true}>Button</BigButton>
 ```
 
 **現在我們的 `button` 不能同時是 `primary` 也是 `big` 了。**
 
-這是因為我們把 `PrimaryButton` 與 `BigButton` 分開定義的緣故。<br>
+這是因為我把 `PrimaryButton` 與 `BigButton` 分開定義的緣故。<br>
 如果你想要做出 CSS module 那種 `class="button button-primary button-big"` 的效果，這種寫法有可能會需要多個三元表達式，因為 `size="big"` 會同時影響 `width`, `height` 等多個屬性。<br>
 
-就像下面這樣:
+例如下面這樣:
 
 ```
 const ButtonDefault = (props) => css`
@@ -164,7 +164,6 @@ const buttonDefaultCSS = {
   fontWeight: 500,
   color: 'white',
   backgroundColor: 'black',
-  pointerEvents: 'none'
 }
 const variantButtonCSS = {
   primary: {
@@ -197,8 +196,8 @@ export default MyButton
 <MyButton variant="primary" size="big" isDisable={false} />
 ```
 
-登愣！Mission complete！我們利用 **JS Object property 後蓋前的特性**完美解決了 stye 屬性重複的問題，這方法也能很優雅地**應對增加 props 的情況** (比如多一種 variant 之類的)，不知道有沒有讓讀者稍微感受到 css-in-js 的魅力了呢？<br>
-基本上有了 javascript 作為武器來管理 style，你不太會需要擔心 props 如何跟 style 綁定，因為總會有一些 JS 的奇技淫巧可以解決 (例如上面同時使用 spread + 三元來組合 css object 就是一種方式)。
+登愣！Mission complete！我們利用 **JS Object property 後蓋前的特性**完美解決了 style 屬性重複的問題，這方法也能很優雅地**應對增加 props 的情況** (比如多一種 variant 之類的)，不知道有沒有讓讀者稍微感受到 css-in-js 的魅力了呢？<br>
+基本上有了 javascript 作為武器來管理 style，你不太會需要擔心 props 要如何跟 style 綁定，因為總會有一些 JS 的奇技淫巧可以解決 (例如上面同時使用 spread + 三元來組合 css object 就是一種方式)。
 
 以上，對於 **CSS module** 以及 **styled components** 的介紹就先點到為止，相信讀者已經有點感覺了，我知道忽略了很多面相，這是因為暫時不想讓討論太發散，還請各位保持耐心。
 
