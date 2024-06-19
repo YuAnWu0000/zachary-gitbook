@@ -22,7 +22,8 @@ function MyButton() {
   height: 30px;
   fontSize: 14px;
   fontWeight: 500;
-  color: black;
+  color: white;
+  background-color: black;
 }
 ```
 
@@ -53,16 +54,18 @@ export function MyButton({ variant, size, status }) {
   fontSize: 14px;
   fontWeight: 500;
   color: white;
+  background-color: black;
   &-primary: {
     font-weight: bold;
-    background-color: black;
+    background-color: green;
   }
   &-big {
     width: 200px;
     height: 50px;
   }
   &-disable {
-    pointer-events: none
+    pointer-events: none;
+    background-color: gray;
   }
 }
 ```
@@ -75,29 +78,29 @@ export function MyButton({ variant, size, status }) {
 // jsx
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
-
 const ButtonDefault = (props) => css`
   width: 120px;
   height: 30px;
-  fontSize: 14px;
-  fontWeight: 500;
+  font-size: 14px;
+  font-weight: 500;
   color: white;
+  background-color: black;
   pointer-events: ${props.isDisable ? 'none' : 'auto'};
 `
 const PrimaryButton = styled.div`
   ${ButtonDefault};
   font-weight: bold;
-  background-color: black;
+  background-color: green;
+  border-radius: 10px;
 `
 const BigButton = styled.div`
   ${ButtonDefault};
   width: 200px;
   height: 50px;
 `
-
 // how to use
-<PrimaryButton isDisable={true} />
-<BigButton isDisable={true} />
+<PrimaryButton isDisable={true}>Button</PrimaryButton>
+<BigButton isDisable={true}>Button</BigButton>
 ```
 
 > ##### _你可能會納悶，為什麼要把 CSS 的事情挪到 JS 裡面來做呢？你看他到頭來還是寫 css syntax 呀？_
@@ -129,7 +132,7 @@ const BigButton = styled.div`
 這是因為我們把 `PrimaryButton` 與 `BigButton` 分開定義的緣故。<br>
 如果你想要做出 CSS module 那種 `class="button button-primary button-big"` 的效果，這種寫法有可能會需要多個三元表達式，因為 `size="big"` 會同時影響 `width`, `height` 等多個屬性。<br>
 
-例如下面這樣:
+就像下面這樣:
 
 ```
 const ButtonDefault = (props) => css`
@@ -138,73 +141,64 @@ const ButtonDefault = (props) => css`
   fontSize: ${props.isBig ? '16px' : '14px'};
   fontWeight: 500;
   color: white;
+  background-color: black;
   pointer-events: ${props.isDisable ? 'none' : 'auto'};
 `
 ```
 
-**而且當兩個以上的 props 都會影響同一個 property 的時候，還會變得更醜。**<br>
+乍看之下蠻簡潔的沒什麼問題，但你可以明顯感覺到這種寫法的脆弱性，那就是：<br>
+**當兩個以上的 props 都影響同一個 style property 的時候，就會變得很醜。**<br>
+當然，如果你可以確保每個 props 對應的屬性彼此之間沒有交集，這種寫法就已經足夠好，
+但**在實務上設計師的 design guideline 往往不見得會符合工程化的需求就是了。**
 
 既然如此，那我們不要全部寫在同個 class 裡面，把他分開怎麼樣？就像 CSS module 分開定義 class 那樣！<br>
 這次來試試看用 Emotion 官方提供的另一種 css prop 語法實作:
 
 ```
+/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-
-const buttonCSS = css({
+const buttonDefaultCSS = {
   width: '120px',
   height: '30px',
   fontSize: '14px',
   fontWeight: 500,
-  color: 'white'
-})
-
-const PrimaryButtonCSS = css({
-  fontWeight: 'bold',
-  backgroundColor: 'black'
-}, buttonCSS)
-
-const BigButtonCSS = css({
-  width: '200px',
-  height: '50px',
-}, buttonCSS)
-
-const PrimaryBigButtonCSS = css({
-  width: '200px',
-  height: '50px',
-}, PrimaryButtonCSS)
-
-export function MyButton({ variant, size, status }) {
-  if (variant === 'primary') {
-    if (size === 'big')
-      return
-        <div css={PrimaryBigButtonCSS}>
-          Button
-        </div>
-    else
-      return
-        <div css={PrimaryButtonCSS}>
-          Button
-        </div>
-  }
-  else {
-    if (size === 'big')
-      return
-        <div css={BigButtonCSS}>
-          Button
-        </div>
-    else
-      return
-        <div css={buttonCSS}>
-          Button
-        </div>
+  color: 'white',
+  backgroundColor: 'black',
+  pointerEvents: 'none'
+}
+const variantButtonCSS = {
+  primary: {
+    ...buttonDefaultCSS,
+    fontWeight: 'bold',
+    backgroundColor: 'green',
+    borderRadius: '10px'
   }
 }
-
+const sizeButtonCSS = {
+  big: {
+    width: '200px',
+    height: '50px'
+  }
+}
+const disableCSS = {
+  pointerEvents: 'none',
+  backgroundColor: 'gray'
+}
+function MyButton({ variant, size, isDisable }) {
+  const buttonStyles = css({
+    ...variantButtonCSS[variant],
+    ...sizeButtonCSS[size],
+    ...(isDisable ? disableCSS : null)
+  })
+  return <div css={buttonStyles}>Button</div>
+}
+export default MyButton
 // how to use
-<MyButton variant="primary" size="big"/>
+<MyButton variant="primary" size="big" isDisable={false} />
 ```
 
-結果跟 styled components 差不多，要馬使用多個三元表達式寫在一起，要馬 if else 直接展開硬幹，共同問題就是**沒辦法很優雅的應對增加 props 的情況**，我認為這是所有 **css-in-js** 的通病：**一旦當我們需要 apply 多個相依於 props 的 class，事情就容易變得很複雜**。
+登愣！Mission complete！我們利用 **JS Object property 後蓋前的特性**完美解決了 stye 屬性重複的問題，這方法也能很優雅地**應對增加 props 的情況** (比如多一種 variant 之類的)，不知道有沒有讓讀者稍微感受到 css-in-js 的魅力了呢？<br>
+基本上有了 javascript 作為武器來管理 style，你不太會需要擔心 props 如何跟 style 綁定，因為總會有一些 JS 的奇技淫巧可以解決 (例如上面同時使用 spread + 三元來組合 css object 就是一種方式)。
 
 以上，對於 **CSS module** 以及 **styled components** 的介紹就先點到為止，相信讀者已經有點感覺了，我知道忽略了很多面相，這是因為暫時不想讓討論太發散，還請各位保持耐心。
 
