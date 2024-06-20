@@ -37,22 +37,23 @@ function MyButton() {
 ```
 // jsx
 export function MyButton({ variant, size, status }) {
-  return
-    <div className={`button button-${variant} button-${size} button-${status}`>
+  return (
+    <div className={`button button-${variant} button-${size} button-${status}`}>
       Button
     </div>
+  )
 }
 // how to use
 <MyButton variant="primary" size="big" status="disable"/>
 ```
 
 ```
-/* sass */
+/* scss */
 .button {
   width: 120px;
   height: 30px;
-  fontSize: 14px;
-  fontWeight: 500;
+  font-size: 14px;
+  font-weight: 500;
   color: white;
   background-color: black;
   &-primary: {

@@ -5,22 +5,23 @@
 ```
 // jsx
 export function MyButton({ variant, size, status }) {
-  return
-    <div className={`button button-${variant} button-${size} button-${status}`>
+  return (
+    <div className={`button button-${variant} button-${size} button-${status}`}>
       Button
     </div>
+  )
 }
 // how to use
 <MyButton variant="primary" size="big" status="disable"/>
 ```
 
 ```
-/* sass */
+/* scss */
 .button {
   width: 120px;
   height: 30px;
-  fontSize: 14px;
-  fontWeight: 500;
+  font-size: 14px;
+  font-weight: 500;
   color: white;
   background-color: black;
   &-primary: {
@@ -76,7 +77,7 @@ export default MyButton
 
 `` let totalStyles = `${defaultStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${isDisable ? disableStyles : ''}`; ``
 
-這可能是多數人使用 Atomic css 第一個會遇到的坑，那就是**會出現非預期的 css 覆蓋行為**，具體來說，是你認為應該覆蓋的樣式他卻沒有覆蓋成功。
+這可能是多數人使用 Atomic css 第一個會遇到的坑，那就是**會出現非預期的 css 覆蓋行為**，具體來說，是你認為應該覆蓋的樣式它卻沒有覆蓋成功。
 
 還記得在 CSS module 裡面你是怎麼宣告 class 的嗎？
 
@@ -97,7 +98,7 @@ export default MyButton
 順序是你自己寫的，很明顯`.button-disable`裡面的樣式就是可以覆蓋`.button-primary`，因為在同階層的情況下，class 定義在後面的贏。<br>
 (注意： 就算你外面寫的是`className="button-disable button-primary"`也一樣是`button-disable`會贏，**重點是 class 宣告的順序而不是模板上的順序。)**<br>
 
-然而在 Tailwind 裡面眾多的 atomic class 是額外引入的，你並不曉得`w-full w-12`哪個 class 被 Tailwind 定義在後面，因此我們才需要`tailwind-merge`套件來幫我們確保這件事。
+然而在 Tailwind 裡面眾多的 utility class 是額外引入的，你並不曉得`w-full w-12`哪個 class 被 Tailwind 定義在後面，因此我們才需要`tailwind-merge`套件來幫我們確保這件事。
 
 ---
 
@@ -113,25 +114,25 @@ _**Atomic css (Tailwind):** `button` 的每種狀態都是一個 string (class l
 
 ### 關於學習曲線
 
-幾乎所有前端的起手式都是從 html, css, javascript 開始學習，想當然貼近原生寫法的 CSS module 一定是學習曲線最和緩的選擇。<br>
+幾乎所有前端的起手式都是從 html, css, javascript 開始學習，想當然**貼近原生寫法的 CSS module 一定是學習曲線最和緩的選擇。**<br>
 
-css-in-js 的方案需要對 javascript 有一定程度的熟悉才能運用得當，以前面的例子來說，你如果不知道 spread operator 可以搭配 ternary operator 使用，那你可能會寫出一堆 if else 的程式碼來做 props 的判斷，因此也不算太適合新手。<br>
+**css-in-js 的方案需要對 javascript 有一定程度的熟悉才能運用得當**，以前面的例子來說，你如果不知道 spread operator 可以搭配 ternary operator 使用，那你可能會寫出一堆 if else 的程式碼來做 props 的判斷，因此也不算太適合新手。<br>
 
-而 Tailwind，說實話它的學習曲線就是一齣悲劇，首先你要對 CSS 語法熟悉 (不然你根本不知道 syntax 要怎麼查)，再來你需要適應他一堆 boilerplate，最後如果是新手第一次遇到樣式合併的坑一定會很矇。社群中有不少人對 Atomic 很排斥，我不會覺得這是一種不願意學習新東西的藉口，因為它的學習曲線真的相對其他兩者陡峭許多。<br>
+而 Tailwind，說實話它的學習曲線就是一齣悲劇，首先你要對 CSS 語法熟悉 (不然你根本不知道 syntax 要怎麼查)，再來你需要適應他一堆 boilerplate，最後如果是新手第一次遇到樣式合併的坑一定會很矇。社群中有不少人對 Atomic 很排斥，我不會覺得這是一種不願意學習新東西的藉口，因為**它的學習曲線真的相對其他兩者陡峭許多。**<br>
 
-### 語法簡潔程度、開發者體驗(Developer Experience)
+### 論開發者體驗 (Developer Experience)、語法簡潔程度
 
 開發者體驗(Developer Experience)又簡稱 DX，其實跟語法簡潔有很大的正相關，一個普遍認為 DX 最友善的語言 ─ Python，就是得利於它的語法簡潔性，所以我這邊想放在一起討論。
 
-Tailwind 在實作上幾乎擁有最簡短的程式碼，其主因是它把樣式從`background-color: black;`轉設計為`bg-black`這種 atomic class，比 CSS module, css-in-js 要來的簡潔許多，犧牲了學習曲線換來的是極佳的開發者體驗。
+**Tailwind 在實作上幾乎擁有最簡短的程式碼**，其主因是它把樣式從`background-color: black;`轉設計為`bg-black`這種 utility class，比 CSS module, css-in-js 要來的簡潔許多，犧牲了學習曲線換來的是極佳的開發者體驗。
 
 再來，跟 CSS module 相比，你不再需要兩個 file 切來切去了，對比 css-in-js，你甚至連 JS 的地方都不用看，從頭到尾只需要關注模板的部分。並且新增了 class 以後你再也不需要確認那個 class 內部的樣式有什麼，因為它的 class name 本身就是 self explanation。
 
-Atomic 比較會為人詬病的是定位 Bug 的能力，因為當你遇到樣式出現問題，打開 console 看到一坨 class 難免很容易會躁起來，這是人之常情。
+**Atomic css 比較會為人詬病的是定位 Bug 的能力**，因為當你遇到樣式出現問題，打開 console 看到一坨 class 難免很容易會躁起來，這是人之常情。
 
 相比之下，CSS module 有著最好的偵錯體驗，因為命名得當的 class name 可以讓你最快找出哪個組件的哪個地方出現問題，在單純看模板的情況下可讀性非常好，這也是許多人推崇 CSS module 的原因。
 
-但是，一個專案開發跟找 bug 的時間是極度不平衡的，你可能會花 80% 的時間在從 0 到 1 的開發，只有另外的 20% 時間在找 bug，而其中關於樣式的 bug 比例可能更低。
+但是，一個專案在開發跟找 bug 的時間是極度不平衡的，你可能會花 80% 的時間專注在從 0 到 1 的開發，只有 20% 時間在找 bug，而其中關於樣式相關 bug 的比例可能更低。
 
 因此如果要我選一個 DX 最友善的框架，我一定會投給 Tailwind。
 
