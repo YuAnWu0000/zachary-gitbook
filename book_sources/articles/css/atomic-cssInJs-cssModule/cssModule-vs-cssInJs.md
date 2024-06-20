@@ -1,4 +1,4 @@
-# CSS Framework 到底怎麼選？Tailwind css ? styled components ? CSS Module ? (1)
+# CSS Framework 到底怎麼選？Tailwind CSS ? styled components ? CSS Module ? (1)
 
 對於我這種選擇障礙來說，看到這麼多選項只覺得頭昏眼花，不如就...
 
