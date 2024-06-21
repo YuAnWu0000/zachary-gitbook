@@ -77,7 +77,7 @@ export default MyButton
 
 `` let totalStyles = `${defaultStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${isDisable ? disableStyles : ''}`; ``
 
-這可能是多數人使用 Atomic css 第一個會遇到的坑，那就是**會出現非預期的 css 覆蓋行為**，具體來說，是你認為應該覆蓋的樣式它卻沒有覆蓋成功。
+這可能是多數人使用 Atomic css 第一個會遇到的坑，那就是**會出現非預期的 css 覆蓋行為**，具體來說，**是你認為應該覆蓋的樣式它卻沒有覆蓋成功。**
 
 還記得在 CSS module 裡面你是怎麼宣告 class 的嗎？
 
@@ -98,7 +98,9 @@ export default MyButton
 順序是你自己寫的，很明顯`.button-disable`裡面的樣式就是可以覆蓋`.button-primary`，因為在同階層的情況下，class 定義在後面的贏。<br>
 (注意： 就算你外面寫的是`className="button-disable button-primary"`也一樣是`button-disable`會贏，**重點是 class 宣告的順序而不是模板上的順序。)**<br>
 
-然而在 Tailwind 裡面眾多的 utility class 是額外引入的，你並不曉得`w-full w-12`哪個 class 被 Tailwind 定義在後面，因此我們才需要`tailwind-merge`套件來幫我們確保這件事。
+然而在 Tailwind 裡面眾多的 utility class 是額外引入的，你並不曉得`w-full w-12`哪個 class 被 Tailwind 定義在後面，因此我們才需要`tailwind-merge`套件來幫我們確保這件事，有了這個套件，我們可以將想要合併的 class string 塞進 `twMerge()` 的 `arguments` 當中，讓套件幫我們處理重複跟順序性的問題。
+
+以上，就是簡單的 Tailwind CSS 實作範例了。
 
 ---
 
