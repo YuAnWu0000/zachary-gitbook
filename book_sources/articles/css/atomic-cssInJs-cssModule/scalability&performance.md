@@ -20,7 +20,7 @@
 // jsx
 <div
   className={`button button-${variant} button-${size} button-${status}
-    ${isHidden ? 'hidden' : ''}`}
+    ${isHidden ? 'hidden' : ''}`} //新增一個三元
 >
   Button
 </div>
@@ -100,7 +100,7 @@ let totalStyles = twMerge(
   status="disable"
   isHidden={true}
   color="yellow"
-  className="button-special"
+  className="button-special" //客製化class
 />
 ```
 
@@ -128,7 +128,7 @@ const buttonStyles = css({
     ...(isDisable ? disableCSS : null),
     display: `${isHidden ? 'none' : 'block'}`,
     color,
-    ...className
+    ...className //新增這行
   })
 ```
 
@@ -140,7 +140,7 @@ const buttonStyles = css({
   isDisable={false}
   isHidden={true}
   color: "yellow"
-  className={{
+  className={{ //客製化class
     color: 'blue',
     backgroundColor: 'red',
     display: 'block'
@@ -163,7 +163,7 @@ let totalStyles = twMerge(
   isDisable ? disableStyles : '',
   isHidden ? 'hidden' : '',
   textColor,
-  className
+  className //新增這行
 )
 ```
 
@@ -175,7 +175,7 @@ let totalStyles = twMerge(
   isDisable={false}
   isHidden={true}
   textColor="text-yellow-500"
-  className="text-blue-500 bg-red-500 block"
+  className="text-blue-500 bg-red-500 block" //客製化class
 />
 ```
 
@@ -183,7 +183,10 @@ let totalStyles = twMerge(
 ![button images](../../../images/atomic-cssInJs-cssModule/buttonAtomicCss.png)<br>
 同樣是預期內的結果，也只需要關注模板本身。
 
+---
+
 由上面的例子可以清楚看出三種 CSS framework 在面對業務擴展時的 scalability，**我認為在三者當中就屬 css-in-js 的功能最強大**，因為它利用 JS 的語法特性可以更優雅的應對各種不同的場景，我想這也是這麼多 UI library 採用 css-in-js 作為解決方案的原因，畢竟在面對眾多用戶的前提下，**抽象化 (abstraction)、彈性 (flexibility)、可擴展性 (scalability)，就會是首要考量。**<br>
+
 當然其他兩者也不算差，Tailwind 撇除偶爾會遇到奇怪的坑，搭配上`twMerge`也有很不錯的彈性，至於 CSS module 則是需要額外關注 css file 中 class 定義的順序性跟權重等等，面對多個日漸複雜的業務有可能會留下比較多的 legacy code。
 
 下一篇就讓我們來談談效能吧！敬請期待！

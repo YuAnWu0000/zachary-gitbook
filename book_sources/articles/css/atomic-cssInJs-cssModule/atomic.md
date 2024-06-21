@@ -18,23 +18,15 @@ export function MyButton({ variant, size, status }) {
 ```
 /* scss */
 .button {
-  width: 120px;
-  height: 30px;
-  font-size: 14px;
-  font-weight: 500;
-  color: white;
-  background-color: black;
+  ...
   &-primary: {
-    font-weight: bold;
-    background-color: green;
-    border-radius: 10px;
+    ...
   }
   &-big {
-    width: 200px;
-    height: 50px;
+    ...
   }
   &-disable {
-    pointer-events: none;
+    ...
   }
 }
 ```
