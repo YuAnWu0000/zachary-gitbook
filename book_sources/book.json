@@ -19,19 +19,19 @@
     "my-toolbar": {
       "buttons": [
         {
-          "label": "",
+          "label": "Github",
           "icon": "fa fa-github",
           "url": "https://github.com/YuAnWu0000",
-          "position": "right",
-          "text": "",
+          "position": "left",
+          "text": "Github",
           "target": "_blank"
         },
         {
-          "label": "",
+          "label": "LinkedIn",
           "icon": "fa fa-linkedin",
           "url": "https://www.linkedin.com/in/yu-an-wu-486ab5160/",
-          "position": "right",
-          "text": "",
+          "position": "left",
+          "text": "LinkedIn",
           "target": "_blank"
         }
       ]
