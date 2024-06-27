@@ -1,4 +1,4 @@
-# CSS Framework 到底怎麼選？Tailwind CSS ? styled components ? CSS Module ? ─ 談體驗 (2)
+# CSS Framework 到底怎麼選？Tailwind CSS ? styled components ? CSS Module ? (2) ─ 談體驗
 
 前一篇講到，假設我們有一個接收三個 props 的 button component，以 CSS module 的方式會這樣做:
 

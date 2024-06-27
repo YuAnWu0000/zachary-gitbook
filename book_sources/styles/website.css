@@ -8,7 +8,7 @@ body .book .book-body {
 body .book .book-summary {
   font-weight: 500;
 }
-body .book .book-summary ul.summary li.active > a {
+body .book .book-summary ul.summary li > a {
   white-space: normal;
 }
 .book .book-body .markdown-section pre > code {
