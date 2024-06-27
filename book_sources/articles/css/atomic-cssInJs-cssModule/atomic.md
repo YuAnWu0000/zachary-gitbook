@@ -122,12 +122,12 @@ _**Atomic css (Tailwind):** `button` 的每種狀態都是一個 string (class l
 
 再來，跟 CSS module 相比，你不再需要兩個 file 切來切去了，對比 css-in-js，你甚至連 JS 的地方都不用看，從頭到尾只需要關注模板的部分。並且新增了 class 以後你再也不需要確認那個 class 內部的樣式有什麼，因為它的 class name 本身就是 self explanation。
 
-**Atomic css 比較會為人詬病的是定位 Bug 的能力**，因為當你遇到樣式出現問題，打開 console 看到一坨 class 難免很容易會躁起來，這是人之常情。
+**Atomic css 比較會為人詬病的是定位 Bug 的能力**，因為當你遇到樣式出現問題，失去了解釋性的 classname 會讓你不好確定這是哪個 component，然後當你打開 console 看到一坨 utility class，想到接下來只能逐一確認，躁起來是難免的 XD。
 
-相比之下，CSS module 有著最好的偵錯體驗，因為命名得當的 class name 可以讓你最快找出哪個組件的哪個地方出現問題，在單純看模板的情況下可讀性非常好，這也是許多人推崇 CSS module 的原因。
+相比之下，我認為 CSS module 有著最好的偵錯體驗，因為命名得當的 class name 可以讓你單看模板就快速定位問題組件，並且找出是哪個 class 出現問題，這也是許多人推崇 CSS module 的原因。
 
 但是，一個專案在開發跟找 bug 的時間是極度不平衡的，你可能會花 80% 的時間專注在從 0 到 1 的開發，只有 20% 時間在找 bug，而其中關於樣式相關 bug 的比例可能更低。
 
-因此如果要我選一個 DX 最友善的框架，我一定會投給 Tailwind。
+因此如果要我選一個 DX 最友善的框架，我還是會投給 Tailwind，他會讓你在 0 到 1 的過程相當舒服 (這句話好像怪怪的)。
 
-(然後在 DX 這塊幾乎沒有 css-in-js 的事，因為...它就真的很囉唆。)
+然後在 DX 這塊幾乎沒有 css-in-js 的事，因為...它就真的有點囉唆。
