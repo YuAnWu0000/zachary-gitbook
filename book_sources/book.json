@@ -1,43 +1,55 @@
 {
+  "links": {
+    "sidebar": {
+      "Github": "https://github.com/YuAnWu0000",
+      "LinkedIn": "https://www.linkedin.com/in/yu-an-wu-486ab5160/"
+    }
+  },
   "styles": {
     "website": "styles/website.css"
   },
-  "plugins": ["anchor-navigation-ex", "edit-link", "copy-code-button", "ga", "chapter-fold"],
-    "pluginsConfig": {
-      "fontSettings": {
-        "theme": "night",
-        "family": "sans"
+  "plugins": [
+    "anchor-navigation-ex",
+    "edit-link",
+    "copy-code-button",
+    "ga",
+    "chapter-fold"
+  ],
+  "pluginsConfig": {
+    "fontSettings": {
+      "theme": "night",
+      "family": "sans"
+    },
+    "theme-default": {
+      "showLevel": false
+    },
+    "anchor-navigation-ex": {
+      "showLevel": false,
+      "associatedWithSummary": false,
+      "printLog": false,
+      "multipleH1": false,
+      "mode": "float",
+      "showGoTop": true,
+      "float": {
+        "floatIcon": "fa fa-navicon",
+        "showLevelIcon": false,
+        "level1Icon": "fa fa-hand-o-right",
+        "level2Icon": "fa fa-hand-o-right",
+        "level3Icon": "fa fa-hand-o-right"
       },
-      "theme-default": {
-        "showLevel": false
-      },
-      "anchor-navigation-ex": {
-          "showLevel": false,
-          "associatedWithSummary": false,
-          "printLog": false,
-          "multipleH1": false,
-          "mode": "float",
-          "showGoTop":true,
-          "float": {
-              "floatIcon": "fa fa-navicon",
-              "showLevelIcon": false,
-              "level1Icon": "fa fa-hand-o-right",
-              "level2Icon": "fa fa-hand-o-right",
-              "level3Icon": "fa fa-hand-o-right"
-          },
-          "pageTop": {
-              "showLevelIcon": false,
-              "level1Icon": "fa fa-hand-o-right",
-              "level2Icon": "fa fa-hand-o-right",
-              "level3Icon": "fa fa-hand-o-right"
-          }
-      },
-      "edit-link": {
-        "base": "https://github.com/onejar99/demo-build-and-publish-gitbook/edit/master/",
-        "label": "Edit This Page"
-      },
-      "ga": {
-        "token": ""
+      "pageTop": {
+        "showLevelIcon": false,
+        "level1Icon": "fa fa-hand-o-right",
+        "level2Icon": "fa fa-hand-o-right",
+        "level3Icon": "fa fa-hand-o-right"
       }
+    },
+    "edit-link": {
+      "base": "https://github.com/onejar99/demo-build-and-publish-gitbook/edit/master/",
+      "label": "Edit This Page"
+    },
+    "ga": {
+      "token": ""
     }
+  }
 }

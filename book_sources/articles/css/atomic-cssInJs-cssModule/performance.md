@@ -35,11 +35,19 @@ css-in-js 大概是 run time 成本最高的一種解決方案，因為所有的
 - [linaria](https://linaria.dev/)
 - [Compiled](https://compiledcssinjs.com/)
 
-又或者你使用 CSS module、Tailwind 但卻想要更大的可擴展性，那就試著用 [classnames](https://www.npmjs.com/package/classnames) 來幫助你吧！
+又或者你使用 CSS module、Tailwind 但卻想要更大的可擴展性，那可以試著用 [classnames](https://www.npmjs.com/package/classnames) 來幫助你達成！
 
-> **工程師善用手上的工具，而不是辯護手上的工具**
+> ### 工程師善用手上的工具，而不是辯護手上的工具
 
-在前端領域每天都有新技術出現，身為工程師應該要擁抱改變，畢竟世界需要我們走在前面:)
+在前端領域每天都有新技術出現，身為工程師應該要擁抱改變，而不是畏懼改變，畢竟世界需要我們走在前面:)
 
-最後祝大家<br>
+到這邊，CSS Framework 系列文結束啦，我用了四篇文章談了實作案例、開發者體驗、可擴展性及效能的差異，希望有讓讀者更清楚要選擇哪一個框架來應對專案需求。
+
+很感謝看到這的你們，如果對這篇文章有其他想法或意見，可以直接開 Github issue 或私訊我的 LinkedIn，相信我們很快就能開啟愉快的技術討論！
+
+最後就祝大家<br>
 Happy ~~debating~~ coding！
+
+### References
+
+https://dev.to/srmagura/why-were-breaking-up-wiht-css-in-js-4g9b
