@@ -1,9 +1,6 @@
 {
   "links": {
-    "sidebar": {
-      "Github": "https://github.com/YuAnWu0000",
-      "LinkedIn": "https://www.linkedin.com/in/yu-an-wu-486ab5160/"
-    }
+    "sidebar": {}
   },
   "styles": {
     "website": "styles/website.css"
@@ -57,7 +54,7 @@
       "vk": false,
       "weibo": false,
       "whatsapp": false,
-      "all": ["facebook", "google", "twitter"]
+      "all": []
     },
     "fontSettings": {
       "theme": "night",
