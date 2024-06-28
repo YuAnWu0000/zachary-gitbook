@@ -13,7 +13,7 @@ https://github.com/facebook/create-react-app/issues/9937
 
 `<div className="bg-[url('~/public/images/cat.jpg')]">`
 
-馬上來看看這種解法是否可行
+馬上來看看這種解法是否可行<br>
 ![public](../../images/craUrlIssue/noPublic.png)
 
 可以耶！打完收工？<br>
@@ -30,7 +30,7 @@ https://github.com/facebook/create-react-app/issues/9937
 
 確實如他所說會存進 `static/media/`，並且由於原本我們是把圖片存在 `public/images` 裡面，因此 `webpack` 也會幫你額外複製一份出來，導致最終 build 出來的檔案竟然有兩張一樣的圖片。
 
-### 這種無謂增加 bundle size 的作法應該要想辦法避免！慶幸自己剛剛選擇了追根究柢。
+### 這種無謂增加 bundle size 的作法應該要想辦法避免！慶幸自己剛剛選擇了追根究柢！
 
 我繼續爬完了 issue，發現整件事的起因是因為 CRA 升上 4.X 版本後將`css-loader`的 options 改掉，**變成預設把 image 路徑指向 src 底下**，所以才有了這麼多的事情。
 
@@ -45,14 +45,14 @@ OK！那當前的目標就是要想辦法擴充 `create-react-app` 預設的 web
 
 看了一些推薦文，最後決定使用`react-app-rewired`套件來幫我進行擴充。
 
-那麼...要怎麼擴充呢？只能去看看 `react-scripts` 的 webpack config 裡面都做了些什麼了...
+那麼...要怎麼擴充呢？只能去看看 `react-scripts` 的 webpack config 裡面都做了些什麼事了...
 
 (以下忽略 30 分鐘的 trace code 過程...)
 
 經過一段查找 source code 的時間及測試後，**我發現這種寫法可以取得我要的屬性，並且解決這個問題：**
 
 ```
-// in config-overrides.js
+// config-overrides.js
 const path = require('path')
 module.exports = function override(config) {
   const targetRegex = /\.css$/
