@@ -16,7 +16,7 @@ https://github.com/facebook/create-react-app/issues/9937
 馬上來看看這種解法是否可行<br>
 ![public](../../images/craUrlIssue/noPublic.png)
 
-可以耶！打完收工？<br>
+可以耶！圖片成功出現了！打完收工？<br>
 **咦？等等.......路徑為什麼怪怪的？**
 
 ### 這時候你有兩個選擇，追根究柢抑或是得過且過
