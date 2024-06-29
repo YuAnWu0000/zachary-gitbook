@@ -21,14 +21,14 @@ https://github.com/facebook/create-react-app/issues/9937
 
 ### 這時候你有兩個選擇，追根究柢抑或是得過且過
 
-因為我實在是太好奇了，不禁繼續往下滑 issue，直至看到這個評論：
+因為我實在是太好奇了，於是繼續往下滑 issue，直至看到這個評論：
 ![seo](../../images/craUrlIssue/seo.png)
 大意是說上面那種方式，是由 `react-scripts` 幫你把用到的圖片打包進專案，並且將路徑設置為 `static/media/cat.{hash}.png`來對應，雖然一樣可以載入圖片，這樣會導致每次 build 完都有不同的 hash 值，**這會令 google 爬蟲爬不到穩定的圖片來源，因而降低網站 SEO。**
 
 於是我實際 build 了一下剛剛的專案，發現：<br>
 ![no public build](../../images/craUrlIssue/noPublicBuild.png)
 
-確實如他所說會存進 `static/media/`，並且由於原本我們是把圖片存在 `public/images` 裡面，因此 `webpack` 也會幫你額外複製一份出來，導致最終 build 出來的檔案竟然有兩張一樣的圖片。
+確實如他所說會存進 `static/media/`，並且由於原本我們是把圖片存在 `public/images` 裡面，因此 `webpack` 也會幫你額外複製一份出來，導致最終 build 出來的檔案裡竟然有兩張一樣的圖片。
 
 ### 這種無謂增加 bundle size 的作法應該要想辦法避免！慶幸自己剛剛選擇了追根究柢！
 
@@ -41,7 +41,7 @@ https://github.com/facebook/create-react-app/issues/9937
 
 OK！那當前的目標就是要想辦法擴充 `create-react-app` 預設的 webpack config，然後把 `css-loader` 內部的 url 改為 false (預設值)。
 
-因為只需要動到少部分的 config，我這裡不傾向 eject 出來維護整個 webpack config，這樣如果未來套件更新我會很難在本地端同步。
+因為只需要動到少部分的 config，我這裡不傾向 eject 出來維護整個 webpack config，**這樣如果未來套件更新我會很難在本地端同步。**
 
 看了一些推薦文，最後決定使用`react-app-rewired`套件來幫我進行擴充。
 
