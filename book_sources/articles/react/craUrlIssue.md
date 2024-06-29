@@ -9,7 +9,7 @@ https://github.com/facebook/create-react-app/issues/9937
 
 大家都表示把圖片放在 public 裡面會讀不到，就在群眾一片焦頭爛額時<br>
 
-我看到在 issue 中有人這麼建議：
+我看到在 issue 中有人建議，將你的路徑改為這樣：
 
 `<div className="bg-[url('~/public/images/cat.jpg')]">`
 
