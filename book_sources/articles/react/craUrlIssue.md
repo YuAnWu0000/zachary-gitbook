@@ -4,7 +4,7 @@
 
 `<div className="bg-[url('/images/cat.jpg')]">`
 
-推測原因應該跟 CRA 預設的 webpack 設定有關，在網上找到這樣一個 issue，底下哀鴻遍野：
+推測原因應該跟 CRA 預設的 webpack 設定有關，我在網上找到這樣一個 issue，底下哀鴻遍野：
 https://github.com/facebook/create-react-app/issues/9937
 
 大家都表示把圖片放在 public 裡面會讀不到，就在群眾一片焦頭爛額時<br>
