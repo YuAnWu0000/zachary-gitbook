@@ -1,8 +1,12 @@
 # CSS Framework 到底怎麼選？Tailwind CSS ? styled components ? CSS Module ? (1) ─ 談案例
 
-對於我這種選擇障礙來說，看到這麼多選項只覺得頭昏眼花，不如就看老闆怎麼說？
+對於我這種選擇障礙來說，看到這麼多選項只覺得頭昏眼花，不如就看看老闆怎麼說？
 
 ![meme](../../../images/atomic-cssInJs-cssModule/meme.png)
+
+咦等等，身為一位前端工程師，現在應該不是你放棄思考的時候，而是你展現專業的時候才對吧XD？<br>
+那麼就讓我們開始今日的分析吧！
+
 ### 與其攤開表格來比較各項優缺，我更喜歡直接用實作場景來切入...
 
 假設我們今天有個 Button component，先來個最傳統的版本 (以 React 為例)：<br>
