@@ -10,10 +10,10 @@
     "edit-link",
     "copy-code-button",
     "ga",
-    "chapter-fold",
     "-sharing",
     "sharing-plus@^0.0.2",
-    "my-toolbar"
+    "my-toolbar",
+    "collapsible-menu"
   ],
   "pluginsConfig": {
     "my-toolbar": {
