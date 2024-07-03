@@ -14,3 +14,6 @@ body .book .book-summary ul.summary li > a {
 .book .book-body .markdown-section pre > code {
   font-size: 12px;
 }
+.book-summary ul.summary li ul li {
+  display: block !important;
+}
