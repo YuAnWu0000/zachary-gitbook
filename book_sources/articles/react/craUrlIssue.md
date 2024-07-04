@@ -52,7 +52,7 @@ OK！那當前的目標就是要想辦法擴充 `create-react-app` 預設的 web
 終於讓我找到設定`module.rules`的地方：
 
 ```
-// in react-scripts/config/webpack.config.js
+// react-scripts/config/webpack.config.js
 module: {
   ...
   rules: [
