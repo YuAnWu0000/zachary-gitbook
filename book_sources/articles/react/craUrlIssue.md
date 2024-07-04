@@ -49,7 +49,73 @@ OK！那當前的目標就是要想辦法擴充 `create-react-app` 預設的 web
 
 (以下忽略 30 分鐘的 trace code 過程...)
 
-經過一段查找 source code 的時間及測試後，**我發現這種寫法可以取得我要的屬性，並且解決這個問題：**
+終於讓我找到設定`module.rules`的地方：
+
+```
+// in react-scripts/config/webpack.config.js
+module: {
+  ...
+  rules: [
+    ...
+    {
+      oneOf: [
+        ...
+        // "postcss" loader applies autoprefixer to our CSS.
+        // "css" loader resolves paths in CSS and adds assets as dependencies.
+        // "style" loader turns CSS into JS modules that inject <style> tags.
+        // In production, we use MiniCSSExtractPlugin to extract that CSS
+        // to a file, but in development "style" loader enables hot editing
+        // of CSS.
+        // By default we support CSS Modules with the extension .module.css
+        {
+          test: cssRegex,
+          exclude: cssModuleRegex,
+          use: getStyleLoaders({
+            importLoaders: 1,
+            sourceMap: isEnvProduction
+              ? shouldUseSourceMap
+              : isEnvDevelopment,
+            modules: {
+              mode: 'icss',
+            },
+          }),
+          // Don't consider CSS imports dead code even if the
+          // containing package claims to have no side effects.
+          // Remove this when webpack adds a warning or an error for this.
+          // See https://github.com/webpack/webpack/issues/6571
+          sideEffects: true,
+        },
+      ]
+    }
+  ]
+}
+```
+
+而當中有一句註解是這樣寫的：<br>
+`"css" loader resolves paths in CSS and adds assets as dependencies.`<br>
+也證實了這個設定確實就是我們要找的。
+
+繼續往下探索，看到了這個 function：
+
+```
+// common function to get style loaders
+  const getStyleLoaders = (cssOptions, preProcessor) => {
+    const loaders = [
+      ...
+      {
+        loader: require.resolve('css-loader'),
+        options: cssOptions,
+      },
+      ...
+    ]
+    ...
+    return loaders
+  }
+```
+
+嗯！沒問題，看起來只要把外部傳入的 cssOptions 想辦法加上 `url: false` 就可以了！
+
+於是經過一段時間的測試後，**我發現這種寫法可以順利覆寫我要的屬性，並且解決這個問題：**
 
 ```
 // config-overrides.js
