@@ -47,7 +47,7 @@ OK！那當前的目標就是要想辦法擴充 `create-react-app` 預設的 web
 
 那麼...要怎麼擴充呢？只能去看看 `react-scripts` 的 webpack config 裡面都做了些什麼事了...
 
-(以下忽略 30 分鐘的 trace code 過程...)
+(以下忽略數分鐘的 trace code 過程...)
 
 終於讓我找到設定`module.rules`的地方：
 
@@ -113,9 +113,9 @@ module: {
   }
 ```
 
-嗯！沒問題，看起來只要把外部傳入的 cssOptions 想辦法加上 `url: false` 就可以了！
+嗯！沒有什麼問題，看起來只要把外部傳入的 cssOptions 想辦法加上 `url: false` 就可以了！
 
-於是經過一段時間的測試後，**我發現這種寫法可以順利覆寫我要的屬性，並且解決這個問題：**
+經過一段時間的測試後，**我發現這種寫法可以順利覆寫我要的屬性，並且解決這個問題：**
 
 ```
 // config-overrides.js
@@ -139,5 +139,8 @@ module.exports = function override(config) {
 
 貓貓圖片成功出現了，並且 build 出來的檔案只有 public/images 底下的那一張圖片，也沒有重複的問題，這次真的可以打完收工了。
 
-沒想到這麼小的問題竟然也隱藏著這麼多細節，為自己不留技術債的態度豎起一根大拇指！啊！順便去 Github issue 底下留個言，看能不能幫助更多的開發者好了。<br>
+### 結語
+
+沒想到這麼小的問題竟然也隱藏著這麼多細節，為自己不留技術債的態度豎起一根大拇指！<br>
+啊！順便去 Github issue 底下留個言，看能不能幫助更多的開發者好了，畢竟沒有那串 issue 我可能還不知道該怎麼定義問題呢！能夠回饋社群的感覺也很不賴。<br>
 https://github.com/facebook/create-react-app/issues/9937
