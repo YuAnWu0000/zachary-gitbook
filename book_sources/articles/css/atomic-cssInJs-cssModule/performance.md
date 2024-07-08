@@ -9,16 +9,16 @@
 
 ##### 1. Bundle size
 
-Atomic css 的特點就是每個屬性值都只會有一個 utility class，因此一個專案就算用到 50 個 `display: flex`，也只是重複使用 `flex` 這個 class 罷了，相比傳統的 css module 把每個需要樣式的節點都量身定義一個 class，**Atomic 的作法減少了非常多的樣式重複定義，因此有效降低了 css bundle size。**<br>
-另外，css module 在開發時需要特別關注權重跟覆蓋性的問題，在專案功能越做越複雜的情況下，難免會出現一些 zombie styles，這些沒有被使用到的 class 會導致 bundle size 的增加，需要開發者額外小心注意。<br>
-至於 css-in-js 的解決方案如 Emotion ，bundle size 只有 7.9KB，不會造成什麼額外負擔，編譯出來的結果則是跟 CSS module 類似，都是 `classname-{hash}`的方式，但相對來說 zombie styles 的情況要少得多。<br>
+Atomic css 的特點就是每個屬性值都只會有一個 utility class，因此一個專案就算用到 50 個 `display: flex`，也只是重複使用 `flex` 這個 class，相比傳統的 css module 把每個節點都量身定義一個 class，**Atomic 的作法減少了非常多的樣式重複定義，因此有效降低了 css bundle size。**<br>
+另外，css module 在開發時還需要特別關注權重跟覆蓋性的問題，在專案功能越做越複雜的情況下，難免會出現一些 zombie styles，這些沒有被使用到的 class 會導致 bundle size 的增加，需要開發者額外小心注意。<br>
+至於 css-in-js 的解決方案如 Emotion ，bundle size 只有 7.9 KB，不算什麼太大問題。
 
 ##### 2. Run time
 
 相信大家都有一個共識，那就是在 run time 成本上，**越貼近原生瀏覽器的作法就越快。**<br>
 由於 scss 等 css module 解決方案都是在 compile time 做靜態分析將樣式編譯為 pure css，所以 run time 時候其實跟原生沒有太大區別。<br>
 有時 Tailwind css 需要使用 `tw-merge` 來進行字串合併，因此多了一些字串比對跟查找的額外成本，但除此之外沒有其他太大的負擔。<br>
-css-in-js 大概是 run time 成本最高的一種解決方案，因為所有的樣式都定義在 js 當中，實際程式在跑的時候需要動態組合樣式並產生對應的 class 然後 binding 到模板上，在面對頻繁抽換 style 的情境有可能會出現效能上的問題。
+css-in-js 大概是 run time 成本最高的一種解決方案，因為所有的樣式都定義在 js 當中，實際程式在跑的時候需要動態組合樣式並產生對應的 class 然後 binding 到模板上，**因此在面對頻繁抽換 style 的情境有可能會出現效能上的問題**，至於編譯出來的結果跟 CSS module 類似，如： `classname-{hash}`，但相對來說 zombie styles 要少得多，畢竟不需要太過關注覆蓋性的問題。
 
 ### 結論
 
