@@ -24,7 +24,7 @@ css-in-js 大概是 run time 成本最高的一種解決方案，因為所有的
 **以學習曲線來說：** CSS module > Emotion > Tailwind<br>
 **以開發者體驗來說：** Tailwind > CSS module > Emotion<br>
 **以偵錯體驗來說：** CSS module > Emotion > Tailwind<br>
-以擴展性來說：Emotion > Tailwind > CSS module<br>
+**以擴展性來說：** Emotion > Tailwind > CSS module<br>
 以效能來說：Tailwind >= CSS module > Emotion<br>
 
 上述的比較純屬個人看法，投資框架有賺有賠，使用前應詳閱公開說明書。<br>
