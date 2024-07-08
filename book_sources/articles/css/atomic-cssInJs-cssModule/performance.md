@@ -10,7 +10,8 @@
 ##### 1. bundle size
 
 Atomic css 的特點就是每個屬性值都只會有一個 utility class，因此一個專案就算用到 50 個 `display: flex`，也只是重複使用 `flex` 這個 class 罷了，相比傳統的 css module 把每個需要樣式的節點都量身定義一個 class，**Atomic 的作法減少了非常多的樣式重複定義，因此有效降低了 css bundle size。**<br>
-另外，css module 在開發時需要特別關注權重跟覆蓋性的問題，在專案功能越做越複雜的情況下，難免會出現一些 zombie styles，這些沒有被使用到的 class 會導致 bundle size 的增加，需要開發者額外小心注意。
+另外，css module 在開發時需要特別關注權重跟覆蓋性的問題，在專案功能越做越複雜的情況下，難免會出現一些 zombie styles，這些沒有被使用到的 class 會導致 bundle size 的增加，需要開發者額外小心注意。<br>
+至於 css-in-js 的解決方案如 Emotion ，bundle size 只有 7.9KB，不會造成什麼額外負擔，編譯出來的結果則是跟 CSS module 類似，都是 `classname-{hash}`的方式，但相對來說 zombie styles 的情況要少得多。<br>
 
 ##### 2. run time
 
