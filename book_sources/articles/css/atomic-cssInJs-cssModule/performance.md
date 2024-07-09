@@ -29,7 +29,7 @@ css-in-js 大概是 run time 成本最高的一種解決方案，因為所有的
 **以效能來說：** Tailwind >= CSS module > Emotion<br>
 
 上述的比較純屬個人看法，投資框架有賺有賠，使用前應詳閱公開說明書。<br>
-我認為重點還是要知道自己為什麼選擇當前的 CSS framework，並且知道手上的工具有什麼短版：<br>
+我認為重點還是要知道自己為什麼選擇當前的 CSS framework，**並且知道手上的工具有什麼短版：**<br>
 
 比如你喜歡 css-in-js 提早抽象化的寫法，但又擔心有 performance bottleneck，那麼也許你可以採用 Zero-Runtime 的解決方案如：
 
