@@ -21,22 +21,22 @@ const basket = [
     name: 'mango',
     number: 3
   }
-];
+]
 async function buyEachOne() { // 希望拿到每種水果+1的結果
   basket.forEach(async (item) => {
-    const newNumber = await shopping(item.number);
-    item.number = newNumber;
-  });
-  console.log(basket);
+    const newNumber = await shopping(item.number)
+    item.number = newNumber
+  })
+  console.log(basket)
 }
 function shopping(number) {
   return new Promise((resolve, reject) => {
     setTimeout(function() {
-      resolve(number + 1);
-    }, 2000);
+      resolve(number + 1)
+    }, 2000)
   });
 }
-buyEachOne();
+buyEachOne()
 ```
 
 > 我將概念梳理了一下，流程簡化為菜籃中有若干種水果，我想為每樣水果都多添購一顆，每次購買須花費兩秒的時間，購買完成後將菜籃中所有水果的新數量打印出來。
@@ -75,3 +75,35 @@ below was evaluated just now."<br>
 我們都知道 JavaScript 是單執行緒的語言，內部有著 Event Loop 機制，各位可能很困惑，奇怪，怎麼被威脅了一下，就開始講其他的東西不講 async/await 了呢？除了他們倆個手上的球棒真的很大根之外，其實，這些都是環環相扣的，觀念缺一不可。
 
 如果對 Event Loop 機制不理解的人，可以參照<a href="https://pjchender.blogspot.com/2017/08/javascript-learn-event-loop-stack-queue.html">這篇</a>文章
+
+**文章真的非常重要**<br>
+**文章真的非常重要**<br>
+**文章真的非常重要**<br>
+
+我決定等你看完再繼續講解，放心，我很閒， 我可以在這等你一天都不是問題。<br>
+至於如何算是完全理解 Event Loop？ 對不起，可能要請你去問 Brendan Eich，不過...<br>
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOo001UM8PI/0.jpg)](https://www.youtube.com/watch?v=YOo001UM8PI)
+
+當你可以完全預測上面這個影片的走向時，我相信你應該就可以繼續閱讀以下的文章了。
+
+### 讓我們用上面影片的邏輯來重新檢視一下這個範例
+
+```
+async function buyEachOne() { // 希望拿到每種水果+1的結果
+basket.forEach(async (item) => {
+  const newNumber = await shopping(item.number)
+  item.number = newNumber
+})
+console.log(basket)
+}
+function shopping(number) {
+  return new Promise((resolve, reject) => {
+    setTimeout(function() {
+      resolve(number + 1)
+    }, 2000)
+  })
+}
+```
+
+我們首先觀察 buyEachOne 這個 function，程式先用 forEach 對 basket 進行遍歷，依序執行傳入 forEach 的三個 callback，執行到 shopping 的時候發現遇到了 setTimeOut，因此將 setTimeOut 交由 Web APIs 進行處理，接著由於 await 的效果，暫時凍結內部執行環境，至此，第一個 callback 處理完畢。**這樣的流程會重複不間斷地執行三次。**
