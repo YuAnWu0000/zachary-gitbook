@@ -110,4 +110,6 @@ function shopping(number) {
 }
 ```
 
-我們首先觀察 buyEachOne 這個 function，程式先用 forEach 對 basket 進行遍歷，依序執行傳入 forEach 的三個 callback，執行到 shopping 的時候發現遇到了 setTimeOut，因此將 setTimeOut 交由 Web APIs 進行處理，接著由於 await 的效果，暫時凍結內部執行環境，至此，第一個 callback 處理完畢。**這樣的流程會重複不間斷地執行三次。**
+我們首先觀察 `buyEachOne` 這個 function，程式先用 `forEach` 對 `basket` 進行遍歷，依序執行傳入 `forEach` 的三個 callback，執行到 `shopping` 的時候發現遇到了 `setTimeOut`，因此將 `setTimeOut` 交由 Web APIs 進行處理，接著由於 `await` 的效果，暫時凍結內部執行環境，至此，第一個 callback 處理完畢。**這樣的流程會重複不間斷地執行三次。**
+
+`forEach` 的三個 callback 處理完以後，接著 callstack 執行了 `console` 這一行，因而才有了上面 chrome 打印的結果。也就是說，這邊 `console` 執行時，那三個 Async callback 還沒有結束凍結，這也就解釋了為什麼圖一會有我們意想不到的結果出現。
