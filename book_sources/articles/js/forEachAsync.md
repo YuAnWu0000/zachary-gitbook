@@ -58,10 +58,20 @@ buyEachOne();
 
 > **釋迦牟尼《法句經》中有言：莫輕小惡，以為無罪，小惡所積，足以滅身。**
 
+### Chrome dev tool
+
 我們先說行小惡的兇手，Chrome dev tool！沒錯，就是你，不要以為把頭撇開我就抓不到你了(Chrome:
 關我屁事。)<br>
 事實上只要你把鼠標移到上圖的藍色 icon，就會出現 tooltip 告訴你原因了："Value
 below was evaluated just now."<br>
-意思是：以 chrome 來說，展開前的數值是 console 當下的值，而展開後則是現在存放在記憶體中最新的值，
-至於兩者有什麼不同？為什麼 console 當下數值會還沒變更呢？這問題就牽涉到了我們今天的千古罪人，
-Async/Await 了！(Async/Await: 你再繼續誣陷我兩兄弟，我就把你打到你媽都不認識你。)
+意思是：以 chrome 來說，展開前的數值是 console 當下的值，而展開後則是現在存放在記憶體中最新的值，這其實是 chrome 的一個小巧思，讓開發者能夠更好地追蹤該地址的值為何，只是在這個例子中不幸變成苦惱我同事的一個盲點。
+
+至於為什麼 console 當下數值會還沒變更呢？這問題就牽涉到了我們今天的千古罪人，Async/Await 了！(Async/Await: 你再繼續誣陷我兩兄弟，我就把你打到你媽都不認識你。)
+
+> 其實他倆兄弟是無辜的，前面只是玩笑話而已，各位客官請別太認真，他們現在拿著球棒站在我身後呢！
+
+### async / await
+
+我們都知道 JavaScript 是單執行緒的語言，內部有著 Event Loop 機制，各位可能很困惑，奇怪，怎麼被威脅了一下，就開始講其他的東西不講 async/await 了呢？除了他們倆個手上的球棒真的很大根之外，其實，這些都是環環相扣的，觀念缺一不可。
+
+如果對 Event Loop 機制不理解的人，可以參照<a href="https://pjchender.blogspot.com/2017/08/javascript-learn-event-loop-stack-queue.html">這篇</a>文章
