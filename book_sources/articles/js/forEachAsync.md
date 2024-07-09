@@ -44,10 +44,14 @@ buyEachOne()
 好的！回到問題...<br>
 
 「到底為什麼 console 出來是下面這樣啊！」他一臉懊惱的抱著頭嘶吼<br>
-![console](../../images/forEach-async-await/console.jpg)
+<img src="../../images/forEach-async-await/console.jpg" width="268" height="110">
+
+<!-- ![console](../../images/forEach-async-await/console.jpg) -->
 
 「而且...點了一下箭頭...」<br>
-![console](../../images/forEach-async-await/console_expand.jpg)
+<img src="../../images/forEach-async-await/console_expand.jpg" width="176" height="268">
+
+<!-- ![console](../../images/forEach-async-await/console_expand.jpg) -->
 
 「你看！我要的值又長出來啦！是怎樣，為什麼這世界這麼複雜啊啊啊？」<br>
 
@@ -91,11 +95,11 @@ below was evaluated just now."<br>
 
 ```
 async function buyEachOne() { // 希望拿到每種水果+1的結果
-basket.forEach(async (item) => {
-  const newNumber = await shopping(item.number)
-  item.number = newNumber
-})
-console.log(basket)
+  basket.forEach(async (item) => {
+    const newNumber = await shopping(item.number)
+    item.number = newNumber
+  })
+  console.log(basket)
 }
 function shopping(number) {
   return new Promise((resolve, reject) => {
