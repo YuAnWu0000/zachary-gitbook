@@ -1,4 +1,6 @@
-# async/await 在 forEach 裡面不起作用？我覺得你可能搞錯了什麼
+# async/await 在 forEach 裡面不起作用？你是否搞錯了什麼
+
+![meme](../../images/forEach-async-await/meme.jpg)
 
 ### 「ㄟ~Zachary~~你可以過來幫我通靈一下嗎？」
 
