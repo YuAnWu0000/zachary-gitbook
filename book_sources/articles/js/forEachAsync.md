@@ -125,11 +125,12 @@ function shopping(number) {
 
 ### 還記得開頭的那張迷因嗎？
 
-我曾看過不少人說 async / await 在 forEach 中是不起作用的，但其實事實並不是這樣，以結果來說，async / await 依舊保證了函式內部的執行順序，以這個例子而言，就是**等待了兩秒後才更新水果的數量**，但他**不能保證的是，函式外部 callstack 會先跳過他來執行其他程式。**(async / await：說得不錯，今天就饒你一命)
+我曾看過不少人說 async / await 在 forEach 中是不起作用的，但事實並不是這樣，以結果來說，async / await 依舊保證了函式內部的執行順序，以這個例子而言，就是**等待了兩秒後才更新水果的數量**，但他**不能保證的是，函式外部 callstack 會先跳過他來執行其他程式。**(async / await：說得不錯，今天就饒你一命)
 
 > ㄟ等等，講了這麼多，所以你到底有沒有幫你同事解決問題啊？
 
-阿對了，差點忘記在一邊懷疑人生的同事了，其實解決方式非常簡單，只要把 forEach 換成 for...of 就解決了！
+阿對了，差點忘記在一邊懷疑人生的同事了，他已經模仿柯文哲到快把頭給搔破了。<br>
+其實這題的解決方式非常簡單，只要把 forEach 換成 for...of 就解決了！
 
 ```
 async function buyEachOne() { // 希望拿到每種水果+1的結果
@@ -149,7 +150,7 @@ async function buyEachOne() { // 希望拿到每種水果+1的結果
 
 > ### 這真是太神奇了傑克！！
 
-其實懂了 Event Loop 的原理後，這樣的結果也沒什麼好驚訝的了。<br>
+其實在懂了 Event Loop 的原理後，這樣的結果也沒什麼好驚訝的了。<br>
 async / await 的作用是保證當前函式的執行順序，而 forEach 與 for 的最大區別就在於 forEach 是傳入 callback 來執行，因此對於 async/await 來說，當前函式是那三個 callback，也就是說，這邊它的作用是凍結那三個 callback function 內部。<br>
 但 for...of 就不同了，它內部的 await 會凍結最近的 async function，也就是凍結 buyEachOne()的執行，因此才會有我們想要的結果出現。
 
