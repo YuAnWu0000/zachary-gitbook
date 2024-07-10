@@ -134,14 +134,14 @@ function shopping(number) {
 ```
 async function buyEachOne() { // 希望拿到每種水果+1的結果
   /* basket.forEach(async (item) => {
-    const newNumber = await shopping(item.number);
-    item.number = newNumber;
+    const newNumber = await shopping(item.number)
+    item.number = newNumber
   }); */
   for (let item of basket) {
-    const newNumber = await shopping(item.number);
-    item.number = newNumber;
+    const newNumber = await shopping(item.number)
+    item.number = newNumber
   }
-  console.log(basket);
+  console.log(basket)
 }
 ```
 
@@ -152,3 +152,39 @@ async function buyEachOne() { // 希望拿到每種水果+1的結果
 其實懂了 Event Loop 的原理後，這樣的結果也沒什麼好驚訝的了。<br>
 async / await 的作用是保證當前函式的執行順序，而 forEach 與 for 的最大區別就在於 forEach 是傳入 callback 來執行，因此對於 async/await 來說，當前函式是那三個 callback，也就是說，這邊它的作用是凍結那三個 callback function 內部。<br>
 但 for...of 就不同了，它內部的 await 會凍結最近的 async function，也就是凍結 buyEachOne()的執行，因此才會有我們想要的結果出現。
+
+### 如果你認為你已經理解上面的範例，那就不妨試試下面這個吧!
+
+```
+const example = async () => {
+  const nums = [1,2,3]
+  nums.forEach(async num => {
+    console.log('start ', num)
+    const result = await returnNum(num)
+    console.log('end ', num)
+  })
+  console.log('after forEach')
+}
+const returnNum = x => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(x)
+    }, 500*(5-x))
+  });
+}
+example().then(() =>{
+  console.log('done')
+})
+```
+
+給自己一段時間思考吧！<br>
+給自己一段時間思考吧！<br>
+給自己一段時間思考吧！<br>
+給自己一段時間思考吧！<br>
+給自己一段時間思考吧！<br>
+給自己一段時間思考吧！<br>
+給自己一段時間思考吧！<br>
+
+思考完後看解答 ↓<br>
+<img src="../../images/forEach-async-await/test_ans.jpg" width="268" height="">
+希望解答有跟你心目中的一樣！
