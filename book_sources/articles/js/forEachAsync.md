@@ -88,7 +88,7 @@ below was evaluated just now."<br>
 我決定等你看完再繼續講解，放心，我很閒， 我可以在這等你一天都不是問題。<br>
 至於如何算是完全理解 Event Loop？ 對不起，可能要請你去問 Brendan Eich，不過...<br>
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOo001UM8PI/0.jpg)](https://www.youtube.com/watch?v=YOo001UM8PI)
+[![YouTube video](https://img.youtube.com/vi/YOo001UM8PI/0.jpg)](https://www.youtube.com/watch?v=YOo001UM8PI)
 
 當你可以完全預測上面這個影片的走向時，我相信你就可以繼續閱讀以下的文章了。
 
@@ -128,3 +128,27 @@ function shopping(number) {
 我曾看過不少人說 async / await 在 forEach 中是不起作用的，但其實事實並不是這樣，以結果來說，async / await 依舊保證了函式內部的執行順序，以這個例子而言，就是**等待了兩秒後才更新水果的數量**，但他**不能保證的是，函式外部 callstack 會先跳過他來執行其他程式。**(async / await：說得不錯，今天就饒你一命)
 
 > ㄟ等等，講了這麼多，所以你到底有沒有幫你同事解決問題啊？
+
+阿對了，差點忘記在一邊懷疑人生的同事了，其實解決方式非常簡單，只要把 forEach 換成 for...of 就解決了！
+
+```
+async function buyEachOne() { // 希望拿到每種水果+1的結果
+  /* basket.forEach(async (item) => {
+    const newNumber = await shopping(item.number);
+    item.number = newNumber;
+  }); */
+  for (let item of basket) {
+    const newNumber = await shopping(item.number);
+    item.number = newNumber;
+  }
+  console.log(basket);
+}
+```
+
+<img src="../../images/forEach-async-await/console_right.jpg" width="268" height="110">
+
+> ### 這真是太神奇了傑克！！
+
+其實懂了 Event Loop 的原理後，這樣的結果也沒什麼好驚訝的了。<br>
+async / await 的作用是保證當前函式的執行順序，而 forEach 與 for 的最大區別就在於 forEach 是傳入 callback 來執行，因此對於 async/await 來說，當前函式是那三個 callback，也就是說，這邊它的作用是凍結那三個 callback function 內部。<br>
+但 for...of 就不同了，它內部的 await 會凍結最近的 async function，也就是凍結 buyEachOne()的執行，因此才會有我們想要的結果出現。
