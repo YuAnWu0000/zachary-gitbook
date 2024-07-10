@@ -59,7 +59,7 @@ buyEachOne()
 
 **Chrome DevTool, Async/Await**<br>
 
-就是你們(指
+就是你們(指 ☝️
 
 > ### 釋迦牟尼《法句經》中有言：莫輕小惡，以為無罪，小惡所積，足以滅身。
 
