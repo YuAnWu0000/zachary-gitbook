@@ -122,3 +122,7 @@ function shopping(number) {
 過了不久，剛剛被我們暫時置之不理的那三個 setTimeout 也在 Web API 的機制幫助下等待了兩秒並將後續程式塞入工作佇列(task queue)當中了。
 
 當 stack 中的事件執行完畢之後，Event Loop 機制才會將工作佇列(taskqueue)中的事件逐一塞入 stack 中並執行，直到這時候，那三個 callback 才結束凍結繼續運行，而水果的數量**才真正地進行更新**。
+
+### 還記得開頭的那張迷因嗎？
+
+我曾看過不少人說 async / await 在 forEach 中是不起作用的，但其實事實並不是這樣，以結果來說，async / await 依舊保證了函式內部的執行順序，以這個例子而言，就是**等待了兩秒後才更新水果的數量**，但他**不能保證的是，函式外部 callstack 會先跳過他來執行其他程式。**(async / await：說得不錯，今天就饒你一命)
