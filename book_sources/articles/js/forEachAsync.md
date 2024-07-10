@@ -118,3 +118,7 @@ function shopping(number) {
 `forEach()` 的三個 callback "處理"完以後 (**注意：此時三個 callback 內部仍然是凍結狀態，因為在等待`setTimeout()`**)，接著程式執行到了 `console.log()` 這一行，所以才有了上面 chrome 的打印：**水果們並沒有得到+1 的結果**。
 
 > 試想如果單執行緒的 JS 沒有 Web API 輔助，停留在原地等待三個 callback 執行完畢，那總共就是等待六秒的時間才能執行其他任務，網頁如果阻塞六秒，使用者早就已經跑光光了 :P
+
+過了不久，剛剛被我們暫時置之不理的那三個 setTimeout 也在 Web API 的機制幫助下等待了兩秒並將後續程式塞入工作佇列(task queue)當中了。
+
+當 stack 中的事件執行完畢之後，Event Loop 機制才會將工作佇列(taskqueue)中的事件逐一塞入 stack 中並執行，直到這時候，那三個 callback 才結束凍結繼續運行，而水果的數量**才真正地進行更新**。
