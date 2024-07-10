@@ -186,5 +186,10 @@ example().then(() =>{
 給自己一段時間思考吧！<br>
 
 思考完後看解答 ↓<br>
-<img src="../../images/forEach-async-await/test_ans.jpg" width="268" height="">
+<img src="../../images/forEach-async-await/testAns.jpg" width="268" height=""><br>
 希望解答有跟你心目中的一樣！
+
+### 結語
+
+今天帶各位看了 forEach & async / await 常見的迷思，希望這種深入淺出的內容可以幫助到大家！<br>
+一方面是拋磚引玉，一方面這篇文章也是寫給當初的自己，希望當初困惑的自己在網路上看到這篇文章，除了覺得有些有趣以外，也可以對 JS 的 Event Loop 機制激起求知慾，千萬不是一句「改用 for...of 就好，就這樣吧。」
