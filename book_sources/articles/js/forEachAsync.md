@@ -92,7 +92,7 @@ below was evaluated just now."<br>
 
 當你可以完全預測上面這個影片的走向時，我相信你就可以繼續閱讀以下的文章了。
 
-<a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D">範例</a>來源
+對這個視覺化 UI 有興趣的，可以參考這個<a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D">網站</a>
 
 ### 讓我們用上面影片的邏輯來重新檢視一下這個範例
 
@@ -145,7 +145,7 @@ async function buyEachOne() { // 希望拿到每種水果+1的結果
 }
 ```
 
-<img src="../../images/forEach-async-await/console_right.jpg" width="268" height="110">
+<img src="../../images/forEach-async-await/console_right.jpg" width="268" height="">
 
 > ### 這真是太神奇了傑克！！
 
@@ -172,24 +172,28 @@ const returnNum = x => {
     }, 500*(5-x))
   });
 }
-example().then(() =>{
+example().then(() => {
   console.log('done')
 })
 ```
 
 給自己一段時間思考吧！<br>
-給自己一段時間思考吧！<br>
-給自己一段時間思考吧！<br>
-給自己一段時間思考吧！<br>
-給自己一段時間思考吧！<br>
-給自己一段時間思考吧！<br>
-給自己一段時間思考吧！<br>
+.<br>
+.<br>
+.<br>
+.<br>
+.<br>
+.<br>
+.<br>
+.<br>
+.<br>
 
 思考完後看解答 ↓<br>
 <img src="../../images/forEach-async-await/testAns.jpg" width="268" height=""><br>
 希望解答有跟你心目中的一樣！
+如果有些許疑惑，關鍵字 **micro task** 去搜尋看看 :)
 
 ### 結語
 
 今天帶各位看了 forEach & async / await 常見的迷思，希望這種深入淺出的內容可以幫助到大家！<br>
-一方面是拋磚引玉，一方面這篇文章也是寫給當初的自己，希望當初困惑的自己在網路上看到這篇文章，除了覺得有些有趣以外，也可以對 JS 的 Event Loop 機制激起求知慾，千萬不是一句「改用 for...of 就好，就這樣吧。」
+一方面是拋磚引玉，一方面這篇文章也是寫給當初的自己，希望當初困惑的自己在網路上看到這篇文章，除了感到有趣以外，也可以對 JS 的 Event Loop 機制激起求知慾，去找尋更多網路資料，而不是一句「改用 for...of 就好，就這樣吧。」
