@@ -119,18 +119,18 @@ function shopping(number) {
 
 > 試想如果單執行緒的 JS 沒有 Web API 輔助，而是停留在原地等待三個 callback 執行完畢，那總共就需要等待六秒的時間才能執行其他任務，網頁如果阻塞六秒，使用者早就已經跑光光了 :P
 
-不久之後，剛剛被我們暫時置之不理的那三個 setTimeout 也在 Event Loop 機制幫助下等待了兩秒並將後續程式塞入工作佇列(task queue)當中了。
+不久之後，剛剛被我們暫時置之不理的那三個 `setTimeout` 也在 Event Loop 機制幫助下等待了兩秒並將後續程式塞入工作佇列(task queue)當中了。
 
 當 call stack 中的事件執行完畢之後，Event Loop 會將工作佇列(taskqueue)中的事件逐一塞入 stack 中並執行，直到這時候，那三個 callback 才結束凍結繼續運行，而水果的數量**才真正地進行更新**。
 
 ### 還記得開頭的那張迷因嗎？
 
-我曾看過不少人說 async / await 在 forEach 中是不起作用的，但事實並不是這樣，以結果來說，async / await 依舊保證了函式內部的執行順序，以這個例子而言，就是**等待了兩秒後才更新水果的數量**，但他**不能保證的是，函式外部 callstack 會先跳過他來執行其他程式。**(async / await：說得不錯，今天就饒你一命)
+我曾看過不少人說 `async / await` 在 `forEach` 中是不起作用的，但事實並不是這樣，以結果來說，`async / await` 依舊保證了函式內部的執行順序，以這個例子而言，就是**等待了兩秒後才更新水果的數量**，但他**不能保證的是，函式外部 callstack 會先跳過他來執行其他程式。**(async / await：說得不錯，今天就饒你一命)
 
 > ㄟ等等，講了這麼多，所以你到底有沒有幫你同事解決問題啊？
 
 阿對了，差點忘記在一邊懷疑人生的同事了，他已經模仿柯文哲到快把頭給搔破了。<br>
-其實這題的解決方式非常簡單，只要把 forEach 換成 for...of 就解決了！
+其實這題的解決方式非常簡單，只要把 `forEach` 換成 `for...of` 就解決了！
 
 ```
 async function buyEachOne() { // 希望拿到每種水果+1的結果
@@ -151,8 +151,8 @@ async function buyEachOne() { // 希望拿到每種水果+1的結果
 > ### 這真是太神奇了傑克！！
 
 其實在懂了 Event Loop 的原理後，這樣的結果也沒什麼好驚訝的了。<br>
-async / await 的作用是保證當前函式的執行順序，而 forEach 與 for 的最大區別就在於 forEach 是傳入 callback 來執行，因此對於 async/await 來說，當前函式是那三個 callback，也就是說，這邊它的作用是凍結那三個 callback function 內部。<br>
-但 for...of 就不同了，它內部的 await 會凍結最近的 async function，也就是凍結 buyEachOne()的執行，因此才會有我們想要的結果出現。
+`async / await` 的作用是保證當前函式的執行順序，而 `forEach` 與 `for` 的最大區別就在於 `forEach` 是傳入 callback 來執行，因此對於 `async/await` 來說，凍結的是那三個 callback。<br>
+但 `for...of` 就不同了，它內部的 `await` 會凍結最近的 `async function`，也就是 `buyEachOne()`，因此才會有我們想要的結果出現。
 
 ### 如果你認為你已經理解上面的範例，那就不妨試試下面這個吧!
 
@@ -189,12 +189,11 @@ example().then(() => {
 .<br>
 .<br>
 
-思考完後看解答 ↓<br>
+解答 ↓<br>
 <img src="../../images/forEach-async-await/testAns.jpg" width="268" height=""><br>
-希望解答有跟你心目中的一樣！
-如果有些許疑惑，關鍵字 **micro task** 去搜尋看看 :)
+希望有跟你心目中想的一樣！如果還有疑惑，關鍵字 **micro task** 去搜尋看看 :)
 
 ### 結語
 
-今天帶各位看了 forEach & async / await 常見的迷思，希望這種深入淺出的內容可以幫助到大家！<br>
-一方面是拋磚引玉，一方面這篇文章也是寫給當初的自己，希望當初困惑的自己在網路上看到這篇文章，除了感到有趣以外，也可以對 JS 的 Event Loop 機制激起求知慾，去找尋更多網路資料，而不是一句「改用 for...of 就好，就這樣吧。」
+今天帶各位看了 `forEach` & `async / await` 常見的迷思，希望這種深入淺出的內容可以幫助到大家！<br>
+一方面是拋磚引玉，另一方面這篇文章也是寫給當初的自己，希望當初困惑的自己在網路上看到這篇文章，除了感到有趣以外，也可以對 JS 的 Event Loop 機制激起求知慾，去找尋更多網路資料，而不是一句「改用 for...of 可以耶！就這樣吧。」
