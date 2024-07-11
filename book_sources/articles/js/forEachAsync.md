@@ -121,9 +121,11 @@ function shopping(number) {
 
 > 試想如果單執行緒的 JS 沒有 Web API 輔助，而是停留在原地等待三個 callback 執行完畢，那總共就需要等待六秒的時間，網頁如果阻塞六秒，使用者早就已經跑光光了 :P
 
-"大約"兩秒之後 **(註：這邊用"大約"是因為 JS 只保證等待兩秒後把任務丟到 task queue，但任務具體執行時間還是要看在 queue 排隊等了多久)**，剛剛被我們暫時置之不理的那三個 `setTimeout` 也在 Event Loop 機制幫助下等待了兩秒並將後續程式塞入工作佇列(task queue)當中了。
+兩秒之後，剛剛被我們暫時置之不理的那三個 `setTimeout` 也在 Event Loop 機制幫助下等待了兩秒並將後續程式塞入工作佇列(task queue)當中了。
 
 當 call stack 中的事件執行完畢之後，Event Loop 會將工作佇列(taskqueue)中的事件逐一塞入 stack 中並執行，直到這時候，那三個 callback 才結束凍結繼續運行，而水果的數量**才真正地進行更新**。
+
+**注意：你現在應該知道為什麼大家會說 `setTimeout` 沒有那麼"精確"了，因為 JS 只保證在等待兩秒後把任務丟到 task queue，但任務具體執行時間還是要看它在 queue 裡面排隊等了多久。**
 
 ### 還記得開頭的那張迷因嗎？
 
