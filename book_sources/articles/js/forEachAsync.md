@@ -113,13 +113,15 @@ function shopping(number) {
 }
 ```
 
-我們首先觀察 `buyEachOne()` 這個 function，程式先用 `forEach()` 對 `basket` 進行遍歷，依序執行傳入 `forEach()` 的三個 callback，執行到 `shopping()` 的時候發現遇到了 `setTimeOut()`，因此將 `setTimeOut()` 交由 Web APIs 進行處理，接著由於 `await` 的效果，暫時凍結內部執行環境，至此，第一個 callback 處理完畢。**這樣的流程會重複不間斷地執行三次。**
+我們首先觀察 `buyEachOne()` 這個 function，程式先用 `forEach()` 對 `basket` 進行遍歷，依序執行三個 callback：
+
+執行到 `await shopping()` 的時候發現遇到了 `setTimeOut()`，因此將 `setTimeOut()` 交由 Web APIs 進行處理，然後由於 `await` 的效果，暫時凍結內部執行環境，至此，第一個 callback 處理完畢。**這樣的流程會重複不間斷地執行三次。**
 
 `forEach()` 的三個 callback "處理"完以後 (**注意：此時三個 callback 內部仍然是凍結狀態，因為在等待`setTimeout()`**)，接著程式執行到了 `console.log()` 這一行，所以才有了上面 chrome 的輸出：**水果們並沒有得到 +1 的結果**。
 
-> 試想如果單執行緒的 JS 沒有 Web API 輔助，而是停留在原地等待三個 callback 執行完畢，那總共就需要等待六秒的時間才能執行其他任務，網頁如果阻塞六秒，使用者早就已經跑光光了 :P
+> 試想如果單執行緒的 JS 沒有 Web API 輔助，而是停留在原地等待三個 callback 執行完畢，那總共就需要等待六秒的時間，網頁如果阻塞六秒，使用者早就已經跑光光了 :P
 
-不久之後，剛剛被我們暫時置之不理的那三個 `setTimeout` 也在 Event Loop 機制幫助下等待了兩秒並將後續程式塞入工作佇列(task queue)當中了。
+"大約"兩秒之後 **(註：這邊用"大約"是因為 JS 只保證等待兩秒後把任務丟到 task queue，但任務具體執行時間還是要看在 queue 排隊等了多久)**，剛剛被我們暫時置之不理的那三個 `setTimeout` 也在 Event Loop 機制幫助下等待了兩秒並將後續程式塞入工作佇列(task queue)當中了。
 
 當 call stack 中的事件執行完畢之後，Event Loop 會將工作佇列(taskqueue)中的事件逐一塞入 stack 中並執行，直到這時候，那三個 callback 才結束凍結繼續運行，而水果的數量**才真正地進行更新**。
 
