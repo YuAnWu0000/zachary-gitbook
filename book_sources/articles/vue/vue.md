@@ -1,3 +1,3 @@
-# Vue the World
+# Vue the world differently
 
-### Hope we can view the world in a different way.
+### Different perspective makes people understand more.
