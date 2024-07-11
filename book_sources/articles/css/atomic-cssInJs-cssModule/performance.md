@@ -47,7 +47,7 @@ css-in-js 大概是 run time 成本最高的一種解決方案，因為所有的
 很感謝看到這的你們，如果對這篇文章有其他想法或意見，可以直接開 Github issue 或私訊我的 LinkedIn，相信我們很快就能開啟愉快的技術討論！
 
 最後就祝大家<br>
-Happy ~~debating~~ coding！
+Happy ~~debating~~ coding！😉
 
 ### References
 
