@@ -142,5 +142,5 @@ module.exports = function override(config) {
 ### 結語
 
 沒想到這麼小的問題竟然也隱藏著這麼多細節，為自己不留技術債的態度豎起一根大拇指！<br>
-啊！順便去 Github issue 底下留個言，看能不能幫助更多的開發者好了，畢竟沒有那串 issue 我可能還不知道該怎麼定義問題呢！能夠回饋社群的感覺也很不賴。<br>
+啊！順便去 Github issue 底下留個言，看能不能幫助更多的開發者好了，畢竟沒有那串 issue 我可能還不知道該怎麼定義問題呢！有能力回饋社群的感覺真好。<br>
 https://github.com/facebook/create-react-app/issues/9937

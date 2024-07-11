@@ -1,6 +1,6 @@
 # async/await 在 forEach 裡面不起作用？你是否搞錯了什麼
 
-![meme](../../images/forEach-async-await/meme.jpg)
+<img src="../../images/forEach-async-await/meme.jpg" width="450" >
 
 ### 「ㄟ~Zachary~~你可以過來幫我通靈一下嗎？」
 
@@ -121,9 +121,9 @@ function shopping(number) {
 
 > 試想如果單執行緒的 JS 沒有 Web API 輔助，而是停留在原地等待三個 callback 執行完畢，那總共就需要等待六秒的時間，網頁如果阻塞六秒，使用者早就已經跑光光了 :P
 
-兩秒之後，剛剛被我們暫時置之不理的那三個 `setTimeout` 也在 Event Loop 機制幫助下等待了兩秒並將後續程式塞入工作佇列(task queue)當中了。
+兩秒之後，剛剛被我們暫時置之不理的那三個 `setTimeout` 也在 Event Loop 機制幫助下將後續程式塞入工作佇列(task queue)當中了。
 
-當 call stack 中的事件執行完畢之後，Event Loop 會將工作佇列(taskqueue)中的事件逐一塞入 stack 中並執行，直到這時候，那三個 callback 才結束凍結繼續運行，而水果的數量**才真正地進行更新**。
+當 call stack 中的事件執行完畢之後，Event Loop 會將工作佇列(task queue)中的事件逐一塞入 stack 中並執行，直到這時候，那三個 callback 才結束凍結繼續運行，而水果的數量**才真正地進行更新**。
 
 **注意：你現在應該知道為什麼大家會說 `setTimeout` 沒有那麼"精確"了，因為 JS 只保證在等待兩秒後把任務丟到 task queue，但任務具體執行時間還是要看它在 queue 裡面排隊等了多久。**
 
@@ -158,7 +158,7 @@ async function buyEachOne() { // 希望拿到每種水果+1的結果
 `async / await` 的作用是保證當前函式的執行順序，而 `forEach` 與 `for` 的最大區別就在於 `forEach` 是傳入 callback 來執行，因此對於 `async/await` 來說，凍結的是那三個 callback 本身。<br>
 但 `for...of` 就不同了，它內部的 `await` 會凍結最近的 `async function`，也就是 `buyEachOne()`，因此才會有我們想要的結果出現。
 
-**注意：這種同步寫法通常只會出現在多個 API 相互依賴且需保證順序性的情況，此做法容易有網頁阻塞的問題請小心使用。在可接受併發的情況下請愛用`Promise.all()`，沒有以上需求的話直接 forEach 送出也沒問題，重點是知道你自己在寫什麼。**
+**注意：這種同步寫法通常只會出現在多個 API 相互依賴且需保證順序性的情況，此做法容易有網頁阻塞的問題，請小心使用。推薦在可接受併發的情況下多用`Promise.all()`，沒有以上需求的話直接 forEach 送出也沒問題，重點是知道你自己在寫什麼。**
 
 ### 如果你認為你已經理解上面的範例，那就不妨試試下面這個吧!
 
@@ -184,7 +184,7 @@ example().then(() => {
 })
 ```
 
-給自己一段時間思考...<br>
+請給自己一段時間思考...<br>
 .<br>
 .<br>
 .<br>
@@ -201,7 +201,7 @@ example().then(() => {
 
 ### 結語
 
-今天帶各位看了 `forEach` & `async / await` 常見的迷思，希望這種深入淺出的內容可以幫助到大家！<br>
+今天帶各位看了 `forEach` & `async / await` 常見的迷思，省略了許多更細節的內容，只單純講解這個實作案例，希望這種深入淺出的內容可以幫助到大家！<br>
 一方面是拋磚引玉，另一方面這篇文章也是寫給當初的自己，希望當初困惑的自己在網路上看到這篇文章，除了感到有趣以外，也可以對 JS 的 Event Loop 機制激起求知慾，去找尋更多網路資料，而不是一句「改用 for...of 可以耶！就這樣吧。」
 
 ### References
