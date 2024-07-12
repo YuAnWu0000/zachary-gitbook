@@ -1,6 +1,6 @@
 # CSS Framework 到底怎麼選？Tailwind CSS ? styled components ? CSS Module ? (3) ─ 談擴展
 
-### 接著讓我們來談談可擴展性 💪 (scalability)
+### 接著讓我們來談談可擴展性 ☕ (scalability)
 
 基於前面的案例，思考下面這幾種擴充情境
 
@@ -118,7 +118,7 @@ let totalStyles = twMerge(
 
 **由這個例子可以看出，如果樣式出現非預期的結果，CSS module 需要同時關注模板 & 樣式 (這通常是兩個檔案)，其中尤其是 CSS，你必須確認順序性跟權重的問題，我認為這就是它 DX 相比於其他兩者不太友善的地方。**
 
-**css-in-js:** 在子組件內新增一行輕鬆解決。(正常來說應該是外部把 css prop 傳入啦，在這邊為了方便比較就先統一命名成 className)<br>
+**css-in-js:** 在子組件內新增一行輕鬆解決 👊。(正常來說應該是外部把 css prop 傳入啦，在這邊為了方便比較就先統一命名成 className)<br>
 
 ```
 // 子組件內
@@ -152,7 +152,7 @@ const buttonStyles = css({
 ![button images](../../../images/atomic-cssInJs-cssModule/buttonCssInJs.png)<br>
 非常好！完全是我們預期的行為！**而要預測此行為只需要關注模板內 object 的組合順序就可以了！**
 
-**Atomic css:** 同樣是新增一行輕鬆解決。<br>
+**Atomic css:** 同樣是新增一行輕鬆解決 👌。<br>
 
 ```
 // 子組件內
@@ -185,7 +185,7 @@ let totalStyles = twMerge(
 
 ---
 
-由上面的例子可以清楚看出三種 CSS framework 在面對業務擴展時的 scalability，**我認為在三者當中就屬 css-in-js 的功能最強大**，因為它利用 JS 的語法特性可以更優雅的應對各種不同的場景，我想這也是這麼多 UI library 採用 css-in-js 作為解決方案的原因，畢竟在面對眾多用戶的前提下，**抽象化 (abstraction)、彈性 (flexibility)、可擴展性 (scalability)，就會是首要考量。**<br>
+由上面的例子可以清楚看出三種 CSS framework 在面對業務擴展時的 scalability，**我認為在三者當中就屬 css-in-js 的功能最強大 💪**，因為它利用 JS 的語法特性可以更優雅的應對各種不同的場景，我想這也是這麼多 UI library 採用 css-in-js 作為解決方案的原因，畢竟在面對眾多用戶的前提下，**抽象化 (abstraction)、彈性 (flexibility)、可擴展性 (scalability)，就會是首要考量。**<br>
 
 當然其他兩者也不算差，Tailwind 撇除偶爾會遇到奇怪的坑，搭配上 `twMerge` 也有很不錯的彈性，至於 CSS module 則是需要額外關注 css file 中 class 定義的順序性跟權重等等，如果有些 class 長期被覆蓋掉可能也不好發現，面對日漸複雜的業務有可能會留下比較多的 legacy code。
 
