@@ -31,7 +31,7 @@ export function MyButton({ variant, size, status }) {
 }
 ```
 
-### 那麼 Atomic css 又是如何將組件的 props 跟 style 綁定的呢？ (以 Tailwind 為例)
+### 那麼 Atomic css 又是如何將組件的 props 跟 style 綁定的呢 😕？ (以 Tailwind 為例)
 
 ```
 import { twMerge } from 'tailwind-merge'
@@ -69,7 +69,7 @@ export default MyButton
 
 `` let totalStyles = `${defaultStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${isDisable ? disableStyles : ''}`; ``
 
-這可能是多數人使用 Atomic css 第一個會遇到的坑，那就是**會出現非預期的 css 覆蓋行為**，具體來說，**是你認為應該覆蓋的樣式它卻沒有覆蓋成功。**
+這可能是多數人使用 Atomic css 第一個會遇到的坑，那就是**會出現非預期的 css 覆蓋行為**，具體來說，**是你認為應該覆蓋的樣式它卻沒有覆蓋成功 😰。**
 
 還記得在 CSS module 裡面你是怎麼宣告 class 的嗎？
 
