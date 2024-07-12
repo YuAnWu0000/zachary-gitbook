@@ -96,7 +96,7 @@ export default MyButton
 
 ---
 
-不知道各位讀者看完這些實作案例以後有什麼感覺？<br>
+不知道各位讀者看完這些實作案例以後有什麼感覺 😏？<br>
 
 > 我個人的看法是，製作組件最常遇到的**將 props 與 style 綁定**的這個課題上，三種 CSS framework 都提供了很成熟的解法。<br>
 
@@ -106,7 +106,7 @@ _**Atomic css (Tailwind):** `button` 的每種狀態都是一個 string (class l
 
 我認為在這個議題上，說哪個 framework 不好用都有點牽強，但或許我們可以在這些程式碼基礎上，針對其他議題下去做分析。
 
-### 關於學習曲線
+### 關於學習曲線 📈
 
 幾乎所有前端的起手式都是從 html, css, javascript 開始學習，想當然**貼近原生寫法的 CSS module 一定是學習曲線最和緩的選擇。**<br>
 
