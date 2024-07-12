@@ -67,7 +67,7 @@ let totalStyles = twMerge(
 )
 ```
 
-這時候你發現顏色卻沒有變 🙈，打開 console 一查發現 className 有指定對，但是沒有對應的 class。<br>
+這時候你發現顏色卻沒有變 😥，打開 console 一查發現 className 有指定對，但是沒有對應的 class。<br>
 
 恭喜你又踩到一個坑，原因是 **Tailwind 會在 compile time 透過字串掃描來決定整個專案會用到哪一些 utility class**，因此這種字串拼接的方式並不會被 scan 到，該 class 也不會被打包進來，顏色當然也就不會變了。<br>
 
