@@ -8,7 +8,7 @@
 「啊我就怕被罵啊！」<br>
 不要怕被罵，畢竟付你錢就是請你來被罵的(X
 
-### 與其攤開表格來比較各項優缺，我更喜歡直接用實作場景來切入...
+### 與其攤開表格來比較各項優缺，我更喜歡直接用實作場景來切入 🔎...
 
 假設我們今天有個 Button component，先來個最傳統的版本 (以 React 為例)：<br>
 
@@ -36,7 +36,7 @@ function MyButton() {
 接下來，我們根據 **Design Guideline** 將它設計成三個 props 的組件<br>
 分別是: `variant` (決定種類 EX: primary, warning, error), `size` (決定大小), `status` (決定是否可點擊) <br>
 
-### 就組件管理而言, 如何將組件的 props 跟 style 綁定一直是個重大課題
+### 就組件管理而言, 如何將組件的 props 跟 style 綁定一直是個重大課題 📌
 
 ##### 對於這點 CSS module 可以透過一些技巧來綁定對應的 class:
 
@@ -156,7 +156,7 @@ const ButtonDefault = (props) => css`
 乍看之下蠻簡潔的沒什麼問題，但你可以明顯感覺到這種寫法的脆弱性，那就是：<br>
 **當兩個以上的 props 都影響同一個 style property 的時候，就會變得很醜。**<br>
 當然，如果你可以確保每個 props 對應的屬性彼此之間沒有交集，這種寫法就已經足夠好，
-但**在實務上設計師的 design guideline 往往不見得會符合工程化的需求就是了。**
+但**在實務上設計師的 design guideline 往往不見得會符合工程化的需求就是了 🙈。**
 
 既然如此，那我們不要全部寫在同個 class 裡面，把他分開怎麼樣？就像 CSS module 分開定義 class 那樣！<br>
 於是我們來試試看用 Emotion 官方提供的另一種 css prop 語法實作:
@@ -203,7 +203,7 @@ export default MyButton
 <MyButton variant="primary" size="big" isDisable={false} />
 ```
 
-登愣！Mission complete！我們利用 **JS Object property 後蓋前的特性**完美解決了 style 屬性重複的問題，這方法也能很優雅地**應對增加 props 的情況** (比如多一種 variant 之類的)，不知道有沒有讓讀者稍微感受到 css-in-js 的魅力了呢？<br>
+登愣 👏！Mission complete！我們利用 **JS Object property 後蓋前的特性**完美解決了 style 屬性重複的問題，這方法也能很優雅地**應對增加 props 的情況** (比如多一種 variant 之類的)，不知道有沒有讓讀者稍微感受到 css-in-js 的魅力了呢？<br>
 基本上有了 javascript 作為武器來管理 style，你不太會需要擔心 props 要如何跟 style 綁定，因為總會有一些 JS 的奇技淫巧可以解決 (例如上面同時使用 spread + 三元來組合 css object 就是一種方式)。
 
 以上，對於 **CSS module** 以及 **styled components** 的介紹就先點到為止，相信讀者已經有點感覺了，我知道忽略了很多面相，這是因為暫時不想讓討論太發散，還請各位保持耐心。
