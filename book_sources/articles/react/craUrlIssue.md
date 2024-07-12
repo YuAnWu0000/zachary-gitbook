@@ -45,7 +45,7 @@ OK！那當前的目標就是要想辦法擴充 `create-react-app` 預設的 web
 
 看了一些推薦文，最後決定使用`react-app-rewired`套件來幫我進行擴充。
 
-那麼...要怎麼擴充呢？只能去看看 `react-scripts` 的 webpack config 裡面都做了些什麼事了...
+那麼...要怎麼擴充呢？只能去看看 `react-scripts` 的 webpack config 裡面都做了些什麼事了 😓...
 
 (以下忽略數分鐘的 trace code 過程...)
 
@@ -116,7 +116,7 @@ module: {
 **🔪「Here is Johnny!!!!!」**<br>
 找到了 `css-loader`，看起來只要把外部傳入的 cssOptions 想辦法加上 `url: false` 就可以了！
 
-經過一段時間的測試後，**我發現這種寫法可以順利覆寫我要的屬性，並且解決這個問題：**
+經過一段時間的測試後，**我發現這種寫法可以順利覆寫我要的屬性，並且解決這個問題 🙌：**
 
 ```
 // config-overrides.js
