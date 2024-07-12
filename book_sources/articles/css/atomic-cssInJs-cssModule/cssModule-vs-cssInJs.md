@@ -36,9 +36,9 @@ function MyButton() {
 接下來，我們根據 **Design Guideline** 將它設計成三個 props 的組件<br>
 分別是: `variant` (決定種類 EX: primary, warning, error), `size` (決定大小), `status` (決定是否可點擊) <br>
 
-### 就組件管理而言, 如何將組件的 props 跟 style 綁定一直是個重大課題 📌
+### 就組件管理而言, 如何將組件的 props 跟 style 綁定一直是個重大課題
 
-##### 對於這點 CSS module 可以透過一些技巧來綁定對應的 class:
+##### 對於這點 CSS module 可以透過一些技巧來綁定 對應的 class📌:
 
 ```
 // jsx
