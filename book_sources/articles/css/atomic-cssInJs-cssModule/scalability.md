@@ -1,6 +1,6 @@
 # CSS Framework 到底怎麼選？Tailwind CSS ? styled components ? CSS Module ? (3) ─ 談擴展
 
-### 接著讓我們來談談可擴展性 (scalability)
+### 接著讓我們來談談可擴展性 💪 (scalability)
 
 基於前面的案例，思考下面這幾種擴充情境
 
@@ -47,7 +47,7 @@ let totalStyles = twMerge(
 ##### 2. 增加一個 prop `color`，直接讓外部決定顏色為何
 
 **CSS module:** 因為 CSS module 的設計是以 class 為最小單位，不好直接應對屬性值。<br>
-因此除了`style={{ color }}`幾乎沒有太優雅的方式，但行內樣式又有著難以被覆蓋的問題。<br>
+因此除了`style={{ color }}`幾乎沒有太優雅的方式，但行內樣式又有著難以被覆蓋的問題 😓。<br>
 
 **css-in-js:** 直接將 prop 塞進 css object，結束。<br>
 
