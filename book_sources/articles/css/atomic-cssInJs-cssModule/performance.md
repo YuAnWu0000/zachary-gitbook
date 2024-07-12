@@ -1,6 +1,6 @@
 # CSS Framework 到底怎麼選？Tailwind CSS ? styled components ? CSS Module ? (4) ─ 談效能
 
-### 淺談效能
+### 淺談效能 ⏳
 
 談到前端效能無外乎就是以下兩點：
 
@@ -15,10 +15,10 @@ Atomic css 的特點就是每個屬性值都只會有一個 utility class，因�
 
 ##### 2. Run time
 
-相信大家都有一個共識，那就是在 run time 成本上，**越貼近原生瀏覽器的作法就越快。**<br>
+相信大家都有一個共識，那就是在 run time 成本上，**越貼近原生瀏覽器的作法就越快 🚄。**<br>
 由於 scss 等 css module 解決方案都是在 compile time 做靜態分析將樣式編譯為 pure css，所以 run time 時候其實跟原生沒有太大區別。<br>
 Tailwind css 有時需要使用 `tw-merge` 來進行字串合併，因此多了一些字串比對跟查找的額外 run time 成本，但除此之外並沒有其他太大的負擔。<br>
-css-in-js 大概是 run time 成本最高的一種解決方案，因為所有的樣式都定義在 js 當中，實際程式在跑的時候需要動態組合樣式並產生對應的 class 最後才 binding 到模板上，因此，**面對頻繁抽換 style 的情境有可能會出現效能上的問題。**編譯出來的結果則是跟 CSS module 類似： `classname-{hash}`，但相對來說 zombie styles 要少得多，畢竟不需要太過關注權重的問題，JS 會幫你 handle 一切。
+css-in-js 大概是 run time 成本最高的一種解決方案，因為所有的樣式都定義在 js 當中，實際程式在跑的時候需要動態組合樣式並產生對應的 class 最後才 binding 到模板上，因此，**面對頻繁抽換 style 的情境有可能會出現效能上的問題 🙀。**編譯出來的結果則是跟 CSS module 類似： `classname-{hash}`，但相對來說 zombie styles 要少得多，畢竟不需要太過關注權重的問題，JS 會幫你 handle 一切。
 
 ### 結論
 
@@ -38,7 +38,7 @@ css-in-js 大概是 run time 成本最高的一種解決方案，因為所有的
 
 又或者你使用 CSS module、Tailwind 但卻想要更大的可擴展性，那可以試著用 [classnames](https://www.npmjs.com/package/classnames) 來幫助你達成！
 
-> ### 工程師善用手上的工具，而不是辯護手上的工具
+> ### 工程師善用手上的工具，而不是辯護手上的工具 👊
 
 **在前端領域每天都有新技術出現，身為工程師應該要擁抱改變，而不是畏懼改變，畢竟世界需要我們走在前面:)**
 
