@@ -114,7 +114,7 @@ _**Atomic css (Tailwind):** `button` 的每種狀態都是一個 string (class l
 
 而 Tailwind，說實話它的學習曲線就是一齣悲劇，首先你要對 CSS 語法熟悉 (不然你根本不知道 syntax 要怎麼查)，再來你需要適應他一堆 boilerplate，最後如果是新手第一次遇到樣式合併的坑一定會很矇。社群中有不少人對 Atomic 很排斥，我不會覺得這是一種不願意學習新東西的藉口，因為**它的學習曲線真的相對其他兩者陡峭許多。**<br>
 
-### 論開發者體驗 (Developer Experience)、語法簡潔程度
+### 論開發者體驗 😎 (Developer Experience)、語法簡潔程度
 
 開發者體驗(Developer Experience)又簡稱 DX，其實跟語法簡潔有很大的正相關，一個普遍認為 DX 最友善的語言 ─ Python，就是得利於它的語法簡潔性，所以我這邊想放在一起討論。
 
