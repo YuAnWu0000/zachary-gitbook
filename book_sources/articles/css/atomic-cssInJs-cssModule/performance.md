@@ -15,10 +15,10 @@ Atomic css 的特點就是每個屬性值都只會有一個 utility class，因�
 
 ##### 2. Run time
 
-相信大家都有一個共識，那就是在 run time 成本上，**越貼近原生瀏覽器的作法就越快 🚄。**<br>
+相信大家都有一個共識，那就是在 run time 成本上，**越貼近原生瀏覽器的作法就越快 🚆。**<br>
 由於 scss 等 css module 解決方案都是在 compile time 做靜態分析將樣式編譯為 pure css，所以 run time 時候其實跟原生沒有太大區別。<br>
 Tailwind css 有時需要使用 `tw-merge` 來進行字串合併，因此多了一些字串比對跟查找的額外 run time 成本，但除此之外並沒有其他太大的負擔。<br>
-css-in-js 大概是 run time 成本最高的一種解決方案，因為所有的樣式都定義在 js 當中，實際程式在跑的時候需要動態組合樣式並產生對應的 class 最後才 binding 到模板上，因此，**面對頻繁抽換 style 的情境有可能會出現效能上的問題 🙀。**編譯出來的結果則是跟 CSS module 類似： `classname-{hash}`，但相對來說 zombie styles 要少得多，畢竟不需要太過關注權重的問題，JS 會幫你 handle 一切。
+css-in-js 大概是 run time 成本最高的一種解決方案，因為所有的樣式都定義在 js 當中，實際程式在跑的時候需要動態組合樣式並產生對應的 class 最後才 binding 到模板上，因此，**面對頻繁抽換 style 的情境有可能會出現效能上的問題 💀。**編譯出來的結果則是跟 CSS module 類似： `classname-{hash}`，但相對來說 zombie styles 要少得多，畢竟不需要太過關注權重的問題，JS 會幫你 handle 一切。
 
 ### 結論
 
@@ -29,7 +29,7 @@ css-in-js 大概是 run time 成本最高的一種解決方案，因為所有的
 **以效能來說：** Tailwind >= CSS module > Emotion<br>
 
 上述的比較純屬個人看法，投資框架有賺有賠，使用前應詳閱公開說明書。<br>
-我認為重點還是要知道自己為什麼選擇當前的 CSS framework，**並且知道手上的工具有什麼短版：**<br>
+我認為重點還是要知道自己為什麼選擇當前的 CSS framework，**並且知道手上的工具有什麼短版 🔨：**<br>
 
 比如你喜歡 css-in-js 提早抽象化的寫法，但又擔心有 performance bottleneck，那麼也許你可以採用 Zero-Runtime 的解決方案如：
 
