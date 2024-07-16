@@ -6,6 +6,7 @@
   - [Cannot resolve url() ─ CRA 用 url() 引入圖片的坑](./articles/react/craUrlIssue.md)
 - [Don't skip javascript](./articles/js/js.md)
   - [async / await 在 forEach 裡面不起作用？你是否搞錯了什麼](./articles/js/forEachAsync.md)
+  - [var, let, const 的區別以及為何你不該覺得這很簡單](./articles/js/varLetConst.md)
 - [Success of css](./articles/css/css.md)
   - [CSS Framework 到底該怎麼選? ─ 談案例](./articles/css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.md)
   - [CSS Framework 到底該怎麼選? ─ 談體驗](./articles/css/atomic-cssInJs-cssModule/atomic.md)
