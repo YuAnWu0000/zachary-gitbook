@@ -50,3 +50,12 @@ if (true) {
 }
 console.log(a); // Uncaught ReferenceError: a is not defined
 ```
+
+- 在**Block Scope**底下有宣告動作，就不管全域如何(**這個錯誤訊息怪怪的，下面會詳細解釋。**)
+  ```
+  var a = 123;
+      if (true) {
+          a = 456 // Uncaught ReferenceError: Cannot access 'a' before initialization
+          let a;
+      }
+  ```
