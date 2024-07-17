@@ -67,8 +67,8 @@ if (true) {
 - 不可重複宣告
 
 ```
-let a = 123;
-let a = 456; // Uncaught SyntaxError: Identifier 'a' has already been declared
+let a = 123
+let a = 456 // Uncaught SyntaxError: Identifier 'a' has already been declared
 ```
 
 ### const
@@ -78,8 +78,8 @@ let a = 456; // Uncaught SyntaxError: Identifier 'a' has already been declared
 - 宣告後就不可更改
 
 ```
-const a = 123;
-a = 456; // Uncaught TypeError: Assignment to constant variable.
+const a = 123
+a = 456 // Uncaught TypeError: Assignment to constant variable.
 ```
 
 - 也不可單獨宣告不給值
@@ -91,8 +91,8 @@ const a // Uncaught SyntaxError: Missing initializer in const declaration
 - 同個作用域底下，不可以重複宣告 const
 
 ```
-var a = 123;
-const a = 456; // Uncaught SyntaxError: Identifier 'a' has already been declared
+var a = 123
+const a = 456 // Uncaught SyntaxError: Identifier 'a' has already been declared
 ```
 
 - 不同作用域底下則可以重複宣告
@@ -100,23 +100,23 @@ const a = 456; // Uncaught SyntaxError: Identifier 'a' has already been declared
 ```
 var a = 0;
 function test() {
-  const a = 1;
-  console.log(a);
+  const a = 1
+  console.log(a)
 }
-test(); // 1
-console.log(a); // 0
+test() // 1
+console.log(a) // 0
 ```
 
 - 指向`Object`或是`Array`的時候更改其屬性不會報錯(store by reference 所以只確保指標沒有變)
 
 ```
-const foo = { a: 0 };
-foo.b = 1; // ok
-foo = {}; // Uncaught TypeError: Assignment to constant variable.
+const foo = { a: 0 }
+foo.b = 1 // ok
+foo = {} // Uncaught TypeError: Assignment to constant variable.
 ```
 
 ```
-const foo = [0];
-foo.push(1); // ok
-foo = []; // Uncaught TypeError: Assignment to constant variable.
+const foo = [0]
+foo.push(1) // ok
+foo = [] // Uncaught TypeError: Assignment to constant variable.
 ```
