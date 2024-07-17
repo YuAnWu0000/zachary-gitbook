@@ -87,3 +87,10 @@ a = 456; // Uncaught TypeError: Assignment to constant variable.
 ```
 const a // Uncaught SyntaxError: Missing initializer in const declaration
 ```
+
+- 同個作用域底下，不可以重複宣告 const
+
+```
+var a = 123;
+const a = 456; // Uncaught SyntaxError: Identifier 'a' has already been declared
+```
