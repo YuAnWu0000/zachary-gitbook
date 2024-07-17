@@ -56,8 +56,8 @@ console.log(a) // Uncaught ReferenceError: a is not defined
 ```
 var a = 123
 if (true) {
-  // Uncaught ReferenceError: Cannot access 'a' before initialization
   a = 456
+  // Uncaught ReferenceError: Cannot access 'a' before initialization
   let a
 }
 ```
