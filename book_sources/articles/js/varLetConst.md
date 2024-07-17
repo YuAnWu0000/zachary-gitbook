@@ -23,21 +23,21 @@ console.log(window.a) // 0
 - `var` 可重複宣告, 以後宣告的為主。(指的是在同一個作用域底下)
 
 ```
-var a = 0;
-var a = 1;
-console.log(window.a); // 1
+var a = 0
+var a = 1
+console.log(window.a) // 1
 ```
 
 - 不同作用域的情況, 在 function 裡面宣告的就只存在於該 function scope
 
 ```
-var a = 0;
+var a = 0
 function test() {
-  var a = 1;
-  console.log(a);
+  var a = 1
+  console.log(a)
 }
-test(); // 1
-console.log(a); // 0
+test() // 1
+console.log(a) // 0
 ```
 
 ### let
@@ -46,16 +46,27 @@ console.log(a); // 0
 
 ```
 if (true) {
-    let a = 0;
+  let a = 0
 }
-console.log(a); // Uncaught ReferenceError: a is not defined
+console.log(a) // Uncaught ReferenceError: a is not defined
 ```
 
 - 在**Block Scope**底下有宣告動作，就不管全域如何(**這個錯誤訊息怪怪的，下面會詳細解釋。**)
-  ```
-  var a = 123;
-      if (true) {
-          a = 456 // Uncaught ReferenceError: Cannot access 'a' before initialization
-          let a;
-      }
-  ```
+
+```
+var a = 123
+if (true) {
+  // Uncaught ReferenceError: Cannot access 'a' before initialization
+  a = 456
+  let a
+}
+```
+
+**上面這種在宣告前賦值失敗的情況也稱作暫時性死區(Temporal Dead Zone)**
+
+- 不可重複宣告
+
+```
+let a = 123;
+let a = 456; // Uncaught SyntaxError: Identifier 'a' has already been declared
+```
