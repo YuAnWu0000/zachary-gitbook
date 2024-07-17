@@ -94,3 +94,15 @@ const a // Uncaught SyntaxError: Missing initializer in const declaration
 var a = 123;
 const a = 456; // Uncaught SyntaxError: Identifier 'a' has already been declared
 ```
+
+- 不同作用域底下則可以重複宣告
+
+```
+var a = 0;
+function test() {
+  const a = 1;
+  console.log(a);
+}
+test(); // 1
+console.log(a); // 0
+```
