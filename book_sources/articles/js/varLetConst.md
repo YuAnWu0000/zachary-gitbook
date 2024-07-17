@@ -42,4 +42,11 @@ console.log(a); // 0
 
 ### let
 
-作用於 Block Scope
+- 作用於**Block Scope**
+
+```
+if (true) {
+    let a = 0;
+}
+console.log(a); // Uncaught ReferenceError: a is not defined
+```
