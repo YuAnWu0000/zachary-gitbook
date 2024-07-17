@@ -70,3 +70,14 @@ if (true) {
 let a = 123;
 let a = 456; // Uncaught SyntaxError: Identifier 'a' has already been declared
 ```
+
+### const
+
+**let 的特性都有, 新增以下:**
+
+- 宣告後就不可更改
+
+```
+const a = 123;
+a = 456; // Uncaught TypeError: Assignment to constant variable.
+```
