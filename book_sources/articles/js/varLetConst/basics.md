@@ -7,7 +7,7 @@
 「`var` 可以被重複宣告； `let` / `const` 不行。」<br>
 「`const` 宣告以後就不能重新賦值。」<br>
 
-最近在準備面試的過程中，我發現這個題目看似簡單，但其實包含著超級多 JS 的基本概念，對面試官來說，Follow up 可以延伸到各個不同的議題如：hoisting, variable life cycle, GC, scope and context 等比較有鑑別度的題目，如果只回答得出上面的答案實在有點可惜。
+最近在準備面試的過程中，我發現這個題目看似簡單，但其實包含著超級多 JS 的基本概念，對面試官來說，follow up 可以延伸到各個不同的議題如：hoisting, variable life cycle, GC, scope and context 等比較有鑑別度的題目，如果只回答得出上面的答案實在有點可惜。
 
 > 深入展開以前，先讓我們複習一下變數基本特性吧！畢竟要想考到滿分，得先及格。 (這什麼廢話 😝)
 
@@ -51,7 +51,7 @@ if (true) {
 console.log(a) // Uncaught ReferenceError: a is not defined
 ```
 
-- 在**Block Scope**底下有宣告動作，就不管全域如何(**這個錯誤訊息怪怪的，下面會詳細解釋。**)
+- 在**Block Scope**底下有宣告動作，就不管全域如何 **(這個錯誤訊息怪怪的，下面會詳細解釋。)**
 
 ```
 var a = 123
@@ -62,7 +62,7 @@ if (true) {
 }
 ```
 
-**上面這種在宣告前賦值失敗的情況也稱作暫時性死區(Temporal Dead Zone)**
+**上面這種在宣告前賦值失敗的情況也稱作暫時性死區 TDZ(Temporal Dead Zone)**
 
 - 不可重複宣告
 
