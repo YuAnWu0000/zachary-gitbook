@@ -51,13 +51,12 @@ if (true) {
 console.log(a) // Uncaught ReferenceError: a is not defined
 ```
 
-- 在**Block Scope**底下有宣告動作，就不管全域如何 **(這個錯誤訊息怪怪的，下面會詳細解釋。)**
+- 在**Block Scope**底下有宣告動作，則同名變數不得再宣告前賦值 **(這個錯誤訊息怪怪的，下面會詳細解釋。)**
 
 ```
 var a = 123
 if (true) {
-  a = 456
-  // Uncaught ReferenceError: Cannot access 'a' before initialization
+  a = 456 // Uncaught ReferenceError: Cannot access 'a' before initialization
   let a
 }
 ```
@@ -139,13 +138,13 @@ let a = 123;
 
 **因為 `var` 有 `hoisting` 而 `let` 沒有。**<br>
 
-等等，你確定？看看下面這個例子：
+等等，你確定？看看剛才這個例子：
 
 ```
 var a = 123
 if (true) {
-    a = 456 // Uncaught ReferenceError: Cannot access 'a' before initialization at <anonymous>:3:7
-    let a
+  a = 456 // Uncaught ReferenceError: Cannot access 'a' before initialization at <anonymous>:3:7
+  let a
 }
 ```
 
@@ -154,10 +153,10 @@ if (true) {
 ```
 var a = 123
 if (true) {
-    a = 456 // ok
+  a = 456 // ok
 }
 ```
 
 而且最詭異的點是它竟然報錯在第三行，如果 JS 是逐行執行的，那到第三行 `a = 456` 為止應該不會出錯才對。<br>
 
-**可見 JS engine 跟我們想得不太一樣，要能解釋這個問題，只能理解它有對 `let` 做一定程度的 `hoisting` ，那到底為什麼官方會否認？這背後又有什麼愛恨情仇糾葛不清呢？各位客倌先別急，敬待小弟下回分曉 😏。**
+**可見 JS engine 跟我們想得不太一樣，要能解釋這個問題，我們只能理解 JS interpreter 有對 `let` 做一定程度的 `hoisting` ，那到底為什麼官方會否認？這背後又有什麼愛恨情仇糾葛不清呢？各位客倌先別急，敬待小弟下回分曉 😏。**
