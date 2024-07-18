@@ -64,3 +64,17 @@ function catName(name) {
 ```
 
 則是提早把 **create + initialize + assign** 都幫你做完了。
+
+### 所以...`let` 到底有沒有 hoisting？
+
+我認為這取決於你對 hoisting 的定義，如果你認為 hoisting 至少就是得 create + initialize，那確實，`let`沒有 hoisting，那如果你的理解比較抽象跟廣義，認為 TDZ 就是一個 hoisting 的證明，我也覺得沒問題。
+
+各位啊！真的不是我故意在這打太極不給個明確的答案，你們自己看看 MDN 在 hoisting 頁面前後兩段的文字就知道他們自己的立場也蠻飄忽不定的：
+
+> However, the temporal dead zone can cause other observable changes in its scope, which suggests there's some form of hoisting
+
+> Still, it may be more useful to characterize lexical declarations as non-hoisting, because from a utilitarian perspective, the hoisting of these declarations doesn't bring any meaningful features.
+
+而且最後站邊 non hoisting 的理由竟然是這個現象並不「實用」？用結果論來定義一個為了幫助理解過程而誕生的詞彙 ─ Hoisting，我怎麼想都覺得有點怪怪的。
+
+### 如果我是面試官
