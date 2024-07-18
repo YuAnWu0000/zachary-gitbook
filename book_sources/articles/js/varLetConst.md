@@ -98,7 +98,7 @@ const a = 456 // Uncaught SyntaxError: Identifier 'a' has already been declared
 - 不同作用域底下則可以重複宣告
 
 ```
-var a = 0;
+var a = 0
 function test() {
   const a = 1
   console.log(a)
