@@ -120,3 +120,17 @@ const foo = [0]
 foo.push(1) // ok
 foo = [] // Uncaught TypeError: Assignment to constant variable.
 ```
+
+### 接著開始上點強度
+
+- 為何同樣的例子 `var` 不會噴錯？
+
+```
+console.log(a); // undefined
+var a = 123;
+```
+
+```
+console.log(a); // Uncaught ReferenceError: a is not defined
+let a = 123;
+```
