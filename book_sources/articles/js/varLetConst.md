@@ -134,3 +134,20 @@ var a = 123;
 console.log(a); // Uncaught ReferenceError: a is not defined
 let a = 123;
 ```
+
+> **MDN: In ECMAScript 2015, let bindings are not subject to Variable Hoisting, which means that let declarations do not move to the top of the current execution context.**
+
+**因為 `var` 有 `hoisting` 而 `let` 沒有。**
+
+等等，你確定？看看下面這個例子：
+
+```
+var a = 123
+if (true) {
+    a = 456 // Uncaught ReferenceError: Cannot access 'a' before initialization at <anonymous>:3:7
+    let a
+}
+```
+
+最詭異的點是它竟然報錯在第三行，如果 JS 是逐行執行的，那到第三行 `a = 456` 為止應該不會出錯才對。<br>
+**可見 JS engine 跟我們想得不太一樣，它確實有對 `let` 做一定程度的 `hoisting` ，那為什麼官方會否認？這背後又有什麼愛恨情仇糾葛不清呢？各位客倌先別急，敬待小弟下回分曉 😏。**
