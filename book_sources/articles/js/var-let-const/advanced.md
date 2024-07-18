@@ -32,11 +32,14 @@
 > 接著讓我們來看看例子：
 
 ```
-console.log(a)  // undefined
+console.log(a) // undefined
 var a = 123
 ```
 
-`var` 有 hoisting 是因為 JS interpreter 把 create + initialize 都提早做完了，
+`var` 有 hoisting 是因為 JS interpreter 把 **create + initialize** 都提早做完了，**You can
+access "a" before declaration.** (儘管取得的值是 undefined，但起碼不會報錯。)
+
+> 那麼 `let` 呢？
 
 ```
 var a = 123
@@ -46,4 +49,18 @@ if (true) {
 }
 ```
 
-我們可以發現 JS interpreter 實際上在執行程式碼之前，有針對 `let` 的宣告做類似「半提升」的行為，為什麼會說只做了一半呢？因為跟 `var` 相比， 我們沒辦法提早取得`undefined`的值，我們能做的就只有從錯誤訊息裡面分辨：「喔~下一行的 let declaration 竟然影響到上一行的賦值了！」
+我們可以發現 JS interpreter 實際上在執行程式碼之前，有針對 `let` 的宣告做類似「半提升」的行為，為什麼會說只做了一半呢？因為跟 `var` 相比，我們沒辦法提早取得 `undefined` 的值，但從 TDZ 的情況來判斷，它確實是預先做了 **create** 的動作所以才讓整個 block scope 都無法再使用 a 變數。
+
+> 順帶一提如果是 function declaration 的情況
+
+```
+catName("Chloe");
+function catName(name) {
+  console.log("My cat's name is " + name);
+}
+/*
+上面程式的結果是: "My cat's name is Chloe"
+*/
+```
+
+則是提早把 **create + initialize + assign** 都幫你做完了。
