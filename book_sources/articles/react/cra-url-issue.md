@@ -14,7 +14,7 @@ https://github.com/facebook/create-react-app/issues/9937
 `<div className="bg-[url('~/public/images/cat.jpg')]">`
 
 馬上來看看這種解法是否可行<br>
-![public](../../images/craUrlIssue/noPublic.png)
+![public](../../images/cra-url-issue/noPublic.png)
 
 可以耶！圖片成功出現了！打完收工？<br>
 **咦？等等.......路徑為什麼怪怪的？**
@@ -22,11 +22,11 @@ https://github.com/facebook/create-react-app/issues/9937
 ### 這時候你有兩個選擇，追根究柢抑或是得過且過
 
 因為我實在是太好奇了，於是繼續往下滑 issue，直至看到這個評論：
-![seo](../../images/craUrlIssue/seo.png)
+![seo](../../images/cra-url-issue/seo.png)
 大意是說上面那種方式，是由 `react-scripts` 幫你把用到的圖片打包進專案，並且將路徑設置為 `static/media/cat.{hash}.png`來對應，雖然一樣可以載入圖片，這樣會導致每次 build 完都有不同的 hash 值，**這會令 google 爬蟲爬不到穩定的圖片來源，因而降低網站 SEO。**
 
 於是我實際 build 了一下剛剛的專案，發現：<br>
-![no public build](../../images/craUrlIssue/noPublicBuild.png)
+![no public build](../../images/cra-url-issue/noPublicBuild.png)
 
 確實如他所說會存進 `static/media/`，並且由於原本我們是把圖片存在 `public/images` 裡面，因此 `webpack` 也會幫你額外複製一份出來，導致最終 build 出來的檔案裡竟然有兩張一樣的圖片。
 
@@ -37,7 +37,7 @@ https://github.com/facebook/create-react-app/issues/9937
 那麼接下來的目光應該是要放在如何更改 `webpack` 的設定檔：
 
 首先讓我們來看看 `css-loader` 的 options 定義：
-![url def](../../images/craUrlIssue/optionsUrlDef.png)
+![url def](../../images/cra-url-issue/optionsUrlDef.png)
 
 OK！那當前的目標就是要想辦法擴充 `create-react-app` 預設的 webpack config，然後把 `css-loader` 內部的 url 改為 false (預設值)。
 
@@ -135,8 +135,8 @@ module.exports = function override(config) {
 ```
 
 結果：<br>
-![result](../../images/craUrlIssue/solution.png)
-![build result](../../images/craUrlIssue/build.png)
+![result](../../images/cra-url-issue/solution.png)
+![build result](../../images/cra-url-issue/build.png)
 
 貓貓圖片成功出現了，並且 build 出來的檔案只有 public/images 底下的那一張圖片，也沒有重複的問題，這次真的可以打完收工了。
 

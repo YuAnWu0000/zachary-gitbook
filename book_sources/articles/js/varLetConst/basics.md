@@ -137,7 +137,7 @@ let a = 123;
 
 > **MDN: In ECMAScript 2015, let bindings are not subject to Variable Hoisting, which means that let declarations do not move to the top of the current execution context.**
 
-**因為 `var` 有 `hoisting` 而 `let` 沒有。**
+**因為 `var` 有 `hoisting` 而 `let` 沒有。**<br>
 
 等等，你確定？看看下面這個例子：
 

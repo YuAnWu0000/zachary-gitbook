@@ -1,4 +1,4 @@
-# async/await 在 forEach 裡面不起作用？你是否搞錯了什麼
+# async / await 在 forEach 裡面不起作用？你是否搞錯了什麼
 
 <img src="../../images/forEach-async-await/meme.jpg" width="450" >
 
