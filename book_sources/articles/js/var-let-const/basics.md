@@ -125,8 +125,8 @@ foo = [] // Uncaught TypeError: Assignment to constant variable.
 - 為何同樣的例子 `var` 不會噴錯？
 
 ```
-console.log(a); // undefined
-var a = 123;
+console.log(a) // undefined
+var a = 123
 ```
 
 ```
