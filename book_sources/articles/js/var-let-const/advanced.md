@@ -7,8 +7,8 @@
 > MDN: JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables, classes, or imports to the top of their scope, prior to execution of the code.
 
 簡單說，**Hoisting = You can access variable before declaration.**<br>
-但就是這麼簡單的一句話，卻引來了許多爭議。<br>
-其主因為，hoisting 並非一個官方詞彙，沒有被寫進 ECMAScript 規格當中，它是為了方便我們這些 JS 使用者理解流程而被發明出來的。<br>
+但就是這麼簡單的一句話，卻引來了許多爭議 😥。<br>
+因為，hoisting 並非一個官方詞彙，沒有被寫進 ECMAScript 規格當中，它是為了方便我們這些 JS 使用者理解流程而被發明出來的。<br>
 
 > _MDN: Hoisting is not a term normatively defined in the ECMAScript specification._
 
@@ -22,7 +22,7 @@
 
 ##### 2. initialize
 
-- 為所有宣告的變數第一次指定值 (注意：此動作並非賦值)，並且為沒有在 declaration 給值 (initializer) 的變數默認塞給他 `undefined`，例如 `var a;`
+- 為所有宣告的變數第一次指定值 (注意：此動作並非賦值)，並且把沒有在 declaration 給值 (initializer) 的變數默認塞給他 `undefined`，例如 `var a` 預設 `a = undefined`
 
 ##### 3. assign
 
@@ -35,7 +35,7 @@ console.log(a) // undefined
 var a = 123
 ```
 
-`var` 有 hoisting 是因為 JS interpreter 把 **create + initialize** 都提早做完了，**You can
+`var` 之所以被認為有 hoisting 是因為 JS interpreter 把 **create + initialize** 都提早做完了，**So you can
 access "a" before declaration.** (儘管取得的值是 undefined，但起碼不會報錯。)
 
 > 那麼 `let` 呢？
@@ -48,7 +48,7 @@ if (true) {
 }
 ```
 
-我們可以發現 JS interpreter 實際上在執行程式碼之前，有針對 `let` 的宣告做類似「半提升」的行為，為什麼會說只做了一半呢？因為跟 `var` 相比，我們沒辦法提早取得 `undefined` 的值，但從 TDZ 的情況來判斷，它確實是預先做了 **create** 的動作所以才讓整個 block scope 都無法再使用 a 變數。
+我們可以發現 JS interpreter 實際上在執行程式碼之前，有針對 `let` 的宣告做類似「半提升」的行為，為什麼會說只做了一半呢？因為跟 `var` 相比，我們沒辦法提早取得 `undefined` 的值，但從 TDZ 來判斷，它確實是預先做了 **create** 的動作所以才讓整個 block scope 都無法再使用 a 變數。
 
 > 順帶一提如果是 function declaration 的情況
 
@@ -78,4 +78,4 @@ function catName(name) {
 
 ### 如果我是面試官
 
-各位可以發現，這個問題已經漸漸的從是非題變成了申論題，每個人都有他各自的立場。如果我是面試官，並不會太注重你的最終答案是 hoisting or non-hoisting，而是從你分析的過程下去觀察你是如何定義問題、架構邏輯、表達立場的，這些，才是一個工程師不可或缺的軟實力。
+各位可以發現，這個問題已經漸漸的從是非題變成了申論題，每個人都有他各自的立場。如果我是面試官，其實並不會太注重你的最終答案是 hoisting or non-hoisting，而是從你分析的過程下去觀察你是如何定義問題、架構邏輯、表達立場的，這些，才是一個工程師不可或缺的軟實力。
