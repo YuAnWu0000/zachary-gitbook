@@ -130,8 +130,8 @@ var a = 123
 ```
 
 ```
-console.log(a); // Uncaught ReferenceError: a is not defined
-let a = 123;
+console.log(a) // Uncaught ReferenceError: a is not defined
+let a = 123
 ```
 
 > **MDN: In ECMAScript 2015, let bindings are not subject to Variable Hoisting, which means that let declarations do not move to the top of the current execution context.**
