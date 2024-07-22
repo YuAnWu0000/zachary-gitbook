@@ -141,10 +141,10 @@ let a = 123;
 等等，你確定？看看剛才這個例子：
 
 ```
-var a = 123
+var a = 123;
 if (true) {
-  a = 456 // Uncaught ReferenceError: Cannot access 'a' before initialization at <anonymous>:3:7
-  let a
+  a = 456; // Uncaught ReferenceError: Cannot access 'a' before initialization at <anonymous>:3:7
+  let a;
 }
 ```
 
