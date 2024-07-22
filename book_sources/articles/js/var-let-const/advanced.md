@@ -95,5 +95,6 @@ function catName(name) {
 比如這題我會這樣問：<br>
 
 1. 請問你知道 var / let / const 的區別嗎？你會分別在什麼情況下使用他們？
-2. 你剛剛有提到常數的時候使用 const，那請問為什麼變更常數陣列或物件屬性不會報錯，為什麼呢？
+2. 你剛剛有提到常數的時候使用 const，那請問為什麼變更常數陣列或物件屬性不會報錯？ (by reference? by value?)
 3. 你剛剛有提到 function scope / block scope，那你可以解釋看看 let 在 for 底下的作用跟 var 有什麼不同嗎？
+4. 你說你認為 let 沒有 hoisting，那你可以解釋這個例子嗎 (這篇文章的例子)？，另外你覺得 JS interpreter 對 let 做了什麼額外處理?
