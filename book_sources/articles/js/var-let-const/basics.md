@@ -97,13 +97,13 @@ const a = 456; // Uncaught SyntaxError: Identifier 'a' has already been declared
 - 不同作用域底下則可以重複宣告
 
 ```
-var a = 0
+var a = 0;
 function test() {
-  const a = 1
-  console.log(a)
+  const a = 1;
+  console.log(a);
 }
-test() // 1
-console.log(a) // 0
+test(); // 1
+console.log(a); // 0
 ```
 
 - 指向`Object`或是`Array`的時候更改其屬性不會報錯(store by reference 所以只確保指標沒有變)
