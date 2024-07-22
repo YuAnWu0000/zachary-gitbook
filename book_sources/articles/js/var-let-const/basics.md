@@ -16,8 +16,8 @@
 - 在全域宣告的變數 `var`, 也會同時作為全域物件(前端為 `window`, 後端為 `global`)的屬性
 
 ```
-var a = 0
-console.log(window.a) // 0
+var a = 0;
+console.log(window.a); // 0
 ```
 
 - `var` 可重複宣告, 以後宣告的為主。(指的是在同一個作用域底下)
