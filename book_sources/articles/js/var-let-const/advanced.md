@@ -8,7 +8,7 @@
 
 簡單說，**Hoisting = You can access variable before declaration.**<br>
 但就是這麼簡單的一句話，卻引來了許多爭議 😥。<br>
-因為，hoisting 並非一個官方詞彙，沒有被寫進 ECMAScript 規格當中，它是為了方便我們這些 JS 使用者理解流程而被發明出來的。<br>
+因為，hoisting 並非一個官方詞彙，沒有被寫進 ECMAScript 規格當中，它是為了方便我們這些 JS 使用者理解流程而被發明出來的，所以在定義方面一直是各說各話。<br>
 
 > _MDN: Hoisting is not a term normatively defined in the ECMAScript specification._
 
