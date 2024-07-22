@@ -115,9 +115,9 @@ foo = {}; // Uncaught TypeError: Assignment to constant variable.
 ```
 
 ```
-const foo = [0]
-foo.push(1) // ok
-foo = [] // Uncaught TypeError: Assignment to constant variable.
+const foo = [0];
+foo.push(1); // ok
+foo = []; // Uncaught TypeError: Assignment to constant variable.
 ```
 
 ### 接著開始上點強度
