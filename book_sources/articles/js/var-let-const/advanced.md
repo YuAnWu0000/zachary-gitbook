@@ -71,7 +71,7 @@ function catName(name) {
 */
 ```
 
-則是幫你把 **create + initialize + assign** 都做完了，也因此你可以在 scoped 內的任何地方正常使用`catName()`。
+則是幫你把 **create + initialize + assign** 都做完了，也因此你可以在 scoped 內的任何地方正常執行`catName()`的內容。
 
 ### 所以...`let` 到底有沒有 hoisting？
 
