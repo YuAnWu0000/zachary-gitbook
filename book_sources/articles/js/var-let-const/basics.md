@@ -37,7 +37,7 @@ function test() {
   console.log(a);
 }
 test(); // 1
-console.log(a) // 0
+console.log(a); // 0
 ```
 
 ### let
