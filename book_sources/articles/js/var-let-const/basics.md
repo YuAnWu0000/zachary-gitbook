@@ -66,8 +66,8 @@ if (true) {
 - 不可重複宣告
 
 ```
-let a = 123
-let a = 456 // Uncaught SyntaxError: Identifier 'a' has already been declared
+let a = 123;
+let a = 456; // Uncaught SyntaxError: Identifier 'a' has already been declared
 ```
 
 ### const
