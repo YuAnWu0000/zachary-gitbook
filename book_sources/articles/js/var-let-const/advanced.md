@@ -41,12 +41,21 @@ access "a" before declaration.** (儘管取得的值是 undefined，但起碼不
 > 那麼 `let` 呢？
 
 ```
+console.log(a) // Uncaught ReferenceError: a is not defined
+let a = 123
+```
+
+單純看這個簡單的例子你會認為`let`沒有 hoisting，但請你看看接下來的這個例子：
+
+```
 var a = 123
 if (true) {
   a = 456 // Uncaught ReferenceError: Cannot access 'a' before initialization at <anonymous>:3:7
   let a
 }
 ```
+
+**如果真的沒有「提升」，那為什麼程式會在第三行報錯？照理說應該可以直接把全域的 a 賦值為 456 才對。**<br>
 
 我們可以發現 JS interpreter 實際上在執行程式碼之前，有針對 `let` 的宣告做類似「半提升」的行為，為什麼會說只做了一半呢？因為跟 `var` 相比，我們沒辦法提早取得 `undefined` 的值，但從 TDZ 來判斷，它確實是預先做了 **create** 的動作所以才讓整個 block scope 都無法再使用 a 變數。
 
