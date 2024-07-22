@@ -77,8 +77,8 @@ let a = 456; // Uncaught SyntaxError: Identifier 'a' has already been declared
 - 宣告後就不可更改
 
 ```
-const a = 123
-a = 456 // Uncaught TypeError: Assignment to constant variable.
+const a = 123;
+a = 456; // Uncaught TypeError: Assignment to constant variable.
 ```
 
 - 也不可單獨宣告不給值
