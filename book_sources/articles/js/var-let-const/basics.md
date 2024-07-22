@@ -84,7 +84,7 @@ a = 456; // Uncaught TypeError: Assignment to constant variable.
 - 也不可單獨宣告不給值
 
 ```
-const a // Uncaught SyntaxError: Missing initializer in const declaration
+const a; // Uncaught SyntaxError: Missing initializer in const declaration
 ```
 
 - 同個作用域底下，不可以重複宣告 const
