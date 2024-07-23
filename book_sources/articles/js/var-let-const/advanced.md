@@ -48,7 +48,7 @@ let a = 123;
 單純看這個簡單的例子你會認為`let`沒有 hoisting，但請你看看接下來的這個例子：
 
 ```
-var a = 123
+var a = 123;
 if (true) {
   a = 456 // Uncaught ReferenceError: Cannot access 'a' before initialization at <anonymous>:3:7
   let a
