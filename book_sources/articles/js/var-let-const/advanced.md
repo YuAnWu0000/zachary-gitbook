@@ -50,7 +50,7 @@ let a = 123;
 ```
 var a = 123;
 if (true) {
-  a = 456 // Uncaught ReferenceError: Cannot access 'a' before initialization at <anonymous>:3:7
+  a = 456; // Uncaught ReferenceError: Cannot access 'a' before initialization at <anonymous>:3:7
   let a
 }
 ```
