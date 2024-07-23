@@ -31,8 +31,8 @@
 > 接著讓我們來看看例子：
 
 ```
-console.log(a) // undefined
-var a = 123
+console.log(a); // undefined
+var a = 123;
 ```
 
 `var` 之所以被認為有 hoisting 是因為 JS interpreter 把 **create + initialize** 都提早做完了，**So you can
@@ -41,8 +41,8 @@ access "a" before declaration.** (儘管取得的值是 undefined，但起碼不
 > 那麼 `let` 呢？
 
 ```
-console.log(a) // Uncaught ReferenceError: a is not defined
-let a = 123
+console.log(a); // Uncaught ReferenceError: a is not defined
+let a = 123;
 ```
 
 單純看這個簡單的例子你會認為`let`沒有 hoisting，但請你看看接下來的這個例子：
