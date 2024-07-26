@@ -31,8 +31,8 @@
 > 接著讓我們來看看例子：
 
 ```
-console.log(a) // undefined
-var a = 123
+console.log(a); // undefined
+var a = 123;
 ```
 
 `var` 之所以被認為有 hoisting 是因為 JS interpreter 把 **create + initialize** 都提早做完了，**So you can
@@ -41,17 +41,17 @@ access "a" before declaration.** (儘管取得的值是 undefined，但起碼不
 > 那麼 `let` 呢？
 
 ```
-console.log(a) // Uncaught ReferenceError: a is not defined
-let a = 123
+console.log(a); // Uncaught ReferenceError: a is not defined
+let a = 123;
 ```
 
 單純看這個簡單的例子你會認為`let`沒有 hoisting，但請你看看接下來的這個例子：
 
 ```
-var a = 123
+var a = 123;
 if (true) {
-  a = 456 // Uncaught ReferenceError: Cannot access 'a' before initialization at <anonymous>:3:7
-  let a
+  a = 456; // Uncaught ReferenceError: Cannot access 'a' before initialization at <anonymous>:3:7
+  let a;
 }
 ```
 
@@ -90,7 +90,7 @@ function catName(name) {
 
 各位可以發現，這個問題已經漸漸的從是非題變成了申論題，每個人都有他各自的立場。如果我是面試官，其實並不會太注重你的最終答案是 hoisting or non-hoisting，而是從你分析的過程下去觀察你是如何定義問題、架構邏輯、表達立場的，這些，才是一個工程師不可或缺的軟實力。
 
-順帶一提，個人覺得現在的面試考題似乎漸漸淪為死背硬記，可是偏偏工程師的工作內容常常沒有正確解答，有的只有 trade off 跟方案利弊分析，既然要想辦法量化工程師的能力，那就應該透過比較貼近工作的方式來考核才對。<br>
+順帶一提，個人覺得現在的面試考題似乎漸漸淪為死背硬記，可是偏偏工程師的工作內容常常沒有正確解答，有的只是 trade off 跟方案利弊分析，既然要想辦法量化工程師的能力，那就應該透過比較貼近工作的方式來考核才對。<br>
 
 比如這題我會這樣問：<br>
 
