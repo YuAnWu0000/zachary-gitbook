@@ -84,7 +84,7 @@ function catName(name) {
 
 > Still, it may be more useful to characterize lexical declarations as non-hoisting, because from a utilitarian perspective, the hoisting of these declarations doesn't bring any meaningful features.
 
-而且最後站邊 non hoisting 的理由竟然是這個現象並不「實用」？用結果論來定義一個為了幫助理解過程而誕生的詞彙 ─ Hoisting，我怎麼想都覺得有點怪怪的。
+而且最後站邊 non hoisting 的理由竟然是這個現象並不「實用」？**用結果論來定義一個為了幫助理解過程而誕生的詞彙 ─ Hoisting**，我怎麼想都覺得有點怪怪的。
 
 ### 如果我是面試官
 
