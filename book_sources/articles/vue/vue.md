@@ -1,3 +1,3 @@
 # Vue the world differently
 
-### Different perspective makes people understand more.
+### Observe from different perspective create comprehensive thinking in your mind.
