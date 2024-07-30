@@ -1,3 +1,3 @@
 # Vue the world differently
 
-### Observe from different perspective create comprehensive thinking in your mind.
+### Observe from different perspective create comprehensive thinking.
