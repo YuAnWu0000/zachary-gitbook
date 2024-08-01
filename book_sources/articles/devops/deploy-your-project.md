@@ -11,3 +11,9 @@
 > 誰說只有後端可以兼任 DevOps，前端也可以打開 ubuntu terminal key 帥帥的 command 把自己的前端專案部署上機器上！成為八點檔裡面的駭客 🎉！
 
 ### 在這個前後端分離成為主流的時代，前端懂點 DevOps 的基礎會對公司省錢很有幫助 (X
+
+### 在專案內新增 docker-compose.yaml
+
+```
+
+```
