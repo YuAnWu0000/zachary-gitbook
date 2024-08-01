@@ -21,5 +21,6 @@ services:
     build:
       context: .
     environment:
-      - 'API_HOST: X.X.X.X'
+      - 'API_HOST=X.X.X.X'
+      - 'API_PORT=3001'
 ```
