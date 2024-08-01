@@ -21,4 +21,5 @@ services:
     build:
       context: .
     environment:
+      - 'API_HOST: X.X.X.X'
 ```
