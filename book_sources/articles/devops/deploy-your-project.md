@@ -23,4 +23,5 @@ services:
     environment:
       - 'API_HOST=X.X.X.X'
       - 'API_PORT=3001'
+    ports:
 ```
