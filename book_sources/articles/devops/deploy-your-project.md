@@ -15,5 +15,5 @@
 ### 在專案內新增 docker-compose.yaml
 
 ```
-
+version: '3'
 ```
