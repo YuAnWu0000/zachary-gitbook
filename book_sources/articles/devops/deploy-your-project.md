@@ -17,4 +17,5 @@
 ```
 version: '3'
 services:
+  web:
 ```
