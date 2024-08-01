@@ -19,4 +19,5 @@ version: '3'
 services:
   web:
     build:
+      context: .
 ```
