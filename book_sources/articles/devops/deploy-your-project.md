@@ -20,4 +20,5 @@ services:
   web:
     build:
       context: .
+    environment:
 ```
