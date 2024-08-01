@@ -16,4 +16,5 @@
 
 ```
 version: '3'
+services:
 ```
