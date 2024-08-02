@@ -30,5 +30,6 @@ services:
 ### 在專案內新增 Dockerfile
 
 ```
-
+FROM node:20 as build
+WORKDIR /app
 ```
