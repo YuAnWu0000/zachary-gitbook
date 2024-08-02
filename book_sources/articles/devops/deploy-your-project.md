@@ -32,4 +32,5 @@ services:
 ```
 FROM node:20 as build
 WORKDIR /app
+ADD package.json /app/
 ```
