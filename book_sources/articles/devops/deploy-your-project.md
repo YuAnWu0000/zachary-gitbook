@@ -38,4 +38,7 @@ RUN npm install
 
 COPY . /app/
 RUN npm run build
+
+FROM nginx:stable
+COPY --from=build /app/build /usr/share/nginx/html
 ```
