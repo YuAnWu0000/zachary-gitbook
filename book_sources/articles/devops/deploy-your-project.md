@@ -41,4 +41,5 @@ RUN npm run build
 
 FROM nginx:stable
 COPY --from=build /app/build /usr/share/nginx/html
+COPY default.conf.template /etc/nginx/templates/
 ```
