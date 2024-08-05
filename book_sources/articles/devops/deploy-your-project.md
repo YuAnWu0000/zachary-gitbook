@@ -100,6 +100,7 @@ server {
     proxy_http_version 1.1;
     proxy_redirect off;
     proxy_buffering off;
+    proxy_read_timeout 86400s;
   }
 
   location ^~ /api/ {
