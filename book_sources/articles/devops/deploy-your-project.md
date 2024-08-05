@@ -74,9 +74,12 @@ upstream api {
 }
 ```
 
-###### 如果你的專案有用到 websocket 的話...
+###### 順帶一提，如果你的專案有用到 websocket 的話可以這樣寫...
 
 ```
+map $http_upgrade $connection_upgrade {
+
+}
 server {
   include   /etc/nginx/mime.types;
   default_type  application/octet-stream;
