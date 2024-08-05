@@ -78,7 +78,7 @@ upstream api {
 
 ```
 map $http_upgrade $connection_upgrade {
-
+  default Upgrade;
 }
 server {
   include   /etc/nginx/mime.types;
