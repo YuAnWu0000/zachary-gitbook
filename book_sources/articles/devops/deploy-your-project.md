@@ -52,6 +52,7 @@ services:
 
 ```
 server {
+  include   /etc/nginx/mime.types;
 
 }
 ```
