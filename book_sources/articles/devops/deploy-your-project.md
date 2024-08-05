@@ -102,6 +102,7 @@ server {
     proxy_buffering off;
     proxy_read_timeout 86400s;
     proxy_send_timeout 86400s;
+    proxy_pass http://api/ws;
   }
 
   location ^~ /api/ {
