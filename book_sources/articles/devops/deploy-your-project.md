@@ -60,6 +60,8 @@ server {
 
   listen 80;
 
-  location ^~ /api/ {}
+  location ^~ /api/ {
+    rewrite ^/api/(.*)$ /$1 break;
+  }
 }
 ```
