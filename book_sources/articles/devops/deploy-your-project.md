@@ -22,7 +22,7 @@ services:
       context: .
     environment:
       - 'API_HOST=X.X.X.X'
-      - 'API_PORT=3001'
+      - 'API_PORT=XXXX'
     ports:
       - 3000:80
 ```
