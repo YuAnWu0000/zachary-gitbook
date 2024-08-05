@@ -83,5 +83,7 @@ server {
   default_type  application/octet-stream;
   root  /usr/share/nginx/html/;
 
+  absolute_redirect off;
+
 }
 ```
