@@ -12,7 +12,7 @@
 
 ### 在這個前後端分離成為主流的時代，前端懂點 DevOps 的基礎會對公司省錢很有幫助 (X
 
-### 在專案內新增 docker-compose.yaml
+##### 在專案內新增 docker-compose.yaml
 
 ```
 version: '3'
@@ -27,7 +27,7 @@ services:
       - 3000:80
 ```
 
-### 在專案內新增 Dockerfile
+##### 在專案內新增 Dockerfile
 
 ```
 FROM node:20 as build
