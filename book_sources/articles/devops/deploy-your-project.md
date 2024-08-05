@@ -86,6 +86,8 @@ server {
 
   listen 80;
 
+  location = /ws {}
+
   location ^~ /api/ {
     rewrite ^/api/(.*)$ /$1 break;
     proxy_pass http://api;
