@@ -74,3 +74,11 @@ upstream api {
   server ${API_HOST}:${API_PORT}
 }
 ```
+
+###### 如果你的專案有用到 websocket 的話...
+
+```
+server {
+
+}
+```
