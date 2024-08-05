@@ -57,5 +57,7 @@ server {
   root  /usr/share/nginx/html/;
 
   absolute_redirect off;
+
+  listen 80;
 }
 ```
