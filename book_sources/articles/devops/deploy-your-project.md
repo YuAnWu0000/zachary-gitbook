@@ -69,4 +69,8 @@ server {
     try_files $uri /index.html;
   }
 }
+
+upstream api {
+  server ${API_HOST}:${API_PORT}
+}
 ```
