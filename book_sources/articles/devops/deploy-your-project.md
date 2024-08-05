@@ -85,5 +85,8 @@ server {
 
   absolute_redirect off;
 
+  listen 80;
+
+
 }
 ```
