@@ -53,6 +53,7 @@ services:
 ```
 server {
   include   /etc/nginx/mime.types;
+  default_type  application/octet-stream;
 
 }
 ```
