@@ -99,6 +99,7 @@ server {
     proxy_set_header Connection $connection_upgrade;
     proxy_http_version 1.1;
     proxy_redirect off;
+    proxy_buffering off;
   }
 
   location ^~ /api/ {
