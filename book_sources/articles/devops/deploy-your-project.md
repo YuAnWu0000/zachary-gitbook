@@ -90,7 +90,9 @@ server {
 
   listen 80;
 
-  location = /ws {}
+  location = /ws {
+    proxy_set_header Host $http_host;
+  }
 
   location ^~ /api/ {
     rewrite ^/api/(.*)$ /$1 break;
