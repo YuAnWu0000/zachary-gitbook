@@ -12,21 +12,6 @@
 
 ### 在這個前後端分離成為主流的時代，前端懂點 DevOps 的基礎會對公司省錢很有幫助 (X
 
-##### 在專案內新增 docker-compose.yaml
-
-```
-version: '3'
-services:
-  web:
-    build:
-      context: .
-    environment:
-      - 'API_HOST=X.X.X.X'
-      - 'API_PORT=XXXX'
-    ports:
-      - 3000:80
-```
-
 ##### 在專案內新增 Dockerfile
 
 ```
@@ -46,4 +31,25 @@ COPY default.conf.template /etc/nginx/templates/
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
+```
+
+##### 在專案內新增 docker-compose.yaml
+
+```
+version: '3'
+services:
+  web:
+    build:
+      context: .
+    environment:
+      - 'API_HOST=X.X.X.X'
+      - 'API_PORT=XXXX'
+    ports:
+      - 3000:80
+```
+
+##### 在專案內新增 default.conf.template (nginx.conf)
+
+```
+
 ```
