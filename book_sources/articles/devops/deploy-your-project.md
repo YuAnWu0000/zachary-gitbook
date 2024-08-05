@@ -62,7 +62,11 @@ server {
 
   location ^~ /api/ {
     rewrite ^/api/(.*)$ /$1 break;
-    proxy_pass http://api
+    proxy_pass http://api;
+  }
+
+  location ^~ / {
+    try_files $uri /index.html;
   }
 }
 ```
