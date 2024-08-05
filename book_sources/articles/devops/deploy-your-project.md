@@ -51,5 +51,7 @@ services:
 ##### 在專案內新增 default.conf.template (nginx.conf)
 
 ```
+server {
 
+}
 ```
