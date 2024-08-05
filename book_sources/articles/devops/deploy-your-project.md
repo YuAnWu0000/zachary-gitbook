@@ -79,6 +79,7 @@ upstream api {
 
 ```
 server {
+  include   /etc/nginx/mime.types;
 
 }
 ```
