@@ -144,7 +144,7 @@ services:
 
 ##### 4. Command Line 執行 `docker compose up --build -d` 就搞定了
 
-`docker compose up`: 透過`docker-compose.yaml`來運行裡面所有的容器。<br>
+`docker compose up`: 根據 `docker-compose.yaml` 的設定來運行裡面所有的容器。<br>
 `--build`: 啟動之前強制重 build 一次所有的 docker image，避免你使用到舊的。<br>
 `-d`: 背景執行，相當於 `--detach`。<br>
 
