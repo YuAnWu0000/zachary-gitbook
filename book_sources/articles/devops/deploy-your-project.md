@@ -16,6 +16,10 @@
 
 ##### 在專案內新增 default.conf.template (nginx.conf)
 
+你可以簡單把 nginx 理解成一台本地的 web server，編輯他的設定檔可以幫你 host 靜態網頁在特定的 port 或者設定 proxy。 <br>
+
+例如下面的設定就是讓你去監聽 http 預設的 80 port，讓你的前端網頁在 call API 時可以直接用相對地址 /api/profile，nginx 會直接作為 proxy 幫你把 /api/profile 轉到真正 server 的位置: http://x.x.x.x:port/profile
+
 ```
 server {
   include   /etc/nginx/mime.types;
