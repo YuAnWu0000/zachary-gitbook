@@ -122,7 +122,7 @@ CMD ["nginx", "-g", "daemon off;"]
 ##### 3. 在專案內新增 docker-compose.yaml
 
 接下來你要做的就是把這個 docker build 好並且 run 起來。<br>
-你可以透過`docker build`, `docker run`這兩個 command 來做。<br>
+一個方式是你可以透過 `docker build` , `docker run` 這兩個 command 來做。<br>
 
 或是你也可以跟我一樣不想打 command, 用 docker compose 來幫你達成，好處是你不用每次都去記上面的 command 要怎麼下，只需要在`docker-compose.yaml`裡面定義好要做的事就行了。
 
