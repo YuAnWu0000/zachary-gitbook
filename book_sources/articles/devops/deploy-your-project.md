@@ -126,8 +126,8 @@ CMD ["nginx", "-g", "daemon off;"]
 
 或是你也可以跟我一樣不想打 command, 用 docker compose 來幫你達成，好處是你不用每次都去記上面的 command 要怎麼下，只需要在`docker-compose.yaml`裡面定義好要做的事就行了。
 
-`build: context .`代表他會幫你在當前目錄下找尋 Dockerfile 並且運行 docker build <br>
-`ports: 3000:80`代表他會幫你映射容器內的 80 port 給外面機器的 localhost:3000<br>
+`build: context .`代表他會幫你在當前目錄下找尋 Dockerfile 並且運行 docker build。<br>
+`ports: 3000:80`代表他會幫你映射容器內的 80 port 給外面機器的 localhost:3000。<br>
 
 ```
 version: '3'
@@ -144,4 +144,6 @@ services:
 
 ##### 4. Run `docker compose up --build -d` 就搞定了
 
-`docker compose up`: 透過`docker-compose.yaml`來運行裡面所有的容器<br>
+`docker compose up`: 透過`docker-compose.yaml`來運行裡面所有的容器。<br>
+`--build`: 啟動之前強制重 build 一次所有的 docker image，避免你使用到舊的。<br>
+`-d`: 背景執行，相當於 `--detach`。
