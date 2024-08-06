@@ -117,7 +117,7 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-後面其實就是一步一步的把當前專案複製進去，接著再用我們前面編輯過的 default.conf.template 來設定 nginx，並且 host build 過的靜態檔案。
+後面其實就是一步一步的把當前專案複製進去，接著再用我們前面編輯過的 default.conf.template 來設定 nginx，並且 host build 過的靜態檔案在對外開放的 80 port。
 
 ##### 3. 在專案內新增 docker-compose.yaml
 
