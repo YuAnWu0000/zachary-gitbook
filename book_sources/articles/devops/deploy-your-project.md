@@ -91,10 +91,10 @@ upstream api {
 
 ##### 2. 在專案內新增 Dockerfile
 
-試想如果一台機器上要同時運行 node 16, node 20, python2, python3 的專案，並且各自有完全獨立的 nginx 設定要怎麼做？
+試想如果一台機器上要同時運行 node 10, node 20, python2, python3 的專案，並且各自有完全獨立的 nginx 設定要怎麼做？
 這就是 docker 想要解決的問題了。<br>
 
-Docker 可以幫你的專案建立出完全獨立的執行環境，如此一來在一台機器上你可以同時運行多個不同的執行環境的專案，這也就是所謂容器化的概念。<br>
+Docker 可以幫你的專案建立出完全獨立的執行環境，如此一來在一台機器上你可以同時運行多個不同的執行環境的專案，這也就是所謂容器化的概念 (你也可以想要他就是輕量化的 VM)。<br>
 
 要能建立容器需要你撰寫 Dockerfile 告訴他這個容器需要什麼東西，以下面為例，我使用官方提供 Nodejs version 20 的 docker image 來建立我專案的執行環境。
 
@@ -117,7 +117,14 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-##### 在專案內新增 docker-compose.yaml
+後面就是一步一步的把當前專案複製進去，最後用我們前面編輯過的 default.conf.template 來設定 nginx，並且 host build 過的靜態檔案。
+
+##### 3. 在專案內新增 docker-compose.yaml
+
+接下來你要做的就是把這個 docker build 好並且 run 起來。<br>
+你可以透過`docker build`, `docker run`這兩個 command 來做。<br>
+
+或是你也可以跟我一樣不想打 command, 用 docker compose 來幫你達成，好處是你不用每次都去記上面的 command 要怎麼下，只需要在`docker-compose.yaml`裡面定義好要做的事就行了。
 
 ```
 version: '3'
