@@ -14,7 +14,7 @@
 
 > 那就讓我們開始吧！
 
-##### 在專案內新增 default.conf.template (nginx.conf)
+##### 1. 在專案內新增 default.conf.template (nginx.conf)
 
 你可以簡單把 nginx 理解成一台本地的 web server，編輯他的設定檔可以幫你 host 靜態網頁在特定的 port 或者設定 proxy。 <br>
 
