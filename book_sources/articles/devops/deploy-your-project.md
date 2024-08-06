@@ -126,8 +126,8 @@ CMD ["nginx", "-g", "daemon off;"]
 
 或是你也可以跟我一樣不想打 command, 用 docker compose 來幫你達成，好處是你不用每次都去記上面的 command 要怎麼下，只需要在 `docker-compose.yaml` 裡面定義好要做的事就行了。
 
-`build: context .`: 他會幫你在當前目錄下找尋 Dockerfile 並且運行 docker build。<br>
-`ports: 3000:80`: 他會幫你映射容器內的 80 port 給外面機器的 localhost:3000。<br>
+`build: context .` 他會幫你在當前目錄下找尋 Dockerfile 並且運行 docker build。<br>
+`ports: 3000:80` 他會幫你映射容器內的 80 port 給外面機器的 localhost:3000。<br>
 
 ```
 version: '3'
@@ -148,6 +148,6 @@ services:
 `--build`: 啟動之前強制重 build 一次所有的 docker image，避免你使用到舊的。<br>
 `-d`: 背景執行，相當於 `--detach`。<br>
 
-你現在可以 `docker ps -a` 看看你的容器運行狀況了。
+執行完以後你就可以下 `docker ps -a` 看看你的容器運行狀況了。
 
-實際打開網站看看吧！到這一步你應該已經成功了，不讓後端專美於前，身為前端也是可以兼任 DevOps 的！🎉
+最後實際打開網站看看吧！到這一步你應該已經成功部署了，不讓後端專美於前，身為前端也是可以兼任 DevOps！🎉
