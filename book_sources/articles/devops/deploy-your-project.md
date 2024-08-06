@@ -89,7 +89,10 @@ upstream api {
 }
 ```
 
-##### 在專案內新增 Dockerfile
+##### 2. 在專案內新增 Dockerfile
+
+試想如果一台機器上要同時運行 node 16, node 20, python2, python3 的專案，並且各自有完全獨立的 nginx 設定要怎麼做？
+這就是 docker 想要解決的問題了。
 
 ```
 FROM node:20 as build
