@@ -12,41 +12,7 @@
 
 ### 在這個前後端分離成為主流的時代，前端懂點 DevOps 的基礎會對公司省錢很有幫助 (X
 
-##### 在專案內新增 Dockerfile
-
-```
-FROM node:20 as build
-WORKDIR /app
-ADD package.json /app/
-ADD package-lock.json /app/
-RUN npm install
-
-COPY . /app/
-RUN npm run build
-
-FROM nginx:stable
-COPY --from=build /app/build /usr/share/nginx/html
-COPY default.conf.template /etc/nginx/templates/
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
-```
-
-##### 在專案內新增 docker-compose.yaml
-
-```
-version: '3'
-services:
-  web:
-    build:
-      context: .
-    environment:
-      - 'API_HOST=X.X.X.X'
-      - 'API_PORT=XXXX'
-    ports:
-      - 3000:80
-```
+> 那就讓我們開始吧！
 
 ##### 在專案內新增 default.conf.template (nginx.conf)
 
@@ -117,4 +83,40 @@ server {
 upstream api {
   server ${API_HOST}:${API_PORT}
 }
+```
+
+##### 在專案內新增 Dockerfile
+
+```
+FROM node:20 as build
+WORKDIR /app
+ADD package.json /app/
+ADD package-lock.json /app/
+RUN npm install
+
+COPY . /app/
+RUN npm run build
+
+FROM nginx:stable
+COPY --from=build /app/build /usr/share/nginx/html
+COPY default.conf.template /etc/nginx/templates/
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+##### 在專案內新增 docker-compose.yaml
+
+```
+version: '3'
+services:
+  web:
+    build:
+      context: .
+    environment:
+      - 'API_HOST=X.X.X.X'
+      - 'API_PORT=XXXX'
+    ports:
+      - 3000:80
 ```
