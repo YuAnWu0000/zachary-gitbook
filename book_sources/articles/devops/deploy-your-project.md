@@ -141,3 +141,7 @@ services:
     ports:
       - 3000:80
 ```
+
+##### 4. Run `docker compose up --build -d` 就搞定了
+
+`docker compose up`: 透過`docker-compose.yaml`來運行裡面所有的容器<br>
