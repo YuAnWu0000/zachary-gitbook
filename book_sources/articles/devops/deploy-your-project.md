@@ -92,7 +92,11 @@ upstream api {
 ##### 2. 在專案內新增 Dockerfile
 
 試想如果一台機器上要同時運行 node 16, node 20, python2, python3 的專案，並且各自有完全獨立的 nginx 設定要怎麼做？
-這就是 docker 想要解決的問題了。
+這就是 docker 想要解決的問題了。<br>
+
+Docker 可以幫你的專案建立出完全獨立的執行環境，如此一來在一台機器上你可以同時運行多個不同的執行環境的專案，這也就是所謂容器化的概念。<br>
+
+要能建立容器需要你撰寫 Dockerfile 告訴他這個容器需要什麼東西，以下面為例，我使用官方提供 Nodejs version 20 的 docker image 來建立我專案的執行環境。
 
 ```
 FROM node:20 as build
