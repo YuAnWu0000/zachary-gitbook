@@ -147,7 +147,7 @@ services:
 
 _4.1 `docker compose up`: 根據 `docker-compose.yaml` 的設定來運行裡面所有的容器。_<br>
 _4.2 `--build`: 啟動之前強制重 build 一次所有的 docker image，避免你使用到舊的。_<br>
-4.3 `-d`: 背景執行，相當於 `--detach`。<br>
+_4.3 `-d`: 背景執行，相當於 `--detach`。_<br>
 
 執行完以後你就可以下 `docker ps -a` 看看你的容器運行狀況了。
 
