@@ -128,7 +128,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 _3.1 `build: context .` 他會幫你在當前目錄下找尋 Dockerfile 並且運行 docker build。_<br>
 _3.2 `environment:` 還記得我們前面 `default.conf.template` 裡面有用到的環境變數 `${API_HOST}`, `${API_PORT}` 嗎？在這邊可以做設定。_<br>
-3.3 `ports: 3000:80` 他會幫你映射容器的 80 port 給外面機器的 localhost:3000。<br>
+_3.3 `ports: 3000:80` 他會幫你映射容器的 80 port 給外面機器的 localhost:3000。_<br>
 
 ```
 version: '3'
