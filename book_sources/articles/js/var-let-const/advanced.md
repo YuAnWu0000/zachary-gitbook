@@ -80,7 +80,7 @@ function catName(name) {
 
 各位啊！真的不是我故意打太極不給個明確的答案，你們自己看看 MDN 在 hoisting 篇章前後兩段的文字就知道他們自己的立場也蠻飄忽不定的：
 
-> However, the temporal dead zone can cause other observable changes in its scope, which suggests there's some form of hoisting
+> However, the temporal dead zone can cause other observable changes in its scope, which suggests there's some form of hoisting.
 
 > Still, it may be more useful to characterize lexical declarations as non-hoisting, because from a utilitarian perspective, the hoisting of these declarations doesn't bring any meaningful features.
 
