@@ -1,0 +1,575 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>搞定 Docker 跟 Nginx，輕鬆部署你的專案 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="devops.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    關於我
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../vue/vue.html">
+            
+                <a href="../vue/vue.html">
+            
+                    
+                    Vue the world differently
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../react/react.html">
+            
+                <a href="../react/react.html">
+            
+                    
+                    React with surprise
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../react/cra-url-issue.html">
+            
+                <a href="../react/cra-url-issue.html">
+            
+                    
+                    Cannot resolve url() ─ CRA 用 url() 引入圖片的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../js/js.html">
+            
+                <a href="../js/js.html">
+            
+                    
+                    Don't skip javascript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../js/forEach-async-await.html">
+            
+                <a href="../js/forEach-async-await.html">
+            
+                    
+                    async / await 在 forEach 裡面不起作用？你是否搞錯了什麼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../js/var-let-const/basics.html">
+            
+                <a href="../js/var-let-const/basics.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ 及格標準
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../js/var-let-const/advanced.html">
+            
+                <a href="../js/var-let-const/advanced.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ 滿分標準
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../css/css.html">
+            
+                <a href="../css/css.html">
+            
+                    
+                    Success of css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                <a href="../css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../css/atomic-cssInJs-cssModule/atomic.html">
+            
+                <a href="../css/atomic-cssInJs-cssModule/atomic.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談體驗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../css/atomic-cssInJs-cssModule/scalability.html">
+            
+                <a href="../css/atomic-cssInJs-cssModule/scalability.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談擴展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../css/atomic-cssInJs-cssModule/performance.html">
+            
+                <a href="../css/atomic-cssInJs-cssModule/performance.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談效能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="devops.html">
+            
+                <a href="devops.html">
+            
+                    
+                    Dive into the world of DevOps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.6.1" data-path="deploy-your-project.html">
+            
+                <a href="deploy-your-project.html">
+            
+                    
+                    搞定 Docker 跟 Nginx，輕鬆部署你的專案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >搞定 Docker 跟 Nginx，輕鬆部署你的專案</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x641E;&#x5B9A;-docker-&#x8DDF;-nginx&#xFF0C;&#x8F15;&#x9B06;&#x90E8;&#x7F72;&#x4F60;&#x7684;&#x5C08;&#x6848;"><b></b>&#x641E;&#x5B9A; Docker &#x8DDF; Nginx&#xFF0C;&#x8F15;&#x9B06;&#x90E8;&#x7F72;&#x4F60;&#x7684;&#x5C08;&#x6848;</a></li><ul><ul><li><span class="title-icon "></span><a href="#&#x5728;&#x9019;&#x500B;&#x524D;&#x5F8C;&#x7AEF;&#x5206;&#x96E2;&#x6210;&#x70BA;&#x4E3B;&#x6D41;&#x7684;&#x6642;&#x4EE3;&#xFF0C;&#x524D;&#x7AEF;&#x61C2;&#x9EDE;-devops-&#x7684;&#x57FA;&#x790E;&#x6703;&#x5C0D;&#x516C;&#x53F8;&#x7701;&#x9322;&#x5F88;&#x6709;&#x5E6B;&#x52A9;-x"><b></b>&#x5728;&#x9019;&#x500B;&#x524D;&#x5F8C;&#x7AEF;&#x5206;&#x96E2;&#x6210;&#x70BA;&#x4E3B;&#x6D41;&#x7684;&#x6642;&#x4EE3;&#xFF0C;&#x524D;&#x7AEF;&#x61C2;&#x9EDE; DevOps &#x7684;&#x57FA;&#x790E;&#x6703;&#x5C0D;&#x516C;&#x53F8;&#x7701;&#x9322;&#x5F88;&#x6709;&#x5E6B;&#x52A9; (X</a></li></ul></ul></ul></div><a href="#&#x641E;&#x5B9A;-docker-&#x8DDF;-nginx&#xFF0C;&#x8F15;&#x9B06;&#x90E8;&#x7F72;&#x4F60;&#x7684;&#x5C08;&#x6848;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x641E;&#x5B9A;-docker-&#x8DDF;-nginx&#xFF0C;&#x8F15;&#x9B06;&#x90E8;&#x7F72;&#x4F60;&#x7684;&#x5C08;&#x6848;"><a name="&#x641E;&#x5B9A;-docker-&#x8DDF;-nginx&#xFF0C;&#x8F15;&#x9B06;&#x90E8;&#x7F72;&#x4F60;&#x7684;&#x5C08;&#x6848;" class="anchor-navigation-ex-anchor" href="#&#x641E;&#x5B9A;-docker-&#x8DDF;-nginx&#xFF0C;&#x8F15;&#x9B06;&#x90E8;&#x7F72;&#x4F60;&#x7684;&#x5C08;&#x6848;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x641E;&#x5B9A; Docker &#x8DDF; Nginx&#xFF0C;&#x8F15;&#x9B06;&#x90E8;&#x7F72;&#x4F60;&#x7684;&#x5C08;&#x6848;</h1>
+<p>&#x300C;&#x8BF6;&#x6211;&#x628A;&#x5F8C;&#x7AEF;&#x670D;&#x52D9;&#x90E8;&#x7F72;&#x5230; AWS &#x6A5F;&#x5668;&#x4E0A;&#x56C9;&#xFF01;&#x4F60;&#x770B;&#x8981;&#x4E0D;&#x8981;&#x4E5F;&#x628A;&#x4F60;&#x7684;&#x524D;&#x7AEF;&#x5C08;&#x6848;&#x90E8;&#x7F72;&#x4E0A;&#x53BB;&#x3002;&#x300D;<br>
+&#x300C;&#x54E6;...&#x597D;&#xFF01;&#x53EF;&#x662F;&#x6211;&#x5B8C;&#x5168;&#x6C92;&#x78B0;&#x904E; Docker &#x8DDF; Nginx &#x8036;&#xFF01;&#x300D;<br>
+&#x300C;......&#x300D;<br>
+&#x5F8C;&#x7AEF;&#x5C0D;&#x6211;&#x6BD4;&#x4E86;&#x4E00;&#x500B;&#x8B9A; &#x1F44D; &#x5C31;&#x56DE;&#x982D;&#x505A;&#x4ED6;&#x81EA;&#x5DF1;&#x7684;&#x4E8B;&#x4E86;&#x3002;<br>
+&#x300C;&#x9019;&#x9593;&#x516C;&#x53F8;&#x4E0D;&#x80FD;&#x5F85;&#x4E86;&#x300D;&#x6211;&#x5FC3;&#x60F3;&#x3002;<br></p>
+<p>&#x4EE5;&#x4E0A;&#x5287;&#x60C5;&#x7D14;&#x5C6C;&#x865B;&#x69CB;&#xFF0C;&#x5982;&#x6709;&#x96F7;&#x540C;&#xFF0C;&#x90A3;&#x5C31;&#x96F7;&#x540C;&#x3002;<br></p>
+<blockquote>
+<p>&#x8AB0;&#x8AAA;&#x53EA;&#x6709;&#x5F8C;&#x7AEF;&#x53EF;&#x4EE5;&#x517C;&#x4EFB; DevOps&#xFF0C;&#x524D;&#x7AEF;&#x4E5F;&#x53EF;&#x4EE5;&#x6253;&#x958B; ubuntu terminal key &#x5E25;&#x5E25;&#x7684; command &#x628A;&#x81EA;&#x5DF1;&#x7684;&#x524D;&#x7AEF;&#x5C08;&#x6848;&#x90E8;&#x7F72;&#x4E0A;&#x6A5F;&#x5668;&#x4E0A;&#xFF01;&#x6210;&#x70BA;&#x516B;&#x9EDE;&#x6A94;&#x88E1;&#x9762;&#x7684;&#x99ED;&#x5BA2; &#x1F389;&#xFF01;</p>
+</blockquote>
+<h3 id="&#x5728;&#x9019;&#x500B;&#x524D;&#x5F8C;&#x7AEF;&#x5206;&#x96E2;&#x6210;&#x70BA;&#x4E3B;&#x6D41;&#x7684;&#x6642;&#x4EE3;&#xFF0C;&#x524D;&#x7AEF;&#x61C2;&#x9EDE;-devops-&#x7684;&#x57FA;&#x790E;&#x6703;&#x5C0D;&#x516C;&#x53F8;&#x7701;&#x9322;&#x5F88;&#x6709;&#x5E6B;&#x52A9;-x"><a name="&#x5728;&#x9019;&#x500B;&#x524D;&#x5F8C;&#x7AEF;&#x5206;&#x96E2;&#x6210;&#x70BA;&#x4E3B;&#x6D41;&#x7684;&#x6642;&#x4EE3;&#xFF0C;&#x524D;&#x7AEF;&#x61C2;&#x9EDE;-devops-&#x7684;&#x57FA;&#x790E;&#x6703;&#x5C0D;&#x516C;&#x53F8;&#x7701;&#x9322;&#x5F88;&#x6709;&#x5E6B;&#x52A9;-x" class="anchor-navigation-ex-anchor" href="#&#x5728;&#x9019;&#x500B;&#x524D;&#x5F8C;&#x7AEF;&#x5206;&#x96E2;&#x6210;&#x70BA;&#x4E3B;&#x6D41;&#x7684;&#x6642;&#x4EE3;&#xFF0C;&#x524D;&#x7AEF;&#x61C2;&#x9EDE;-devops-&#x7684;&#x57FA;&#x790E;&#x6703;&#x5C0D;&#x516C;&#x53F8;&#x7701;&#x9322;&#x5F88;&#x6709;&#x5E6B;&#x52A9;-x"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;&#x9019;&#x500B;&#x524D;&#x5F8C;&#x7AEF;&#x5206;&#x96E2;&#x6210;&#x70BA;&#x4E3B;&#x6D41;&#x7684;&#x6642;&#x4EE3;&#xFF0C;&#x524D;&#x7AEF;&#x61C2;&#x9EDE; DevOps &#x7684;&#x57FA;&#x790E;&#x6703;&#x5C0D;&#x516C;&#x53F8;&#x7701;&#x9322;&#x5F88;&#x6709;&#x5E6B;&#x52A9; (X</h3>
+<blockquote>
+<p>&#x90A3;&#x5C31;&#x8B93;&#x6211;&#x5011;&#x958B;&#x59CB;&#x5427;&#xFF01;</p>
+</blockquote>
+<h5 id="1-&#x5728;&#x5C08;&#x6848;&#x5167;&#x65B0;&#x589E;-defaultconftemplate-nginxconf"><a name="1-&#x5728;&#x5C08;&#x6848;&#x5167;&#x65B0;&#x589E;-defaultconftemplate-nginxconf" class="anchor-navigation-ex-anchor" href="#1-&#x5728;&#x5C08;&#x6848;&#x5167;&#x65B0;&#x589E;-defaultconftemplate-nginxconf"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5728;&#x5C08;&#x6848;&#x5167;&#x65B0;&#x589E; default.conf.template (nginx.conf)</h5>
+<p><strong>&#x4F60;&#x53EF;&#x4EE5;&#x7C21;&#x55AE;&#x628A; nginx &#x7406;&#x89E3;&#x6210;&#x4E00;&#x53F0;&#x672C;&#x5730;&#x7684; web server&#xFF0C;&#x7DE8;&#x8F2F;&#x4ED6;&#x7684;&#x8A2D;&#x5B9A;&#x6A94;&#x53EF;&#x4EE5;&#x5E6B;&#x4F60; host &#x975C;&#x614B;&#x7DB2;&#x9801;&#x5728;&#x7279;&#x5B9A;&#x7684; port &#x6216;&#x8005;&#x8A2D;&#x5B9A; proxy&#x3002;</strong><br></p>
+<p>&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x8A2D;&#x5B9A;&#x5C31;&#x662F;&#x53BB;&#x76E3;&#x807D; http &#x9810;&#x8A2D;&#x7684; 80 port&#xFF0C;&#x8B93;&#x4F60;&#x7684;&#x524D;&#x7AEF;&#x7DB2;&#x9801;&#x5728; call API &#x6642;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528;&#x76F8;&#x5C0D;&#x5730;&#x5740; /api/profile&#xFF0C;nginx &#x6703;&#x76F4;&#x63A5;&#x4F5C;&#x70BA; proxy &#x5E6B;&#x4F60;&#x628A; /api/profile &#x8F49;&#x5230;&#x771F;&#x6B63; server &#x7684;&#x4F4D;&#x7F6E;: <a href="http://x.x.x.x:port/profile" target="_blank">http://x.x.x.x:port/profile</a></p>
+<pre><code>server {
+  include   /etc/nginx/mime.types;
+  default_type  application/octet-stream;
+  root  /usr/share/nginx/html/;
+
+  absolute_redirect off;
+
+  listen 80;
+
+  location ^~ /api/ {
+    rewrite ^/api/(.*)$ /$1 break;
+    proxy_pass http://api;
+  }
+
+  location ^~ / {
+    try_files $uri /index.html;
+  }
+}
+upstream api {
+  server ${API_HOST}:${API_PORT}
+}
+</code></pre><h6 id="&#x9806;&#x5E36;&#x4E00;&#x63D0;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684;&#x5C08;&#x6848;&#x6709;&#x7528;&#x5230;-websocket-&#x7684;&#x8A71;&#x53EF;&#x4EE5;&#x9019;&#x6A23;&#x5BEB;"><a name="&#x9806;&#x5E36;&#x4E00;&#x63D0;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684;&#x5C08;&#x6848;&#x6709;&#x7528;&#x5230;-websocket-&#x7684;&#x8A71;&#x53EF;&#x4EE5;&#x9019;&#x6A23;&#x5BEB;" class="anchor-navigation-ex-anchor" href="#&#x9806;&#x5E36;&#x4E00;&#x63D0;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684;&#x5C08;&#x6848;&#x6709;&#x7528;&#x5230;-websocket-&#x7684;&#x8A71;&#x53EF;&#x4EE5;&#x9019;&#x6A23;&#x5BEB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9806;&#x5E36;&#x4E00;&#x63D0;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684;&#x5C08;&#x6848;&#x6709;&#x7528;&#x5230; websocket &#x7684;&#x8A71;&#x53EF;&#x4EE5;&#x9019;&#x6A23;&#x5BEB;...</h6>
+<pre><code>map $http_upgrade $connection_upgrade {
+  default Upgrade;
+  &apos;&apos; close;
+}
+server {
+  include   /etc/nginx/mime.types;
+  default_type  application/octet-stream;
+  root  /usr/share/nginx/html/;
+
+  absolute_redirect off;
+
+  listen 80;
+
+  location = /ws {
+    proxy_set_header Host $http_host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Real-IP    $remote_addr;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_http_version 1.1;
+    proxy_redirect off;
+    proxy_buffering off;
+    proxy_read_timeout 86400s;
+    proxy_send_timeout 86400s;
+    proxy_pass http://api/ws;
+  }
+
+  location ^~ /api/ {
+    rewrite ^/api/(.*)$ /$1 break;
+    proxy_pass http://api;
+  }
+
+  location ^~ / {
+    try_files $uri /index.html;
+  }
+}
+upstream api {
+  server ${API_HOST}:${API_PORT}
+}
+</code></pre><h5 id="2-&#x5728;&#x5C08;&#x6848;&#x5167;&#x65B0;&#x589E;-dockerfile"><a name="2-&#x5728;&#x5C08;&#x6848;&#x5167;&#x65B0;&#x589E;-dockerfile" class="anchor-navigation-ex-anchor" href="#2-&#x5728;&#x5C08;&#x6848;&#x5167;&#x65B0;&#x589E;-dockerfile"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x5728;&#x5C08;&#x6848;&#x5167;&#x65B0;&#x589E; Dockerfile</h5>
+<p>&#x8A66;&#x60F3;&#x5982;&#x679C;&#x4E00;&#x53F0;&#x6A5F;&#x5668;&#x4E0A;&#x8981;&#x540C;&#x6642;&#x904B;&#x884C; node 10, node 20, python2, python3 &#x7684;&#x5C08;&#x6848;&#xFF0C;&#x4E26;&#x4E14;&#x5404;&#x81EA;&#x6709;&#x5B8C;&#x5168;&#x7368;&#x7ACB;&#x7684; nginx &#x8A2D;&#x5B9A;&#x8981;&#x600E;&#x9EBC;&#x505A;&#xFF1F;<br>
+&#x9019;&#x5C31;&#x662F; docker &#x60F3;&#x8981;&#x89E3;&#x6C7A;&#x7684;&#x554F;&#x984C;&#x4E86;&#x3002;<br></p>
+<p><strong>Docker &#x53EF;&#x4EE5;&#x5E6B;&#x4F60;&#x5EFA;&#x7ACB;&#x51FA;&#x7368;&#x7ACB;&#x7684;&#x57F7;&#x884C;&#x74B0;&#x5883;&#xFF0C;&#x5982;&#x6B64;&#x4E00;&#x4F86;&#x5728;&#x4E00;&#x53F0;&#x6A5F;&#x5668;&#x4E0A;&#x4F60;&#x53EF;&#x4EE5;&#x540C;&#x6642;&#x904B;&#x884C;&#x591A;&#x500B;&#x5C08;&#x6848;&#x800C;&#x4E0D;&#x7528;&#x64D4;&#x5FC3;&#x4E92;&#x76F8;&#x5E72;&#x64FE;&#xFF0C;&#x9019;&#x4E5F;&#x5C31;&#x662F;&#x6240;&#x8B02;&#x5BB9;&#x5668;&#x5316;&#x7684;&#x6982;&#x5FF5; (&#x53EF;&#x4EE5;&#x60F3;&#x50CF;&#x4ED6;&#x5C31;&#x662F;&#x8F15;&#x91CF;&#x5316;&#x7684; VM&#x1F4BB;)&#x3002;</strong><br></p>
+<p>&#x8981;&#x80FD;&#x5EFA;&#x7ACB;&#x5BB9;&#x5668;&#x9700;&#x8981;&#x4F60;&#x64B0;&#x5BEB; Dockerfile &#x544A;&#x8A34;&#x4ED6;&#x9019;&#x500B;&#x5BB9;&#x5668;&#x9700;&#x8981;&#x4EC0;&#x9EBC;&#x6771;&#x897F;&#xFF0C;&#x4EE5;&#x4E0B;&#x9762;&#x70BA;&#x4F8B;&#xFF0C;&#x6211;&#x4F7F;&#x7528;&#x5B98;&#x65B9;&#x63D0;&#x4F9B; Nodejs version 20 &#x7684; docker image &#x4F86;&#x5EFA;&#x7ACB;&#x6211;&#x5C08;&#x6848;&#x7684;&#x57F7;&#x884C;&#x74B0;&#x5883;&#x3002;</p>
+<pre><code>FROM node:20 as build
+WORKDIR /app
+ADD package.json /app/
+ADD package-lock.json /app/
+RUN npm install
+
+COPY . /app/
+RUN npm run build
+
+FROM nginx:stable
+COPY --from=build /app/build /usr/share/nginx/html
+COPY default.conf.template /etc/nginx/templates/
+
+EXPOSE 80
+
+CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
+</code></pre><p>&#x5F8C;&#x9762;&#x5176;&#x5BE6;&#x5C31;&#x662F;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x7684;&#x628A;&#x7576;&#x524D;&#x5C08;&#x6848;&#x8907;&#x88FD;&#x9032;&#x53BB;&#x5BB9;&#x5668;&#x5167;&#xFF0C;&#x7136;&#x5F8C;&#x518D;&#x7528;&#x6211;&#x5011;&#x524D;&#x9762;&#x7DE8;&#x8F2F;&#x904E;&#x7684; <code>default.conf.template</code> &#x4F86;&#x8A2D;&#x5B9A; nginx&#xFF0C;&#x4E26;&#x4E14; host build &#x904E;&#x7684;&#x975C;&#x614B;&#x6A94;&#x6848;&#x5728;&#x5BB9;&#x5668;&#x5C0D;&#x5916;&#x958B;&#x653E;&#x7684; 80 port&#x3002;</p>
+<h5 id="3-&#x5728;&#x5C08;&#x6848;&#x5167;&#x65B0;&#x589E;-docker-composeyaml"><a name="3-&#x5728;&#x5C08;&#x6848;&#x5167;&#x65B0;&#x589E;-docker-composeyaml" class="anchor-navigation-ex-anchor" href="#3-&#x5728;&#x5C08;&#x6848;&#x5167;&#x65B0;&#x589E;-docker-composeyaml"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5728;&#x5C08;&#x6848;&#x5167;&#x65B0;&#x589E; docker-compose.yaml</h5>
+<p>&#x63A5;&#x4E0B;&#x4F86;&#x4F60;&#x8981;&#x505A;&#x7684;&#x5C31;&#x662F;&#x628A;&#x9019;&#x500B; docker build &#x597D;&#x4E26;&#x4E14; run &#x8D77;&#x4F86;&#x3002;<br>
+&#x4E00;&#x500B;&#x65B9;&#x5F0F;&#x662F;&#x4F60;&#x53EF;&#x4EE5;&#x900F;&#x904E; <code>docker build</code> , <code>docker run</code> &#x9019;&#x5169;&#x500B; command &#x4F86;&#x505A;&#x3002;<br></p>
+<p>&#x6216;&#x662F;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x8DDF;&#x6211;&#x4E00;&#x6A23;&#x4E0D;&#x60F3;&#x6253; command, &#x5C31;&#x53EF;&#x4EE5;&#x7528; docker compose &#x4F86;&#x5E6B;&#x4F60;&#x9054;&#x6210;&#xFF0C;&#x597D;&#x8655;&#x662F;&#x4F60;&#x4E0D;&#x7528;&#x6BCF;&#x6B21;&#x90FD;&#x53BB;&#x8A18;&#x4E0A;&#x9762;&#x7684; command &#x8981;&#x600E;&#x9EBC;&#x4E0B;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728; <code>docker-compose.yaml</code> &#x88E1;&#x9762;&#x5B9A;&#x7FA9;&#x597D;&#x8981;&#x505A;&#x7684;&#x4E8B;&#x5C31;&#x884C;&#x4E86;&#xFF0C;&#x800C;&#x4E14;&#x9019;&#x500B;&#x6A94;&#x6848;&#x53EF;&#x4EE5;&#x4E0A;&#x5230; git &#x8B93;&#x4F60;&#x4EAB;&#x6709;&#x7248;&#x63A7;&#x7684;&#x597D;&#x8655; &#x1F44F;&#x3002;</p>
+<p><em>3.1 <code>build: context .</code> &#x4ED6;&#x6703;&#x5E6B;&#x4F60;&#x5728;&#x7576;&#x524D;&#x76EE;&#x9304;&#x4E0B;&#x627E;&#x5C0B; Dockerfile &#x4E26;&#x4E14;&#x904B;&#x884C; docker build&#x3002;</em><br>
+<em>3.2 <code>environment:</code> &#x9084;&#x8A18;&#x5F97;&#x6211;&#x5011;&#x524D;&#x9762; <code>default.conf.template</code> &#x88E1;&#x9762;&#x6709;&#x7528;&#x5230;&#x7684;&#x74B0;&#x5883;&#x8B8A;&#x6578; <code>${API_HOST}</code>, <code>${API_PORT}</code> &#x55CE;&#xFF1F;&#x5728;&#x9019;&#x908A;&#x53EF;&#x4EE5;&#x505A;&#x8A2D;&#x5B9A;&#x3002;</em><br>
+<em>3.3 <code>ports: 3000:80</code> &#x4ED6;&#x6703;&#x5E6B;&#x4F60;&#x6620;&#x5C04;&#x5BB9;&#x5668;&#x7684; 80 port &#x7D66;&#x5916;&#x9762;&#x6A5F;&#x5668;&#x7684; localhost:3000&#x3002;</em><br></p>
+<pre><code>version: &apos;3&apos;
+services:
+  web:
+    build:
+      context: .
+    environment:
+      - &apos;API_HOST=X.X.X.X&apos;
+      - &apos;API_PORT=XXXX&apos;
+    ports:
+      - 3000:80
+</code></pre><h5 id="4-&#x6700;&#x5F8C;-command-line-&#x57F7;&#x884C;-docker-compose-up---build--d-&#x5C31;&#x641E;&#x5B9A;&#x4E86;-&#x1F4AA;"><a name="4-&#x6700;&#x5F8C;-command-line-&#x57F7;&#x884C;-docker-compose-up---build--d-&#x5C31;&#x641E;&#x5B9A;&#x4E86;-&#x1F4AA;" class="anchor-navigation-ex-anchor" href="#4-&#x6700;&#x5F8C;-command-line-&#x57F7;&#x884C;-docker-compose-up---build--d-&#x5C31;&#x641E;&#x5B9A;&#x4E86;-&#x1F4AA;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x6700;&#x5F8C; Command Line &#x57F7;&#x884C; <code>docker compose up --build -d</code> &#x5C31;&#x641E;&#x5B9A;&#x4E86; &#x1F4AA;</h5>
+<p><em>4.1 <code>docker compose up</code>: &#x6839;&#x64DA; <code>docker-compose.yaml</code> &#x7684;&#x8A2D;&#x5B9A;&#x4F86;&#x904B;&#x884C;&#x88E1;&#x9762;&#x6240;&#x6709;&#x7684;&#x5BB9;&#x5668;&#x3002;</em><br>
+<em>4.2 <code>--build</code>: &#x555F;&#x52D5;&#x4E4B;&#x524D;&#x5F37;&#x5236;&#x91CD; build &#x4E00;&#x6B21;&#x6240;&#x6709;&#x7684; docker image&#xFF0C;&#x907F;&#x514D;&#x4F60;&#x4F7F;&#x7528;&#x5230;&#x820A;&#x7684;&#x3002;</em><br>
+<em>4.3 <code>-d</code>: &#x80CC;&#x666F;&#x57F7;&#x884C;&#xFF0C;&#x76F8;&#x7576;&#x65BC; <code>--detach</code>&#x3002;</em><br></p>
+<p>&#x57F7;&#x884C;&#x5B8C;&#x4EE5;&#x5F8C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x4E0B; <code>docker ps -a</code> &#x770B;&#x770B;&#x4F60;&#x7684;&#x5BB9;&#x5668;&#x904B;&#x884C;&#x72C0;&#x6CC1;&#x4E86;&#x3002;</p>
+<p>&#x6700;&#x5F8C;&#x5BE6;&#x969B;&#x6253;&#x958B;&#x7DB2;&#x7AD9;&#x770B;&#x770B;&#x5427;&#xFF01;&#x5230;&#x9019;&#x4E00;&#x6B65;&#x4F60;&#x61C9;&#x8A72;&#x5DF2;&#x7D93;&#x6210;&#x529F;&#x90E8;&#x7F72;&#x4E86;&#xFF0C;<strong>&#x4E0D;&#x8B93;&#x5F8C;&#x7AEF;&#x5C08;&#x7F8E;&#x65BC;&#x524D;&#xFF0C;&#x8EAB;&#x70BA;&#x524D;&#x7AEF;&#x4E5F;&#x53EF;&#x4EE5;&#x517C;&#x4EFB; DevOps&#xFF01;&#x1F389;</strong></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="devops.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Dive into the world of DevOps">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"搞定 Docker 跟 Nginx，輕鬆部署你的專案","level":"1.6.1","depth":2,"previous":{"title":"Dive into the world of DevOps","level":"1.6","depth":1,"path":"articles/devops/devops.md","ref":"./articles/devops/devops.md","articles":[{"title":"搞定 Docker 跟 Nginx，輕鬆部署你的專案","level":"1.6.1","depth":2,"path":"articles/devops/deploy-your-project.md","ref":"./articles/devops/deploy-your-project.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex","edit-link","copy-code-button","ga","-sharing","sharing-plus@^0.0.2","my-toolbar","expandable-chapters"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"my-toolbar":{"buttons":[{"label":"Github","icon":"fa fa-github","url":"https://github.com/YuAnWu0000","position":"right","text":"Github","target":"_blank"},{"label":"LinkedIn","icon":"fa fa-linkedin","url":"https://www.linkedin.com/in/yu-an-wu-486ab5160/","position":"right","text":"LinkedIn","target":"_blank"}]},"copy-code-button":{},"ga":{"configuration":"auto","token":""},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"edit-link":{"label":"Edit This Page","base":"https://github.com/onejar99/demo-build-and-publish-gitbook/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{}},"gitbook":"*"},"file":{"path":"articles/devops/deploy-your-project.md","mtime":"2024-08-08T01:43:07.427Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-08T01:43:36.842Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-my-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
