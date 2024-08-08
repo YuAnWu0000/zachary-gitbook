@@ -117,7 +117,7 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-後面其實就是一步一步的把當前專案複製進去容器內，然後再用我們前面編輯過的 default.conf.template 來設定 nginx，並且 host build 過的靜態檔案在容器對外開放的 80 port。
+後面其實就是一步一步的把當前專案複製進去容器內，然後再用我們前面編輯過的 `default.conf.template` 來設定 nginx，並且 host build 過的靜態檔案在容器對外開放的 80 port。
 
 ##### 3. 在專案內新增 docker-compose.yaml
 
@@ -127,6 +127,7 @@ CMD ["nginx", "-g", "daemon off;"]
 或是你也可以跟我一樣不想打 command, 就可以用 docker compose 來幫你達成，好處是你不用每次都去記上面的 command 要怎麼下，只需要在 `docker-compose.yaml` 裡面定義好要做的事就行了，而且這個檔案可以上到 git 讓你享有版控的好處。
 
 `build: context .` 他會幫你在當前目錄下找尋 Dockerfile 並且運行 docker build。<br>
+`environment:` 還記得我們前面 `default.conf.template` 裡面有用到的環境變數 `${API_HOST}`, `${API_PORT}` 嗎？是在這邊做設定的。
 `ports: 3000:80` 他會幫你映射容器的 80 port 給外面機器的 localhost:3000。<br>
 
 ```
