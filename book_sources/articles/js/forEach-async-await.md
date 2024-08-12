@@ -123,7 +123,7 @@ function shopping(number) {
 
 **兩秒之後，剛剛被我們暫時置之不理的那三個 `setTimeout` 也在 Event Loop 機制幫助下將後續程式塞入工作佇列(task queue)當中了。**
 
-當 call stack 中的事件執行完畢之後，Event Loop 會將工作佇列(task queue)中的事件逐一塞入 stack 中並執行，直到這時候，那三個 callback 才結束凍結繼續運行，而水果的數量**才真正地進行更新**。
+當 call stack 中的事件執行完畢之後，Event Loop 會將工作佇列(task queue)中的事件逐一塞入 stack 中並執行，直到這時候，那三個 callback 才結束凍結繼續運行，而水果的數量**才逐一取得更新**。
 
 **注意：你現在應該知道為什麼大家會說 `setTimeout` 沒有那麼"精確"了，因為 JS 只保證在等待兩秒後把任務丟到 task queue，但任務具體執行時間還是要看它在 queue 裡面排隊等了多久。**
 
