@@ -89,6 +89,8 @@ upstream api {
 }
 ```
 
+額外加上 /ws 的 matching (此路徑可自行決定)，然後設定 http upgrade 相關的 header 就可以了！
+
 ##### 2. 在專案內新增 Dockerfile
 
 試想如果一台機器上要同時運行 node 10, node 20, python2, python3 的專案，並且各自有完全獨立的 nginx 設定要怎麼做？<br>
