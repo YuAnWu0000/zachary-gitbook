@@ -117,7 +117,7 @@ function shopping(number) {
 
 執行到 `await shopping()` 的時候發現遇到了 `setTimeOut()`，因此將 `setTimeOut()` 交由 Web APIs 進行處理，然後由於 `await` 的效果，暫時凍結內部執行環境，至此，第一個 callback 處理完畢。**這樣的流程會重複不間斷地執行三次。**
 
-`forEach()` 的三個 callback "處理"完以後 (**注意：此時三個 callback 內部仍然是凍結狀態，因為在等待`setTimeout()`**)，接著程式執行到了 `console.log()` 這一行，所以才有了上面 chrome 的輸出：**水果們並沒有得到 +1 的結果**。
+`forEach()` 的三個 callback "處理"完以後 (**注意：此時三個 callback 內部仍然是凍結狀態，因為在等待`setTimeout()`**)，接著程式執行到外面 `console.log()` 這一行，所以才有了上面 chrome 的輸出：**水果們並沒有得到 +1 的結果**。
 
 > 試想如果單執行緒的 JS 沒有 Web API 輔助，而是停留在原地等待三個 callback 執行完畢，那總共就需要等待六秒的時間，網頁如果阻塞六秒，使用者早就已經跑光光了 :P
 
