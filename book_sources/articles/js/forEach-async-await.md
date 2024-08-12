@@ -113,7 +113,7 @@ function shopping(number) {
 }
 ```
 
-我們首先觀察 `buyEachOne()` 這個 function，程式先用 `forEach()` 對 `basket` 進行遍歷，依序執行三個 callback：
+我們首先觀察 `buyEachOne()` 這個 function，程式先用 `forEach()` 對 `basket` 進行遍歷，**依序執行**三個 callback：
 
 執行到 `await shopping()` 的時候發現遇到了 `setTimeOut()`，因此將 `setTimeOut()` 交由 Web APIs 進行處理，然後由於 `await` 的效果，暫時凍結內部執行環境，至此，第一個 callback 處理完畢。**這樣的流程會重複不間斷地執行三次。**
 
