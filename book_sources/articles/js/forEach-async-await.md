@@ -154,7 +154,7 @@ async function buyEachOne() { // 希望拿到每種水果+1的結果
 
 <img src="../../images/forEach-async-await/console_right.jpg" width="268" height="">
 
-> ### 這真是太神奇了傑克！！(眼裡泛光的同事說道
+> ### 這真是太神奇了札克！！(眼裡泛光的同事說道
 
 其實在懂了 Event Loop 的原理後，這樣的結果也沒什麼好驚訝的了。<br>
 `async / await` 的作用是保證當前函式的執行順序，而 `forEach` 與 `for` 的最大區別就在於 `forEach` 是傳入 callback 來執行，因此對於 `async/await` 來說，凍結的是那三個 callback 本身。<br>
