@@ -76,7 +76,7 @@ function catName(name) {
 ### 所以...`let` 到底有沒有 hoisting？
 
 我認為這取決於你自己對 hoisting 的定義，**如果你認為 hoisting 至少就是得 create + initialize**，那確實，`let`沒有 hoisting，因為他的行為跟`var`並不同。<br>
-但如果你的理解比較抽象跟廣義，**認為 TDZ 本身就是一個 hoisting 的證明**，我也覺得沒問題。
+但如果你的理解比較廣義，**認為 TDZ 本身就是一個 hoisting 的證明**，我也覺得沒問題。
 
 各位啊！真的不是我故意打太極不給個明確的答案，你們自己看看 MDN 在 hoisting 篇章前後兩段的文字就知道他們自己的立場也蠻飄忽不定的：
 
