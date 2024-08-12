@@ -119,7 +119,7 @@ function shopping(number) {
 
 `forEach()` 的三個 callback "處理"完以後 (**注意：此時三個 callback 內部仍然是凍結狀態，因為在等待`setTimeout()`**)，接著程式執行到外面 `console.log()` 這一行，所以才有了上面 chrome 的輸出：**水果們並沒有得到 +1 的結果**。
 
-> 試想如果單執行緒的 JS 沒有 Web API 輔助，而是停留在原地等待三個 callback 執行完畢，那總共就需要等待六秒的時間，網頁如果阻塞六秒，使用者早就已經跑光光了 :P
+> 試想如果單執行緒的 JS 沒有 Web API 輔助，而是停留在原地等待三個 callback 執行完畢，那總共就需要等待 2\*3=6 秒的時間，網頁如果阻塞六秒，使用者早就已經跑光光了 :P
 
 兩秒之後，剛剛被我們暫時置之不理的那三個 `setTimeout` 也在 Event Loop 機制幫助下將後續程式塞入工作佇列(task queue)當中了。
 
