@@ -133,7 +133,7 @@ function shopping(number) {
 
 > ㄟ等等，講了這麼多，所以你到底有沒有幫你同事解決問題啊？
 
-阿對了，差點忘記在一邊懷疑人生的同事了，他拼命搔頭的模樣我還以為在模仿柯文哲呢！<br>
+阿對了，差點忘記在一邊懷疑人生的同事了，他已經快把滑鼠敲壞了！<br>
 其實這題的解決方式非常簡單，只要把 `forEach` 換成 `for...of` 就解決了！
 
 ```
@@ -142,6 +142,7 @@ async function buyEachOne() { // 希望拿到每種水果+1的結果
     const newNumber = await shopping(item.number)
     item.number = newNumber
   }); */
+  <!-- 改用for of -->
   for (let item of basket) {
     const newNumber = await shopping(item.number)
     item.number = newNumber
