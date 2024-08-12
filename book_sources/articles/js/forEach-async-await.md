@@ -134,6 +134,7 @@ function shopping(number) {
 > ㄟ等等，講了這麼多，所以你到底有沒有幫你同事解決問題啊？
 
 阿對了，差點忘記在一邊懷疑人生的同事了，他目前正面壁喃喃自語著：「Javascript...從入門到放棄...」<br>
+
 其實這題的解決方式非常簡單，只要把 `forEach` 換成 `for...of` 就解決了！
 
 ```
@@ -153,7 +154,7 @@ async function buyEachOne() { // 希望拿到每種水果+1的結果
 
 <img src="../../images/forEach-async-await/console_right.jpg" width="268" height="">
 
-> ### 這真是太神奇了傑克！！
+> ### 這真是太神奇了傑克！！(眼裡泛光的同事說道
 
 其實在懂了 Event Loop 的原理後，這樣的結果也沒什麼好驚訝的了。<br>
 `async / await` 的作用是保證當前函式的執行順序，而 `forEach` 與 `for` 的最大區別就在於 `forEach` 是傳入 callback 來執行，因此對於 `async/await` 來說，凍結的是那三個 callback 本身。<br>
