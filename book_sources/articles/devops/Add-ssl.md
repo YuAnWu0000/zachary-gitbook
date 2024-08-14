@@ -49,3 +49,39 @@ upstream api {
 ```
 
 現在讓我們加上監聽 443 port 的部分：
+
+```
+server {
+  include   /etc/nginx/mime.types;
+  default_type  application/octet-stream;
+  root  /usr/share/nginx/html/;
+  absolute_redirect off;
+  listen 80;
+  location ^~ /api/ {
+    rewrite ^/api/(.*)$ /$1 break;
+    proxy_pass http://api;
+  }
+  location ^~ / {
+    try_files $uri /index.html;
+  }
+}
+server {
+  include   /etc/nginx/mime.types;
+  default_type  application/octet-stream;
+  root  /usr/share/nginx/html/;
+  absolute_redirect off;
+  listen 443 ssl;
+  ssl_certificate /etc/nginx/ssl/nginx-selfsigned.crt
+  ssl_certificate_key /etc/nginx/ssl/nginx-selfsigned.key
+  location ^~ /api/ {
+    rewrite ^/api/(.*)$ /$1 break;
+    proxy_pass http://api;
+  }
+  location ^~ / {
+    try_files $uri /index.html;
+  }
+}
+upstream api {
+  server ${API_HOST}:${API_PORT}
+}
+```
