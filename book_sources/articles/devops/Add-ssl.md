@@ -98,3 +98,26 @@ ssl_certificate_key /etc/nginx/ssl/nginx-selfsigned.key
 **路徑的部分因為我們專案是跑在 docker 裡面的，所以還要想辦法把這個內部路徑指到外面機器的./ssl/**<br>
 
 那就讓我們來看看 docker 要怎麼改吧！
+
+### 修改 Dockerfile
+
+```
+FROM node:20 as build
+WORKDIR /app
+ADD package.json /app/
+ADD package-lock.json /app/
+RUN npm install
+
+COPY . /app/
+RUN npm run build
+
+FROM nginx:stable
+COPY --from=build /app/build /usr/share/nginx/html
+COPY default.conf.template /etc/nginx/templates/
+
+EXPOSE 80 443
+
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+只改了一行 `EXPOSE 80 443`，讓 docker 多把 443 port 開出來。
