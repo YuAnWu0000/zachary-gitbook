@@ -135,4 +135,9 @@ services:
       - 'API_PORT=XXXX'
     ports:
       - 3000:80
+    volumes:
+      - ./ssl:/etc/nginx/ssl
 ```
+
+新增 `volumes: - ./ssl:/etc/nginx/ssl` 讓 docker 內部的/etc/nginx/ssl 可以直接掛載到外面的./ssl。
+**也就是我們一開始用 openssl 產出來的私鑰跟憑證的存放位置。**
