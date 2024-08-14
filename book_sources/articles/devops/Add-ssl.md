@@ -121,3 +121,18 @@ CMD ["nginx", "-g", "daemon off;"]
 ```
 
 只改了一行 `EXPOSE 80 443`，讓 docker 多把 443 port 開出來。
+
+### 修改 docker-compose.yaml
+
+```
+version: '3'
+services:
+  web:
+    build:
+      context: .
+    environment:
+      - 'API_HOST=X.X.X.X'
+      - 'API_PORT=XXXX'
+    ports:
+      - 3000:80
+```
