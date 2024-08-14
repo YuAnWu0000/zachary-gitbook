@@ -25,30 +25,10 @@ _-out ./ssl/nginx-selfsigned.crt: 指定憑證儲存位置。_<br>
 
 > 還記得我們前一篇文章學到的 nginx 跟 docker 嗎？
 
-// default.conf.template
 我們之前只有監聽 http 預設的 80port
 
-```
-server {
-  include   /etc/nginx/mime.types;
-  default_type  application/octet-stream;
-  root  /usr/share/nginx/html/;
-  absolute_redirect off;
-  listen 80;
-  location ^~ /api/ {
-    rewrite ^/api/(.*)$ /$1 break;
-    proxy_pass http://api;
-  }
-  location ^~ / {
-    try_files $uri /index.html;
-  }
-}
-upstream api {
-  server ${API_HOST}:${API_PORT}
-}
-```
-
 現在讓我們加上監聽 443 port 的部分：
+// default.conf.template
 
 ```
 server {
