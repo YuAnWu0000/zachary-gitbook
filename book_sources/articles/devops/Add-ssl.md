@@ -141,3 +141,11 @@ services:
 
 新增 `volumes: - ./ssl:/etc/nginx/ssl` 讓 docker 內部的 `/etc/nginx/ssl` 可以直接掛載到外面的 `./ssl`。
 **也就是我們一開始用 openssl 產出來的私鑰跟憑證的存放位置。**
+
+### 重跑 docker compose up --build -d 就大功告成了！
+
+是不是比想像中的要簡單呢？<br>
+
+如果要換成正式憑證只要把它丟進去前面設定好的路徑就可以了，這也是為什麼我採用掛載的方式。
+
+注意：在用自簽憑證的時候
