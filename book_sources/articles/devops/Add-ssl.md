@@ -18,3 +18,5 @@ _-days 365: 設定憑證的有效期為 365 天。_<br>
 _-newkey rsa:2048: 建立一個新的 RSA 私鑰，長度為 2048 位，並使用該密鑰生成憑證。_<br>
 _-keyout ./ssl/nginx-selfsigned.key: 指定私鑰儲存位置。_<br>
 _-out ./ssl/nginx-selfsigned.crt: 指定憑證儲存位置。_<br>
+
+現在，你應該有 private key & cert 兩個檔案了，接下來要想的是把它們"掛"上去你的網站~
