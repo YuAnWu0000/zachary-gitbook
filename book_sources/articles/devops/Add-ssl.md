@@ -21,4 +21,28 @@ _-out ./ssl/nginx-selfsigned.crt: 指定憑證儲存位置。_<br>
 
 現在，你應該有 private key & cert 兩個檔案了，下一步要想的是如何把它們"掛"上去 👆~
 
+### 修改 nginx 設定，讓它監聽 https 的 port
+
 > 還記得我們前一篇文章學到的 nginx 跟 docker 嗎？
+
+// default.conf.template
+
+```
+server {
+  include   /etc/nginx/mime.types;
+  default_type  application/octet-stream;
+  root  /usr/share/nginx/html/;
+  absolute_redirect off;
+  listen 80;
+  location ^~ /api/ {
+    rewrite ^/api/(.*)$ /$1 break;
+    proxy_pass http://api;
+  }
+  location ^~ / {
+    try_files $uri /index.html;
+  }
+}
+upstream api {
+  server ${API_HOST}:${API_PORT}
+}
+```
