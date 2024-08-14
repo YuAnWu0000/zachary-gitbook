@@ -115,6 +115,7 @@ services:
       - 'API_PORT=XXXX'
     ports:
       - 3000:80
+      - 3010:443
     volumes:
       - ./ssl:/etc/nginx/ssl
 ```
