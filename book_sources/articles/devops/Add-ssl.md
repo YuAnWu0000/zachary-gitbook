@@ -85,3 +85,13 @@ upstream api {
   server ${API_HOST}:${API_PORT}
 }
 ```
+
+眼尖的讀者應該發現了，其實只有這三行不同：
+
+```
+listen 443 ssl;
+ssl_certificate /etc/nginx/ssl/nginx-selfsigned.crt
+ssl_certificate_key /etc/nginx/ssl/nginx-selfsigned.key
+```
+
+記得 ssl 一定要加喔！不然你依舊會 host 一個 http (血淋淋的親身經歷)
