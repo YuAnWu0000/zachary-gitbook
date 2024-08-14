@@ -15,6 +15,6 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./ssl/nginx-sel
 _-x509: 指定要生成自簽憑證。_<br>
 _-nodes: 不加密私鑰。_<br>
 _-days 365: 設定憑證的有效期為 365 天。_<br>
-_-newkey rsa:2048: 建立一個新的 RSA 私鑰，長度為 2048 位，並使用該密鑰生成憑證。_
+_-newkey rsa:2048: 建立一個新的 RSA 私鑰，長度為 2048 位，並使用該密鑰生成憑證。_<br>
 _-keyout ./ssl/nginx-selfsigned.key: 指定私鑰儲存位置。_
 _-out ./ssl/nginx-selfsigned.crt: 指定憑證儲存位置。_
