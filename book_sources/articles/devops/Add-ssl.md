@@ -7,3 +7,7 @@
 我：「那是像員工證一樣掛在伺服器上就可以了嗎？」<br>
 
 ### 產出自簽 SSL 憑證
+
+```
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./ssl/nginx-selfsigned.key -out ./ssl/nginx-selfsigned.crt
+```
