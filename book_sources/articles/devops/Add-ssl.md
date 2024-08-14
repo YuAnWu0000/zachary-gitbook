@@ -11,3 +11,5 @@
 ```
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./ssl/nginx-selfsigned.key -out ./ssl/nginx-selfsigned.crt
 ```
+
+_-x509: 指定要生成自簽憑證。_
