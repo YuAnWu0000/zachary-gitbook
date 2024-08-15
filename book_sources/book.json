@@ -6,7 +6,6 @@
     "website": "styles/website.css"
   },
   "plugins": [
-    "anchor-navigation-ex",
     "edit-link",
     "copy-code-button",
     "ga",
