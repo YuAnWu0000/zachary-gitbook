@@ -12,7 +12,8 @@
     "-sharing",
     "sharing-plus@^0.0.2",
     "my-toolbar",
-    "expandable-chapters"
+    "expandable-chapters",
+    "mermaid"
   ],
   "pluginsConfig": {
     "my-toolbar": {
