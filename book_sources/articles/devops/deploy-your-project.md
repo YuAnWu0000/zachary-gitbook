@@ -25,16 +25,12 @@ server {
   include   /etc/nginx/mime.types;
   default_type  application/octet-stream;
   root  /usr/share/nginx/html/;
-
   absolute_redirect off;
-
   listen 80;
-
   location ^~ /api/ {
     rewrite ^/api/(.*)$ /$1 break;
     proxy_pass http://api;
   }
-
   location ^~ / {
     try_files $uri /index.html;
   }
@@ -55,11 +51,8 @@ server {
   include   /etc/nginx/mime.types;
   default_type  application/octet-stream;
   root  /usr/share/nginx/html/;
-
   absolute_redirect off;
-
   listen 80;
-
   location = /ws {
     proxy_set_header Host $http_host;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -74,12 +67,10 @@ server {
     proxy_send_timeout 86400s;
     proxy_pass http://api/ws;
   }
-
   location ^~ /api/ {
     rewrite ^/api/(.*)$ /$1 break;
     proxy_pass http://api;
   }
-
   location ^~ / {
     try_files $uri /index.html;
   }
