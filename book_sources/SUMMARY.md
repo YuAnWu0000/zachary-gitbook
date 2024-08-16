@@ -16,3 +16,5 @@
 - [Dive into the world of DevOps](./articles/devops/devops.md)
   - [搞定 Docker 跟 Nginx，輕鬆部署你的專案](./articles/devops/deploy-your-project.md)
   - [讓你的網站更安全，加上 SSL 憑證吧](./articles/devops/add-ssl.md)
+- [Others](./articles/others/others.md)
+  - [初探 OIDC，完整的登入流程](./articles/others/my-first-oidc-research.md)
