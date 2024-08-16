@@ -16,7 +16,7 @@ OIDC 是建構於 Oauth2 的一種"**身分驗證**"協議，常見的 Flow 有�
 
 ### 1. 重導向的登入流程
 
-<img src="../../images/my-first-oidc-research/login.PNG" width="600" >
+<img src="../../images/my-first-oidc-research/login.PNG" width="1000" >
 
 1.1 使用者點擊登入<br>
 1.2 前端將使用者導向 Authentik 的登入頁面<br>
