@@ -18,3 +18,5 @@ OIDC 是建構於 Oauth2 的一種"**身分驗證**"協議，常見的 Flow 有�
 1.1 使用者點擊登入<br>
 1.2 前端將使用者導向 Authentik 的登入頁面<br>
 1.3 登入成功後導回前端的/callback 頁面<br>
+
+在這個階段，Authentik 已經得知該使用者是誰，但我們前端還沒有取得對應的 access_token<br>
