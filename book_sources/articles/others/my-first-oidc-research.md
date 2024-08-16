@@ -1,6 +1,6 @@
 # 初探 OIDC ─ 揭開我們每天都在使用，卻不了解的黑盒子
 
-多年前曾經串過 google Oauth2，現在想要把技術債一次補齊...
+多年前曾經串過 google Oauth2，現在想要把技術債一次補齊，因此這篇文誕生了！<br>
 OIDC 是建構於 Oauth2 的一種"驗證"協議，常見的 Flow 有三種，本文將著重介紹我所使用的 Hybrid Flow。<br>
 注意：請不要把 Oauth 與 OIDC 混為一談，Oauth 是一種"授權"協議，沒有驗證功能，`access_token`本身單純作為取得某權限的令牌使用，你沒辦法單純用 `access_token` 解析出他是誰。
 
