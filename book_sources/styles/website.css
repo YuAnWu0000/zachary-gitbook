@@ -17,6 +17,6 @@ body .book .book-summary ul.summary li > a {
 .book-summary ul.summary li ul li {
   display: block !important;
 }
-.page-wrapper .page-inner {
+.page-inner {
   max-width: 1000px;
 }
