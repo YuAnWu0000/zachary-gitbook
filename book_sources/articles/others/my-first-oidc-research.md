@@ -13,16 +13,16 @@ OIDC 是建構於 Oauth2 之上的一種"**身分驗證**"協議，常見的 Flo
 
 - **User:** 一般使用者
 - **Relying Party (RP):** 在這邊指的是 SPA 架構下的網站前端
-- **Identity Provider (IDP):** 我這邊用的是 Authentik，常見的有 Google, Facebook, Line...等第三方登入驗證服務。
-- **Web Backend:** 也可以稱作 Resource Server。
+- **Identity Provider (IDP):** 我這邊用的是 Authentik，常見的有 Google, Facebook, Line...等第三方登入驗證服務
+- **Web Backend:** 也可以稱作 Resource Server
 
 ### 1. 重導向的登入流程
 
 <img src="../../images/my-first-oidc-research/login.PNG" width="1000" >
 
-_1.1 使用者點擊登入。_<br>
-_1.2 前端隨機產生 state。_<br>
-_1.3 前端將使用者導向 Authentik 的登入頁面，一併帶上 state, redirect_uri 等其他參數。_<br>
-_1.4 登入成功後 Authentik 根據 redirect_uri 導回前端的 /callback 頁面，並帶上 state, code 參數。_<br>
+_1.1 使用者點擊登入_<br>
+_1.2 前端隨機產生 state_<br>
+_1.3 前端將使用者導向 Authentik 的登入頁面，一併帶上 state, redirect_uri 等參數_<br>
+_1.4 登入成功後 Authentik 根據 redirect_uri 導回前端的 /callback 頁面，並帶上 state, code 參數_<br>
 
 在這個階段，Authentik 成功得知該使用者是誰，並且也已經導回我們的前端頁面，但網頁前端還沒有取得對應的 access_token，只有拿到 Authentik 回傳的 state 跟 code 而已。<br>
