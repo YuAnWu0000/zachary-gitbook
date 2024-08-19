@@ -26,3 +26,5 @@ _1.3 前端將使用者導向 Authentik 的登入頁面，一併帶上 state, re
 _1.4 登入成功後 Authentik 根據 redirect_uri 導回前端的 /callback 頁面，並帶上 state, code 參數_<br>
 
 在這個階段，Authentik 成功得知該使用者是誰，並且也已經導回我們的前端頁面，但網頁前端還沒有取得對應的 access_token，只有拿到 Authentik 回傳的 state 跟 code 而已。<br>
+
+補充：在這邊也可以直接請 Authentik 把 access_token 回傳給你，而不需要回傳 code，就是所謂的 **OIDC Implicit Flow，屬於流程相對簡單，但安全性相對較低的一種方式**。
