@@ -21,7 +21,7 @@ OIDC 是建構於 Oauth2 之上的一種"**身分驗證**"協議，常見的 Flo
 <img src="../../images/my-first-oidc-research/login.PNG" width="1000" >
 
 _1.1 使用者點擊登入。_<br>
-1.2 前端隨機產生 state。<br>
+_1.2 前端隨機產生 state。_<br>
 1.3 前端將使用者導向 Authentik 的登入頁面，一併帶上 state 及其他參數。<br>
 1.4 登入成功後 Authentik 根據 redirect_uri 導回前端的/callback 頁面，並帶上 state, code 參數。<br>
 
