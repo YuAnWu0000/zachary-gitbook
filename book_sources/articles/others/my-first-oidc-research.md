@@ -25,5 +25,4 @@ _1.2 前端隨機產生 state。_<br>
 _1.3 前端將使用者導向 Authentik 的登入頁面，一併帶上 state, redirect_uri 等其他參數。_<br>
 _1.4 登入成功後 Authentik 根據 redirect_uri 導回前端的 /callback 頁面，並帶上 state, code 參數。_<br>
 
-在這個階段，Authentik 已經得知該使用者是誰，並導回我們的前端頁面，但前端還沒有取得對應的 access_token，只有拿到 Authentik 回傳的 state 跟 code 而已。<br>
-並且，為了安全考量，取得 token 前還多了驗證 state 與取得 code 的動作 (這又被稱作 OIDC Authorization Code Flow)。
+在這個階段，Authentik 成功得知該使用者是誰，並且也已經導回我們的前端頁面，但網頁前端還沒有取得對應的 access_token，只有拿到 Authentik 回傳的 state 跟 code 而已。<br>
