@@ -20,10 +20,10 @@ OIDC 是建構於 Oauth2 之上的一種"**身分驗證**"協議，常見的 Flo
 
 <img src="../../images/my-first-oidc-research/login.PNG" width="1000" >
 
-_1.1 使用者點擊登入_<br>
-_1.2 前端隨機產生 state_<br>
-_1.3 前端將使用者導向 Authentik 的登入頁面，一併帶上 state, redirect_uri 等參數_<br>
-_1.4 登入成功後 Authentik 根據 redirect_uri 導回前端的 /callback 頁面，並帶上 state, code 參數_<br>
+_**1.1 使用者點擊登入**_<br>
+_**1.2 前端隨機產生 state**_<br>
+_**1.3 前端將使用者導向 Authentik 的登入頁面，一併帶上 state, redirect_uri 等參數**_<br>
+_**1.4 登入成功後 Authentik 根據 redirect_uri 導回前端的 /callback 頁面，並帶上 state, code 參數**_<br>
 
 在這個階段，Authentik 成功得知了該使用者是誰，並且將他導回到我們的前端頁面，但此時網頁前端還沒有取得對應的 access_token，只有拿到 Authentik 回傳的 state 跟 code 而已。<br>
 
@@ -31,5 +31,5 @@ _1.4 登入成功後 Authentik 根據 redirect_uri 導回前端的 /callback 頁
 
 ### References
 
-深入淺出 OpenID Connect (一): https://shuninjapan.medium.com/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA-openid-connect-%E4%B8%80-8701bbf00958<br>
+深入淺出 OpenID Connect (一): https://shuninjapan.medium.com/ %E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA-openid-connect-%E4%B8%80-8701bbf00958<br>
 2022 鐵人賽 Identity Management: https://ithelp.ithome.com.tw/articles/10300430
