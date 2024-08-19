@@ -9,6 +9,8 @@ OIDC 是建構於 Oauth2 之上的一種"**身分驗證**"協議，常見的 Flo
 
 ### 關於身份定義那件事
 
+在講述任何流程之前，我喜歡先把角色定義好，避免流程搞懂旦角色混淆而不知如何應用的情況。
+
 - **User:** 一般使用者
 - **Relying Party (RP):** 在這邊指的是 SPA 架構下的網站前端
 - **Identity Provider (IDP):** 我這邊用的是 Authentik，常見的有 Google, Facebook, Line...等第三方登入驗證服務。
