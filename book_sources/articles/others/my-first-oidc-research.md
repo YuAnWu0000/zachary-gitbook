@@ -44,6 +44,8 @@ _**2.6 開始與 Web Backend 互動，開始一般的登入流程 (例如把 acc
 
 <img src="../../images/my-first-oidc-research/refreshToken.PNG" width="1000" >
 
+_**3.1 前端可透過解析 access_token (JWT decode)來取得 expired time，主動設定一個 timer 到期通知**_<br>
+
 ### References
 
 深入淺出 OpenID Connect (一): https://shuninjapan.medium.com/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA-openid-connect-%E4%B8%80-8701bbf00958<br>
