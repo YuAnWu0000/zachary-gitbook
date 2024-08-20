@@ -33,7 +33,7 @@ _**1.4 登入成功後 Authentik 根據 redirect_uri 導回前端的 /callback �
 
 <img src="../../images/my-first-oidc-research/getToken.PNG" width="1000" >
 
-_**2.1 驗證 Authentik 帶回來的 state 跟當初儲存在 session**_<br>
+_**2.1 驗證 Authentik 帶回來的 state 跟當初儲存在 session storage 是否相同**_<br>
 
 ### References
 
