@@ -40,6 +40,10 @@ _**2.4 Authentik 回傳 access_token, refresh_token**_<br>
 _**2.5 前端將這兩個 token 儲存至 localStorage**_<br>
 _**2.6 開始與 Web Backend 互動，開始一般的登入流程 (例如把 access_token 帶在 Authorization Header 裡面：`Authorization: Bearer ${access_token}`)**_<br>
 
+### 3. Refresh Token 的流程
+
+<img src="../../images/my-first-oidc-research/refreshToken.PNG" width="1000" >
+
 ### References
 
 深入淺出 OpenID Connect (一): https://shuninjapan.medium.com/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA-openid-connect-%E4%B8%80-8701bbf00958<br>
