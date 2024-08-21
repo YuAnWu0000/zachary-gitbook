@@ -5,7 +5,7 @@ OIDC 是建構於 Oauth2 之上的一種"**身分驗證**"協議，常見的 Flo
 
 注意：請不要把 Oauth 與 OIDC 混為一談，**Oauth 是一種"授權"協議，沒有驗證功能**，`access_token` 本身只單純作為取得某權限的令牌使用，而且在 Oauth 中你沒辦法單純用 `access_token` 解析出他是誰。<br>
 
-不過 OIDC 就不同了，他的 `access_token` 通常是 JWT，你可以透過 decode JWT 來獲得 payload，進而得知該名使用者的基本資訊。
+不過 OIDC 就不同了，可以用作身分驗證之外，他的 `access_token` 通常是 JWT，你可以透過 decode JWT 來獲得 payload，進而得知該名使用者的基本資訊。
 
 ### 關於身份定義那件事
 
