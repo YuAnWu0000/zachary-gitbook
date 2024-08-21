@@ -1,6 +1,6 @@
 # 初探 OIDC ─ 揭開我們每天都在使用，卻不了解的黑盒子
 
-我多年前曾經串過 Google Oauth2，現在想要把技術債一次補齊，因此這篇文誕生了！<br>
+我多年前曾經串過 Google Oauth2，現在想要把技術債一次補齊，因此這篇文誕生了！🎉<br>
 OIDC 是建構於 Oauth2 之上的一種"**身分驗證**"協議，常見的 Flow 有三種，本文將著重介紹我所使用的 Hybrid Flow。<br>
 
 注意：請不要把 Oauth 與 OIDC 混為一談，**Oauth 是一種"授權"協議，沒有驗證功能**，`access_token` 本身只單純作為取得某權限的令牌使用，而且在 Oauth 中你沒辦法單純用 `access_token` 解析出他是誰。<br>
@@ -27,7 +27,7 @@ _**1.4 登入成功後 Authentik 根據 redirect_uri 導回前端的 /callback �
 
 在這個階段，Authentik 成功得知了該使用者是誰，並且將他導回到我們的前端頁面，但此時網頁前端還沒有取得對應的 access_token，只有拿到 Authentik 回傳的 state 跟 code 而已。<br>
 
-補充：在這邊也可以直接請 Authentik 把 access_token 帶在網址列上回傳給你，省略回傳 code 的步驟直接完成登入流程。這就是所謂的 **OIDC Implicit Flow，屬於流程相對簡單，但安全性相對較低的一種方式**。
+補充：在這邊也可以直接請 Authentik 把 access_token 帶在網址列上回傳給你，省略回傳 code 的步驟直接完成登入流程。這也是所謂的 **OIDC Implicit Flow，屬於流程相對簡單，但安全性相對較低的一種方式**。
 
 ### 2. 取得 access_token
 
@@ -50,7 +50,7 @@ _**3.3 Authentik 回傳 access_token, refresh_token**_<br>
 _**3.4 前端將這兩個新的 token 儲存至 localStorage**_<br>
 _**3.5 重新進行 2.6 的登入流程**_<br>
 
-補充：可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤；而重新登入的動作推薦用 AJAX 背景執行就好，避免網頁產生使用者非預期行為比如重整。
+補充：可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤；而重新登入的動作推薦用 AJAX 背景執行就好，避免網頁產生使用者非預期行為比如重整之類。
 
 ### References
 
