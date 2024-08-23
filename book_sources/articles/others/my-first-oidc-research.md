@@ -67,6 +67,10 @@ Logout 的流程可以分為四種，分別是：
 
 <img src="../../images/my-first-oidc-research/logout.PNG" width="1000" >
 
+4.1 先確定使用者登出的意願，前端可以跳出提示彈窗作雙重確認。
+4.2 前端透過 AJAX 打向後端，等待後端回應。
+4.3 後端將 client_id 以及 client_secrect 放入 Basic Auth Header，打向 Authentik /revoke 做 token 的撤銷
+
 ### References
 
 深入淺出 OpenID Connect (一): https://shuninjapan.medium.com/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA-openid-connect-%E4%B8%80-8701bbf00958<br>
