@@ -67,7 +67,7 @@ Logout 的流程可以分為四種，分別是：
 
 <img src="../../images/my-first-oidc-research/logout.PNG" width="1000" >
 
-4.1 先確定使用者登出的意願，前端可以跳出提示彈窗作雙重確認。
+4.1 先確定使用者登出的意願，前端可以跳出提示彈窗作雙重確認。<br>
 4.2 前端透過 AJAX 打向後端，等待後端回應。
 4.3 後端將 client_id 以及 client_secret 放入 Basic Auth Header (EX: Authorization: Basic ${client_id}:${client_secret})，然後打向 idP /revoke 做 token 的撤銷 (若有實作 cookie session 也同步在這一步驟清除 session)。
 4.4 後端確認註銷成功以後回覆前端 logout success。
