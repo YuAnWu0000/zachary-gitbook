@@ -54,6 +54,10 @@ _**3.5 重新進行 2.6 的登入流程**_<br>
 
 ### 4. Logout 的流程
 
+Logout 的流程可以分為四種，分別是：
+
+- [RP-Initiated Logout](https://openid.net/specs/openid-connect-rpinitiated-1_0.html#RPLogout)
+
 ### References
 
 深入淺出 OpenID Connect (一): https://shuninjapan.medium.com/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA-openid-connect-%E4%B8%80-8701bbf00958<br>
