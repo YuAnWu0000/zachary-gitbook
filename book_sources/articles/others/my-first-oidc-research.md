@@ -85,11 +85,11 @@ Logout 的流程可以分為四種，分別是：
 
 > It is up to the RP whether to locally log out the End-User before redirecting the User Agent to the OP's Logout Endpoint.
 
-所以可以根據商業邏輯來更改登出的順序性，並不一定要依賴於 revoke token 的正確性或是第三方的回覆等才能繼續做事，也就是說，只要使用者同意，身為 RP 就已經可以幫他在該服務登出了。
+所以可以根據商業邏輯來更改登出的順序性，並不一定要依賴於 revoke token 的正確性或是第三方的回覆等才能繼續做事。
 
 > On the other hand, some logout notification methods from the OP to the RP are unreliable and therefore the notification might not be received.
 
-spec 中的這段話表明依賴於第三方回覆有時是不可靠的，所以 RP 可以預先登出。
+**spec 中的這段話也同樣表明依賴於第三方回覆有時是不可靠的，所以 RP 可以在跟 idP 互動前預先登出。**
 
 ### References
 
