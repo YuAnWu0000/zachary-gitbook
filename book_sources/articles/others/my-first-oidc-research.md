@@ -77,6 +77,8 @@ Logout 的流程可以分為四種，分別是：
 4.8 若使用者點擊登出，則意味著他也一併登出了 idP 的 session，下次重新登入我們網站需要重新輸入 Authentik 的密碼。
 4.9 idP 登出後，利用前面提到的 OpenID Connect Session Management / OpenID Connect Front-Channel Logout / OpenID Connect Back-Channel Logout 的其中一種 Flow 來讓其他 RP 接收到 idP 登出的訊息，然後主動登出那些 RP。
 
+補充說明：
+
 ### References
 
 深入淺出 OpenID Connect (一): https://shuninjapan.medium.com/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA-openid-connect-%E4%B8%80-8701bbf00958<br>
