@@ -52,6 +52,8 @@ _**3.5 重新進行 2.6 的登入流程**_<br>
 
 補充：可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤；而重新登入的動作推薦用 AJAX 背景執行就好，避免網頁產生使用者非預期行為比如重整之類。
 
+### 4. Logout 的流程
+
 ### References
 
 深入淺出 OpenID Connect (一): https://shuninjapan.medium.com/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA-openid-connect-%E4%B8%80-8701bbf00958<br>
