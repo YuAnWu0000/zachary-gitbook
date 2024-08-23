@@ -74,6 +74,7 @@ Logout 的流程可以分為四種，分別是：
 4.5 前端清除 localStorage 中的 token，到這，登出就算完成了。
 4.6 可根據專案需求決定是否進入 post logout 流程，若有需要則將使用者重導向至 idP /end-session。
 4.7 每個 OpenID Provider 的實作不同，以 Authentik 為例，會是一個網頁上面寫著"你已成功登出某服務"，下面有按鈕寫著"登出 Authentik"。
+4.8 若使用者點擊登出，則意味著他也一併登出了 idP 的 session，下次重新登入我們網站需要重新輸入 Authentik 的密碼。
 
 ### References
 
