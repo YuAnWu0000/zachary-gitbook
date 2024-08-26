@@ -89,7 +89,7 @@ Logout 的流程可以分為四種，分別是：
 
 > On the other hand, some logout notification methods from the OP to the RP are unreliable and therefore the notification might not be received.
 
-**spec 中的這段話也同樣表明依賴於第三方回覆有時是不可靠的，所以 RP 可以在跟 idP 互動前預先登出。**
+**spec 中的這段話也同樣表明依賴於第三方回覆有時是不可靠的，所以 RP 可以在跟 IdP 互動前預先登出。**
 
 ### References
 
