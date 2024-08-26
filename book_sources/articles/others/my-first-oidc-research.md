@@ -61,7 +61,7 @@ Logout 的流程可以分為四種，分別是：
 - [OpenID Connect Front-Channel Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html)
 - [OpenID Connect Back-Channel Logout](https://openid.net/specs/openid-connect-backchannel-1_0.html)
 
-後三者主要是定義 IDP-initiated logout flow，也就是由第三方"主動"發起的登出請求，由於現在不需要應對這種情境，所以就容許我先不展開說明了。<br>
+後三者主要是定義 IdP-initiated logout flow，也就是由第三方"主動"發起的登出請求，由於現在不需要應對這種情境，所以就容許我先不展開說明了。<br>
 
 這篇文章主要會聚焦在 RP-Initiated Logout 的部分，一樣先來看流程圖吧！<br>
 
