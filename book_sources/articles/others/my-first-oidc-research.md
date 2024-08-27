@@ -50,7 +50,7 @@ _**3.3 Authentik 回傳 access_token, refresh_token**_<br>
 _**3.4 前端將這兩個新的 token 儲存至 localStorage**_<br>
 _**3.5 重新進行 2.6 的登入流程**_<br>
 
-補充：有一些 User friendly 的優化可以實作，例如可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤；重新登入的動作推薦用 AJAX 背景執行就好，避免網頁產生非預期的重整行為。
+補充：前端有一些 User friendly 的優化可以實作，例如可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤；重新登入的動作推薦用 AJAX 背景執行就好，避免網頁產生非預期的重整行為。
 
 ### 4. Logout 的流程
 
