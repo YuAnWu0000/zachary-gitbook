@@ -63,7 +63,7 @@ Logout 的流程可以分為四種，分別是：
 
 後三者主要是定義 IdP-initiated logout flow，也就是由**第三方"主動"發起的登出請求**，由於篇幅有限，就先容許我不展開說明了。<br>
 
-這篇文章主要會聚焦在 RP-Initiated Logout 的部分，一樣先來看流程圖吧！<br>
+這篇文章主要會聚焦在 RP-Initiated Logout 的部分，我們一樣先來看流程圖吧！<br>
 
 <img src="../../images/my-first-oidc-research/logout.PNG" width="1000" >
 
