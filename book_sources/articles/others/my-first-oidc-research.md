@@ -35,7 +35,7 @@ _**1.4 登入成功後 Authentik 根據 redirect_uri 導回前端的 /callback �
 
 _**2.1 驗證 Authentik 帶回來的 state 跟當初儲存在 sessionStorage 是否相同**_<br>
 _**2.2 若不同，則顯示錯誤給使用者**_<br>
-_**2.3 若相同，則用 POST 方法打向 /token 並帶上 code 等參數**_ _(`Content-type: application/x-www-form-urlencoded`)_ <br>
+_**2.3 若相同，則用 POST 方法打向 `/token` 並帶上 code 等參數**_ _(`Content-type: application/x-www-form-urlencoded`)_ <br>
 _**2.4 Authentik 回傳 access_token, refresh_token**_<br>
 _**2.5 前端將這兩個 token 儲存至 localStorage**_<br>
 _**2.6 前端開始與 Web Backend 互動，進入一般的登入流程，例如把 access_token 帶在 Authorization Header 裡面：`Authorization: Bearer ${access_token}`**_<br>
