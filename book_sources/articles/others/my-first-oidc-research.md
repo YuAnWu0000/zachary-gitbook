@@ -27,7 +27,9 @@ _**1.4 登入成功後 Authentik 根據 redirect_uri 導回前端的 /callback �
 
 在這個階段，Authentik 成功得知了該使用者是誰，並且將他導回到我們的前端頁面，但此時網頁前端還沒有取得對應的 access_token，只有拿到 Authentik 回傳的 state 跟 code 而已。<br>
 
-補充：在這邊也可以直接請 Authentik 把 access_token 帶在網址列上回傳給你，省略回傳 code 的步驟直接完成登入流程。這也是所謂的 **OIDC Implicit Flow，屬於流程相對簡單，但安全性相對較低的一種方式**。
+> ### 補充說明：
+>
+> 在這邊也可以直接請 Authentik 把 access_token 帶在網址列上回傳給你，省略回傳 code 的步驟直接完成登入流程。這也是所謂的 **OIDC Implicit Flow，屬於流程相對簡單，但安全性相對較低的一種方式**。
 
 ### 2. 取得 access_token
 
@@ -50,7 +52,9 @@ _**3.3 Authentik 回傳 access_token, refresh_token**_<br>
 _**3.4 前端將這兩個新的 token 儲存至 localStorage**_<br>
 _**3.5 重新進行 2.6 的登入流程**_<br>
 
-補充：前端有一些 User friendly 的優化可以實作，例如可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤，然後重新登入的動作推薦用 AJAX 背景執行就好，避免網頁產生非預期的重整行為。
+> ### 補充說明：
+>
+> 前端有一些 User friendly 的優化可以實作，例如可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤，然後重新登入的動作推薦用 AJAX 背景執行就好，避免網頁產生非預期的重整行為。
 
 ### 4. Logout
 
@@ -79,7 +83,7 @@ Logout 的流程可以分為四種，分別是：
 **_4.8 若使用者點擊登出，則意味著他也一併登出了 IdP 的 session，下次重新登入時需要重新輸入 Authentik 的密碼。_**<br>
 **_4.9 在 IdP 登出後，利用前面提到的 `OpenID Connect Session Management` / `OpenID Connect Front-Channel Logout` / `OpenID Connect Back-Channel Logout` 其中一種 Flow 來讓其他 RP 接收到 IdP 登出的訊息，然後主動登出那些 RP。_**<br>
 
-> ### 補充說明：<br>
+> ## 補充說明：<br>
 
 如果沒有進入 post logout 流程，下次使用者登入我們服務時，導去 Authentik 的瞬間會馬上導回來，使用者不需要重新輸入帳密 **(因為 IdP 的 session 並沒有被清除)**，乍看之下很方便，**但當他需要切換帳號時就會遇到困難。**<br>
 
