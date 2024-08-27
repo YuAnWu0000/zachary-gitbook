@@ -79,13 +79,13 @@ Logout 的流程可以分為四種，分別是：
 
 補充說明：<br>
 
-如果沒有進入 post logout 流程，下次使用者登入我們的服務時，導去 Authentik 的瞬間會馬上導回來，使用者不需要重新輸入帳密 **(因為 IdP 的 session 並沒有被清除)**，乍看之下很方便，**但當他需要切換帳號時就會遇到困難。**<br>
+如果沒有進入 post logout 流程，下次使用者登入我們服務時，導去 Authentik 的瞬間會馬上導回來，使用者不需要重新輸入帳密 **(因為 IdP 的 session 並沒有被清除)**，乍看之下很方便，**但當他需要切換帳號時就會遇到困難。**<br>
 
-另外有的人會認為登出流程是否需要確認 revoke token 成功後再清除我們服務的 session 還有前端的 localStorage 等資訊，但我在 spec 中翻到了這麼一段話：
+另外有的人會認為登出流程是否需要確定 revoke token 成功後再清除我們服務的 session 還有前端的 localStorage 等資訊，也就是所謂的相依性問題，但我在 spec 中翻到了這麼一段話：
 
 > It is up to the RP whether to locally log out the End-User before redirecting the User Agent to the OP's Logout Endpoint.
 
-所以可以根據商業邏輯來更改登出的順序性，並不一定要依賴於 revoke token 的正確性或是第三方的回覆等才能繼續做事。
+所以可以根據商業邏輯來更改登出的順序性，兩者互相獨立也沒問題，並不一定要依賴於 revoke token 的正確性或是第三方的回覆等才能繼續做事。
 
 > On the other hand, some logout notification methods from the OP to the RP are unreliable and therefore the notification might not be received.
 
