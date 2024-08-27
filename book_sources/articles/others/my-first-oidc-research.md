@@ -91,7 +91,7 @@ Logout 的流程可以分為四種，分別是：
 
 > It is up to the RP whether to locally log out the End-User before redirecting the User Agent to the OP's Logout Endpoint.
 
-事實上可以根據商業邏輯來更改登出的順序性，**並不一定要依賴於 revoke token 的正確性或是等待第三方的回覆才能繼續做事。**
+事實上可以根據商業邏輯來更改登出的順序性，**並不一定要依賴於 revoke token 的正確性或是等待第三方的回覆才能繼續進行登出。**
 
 > On the other hand, some logout notification methods from the OP to the RP are unreliable and therefore the notification might not be received.
 
