@@ -83,11 +83,11 @@ Logout 的流程可以分為四種，分別是：
 **_4.8 若使用者點擊登出，則意味著他也一併登出了 IdP 的 session，下次重新登入時需要重新輸入 Authentik 的密碼。_**<br>
 **_4.9 在 IdP 登出後，利用前面提到的 `OpenID Connect Session Management` / `OpenID Connect Front-Channel Logout` / `OpenID Connect Back-Channel Logout` 其中一種 Flow 來讓其他 RP 接收到 IdP 登出的訊息，然後主動登出那些 RP。_**<br>
 
-> ## 補充說明：<br>
+> ### 補充說明：<br>
 
 如果沒有進入 post logout 流程，下次使用者登入我們服務時，導去 Authentik 的瞬間會馬上導回來，使用者不需要重新輸入帳密 **(因為 IdP 的 session 並沒有被清除)**，乍看之下很方便，**但當他需要切換帳號時就會遇到困難。**<br>
 
-另外有的人會認為登出流程是否需要確定 revoke token 成功後再清除我們服務的 session 還有前端的 localStorage 等資訊，也就是所謂的相依性問題，但我在 spec 中翻到了這麼一段話：
+另外有的人會認為登出流程是否需要確定 revoke token 成功後再清除我們服務的 session 還有前端的 localStorage 等資訊，也就是相依性問題，但我在 spec 中翻到了這麼一段話：
 
 > It is up to the RP whether to locally log out the End-User before redirecting the User Agent to the OP's Logout Endpoint.
 
@@ -95,7 +95,7 @@ Logout 的流程可以分為四種，分別是：
 
 > On the other hand, some logout notification methods from the OP to the RP are unreliable and therefore the notification might not be received.
 
-**spec 中的這段話也同樣表明依賴於第三方回覆有時是不可靠的，所以 RP 在跟 IdP 互動前預先登出是合理行為。**
+**spec 中的這段話也同樣表明依賴於第三方回覆有時是不可靠的，所以 RP 在跟 IdP 互動前預先登出算是合理行為。**
 
 ### References
 
