@@ -53,6 +53,7 @@ _**2.6 前端開始與 Web Backend 互動，進入一般的登入流程，例如
 > owner).
 
 refresh token 的最大作用是在安全性的前提下，盡量保持使用者的登入狀態，也可以在權限改變的情況下重新請求一個 scope 縮小的 access token，是一種為了使用者體驗而生的設計，我們來看看流程圖：<br>
+
 <img src="../../images/my-first-oidc-research/refreshToken.PNG" width="1000" >
 
 _**3.1 前端可透過解析 access_token (JWT decode)來取得 expired time，並主動設定一個 timer 到期通知**_<br>
@@ -80,7 +81,7 @@ _**3.5 重新進行 2.6 的登入流程**_<br>
 
 3.2.1 章節中提到可以帶上 client_id 來自證身分，或是用 6.章節中提供的 Basic Auth 範例：`Authorization: Basic ${base64_encode(client_id + ":" + client_secret)}`都是合理的驗證方式。
 
-另外前端還有一些增進 User friendly 的優化可以實作：例如可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤；或是重新登入的動作用 AJAX 背景執行，避免網頁產生使用者非預期的重整行為等。
+另外前端還有一些增進 User friendly 的優化可以實作：例如可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤；或是重新登入用 AJAX 背景執行，避免網頁產生使用者非預期的重整行為等。
 
 ### 4. Logout
 
