@@ -44,6 +44,14 @@ _**2.6 前端開始與 Web Backend 互動，進入一般的登入流程，例如
 
 ### 3. Refresh Token 的流程
 
+> RFC 6749: Refresh tokens are credentials used to obtain access tokens. Refresh
+> tokens are issued to the client by the authorization server and are
+> used to obtain a new access token when the current access token
+> becomes invalid or expires, or to obtain additional access tokens
+> with identical or narrower scope (access tokens may have a shorter
+> lifetime and fewer permissions than authorized by the resource
+> owner).
+
 <img src="../../images/my-first-oidc-research/refreshToken.PNG" width="1000" >
 
 _**3.1 前端可透過解析 access_token (JWT decode)來取得 expired time，並主動設定一個 timer 到期通知**_<br>
