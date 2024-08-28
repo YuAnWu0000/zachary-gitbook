@@ -99,6 +99,7 @@ Logout 的流程可以分為四種，分別是：
 
 ### References
 
+The OAuth 2.0 Authorization Framework (RFC 6749): https://datatracker.ietf.org/doc/html/rfc6749#autoid-57<br>
 深入淺出 OpenID Connect (一): https://shuninjapan.medium.com/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA-openid-connect-%E4%B8%80-8701bbf00958<br>
 2022 鐵人賽 Identity Management: https://ithelp.ithome.com.tw/articles/10300430<br>
 OpenID Connect RP-Initiated Logout 1.0: https://openid.net/specs/openid-connect-rpinitiated-1_0.html#RPLogout
