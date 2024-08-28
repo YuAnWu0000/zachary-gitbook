@@ -69,11 +69,14 @@ _**3.5 重新進行 2.6 的登入流程**_<br>
 
 實務上通常我們會將 access token 的 expired time 設置為短時間 (15 分鐘之類)，而 refresh token 設置為長時間 (7 天-30 天不等)，這樣就算 access token 在與 resource server 互動時不幸被竊取，我們也可以透過 refresh token 來取得新的 access token。
 
-有的人可能會說，那 refresh token 如果被盜取呢？為了防範這種狀況，Client Credentials
+有的人可能會說，那 refresh token 如果被盜取呢？為了防範這種狀況，[RFC 6749 6.](https://datatracker.ietf.org/doc/html/rfc6749#autoid-57) 提到我們可以驗證 Client Authentication
 
 > Because refresh tokens are typically long-lasting credentials used to
 > request additional access tokens, the refresh token is bound to the
-> client to which it was issued.
+> client to which it was issued. ...the client MUST authenticate with the
+> authorization server as described in Section 3.2.1.
+
+> 3.2.1: A client MAY use the "client_id" request parameter to identify itself when sending requests to the token endpoint.
 
 另外前端有一些增進 User friendly 的優化可以實作：例如可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤；或是重新登入的動作用 AJAX 背景執行，避免網頁產生使用者非預期的重整行為等。
 
