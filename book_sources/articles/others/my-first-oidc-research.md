@@ -58,7 +58,7 @@ _**3.5 重新進行 2.6 的登入流程**_<br>
 
 由上述 [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749#autoid-10) 的這段話可以看出，Refresh token 是只單純屬於 Client 端與 IdP 互動的一種機制，任何把 refresh token 帶到後端的行為都是不合理的。
 
-另外前端有一些增進 User friendly 的優化可以實作：例如可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤，然後重新登入的動作推薦用 AJAX 背景執行就好，避免網頁產生非預期的重整行為。
+另外前端有一些增進 User friendly 的優化可以實作：例如可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤；或是重新登入的動作用 AJAX 背景執行，避免網頁產生使用者非預期的重整行為等。
 
 ### 4. Logout
 
