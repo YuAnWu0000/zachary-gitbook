@@ -53,8 +53,12 @@ _**3.4 前端將這兩個新的 token 儲存至 localStorage**_<br>
 _**3.5 重新進行 2.6 的登入流程**_<br>
 
 > ### 補充說明：
->
-> 前端有一些 User friendly 的優化可以實作，例如可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤，然後重新登入的動作推薦用 AJAX 背景執行就好，避免網頁產生非預期的重整行為。
+
+Refresh token 是只屬於前端跟 IdP 互動的一種機制，其目的是要在保持安全
+
+> Unlike access tokens, refresh tokens are intended for use only with authorization servers and are never sent to resource servers.
+
+前端有一些 User friendly 的優化可以實作，例如可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤，然後重新登入的動作推薦用 AJAX 背景執行就好，避免網頁產生非預期的重整行為。
 
 ### 4. Logout
 
