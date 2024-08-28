@@ -52,6 +52,7 @@ _**2.6 前端開始與 Web Backend 互動，進入一般的登入流程，例如
 > lifetime and fewer permissions than authorized by the resource
 > owner).
 
+為了安全性考量，access_token 應該設置為短時間，而 refresh token 設置長時間
 <img src="../../images/my-first-oidc-research/refreshToken.PNG" width="1000" >
 
 _**3.1 前端可透過解析 access_token (JWT decode)來取得 expired time，並主動設定一個 timer 到期通知**_<br>
@@ -64,7 +65,7 @@ _**3.5 重新進行 2.6 的登入流程**_<br>
 >
 > Unlike access tokens, refresh tokens are intended for use only with authorization servers and are never sent to resource servers.
 
-由上述 [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749#autoid-10) 的這段話可以看出，Refresh token 是只單純屬於 Client 端與 IdP 互動的一種機制，任何把 refresh token 帶到後端的行為都是不合理的。
+由上述 [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749#autoid-10) 的這段話可以看出，Refresh token 是只單純屬於 Client 端與 IdP 互動的一種機制，**任何把 refresh token 帶到後端的行為都是不合理的 (也會增加被竊取的風險)。**
 
 另外前端有一些增進 User friendly 的優化可以實作：例如可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤；或是重新登入的動作用 AJAX 背景執行，避免網頁產生使用者非預期的重整行為等。
 
