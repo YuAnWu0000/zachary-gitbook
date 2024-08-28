@@ -78,7 +78,9 @@ _**3.5 重新進行 2.6 的登入流程**_<br>
 
 > 3.2.1: A client MAY use the "client_id" request parameter to identify itself when sending requests to the token endpoint.
 
-另外前端有一些增進 User friendly 的優化可以實作：例如可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤；或是重新登入的動作用 AJAX 背景執行，避免網頁產生使用者非預期的重整行為等。
+3.2.1 章節中提到可以帶上 client_id 來自證身分，或是用 6.章節中提供的 Basic Auth 範例：`Authorization: Basic ${base64_encode(client_id + ":" + client_secret)}`都是合理的方式。
+
+另外前端還有一些增進 User friendly 的優化可以實作：例如可以在快要到期前提早取得新的 token，避免使用者操作時發生錯誤；或是重新登入的動作用 AJAX 背景執行，避免網頁產生使用者非預期的重整行為等。
 
 ### 4. Logout
 
