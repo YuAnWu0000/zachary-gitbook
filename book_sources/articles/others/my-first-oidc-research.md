@@ -73,7 +73,7 @@ Logout 的流程可以分為四種，分別是：
 
 **_4.1 先確定使用者登出的意願，前端可以跳出提示彈窗作雙重確認。_**<br>
 **_4.2 前端透過 AJAX 打向後端 `/logout`，等待回應。_**<br>
-**_4.3 後端將 client_id 以及 client_secret 放入 Basic Auth Header (ex: Authorization: Basic ${client_id}:${client_secret})，然後打向 IdP `/revoke` 做 token 的撤銷 (若有實作 cookie session 也同步在這一步驟清除 session)。_**<br>
+**_4.3 後端將 client_id 以及 client_secret 放入 Basic Auth Header (ex: `Authorization: Basic ${base64_encode(url_encode(client_id) + ":" + url_encode(client_secret))}`)，然後打向 IdP `/revoke` 做 token 的撤銷 (若有實作 cookie session 也同步在這一步驟清除 session)。_**<br>
 **_4.4 後端確認註銷成功以後回覆前端 logout success。_**<br>
 **_4.5 前端清除 localStorage 中的 token，到此，一般的登出流程就算完成了。_**<br>
 
