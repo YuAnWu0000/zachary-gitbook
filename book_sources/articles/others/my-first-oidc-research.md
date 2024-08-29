@@ -73,7 +73,7 @@ _**3.5 重新進行 2.6 的登入流程**_<br>
 
 > Section 3.2.1: A client MAY use the "client_id" request parameter to identify itself when sending requests to the token endpoint.
 
-3.2.1 章節中提到可以在 body 帶上 client_id / client_secret 來自證身分，或是 follow 第 6 章節中提供的 Basic Auth Header 範例：`Authorization: Basic ${base64_encode(client_id + ":" + client_secret)}`兩者都是合理的驗證方式。
+3.2.1 章節中提到可以在 body 帶上 client_id / client_secret 來自證身分，或是 follow 第 6 章節中提供的 Basic Auth Header 範例：`Authorization: Basic ${base64_encode(client_id + ":" + client_secret)}`，以上兩者都是合理的驗證方式。
 
 最後，**refresh token 可以設置成同時間只能存在一個**，因此就算 `client_id`, `client_secret` 都被駭客盜取了，駭客也拿到了 refresh token，使用者也只需要在你的網站上重新登入便可以拿到新的 access token 跟 refresh token，**此時駭客手上的 refresh token 也就隨之失效了。**
 
