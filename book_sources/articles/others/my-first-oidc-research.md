@@ -60,11 +60,11 @@ _**3.5 重新進行 2.6 的登入流程**_<br>
 >
 > Unlike access tokens, refresh tokens are intended for use only with authorization servers and are never sent to resource servers.
 
-由上述 [RFC 6749 1.5](https://datatracker.ietf.org/doc/html/rfc6749#autoid-10) 這段話可以看出，refresh token 是只單純屬於 client 端與 IdP 互動的一種機制，**任何把 refresh token 帶到後端的行為都是不合理的 (也會增加被竊取的風險)。**<br>
+由上述 [RFC 6749 1.5.](https://datatracker.ietf.org/doc/html/rfc6749#autoid-10) 這段話可以看出，refresh token 是只單純屬於 client 端與 IdP 互動的一種機制，**任何把 refresh token 帶到後端的行為都是不合理的 (也會增加被竊取的風險)。**<br>
 
 實務上我們通常會將 access token 的 expired time 設置為短時間 (ex: 15 分鐘)，而 refresh token 設置為長時間 (7 天-30 天不等)，這樣就算 access token 在與 resource server 互動時不幸被竊取，我們也可以透過 refresh token 來取得新的 access token。<br>
 
-有的人可能會說，那如果 refresh token 被盜取呢？為了防範這種狀況，[RFC 6749 6.](https://datatracker.ietf.org/doc/html/rfc6749#autoid-57) 提到我們可以做 **Client Authentication**
+有的人可能會說，那如果 refresh token 被盜取呢？為了防範這種狀況，[RFC 6749 6.](https://datatracker.ietf.org/doc/html/rfc6749#autoid-57) 提到我們可以做 **Client Authentication**：
 
 > Because refresh tokens are typically long-lasting credentials used to
 > request additional access tokens, the refresh token is bound to the
