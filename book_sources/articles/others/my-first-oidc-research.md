@@ -50,7 +50,7 @@ refresh token 的最大作用是在安全性的前提下，盡量保持使用者
 
 <img src="../../images/my-first-oidc-research/refreshToken.PNG" width="1000" >
 
-_**3.1 前端可透過解析 access_token (JWT decode)來取得 expired time，並主動設定一個 timer 到期通知**_<br>
+_**3.1 前端可透過解析 access_token (JWT decode) 來取得 expired time，並主動設定一個 timer 到期通知**_<br>
 _**3.2 收到 timer 通知後，用 POST 方法打向 `/token` 並帶上 refresh_token 等參數**_<br>
 _**3.3 Authentik 回傳 access_token, refresh_token**_<br>
 _**3.4 前端將這兩個新的 token 儲存至 localStorage**_<br>
