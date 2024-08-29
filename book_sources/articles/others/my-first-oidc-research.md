@@ -110,7 +110,7 @@ Optional:<br>
 _4.6 可根據專案需求決定是否進入 post logout 流程，若有需要則將使用者重導向至 IdP `/end-session`。_<br>
 _4.7 關於 `/end-session`，每個 OpenID Provider 的實作不同，以 Authentik 為例，會是一個網頁上面寫著 "你已成功登出某服務"，下面有按鈕寫著 "一併登出 Authentik"。_<br>
 _4.8 若使用者點擊登出，則意味著他也一併登出了 IdP 的 session，下次重新登入時需要重新輸入 Authentik 的密碼。_<br>
-**_4.9 在 IdP 登出後，利用前面提到的 `OpenID Connect Session Management` / `OpenID Connect Front-Channel Logout` / `OpenID Connect Back-Channel Logout` 其中一種 Flow 來讓其他 RP 接收到 IdP 登出的訊息，然後主動登出那些 RP。_**<br>
+_4.9 在 IdP 登出後，利用前面提到的 `OpenID Connect Session Management` / `OpenID Connect Front-Channel Logout` / `OpenID Connect Back-Channel Logout` 其中一種 Flow 來讓其他 RP 接收到 IdP 登出的訊息，然後主動登出那些 RP。_<br>
 
 > ### 補充說明：<br>
 
