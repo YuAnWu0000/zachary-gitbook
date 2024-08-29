@@ -19,6 +19,8 @@ _-newkey rsa:2048: 建立一個新的 RSA 私鑰，長度為 2048 位，並使�
 _-keyout ./ssl/nginx-selfsigned.key: 指定私鑰儲存位置。_<br>
 _-out ./ssl/nginx-selfsigned.crt: 指定憑證儲存位置。_<br>
 
+產出憑證以前 CLI 會詢問你一些國家跟區域的基本資訊，其中比較重要的是 Common Name (CN)，這個欄位要填入網址的 domain。
+
 現在，你應該有 private key & cert 兩個檔案了，下一步要想的是如何把它們"掛"上去 👆~
 
 ### 修改 nginx 設定，讓它監聽 https 的 443 port
