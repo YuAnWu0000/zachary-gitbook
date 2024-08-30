@@ -42,6 +42,8 @@ _**2.4 Authentik 回傳 access_token, refresh_token**_<br>
 _**2.5 前端將這兩個 token 儲存至 localStorage**_<br>
 _**2.6 前端開始與 Web Backend 互動，進入一般的登入流程，例如把 access_token 帶在 Authorization Header 裡面：`Authorization: Bearer ${access_token}`**_<br>
 
+> ### 補充說明
+
 ### 3. Refresh Token 的流程
 
 > RFC 6749 1.5: Refresh tokens are issued to the client by the authorization server and are used to obtain a new access token when the current access token becomes invalid or expires, or to obtain additional access tokens with identical or narrower scope.
