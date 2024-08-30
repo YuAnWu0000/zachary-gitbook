@@ -122,7 +122,7 @@ _4.9 在 IdP 登出後，利用前面提到的 `OpenID Connect Session Managemen
 
 ### 最後的流程圖就會長這樣
 
-<img src="../../images/my-first-oidc-research/total.PNG" width="1000" >
+<img src="../../images/my-first-oidc-research/final.png" width="1000" >
 
 ### References
 
