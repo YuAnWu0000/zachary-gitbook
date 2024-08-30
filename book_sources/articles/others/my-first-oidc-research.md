@@ -43,6 +43,8 @@ _**2.5 前端將這兩個 token 儲存至 localStorage**_<br>
 _**2.6 前端開始與 Web Backend 互動，進入一般的登入流程，例如把 access_token 帶在 Authorization Header 裡面：`Authorization: Bearer ${access_token}`**_<br>
 
 > ### 補充說明
+>
+> 更詳細的定義你可以在[這裡](https://datatracker.ietf.org/doc/html/rfc6749#autoid-119)找到。
 
 ### 3. Refresh Token 的流程
 
