@@ -44,7 +44,7 @@ _**2.6 前端開始與 Web Backend 互動，進入一般的登入流程，例如
 
 > ### 補充說明
 >
-> 基本上在 Oauth2 當中，所有的 GET endpoint 都是使用 queryString 傳遞參數
+> 基本上在 Oauth2 當中，所有的 GET endpoint 都是使用 queryString 傳遞參數；而 POST endpoint 則是使用傳統 form data 將參數帶在 body 的方式：`Content-type: application/x-www-form-urlencoded`。<br>
 > 更詳細的定義你可以在[這裡](https://datatracker.ietf.org/doc/html/rfc6749#autoid-119)找到。
 
 ### 3. Refresh Token 的流程
