@@ -42,9 +42,9 @@ _**2.4 Authentik 回傳 access_token, refresh_token**_<br>
 _**2.5 前端將這兩個 token 儲存至 localStorage**_<br>
 _**2.6 前端開始與 Web Backend 互動，進入一般的登入流程，例如把 access_token 帶在 Authorization Header 裡面：`Authorization: Bearer ${access_token}`**_<br>
 
-> ### 補充說明
+> ### 補充說明：
 >
-> 基本上在 Oauth2 當中，所有的 GET endpoint 都是使用 queryString 傳遞參數；而 POST endpoint 則是使用傳統 form data 將參數帶在 body 的方式，並且型別為：`Content-type: application/x-www-form-urlencoded`。<br>
+> 基本上在 Oauth2 當中，所有的 GET endpoint 都是使用 queryString 傳遞參數；而 POST endpoint 則是使用傳統 form data 將參數帶在 body 的方式，型別為：`Content-type: application/x-www-form-urlencoded`。<br>
 > 更多詳細的定義你可以在 [這裡](https://datatracker.ietf.org/doc/html/rfc6749#autoid-119) 找到。
 
 ### 3. Refresh Token 的流程
