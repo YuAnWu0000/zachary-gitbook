@@ -20,7 +20,7 @@ testB.a = 2
 console.log(testA) // { a: 2 }
 ```
 
-因為物件的 assignment 在 javascript 裡面等於將記憶體位址 pass 給另一個變數，也是所謂的 **call by reference**，所以 testB 跟 testA 實際上是同一個物件，更改 testB 的屬性當然也就會改到 testA 了。<br>
+因為物件的 assignment 在 javascript 裡面等於將**記憶體位址** pass 給另一個變數，也是所謂的 **call by reference**，所以 testB 跟 testA 實際上是同一個物件，更改 testB 的屬性當然也就會改到 testA 了。<br>
 
 junior 程度的工程師能夠解釋到這裡基本上就過關了，但是，如果你想了解更多，請繼續往下看...
 
