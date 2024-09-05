@@ -28,5 +28,6 @@ junior 程度的工程師能夠解釋到這裡基本上就過關了，但是，�
 
 ```
 let testA = { a: 1 }
+let testB = 1
 
 ```
