@@ -35,6 +35,7 @@ function change() {
   testB = 3
   testC.c = 2
 }
+change()
 
 ```
 
