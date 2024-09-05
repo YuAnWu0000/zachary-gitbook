@@ -30,5 +30,10 @@ junior 程度的工程師能夠解釋到這裡基本上就過關了，但是，�
 let testA = { a: 1 }
 let testB = 1
 let testC = { c: 1 }
+function change(testA, testB, testC) {
+  testA = { a: 2 }
+  testB = 3
+  testC.c = 2
+}
 
 ```
