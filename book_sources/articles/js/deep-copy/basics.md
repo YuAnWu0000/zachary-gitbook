@@ -36,7 +36,7 @@ function change() {
   testC.c = 2
 }
 change()
-
+console.log(testA, testB, testC) // {a: 2} 3 {c: 2}
 ```
 
 這邊我們在函數裡面直接操作外部變數，一切都是那麼符合預期，直到...
