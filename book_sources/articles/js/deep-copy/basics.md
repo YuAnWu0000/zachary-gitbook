@@ -35,5 +35,6 @@ function change(testA, testB, testC) {
   testB = 3
   testC.c = 2
 }
-
+change(testA, testB, testC)
+console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 ```
