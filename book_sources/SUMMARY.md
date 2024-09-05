@@ -8,6 +8,7 @@
   - [async / await 在 forEach 裡面不起作用？你是否搞錯了什麼](./articles/js/forEach-async-await.md)
   - [回答一題 var / let / const 就驚艷你的面試官 ─ 及格標準](./articles/js/var-let-const/basics.md)
   - [回答一題 var / let / const 就驚艷你的面試官 ─ 滿分標準](./articles/js/var-let-const/advanced.md)
+  - [深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？](./articles/js/deep-copy/basics.md)
 - [Success of css](./articles/css/css.md)
   - [CSS Framework 到底該怎麼選? ─ 談案例](./articles/css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.md)
   - [CSS Framework 到底該怎麼選? ─ 談體驗](./articles/css/atomic-cssInJs-cssModule/atomic.md)
