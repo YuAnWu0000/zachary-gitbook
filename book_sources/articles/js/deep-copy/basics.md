@@ -20,7 +20,7 @@ testB.a = 2
 console.log(testA) // { a: 2 }
 ```
 
-因為物件的 assignment 在 javascript 裡面等於將**記憶體位址** pass 給另一個變數，也是所謂的 **call by reference** (注意：這個用詞可能不夠**精確**，後面會提到)，所以 testB 跟 testA 實際上是**同一個物件**，更改 testB 的屬性當然也就會改到 testA 了。<br>
+因為物件的 assignment 在 javascript 裡面等於將**記憶體位址** pass 給另一個變數，也是所謂的 **call by reference** (注意：這個用詞可能不夠**精確**，後面會提到)，所以 testB 跟 testA 實際上是**同一個物件**，更改 testB 的屬性當然也就會改到 testA。<br>
 
 junior 程度的工程師能夠解釋到這裡基本上就過關了，但是，如果你想了解更多，請繼續往下看...
 
@@ -41,7 +41,7 @@ console.log(testA, testB, testC) // {a: 2} 3 {c: 2}
 
 這邊我們在函數裡面**直接操作外部變數**，一切都是那麼符合預期，直到...
 
-### 一個不那麼簡單的範例出現了：
+### 一個不那麼簡單的範例：
 
 ```
 let testA = { a: 1 }
@@ -56,4 +56,4 @@ change(testA, testB, testC)
 console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 ```
 
-注意到了嗎？當我們把外部變數當成參數傳遞進 `function` 的時候，會跟我們直接在函數內操作外部變數有很大的不同，而其中的關鍵點就在"**傳遞**"，javascript 的傳遞行為有貓膩！或是說，有我們了解不夠透徹的地方。
+注意到了嗎？當我們把外部變數當成參數傳遞進 `function` 的時候，會跟我們直接在函數內操作外部變數有很大的不同，而其中的關鍵點就在"**傳遞**"，javascript 的傳遞行為有貓膩！或是說，其中有我們了解不夠透徹的地方。
