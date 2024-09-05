@@ -1,4 +1,4 @@
-# 深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？
+# 關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？
 
 身為前端工程師，我想你一定在面試時這樣的問題：<br>
 
@@ -23,6 +23,8 @@ console.log(testA) // { a: 2 }
 因為物件的 assignment 在 javascript 裡面等於將記憶體位址 pass 給另一個變數，也是所謂的 call by reference，所以 testB 跟 testA 實際上是同一個物件，更改 testB 的屬性當然也就會改到 testA 了。<br>
 
 junior 程度的工程師能夠解釋到這裡基本上就過關了，但是，如果你想了解更多，請繼續往下看...
+
+### 再一個簡單的範例：
 
 ### 一個不那麼簡單的範例：
 
