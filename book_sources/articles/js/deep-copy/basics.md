@@ -38,3 +38,5 @@ function change(testA, testB, testC) {
 change(testA, testB, testC)
 console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 ```
+
+注意到了嗎？當我們把外部變數當成參數傳遞進 `function` 的時候，他會跟我們直接在函數內操作外部變數有很大的不同，其中的關鍵點就在"傳遞"，javascript 的傳遞行為有貓膩！
