@@ -84,7 +84,7 @@
       }
     },
     "edit-link": {
-      "base": "https://github.com/onejar99/demo-build-and-publish-gitbook/edit/master/",
+      "base": "https://github.com/YuAnWu0000/zachary-gitbook",
       "label": "Edit This Page"
     },
     "ga": {

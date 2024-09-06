@@ -25,6 +25,7 @@ https://github.com/facebook/create-react-app/issues/9937
 
 <!-- ![seo](../../images/cra-url-issue/seo.png) -->
 <img src="../../images/cra-url-issue/seo.png" width="600" height="">
+
 大意是說上面那種方式，是由 `react-scripts` 幫你把用到的圖片打包進專案，並且將路徑設置為 `static/media/cat.{hash}.png`來對應，雖然一樣可以載入圖片，這樣會導致每次 build 完都有不同的 hash 值，**這會令 google 爬蟲爬不到穩定的圖片來源，因而降低網站 SEO。**
 
 於是我實際 build 了一下剛剛的專案，發現：<br>
