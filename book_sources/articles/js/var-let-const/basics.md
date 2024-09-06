@@ -81,7 +81,8 @@ const a = 123;
 a = 456; // Uncaught TypeError: Assignment to constant variable.
 ```
 
-- 也不可單獨宣告不給值
+- 也不可單獨宣告不給值<br>
+  > [ECMA 262 15th](https://262.ecma-international.org/15.0/index.html#prod-BindingList): It is a Syntax Error if _Initializer_ is not present and IsConstantDeclaration of the _LexicalDeclaration_ containing this _LexicalBinding_ is true.
 
 ```
 const a; // Uncaught SyntaxError: Missing initializer in const declaration
