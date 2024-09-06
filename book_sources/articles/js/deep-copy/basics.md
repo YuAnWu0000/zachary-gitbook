@@ -60,4 +60,4 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 
 ### 西藏取經
 
-唐僧一行人前往西方取經的過程旅途艱辛
+唐僧一行人前往西方取經的過程旅途艱辛，Javascript 也有自己的經書，那就是**ECMA**。
