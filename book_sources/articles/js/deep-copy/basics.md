@@ -70,6 +70,8 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 
 那麼就讓我們踏上旅途吧！
 
+### 首先我好奇 javascript 是如何為變數賦值的
+
 其中的[這個](https://262.ecma-international.org/15.0/index.html#sec-assignment-operators-runtime-semantics-evaluation)章節詳細定義了 javascript 如何處理 variable assignment。
 
 <img src="../../../images/deep-copy-basics/assignment.PNG" width="1000" >
