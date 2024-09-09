@@ -62,7 +62,10 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 
 唐僧一行人為了尋求大乘佛法前往西方取經，過程極其艱辛。如今，我為了更加了解 Javascript 的實作原理，也決定遠赴電子絲路取經，只求能獲得真理致道。
 
-你可能會想問，宣揚佛法有無上真經，那理解 javascript 又有什麼？我想，那就只能是
-有自己的經書，那就是**ECMA**，其中的[這個](https://262.ecma-international.org/15.0/index.html#sec-assignment-operators-runtime-semantics-evaluation)章節詳細定義了 javascript 如何處理 variable assignment。
+你可能會想問，宣揚佛法有無上真經，那理解 javascript 又有什麼？我想，那就只能是**ECMA**了。
+
+> ECMAScript 是一種由 Ecma 國際（前身為歐洲電腦製造商協會）在標準 ECMA-262 中定義的手稿語言規範。這種語言在全球資訊網上應用廣泛，它往往被稱為 JavaScript 或 JScript，但實際上後兩者是 ECMA-262 標準的實作和擴充。
+
+其中的[這個](https://262.ecma-international.org/15.0/index.html#sec-assignment-operators-runtime-semantics-evaluation)章節詳細定義了 javascript 如何處理 variable assignment。
 
 <img src="../../../images/deep-copy-basics/assignment.PNG" width="1000" >
