@@ -70,7 +70,7 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 
 那麼就讓我們踏上旅途吧！
 
-### 首先我好奇 javascript 是如何為變數賦值的
+### 首先我好奇， javascript 是如何為變數賦值的
 
 知曉了這個，便知道為什麼會有記憶體共用的情形產生。
 
