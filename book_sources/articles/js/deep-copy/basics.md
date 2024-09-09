@@ -66,6 +66,8 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 
 > ECMAScript 是一種由 Ecma 國際（前身為歐洲電腦製造商協會）在標準 ECMA-262 中定義的手稿語言規範。這種語言在全球資訊網上應用廣泛，它往往被稱為 JavaScript 或 JScript，但實際上後兩者是 ECMA-262 標準的實作和擴充。
 
+那麼就讓我們踏上旅途吧！
+
 其中的[這個](https://262.ecma-international.org/15.0/index.html#sec-assignment-operators-runtime-semantics-evaluation)章節詳細定義了 javascript 如何處理 variable assignment。
 
 <img src="../../../images/deep-copy-basics/assignment.PNG" width="1000" >
