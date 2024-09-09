@@ -58,8 +58,8 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 
 注意到了嗎？當我們把外部變數當成參數傳遞進 `function` 的時候，會跟我們直接在函數內操作外部變數有很大的不同，而其中的關鍵點就在"**傳遞**"，javascript 的傳遞行為有貓膩！或是說，其中有我們了解不夠透徹的地方。
 
-### 西藏取經
+### 天竺取經
 
-唐僧一行人前往西方取經的過程旅途艱辛，Javascript 也有自己的經書，那就是**ECMA**，其中的[這個](https://262.ecma-international.org/15.0/index.html#sec-assignment-operators-runtime-semantics-evaluation)章節詳細定義了 javascript 如何處理 variable assignment。
+唐僧一行人為了尋求大道真裡前往西方取經的過程旅途艱辛，Javascript 也有自己的經書，那就是**ECMA**，其中的[這個](https://262.ecma-international.org/15.0/index.html#sec-assignment-operators-runtime-semantics-evaluation)章節詳細定義了 javascript 如何處理 variable assignment。
 
 <img src="../../../images/deep-copy-basics/assignment.PNG" width="1000" >
