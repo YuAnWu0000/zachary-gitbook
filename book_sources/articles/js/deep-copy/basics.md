@@ -60,6 +60,8 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 
 ### 天竺取經
 
-唐僧一行人為了尋求大道真裡前往西方取經的過程旅途艱辛，Javascript 也有自己的經書，那就是**ECMA**，其中的[這個](https://262.ecma-international.org/15.0/index.html#sec-assignment-operators-runtime-semantics-evaluation)章節詳細定義了 javascript 如何處理 variable assignment。
+唐僧一行人為了尋求大乘佛法前往西方取經，過程極其艱辛。如今，我為了更加了解 Javascript 的實作原理，也決定遠赴電子絲路取經，只求能獲得真理致道。
+
+有自己的經書，那就是**ECMA**，其中的[這個](https://262.ecma-international.org/15.0/index.html#sec-assignment-operators-runtime-semantics-evaluation)章節詳細定義了 javascript 如何處理 variable assignment。
 
 <img src="../../../images/deep-copy-basics/assignment.PNG" width="1000" >
