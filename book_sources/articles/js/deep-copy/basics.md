@@ -66,7 +66,7 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 
 > ECMAScript 是一種由 Ecma 國際（前身為歐洲電腦製造商協會）在標準 ECMA-262 中定義的手稿語言規範。這種語言在全球資訊網上應用廣泛，它往往被稱為 JavaScript 或 JScript，但實際上後兩者是 ECMA-262 標準的實作和擴充。
 
-與無上真經不同的是，ECMA 每年都會有所更新，以下所提到的規範都會是[ECMA-262 15th edition, June 2024](https://262.ecma-international.org/15.0/index.html#sec-intro)的內容。
+與無上真經不同的是，ECMA **每年都會有所更新**，以下所提到的規範都會是 [ECMA-262 15th edition, June 2024](https://262.ecma-international.org/15.0/index.html#sec-intro) 的內容。
 
 那麼就讓我們踏上旅途吧！
 
