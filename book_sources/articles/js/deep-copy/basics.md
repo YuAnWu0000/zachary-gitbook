@@ -112,7 +112,7 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 > The Reference Record type is used to explain the behaviour of such operators as delete, typeof, the assignment operators, the super keyword and other language features. For example, the left-hand operand of an assignment is expected to produce a Reference Record.
 
-第一段話就相當重要，在規範中寫明，_Reference Record_ 是一種為了解釋語言底層原理而被發明的型別，並不存在於實作當中，特別這邊舉的例子剛好就是 assignment 的情況，據他所言，`let testA` 經過 `evaluate()` 的結果就會是 _Reference Record_。
+第一段話就相當重要，在規範中寫明，_Reference Record_ 是一種為了解釋語言底層原理而被發明的型別，並不存在於實作當中，特別這邊舉的例子剛好就是 assignment 的情況。據他所言，`let testA` 經過 `evaluate()` 的結果就會是一個 _Reference Record_。
 
 ### 形參 (Parameter) 與實參 (Argument)
 
