@@ -94,7 +94,7 @@ AssignmentExpression = `{ a: 1 }`<br>
 
 1.b: 這裡沒有匿名函數，所以判斷不成立，跳過。
 
-1.c: 先把 AssignmentExpression 作語法分析放進 rref 中，**再用 GetValue()取得 rref 的值**。
+1.c: 先把 _AssignmentExpression_ 作語法分析放進 rref 中，**再用 GetValue()取得 rref 的值**。
 
 ### 形參 (Parameter) 與實參 (Argument)
 
