@@ -110,6 +110,10 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 <img src="../../../images/deep-copy-basics/referenceRecord.PNG" width="1000" >
 
+> The Reference Record type is used to explain the behaviour of such operators as delete, typeof, the assignment operators, the super keyword and other language features. For example, the left-hand operand of an assignment is expected to produce a Reference Record.
+
+第一段話就相當重要，在規範中寫明，_Reference Record_ 是一種為了解釋語言底層原理而被發明的型別，特別是這邊舉的例子剛好就是 assignment 的情況，也就是說，
+
 ### 形參 (Parameter) 與實參 (Argument)
 
 形參相當於函數中定義的變數，調用函數傳遞參數的過程相當於定義形參變數並且用實參的值來初始化。
