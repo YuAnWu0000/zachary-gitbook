@@ -82,7 +82,7 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 `let testA = { a: 1 }`
 
 _LeftHandSideExpression_ = `let testA`<br>
-AssignmentExpression = `{ a: 1 }`<br>
+_AssignmentExpression_ = `{ a: 1 }`<br>
 
 1: If _LeftHandSideExpression_ is neither an ObjectLiteral nor an ArrayLiteral, then
 
