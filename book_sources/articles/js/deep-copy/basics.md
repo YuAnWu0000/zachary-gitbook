@@ -81,7 +81,7 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 以前面的例子來說：
 `let testA = { a: 1 }`
 
-直接從
+LeftHandSideExpression = `let testA`
 a. a. Let lref be ? Evaluation of LeftHandSideExpression.
 
 ### 形參 (Parameter) 與實參 (Argument)
