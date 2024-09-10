@@ -108,7 +108,7 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 ### Reference Record
 
-<img src="../../../images/deep-copy-basics/getValue.PNG" width="1000" >
+<img src="../../../images/deep-copy-basics/referenceRecord.PNG" width="1000" >
 
 ### 形參 (Parameter) 與實參 (Argument)
 
