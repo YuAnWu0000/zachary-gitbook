@@ -78,7 +78,11 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 
 <img src="../../../images/deep-copy-basics/assignment.PNG" width="1000" >
 
-### 形參(Parameter)與實參(Argument)
+以前面的例子來說：
+直接從
+a. a. Let lref be ? Evaluation of LeftHandSideExpression.
+
+### 形參 (Parameter) 與實參 (Argument)
 
 形參相當於函數中定義的變數，調用函數傳遞參數的過程相當於定義形參變數並且用實參的值來初始化。
 
