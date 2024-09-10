@@ -86,7 +86,7 @@ AssignmentExpression = `{ a: 1 }`<br>
 
 1: If LeftHandSideExpression is neither an ObjectLiteral nor an ArrayLiteral, then
 
-- 這句是要判斷左邊有沒有解構的宣告如：`let { a } = obj`，
+- 這句是要判斷左邊有沒有解構的宣告如：`let { a } = obj`，在這邊顯然是沒有的所以進入 1.a。
   1.a. Let lref be ? Evaluation of LeftHandSideExpression.
 
 ### 形參 (Parameter) 與實參 (Argument)
