@@ -114,9 +114,12 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 第一段話就相當重要，在規範中寫明，_Reference Record_ 是一種為了解釋語言底層原理而被發明的型別，並不存在於實作當中，特別這邊舉的例子剛好就是 assignment 的情況。據他所言，`let testA` 經過 `evaluate()` 的結果就會是一個 _Reference Record_。
 
-_Reference Record_ 具體包含了四個部分，分別是：`[[Base]]`, `[[ReferencedName]]`, `[[Strict]]`, `[[ThisValue]]`。
+_Reference Record_ 具體包含了以下四個部分：
 
-- `[[Base]]`
+- `[[Base]]`: 可以簡單理解為 context，是綁定該變數的執行環境。
+- `[[ReferencedName]]`: 該變數名稱。
+- `[[Strict]]`: Boolean 值紀錄是否為嚴格模式。
+- `[[ThisValue]]`: 跟`super`有關，在這先不討論。
 
 ### 形參 (Parameter) 與實參 (Argument)
 
