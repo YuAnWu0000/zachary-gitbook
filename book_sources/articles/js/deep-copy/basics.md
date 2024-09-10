@@ -84,7 +84,7 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 LeftHandSideExpression = `let testA`<br>
 AssignmentExpression = `{ a: 1 }`<br>
 
-1: If LeftHandSideExpression is neither an ObjectLiteral nor an ArrayLiteral, then
+1: If _LeftHandSideExpression_ is neither an ObjectLiteral nor an ArrayLiteral, then
 
 > 這句是要判斷左邊有沒有解構的宣告如：`let { a } = obj`，在這邊顯然是沒有的所以進入 1.a。
 
@@ -94,7 +94,7 @@ AssignmentExpression = `{ a: 1 }`<br>
 
 1.b: 這裡沒有匿名函數，所以判斷不成立，跳過。
 
-1.c: 先把 `{ a: 1 }` 作語法分析放進 rref 中，**再用 GetValue()取得 rref 的值**。
+1.c: 先把 `{ a: 1 }` 作語法分析放進 rref 中，**再用 GetValue() 取得 rref 的值**。
 
 ### 形參 (Parameter) 與實參 (Argument)
 
