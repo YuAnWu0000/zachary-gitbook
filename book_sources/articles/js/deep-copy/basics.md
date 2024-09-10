@@ -79,6 +79,8 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 <img src="../../../images/deep-copy-basics/assignment.PNG" width="1000" >
 
 以前面的例子來說：
+`let testA = { a: 1 }`
+
 直接從
 a. a. Let lref be ? Evaluation of LeftHandSideExpression.
 
