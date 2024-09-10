@@ -83,7 +83,11 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 
 LeftHandSideExpression = `let testA`<br>
 AssignmentExpression = `{ a: 1 }`<br>
-a. a. Let lref be ? Evaluation of LeftHandSideExpression.
+
+1: If LeftHandSideExpression is neither an ObjectLiteral nor an ArrayLiteral, then
+
+- 這句是要判斷左邊有沒有解構的宣告如：`let { a } = obj`，
+  1.a. Let lref be ? Evaluation of LeftHandSideExpression.
 
 ### 形參 (Parameter) 與實參 (Argument)
 
