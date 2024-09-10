@@ -96,6 +96,8 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 1.c: 先把 `{ a: 1 }` 作語法分析放進 rref 中，**再用 GetValue() 取得 rref 的值**。
 
+> ### 於是問題來了，`GetValue()`是什麼？
+
 ### 形參 (Parameter) 與實參 (Argument)
 
 形參相當於函數中定義的變數，調用函數傳遞參數的過程相當於定義形參變數並且用實參的值來初始化。
