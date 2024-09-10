@@ -96,9 +96,13 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 1.c: 先把 `{ a: 1 }` 作語法分析放進 rref 中，**再用 GetValue() 取得 rref 的值**。
 
-> ### 於是問題來了，`GetValue()`是什麼？
+> ### 於是問題來了，`GetValue()` 是什麼？
 
 <img src="../../../images/deep-copy-basics/getValue.PNG" width="1000" >
+
+由定義可以看出，`GetValue()` 可以取得該變數對應的實際"值"，步驟如下：
+
+1: If V is not a Reference Record, return V.
 
 ### 形參 (Parameter) 與實參 (Argument)
 
