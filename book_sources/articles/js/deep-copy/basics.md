@@ -106,6 +106,10 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 > ### 馬上迎來下個問題，那 `Reference Record` 又是什麼？
 
+### Reference Record
+
+<img src="../../../images/deep-copy-basics/getValue.PNG" width="1000" >
+
 ### 形參 (Parameter) 與實參 (Argument)
 
 形參相當於函數中定義的變數，調用函數傳遞參數的過程相當於定義形參變數並且用實參的值來初始化。
