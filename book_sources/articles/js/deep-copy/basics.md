@@ -82,7 +82,7 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 `let testA = { a: 1 }`
 
 LeftHandSideExpression = `let testA`<br>
-AssignmentExpression = `{ a: 1 }`
+AssignmentExpression = `{ a: 1 }`<br>
 a. a. Let lref be ? Evaluation of LeftHandSideExpression.
 
 ### 形參 (Parameter) 與實參 (Argument)
