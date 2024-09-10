@@ -81,7 +81,7 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 以前面的例子來說：
 `let testA = { a: 1 }`
 
-LeftHandSideExpression = `let testA`<br>
+_LeftHandSideExpression_ = `let testA`<br>
 AssignmentExpression = `{ a: 1 }`<br>
 
 1: If _LeftHandSideExpression_ is neither an ObjectLiteral nor an ArrayLiteral, then
