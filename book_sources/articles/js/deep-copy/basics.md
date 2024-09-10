@@ -88,13 +88,13 @@ AssignmentExpression = `{ a: 1 }`<br>
 
 > 這句是要判斷左邊有沒有解構的宣告如：`let { a } = obj`，在這邊顯然是沒有的所以進入 1.a。
 
-1.a: Let lref be ? Evaluation of LeftHandSideExpression.
+1.a: Let lref be ? Evaluation of _LeftHandSideExpression_.
 
 > 把`let testA`作語法分析的結果放進 lref 中。
 
 1.b: 這裡沒有匿名函數，所以判斷不成立，跳過。
 
-1.c: 先把 _AssignmentExpression_ 作語法分析放進 rref 中，**再用 GetValue()取得 rref 的值**。
+1.c: 先把 `{ a: 1 }` 作語法分析放進 rref 中，**再用 GetValue()取得 rref 的值**。
 
 ### 形參 (Parameter) 與實參 (Argument)
 
