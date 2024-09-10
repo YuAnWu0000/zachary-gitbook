@@ -116,6 +116,6 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 ### References
 
-http://dmitrysoshnikov.com/ecmascript/chapter-8-evaluation-strategy/
-https://github.com/mqyqingfeng/Blog/issues/7
-https://github.com/mqyqingfeng/Blog/issues/10
+http://dmitrysoshnikov.com/ecmascript/chapter-8-evaluation-strategy/<br>
+https://github.com/mqyqingfeng/Blog/issues/7<br>
+https://github.com/mqyqingfeng/Blog/issues/10<br>
