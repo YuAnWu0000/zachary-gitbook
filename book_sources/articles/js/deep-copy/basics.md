@@ -102,7 +102,9 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 由定義可以看出，`GetValue()` 可以取得該變數對應的實際"值"，步驟如下：
 
-1: If V is not a Reference Record, return V.
+1: If V is not a `Reference Record`, return V.
+
+> ### 馬上迎來下個問題，那 `Reference Record` 又是什麼？
 
 ### 形參 (Parameter) 與實參 (Argument)
 
