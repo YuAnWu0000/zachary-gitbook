@@ -114,6 +114,10 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 第一段話就相當重要，在規範中寫明，_Reference Record_ 是一種為了解釋語言底層原理而被發明的型別，並不存在於實作當中，特別這邊舉的例子剛好就是 assignment 的情況。據他所言，`let testA` 經過 `evaluate()` 的結果就會是一個 _Reference Record_。
 
+_Reference Record_ 具體包含了四個部分，分別是：`[[Base]]`, `[[ReferencedName]]`, `[[Strict]]`, `[[ThisValue]]`。
+
+- `[[Base]]`
+
 ### 形參 (Parameter) 與實參 (Argument)
 
 形參相當於函數中定義的變數，調用函數傳遞參數的過程相當於定義形參變數並且用實參的值來初始化。
