@@ -81,7 +81,7 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 以前面的例子來說：
 `let testA = { a: 1 }`
 
-LeftHandSideExpression = `let testA`
+LeftHandSideExpression = `let testA`<br>
 AssignmentExpression = `{ a: 1 }`
 a. a. Let lref be ? Evaluation of LeftHandSideExpression.
 
