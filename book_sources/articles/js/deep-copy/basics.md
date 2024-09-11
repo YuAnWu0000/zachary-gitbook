@@ -130,3 +130,4 @@ _Reference Record_ 具體包含了以下四個部分：
 [ECMA-262-3 in detail. Chapter 8. Evaluation strategy](http://dmitrysoshnikov.com/ecmascript/chapter-8-evaluation-strategy/)<br>
 [JavaScript 深入之从 ECMAScript 规范解读 this](https://github.com/mqyqingfeng/Blog/issues/7)<br>
 [JavaScript 深入之参数按值传递](https://github.com/mqyqingfeng/Blog/issues/10)<br>
+[深入探討 JavaScript 中的參數傳遞：call by value 還是 reference？](https://blog.techbridge.cc/2018/06/23/javascript-call-by-value-or-reference/)<br>
