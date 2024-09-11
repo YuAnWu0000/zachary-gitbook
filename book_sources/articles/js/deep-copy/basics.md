@@ -134,7 +134,7 @@ let testA = { a: 1 }
 ```
 
 以這個例子來說，_EnvironmentRecord_ 就是 `window`，`window` 儲存了 testA 跟其他所有全域變數的綁定。<br>
-那什麼時候 `[[Base]]` 不會是 _EnvironmentRecord_ 呢？
+你可能會想問，那什麼時候 `[[Base]]` 不會是 _EnvironmentRecord_ 呢？
 
 > 我們來舉個例子 🌰：
 
