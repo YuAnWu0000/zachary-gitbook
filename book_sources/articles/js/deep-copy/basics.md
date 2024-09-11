@@ -127,6 +127,6 @@ _Reference Record_ 具體包含了以下四個部分：
 
 ### References
 
-http://dmitrysoshnikov.com/ecmascript/chapter-8-evaluation-strategy/<br>
+[ECMA-262-3 in detail. Chapter 8. Evaluation strategy](http://dmitrysoshnikov.com/ecmascript/chapter-8-evaluation-strategy/)<br>
 https://github.com/mqyqingfeng/Blog/issues/7<br>
 https://github.com/mqyqingfeng/Blog/issues/10<br>
