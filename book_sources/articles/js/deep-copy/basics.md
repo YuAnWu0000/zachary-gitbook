@@ -116,7 +116,7 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 _Reference Record_ 具體包含了以下四個部分：
 
-- `[[Base]]`: 可以簡單理解為 context，是綁定該變數的執行環境。
+- `[[Base]]`: 可以簡單理解為 context，指的是綁定該變數的執行環境。
 - `[[ReferencedName]]`: 該變數名稱。
 - `[[Strict]]`: Boolean 值紀錄是否為嚴格模式。
 - `[[ThisValue]]`: 跟 `super` 有關，在這先不討論。
