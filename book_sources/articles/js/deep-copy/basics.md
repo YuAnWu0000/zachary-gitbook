@@ -125,7 +125,7 @@ _Reference Record_ 具體包含了以下四個部分：
 
 ```
 let testA = { a: 1 }
-// 對應的 Reference Record 是：
+// testA 對應的 Reference Record
 {
   base: EnvironmentRecord,
   name: 'testA',
