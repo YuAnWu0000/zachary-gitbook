@@ -145,6 +145,8 @@ let testA = {
     return b
   }
 }
+console.log(testA.a()) // { b: 1 }
+// a
 ```
 
 ### 形參 (Parameter) 與實參 (Argument)
