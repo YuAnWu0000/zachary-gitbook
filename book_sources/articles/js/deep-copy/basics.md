@@ -141,12 +141,12 @@ let testA = { a: 1 }
 ```
 let testA = {
   a: function() {
-    let b = { b: 1 }
+    let b = { c: 1 }
     return b
   }
 }
-console.log(testA.a()) // { b: 1 }
-// a
+console.log(testA.a()) // { c: 1 }
+// a 對應的 Reference Record
 ```
 
 ### 形參 (Parameter) 與實參 (Argument)
