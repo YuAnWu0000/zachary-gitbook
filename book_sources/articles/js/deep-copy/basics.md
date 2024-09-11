@@ -116,7 +116,7 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 _Reference Record_ 具體包含了以下四個部分：
 
-- `[[Base]]`: 可以簡單理解為 context，指的是綁定該變數的執行環境。
+- `[[Base]]`: 可以簡單理解為 context，指的是綁定該變數的執行環境，可以是基本型別或是 _EnvironmentRecord_。
 - `[[ReferencedName]]`: 該變數名稱。
 - `[[Strict]]`: Boolean 值紀錄是否為嚴格模式。
 - `[[ThisValue]]`: 跟 `super` 有關，在這先不討論。
@@ -154,11 +154,13 @@ console.log(testA.a()) // { c: 1 }
 }
 // b 對應的 Reference Record
 {
-  base: EnvironmentRecord, // function a
+  base: EnvironmentRecord, // Function Environment Record
   name: 'b',
   strict: false
 }
 ```
+
+這樣應該可以了解為什麼規範中寫道
 
 ### 形參 (Parameter) 與實參 (Argument)
 
