@@ -147,6 +147,11 @@ let testA = {
 }
 console.log(testA.a()) // { c: 1 }
 // a 對應的 Reference Record
+{
+  base: testA, // object
+  name: 'a',
+  strict: false
+}
 ```
 
 ### 形參 (Parameter) 與實參 (Argument)
