@@ -84,19 +84,22 @@ console.log(testA, testB, testC) // {a: 1} 1 {c: 2}
 _LeftHandSideExpression_ = `let testA`<br>
 _AssignmentExpression_ = `{ a: 1 }`<br>
 
-1: If _LeftHandSideExpression_ is neither an ObjectLiteral nor an ArrayLiteral, then
+> 1. If _LeftHandSideExpression_ is neither an ObjectLiteral nor an ArrayLiteral, then
 
-> 判斷左邊有沒有解構的宣告如：`let { a } = obj`，在這邊顯然是沒有的，所以流程進入 1.a。
+判斷左邊有沒有解構的宣告如：`let { a } = obj`，在這邊顯然是沒有的，所以流程進入 1.a。
 
-1.a: Let lref be ? Evaluation of _LeftHandSideExpression_.
+> 1.a. Let lref be ? Evaluation of _LeftHandSideExpression_.
 
-> 把 `let testA` 作語法分析的結果放進 lref 中。
+把 `let testA` 作語法分析的結果放進 lref 中。
 
-1.b: If IsAnonymousFunctionDefinition(AssignmentExpression) and IsIdentifierRef of LeftHandSideExpression are both true...
+> 1.b. If IsAnonymousFunctionDefinition(_AssignmentExpression_) and IsIdentifierRef of _LeftHandSideExpression_ are both true...
 
-> 這裡沒有匿名函數，所以判斷不成立，跳過。
+這裡沒有匿名函數，所以判斷不成立，跳過。
 
-1.c: 先把 `{ a: 1 }` 作語法分析放進 rref 中，**再用 GetValue() 取得 rref 的值**。
+> 1.c.i. Let rref be ? Evaluation of _AssignmentExpression_.<br>
+> 1.c.ii. Let rval be ? GetValue(rref).
+
+先把 `{ a: 1 }` 作語法分析放進 rref 中，**再用 GetValue() 取得 rref 的值**。
 
 > ### 於是問題來了，`GetValue()` 是什麼？
 
