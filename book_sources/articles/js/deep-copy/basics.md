@@ -164,6 +164,10 @@ console.log(testA.a()) // { c: 1 }
 
 當然，base 同樣也可以是 number or string，比如 `"hello world".toUpperCase()` 這時候 `toUpperCase` 的 base 值就是 `"hello world"` 這個 string。
 
+### Bottom-up!
+
+理解完了 _Reference Record_，是時候該回去看看 _GetValue()_ 跟 _Assignment operator_ 的定義了，還記得嗎？我們到剛剛為止的研究都是為了理解等號兩邊到底都作了些什麼事。
+
 ### 形參 (Parameter) 與實參 (Argument)
 
 形參相當於函數中定義的變數，調用函數傳遞參數的過程相當於定義形參變數並且用實參的值來初始化。
