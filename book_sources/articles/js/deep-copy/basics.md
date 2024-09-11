@@ -90,9 +90,11 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 1.a: Let lref be ? Evaluation of _LeftHandSideExpression_.
 
-> 把`let testA`作語法分析的結果放進 lref 中。
+> 把 `let testA` 作語法分析的結果放進 lref 中。
 
-1.b: 這裡沒有匿名函數，所以判斷不成立，跳過。
+1.b: If IsAnonymousFunctionDefinition(AssignmentExpression) and IsIdentifierRef of LeftHandSideExpression are both true...
+
+> 這裡沒有匿名函數，所以判斷不成立，跳過。
 
 1.c: 先把 `{ a: 1 }` 作語法分析放進 rref 中，**再用 GetValue() 取得 rref 的值**。
 
