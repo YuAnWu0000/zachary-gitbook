@@ -124,14 +124,9 @@ _Reference Record_ 具體包含了以下四個部分：
 > 任何說明都沒有直接看範例來的好理解，以前面的範例來說...
 
 ```
-var foo = 1;
+let testA = { a: 1 }
+// 對應的 Reference Record是：
 
-// 对应的Reference是：
-var fooReference = {
-    base: EnvironmentRecord,
-    name: 'foo',
-    strict: false
-};
 ```
 
 那什麼時候 `[[Base]]` 不會是 _EnvironmentRecord_ 呢？
