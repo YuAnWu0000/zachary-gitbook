@@ -125,12 +125,12 @@ _Reference Record_ 具體包含了以下四個部分：
 
 ```
 let testA = { a: 1 }
-// 對應的 Reference Record是：
-var testAReferenceRecord = {
-    base: EnvironmentRecord,
-    name: 'foo',
-    strict: false
-};
+// 對應的 Reference Record 是：
+{
+  base: EnvironmentRecord,
+  name: 'testA',
+  strict: false
+}
 ```
 
 那什麼時候 `[[Base]]` 不會是 _EnvironmentRecord_ 呢？
