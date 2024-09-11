@@ -160,7 +160,7 @@ console.log(testA.a()) // { c: 1 }
 }
 ```
 
-這樣應該可以了解為什麼規範中寫道
+相信各位應該可以了解為什麼規範中寫 `[[Base]]` 可以是 _EnvironmentRecord_ 或是基本型別了吧！上述的例子 `a` 的 base 值就是 `testA` 這個 object，當然，base 也可以是 number or string，比如`"hello world".toUpperCase()`這時候`toUpperCase`的 base 值就是`"hello world"`這個 string 喔！
 
 ### 形參 (Parameter) 與實參 (Argument)
 
