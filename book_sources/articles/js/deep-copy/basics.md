@@ -152,6 +152,12 @@ console.log(testA.a()) // { c: 1 }
   name: 'a',
   strict: false
 }
+// b 對應的 Reference Record
+{
+  base: EnvironmentRecord, // function a
+  name: 'b',
+  strict: false
+}
 ```
 
 ### 形參 (Parameter) 與實參 (Argument)
