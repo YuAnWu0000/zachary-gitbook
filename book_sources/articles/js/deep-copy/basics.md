@@ -133,6 +133,7 @@ let testA = { a: 1 }
 }
 ```
 
+_EnvironmentRecord_ 在前端就是 window，後端就是 global，這個執行環境儲存了 testA 跟其他所有全域變數的綁定。<br>
 那什麼時候 `[[Base]]` 不會是 _EnvironmentRecord_ 呢？
 
 > 我們來舉個例子 🌰：
