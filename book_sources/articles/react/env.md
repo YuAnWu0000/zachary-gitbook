@@ -18,3 +18,11 @@
 - npm run start : .env.development.local, .env.local, .env.development, .env
 - npm run build : .env.production.local, .env.local, .env.production, .env
 - npm run test : .env.test.local, .env.test, .env(note .env.local is missing)
+
+所以我們可以在專案內新增一個.env.development 檔案:
+
+```
+REACT_APP_CLIENT_ID = myLocalClientId
+```
+
+一個.env.production.檔案:
