@@ -18,3 +18,11 @@
 - `docker start my-project-1`
 
 來暫停或重啟 container，觀察你的服務行為。
+
+### docker exec -it [container-name] bash
+
+- `-i` (interactive): 保持標準輸入 (STDIN) 開啟，讓你跟容器互動。
+- `-t` (tty): 分配一個 terminal 給該容器。
+
+有時候你會想進 container 看看 nginx 或其他設定檔是否正確，這時候就可以使用這個指令。<br>
+要離開容器輸入 `exit` 即可。
