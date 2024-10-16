@@ -26,3 +26,13 @@
 
 有時候你會想進 container 看看 nginx 或其他設定檔是否正確，這時候就可以使用這個指令。<br>
 要離開容器輸入 `exit` 即可。
+
+### docker logs -f [container-name]
+
+- `-f`: 即時監控。
+
+這個指令可以查看該 container 的 log，如果有在 container 當中使用 nginx，nginx 預設會將 access_log 的內容導出。<br>
+
+主要用來確認 request 是否有正確導入、來源 IP、裝置為何等。<br>
+
+> ### 不過如果你有用反向代理，nginx 如何導流的 log 預設是不會顯示在這裡的，需要額外編輯 access_log 的格式。
