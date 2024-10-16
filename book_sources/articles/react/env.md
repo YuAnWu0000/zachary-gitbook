@@ -32,3 +32,12 @@ REACT_APP_CLIENT_ID = myProductionClientId
 ```
 
 > ### 注意：一定要加上 REACT_APP 前綴 CRA 才會將這個變數打包進 process.env
+
+細心的你可能注意到了，那 uat 環境呢？這樣我們只設定了兩個變數版本呀？
+
+### 自行擴充.env
+
+要自行針對需要來擴充 env 種類，我認為最簡單的方式是使用 [dotenv-cli
+](https://www.npmjs.com/package/dotenv-cli) 套件。
+
+> 當然有志者也可以直接透過`react-app-rewired`套件編輯`config-overrides`檔案，自行編寫 webpack 規則。
