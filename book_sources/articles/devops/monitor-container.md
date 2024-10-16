@@ -11,3 +11,10 @@
 | CONTAINER ID | IMAGE      | COMMAND                 | CREATED       | STATUS       | PORTS                     | NAMES        |
 | :----------- | :--------- | :---------------------- | :------------ | :----------- | :------------------------ | :----------- |
 | dcecfc18ffbb | my-project | "/docker-entrypoint..." | 3 minutes ago | Up 3 minutes | 0.0.0.0:10000->80/tcp,... | my-project-1 |
+
+除了使用 `docker compose up --build -d` 重 build 以外，也可以簡單透過:
+
+- `docker stop my-project-1`
+- `docker start my-project-1`
+
+來暫停或重啟 container，觀察你的服務行為。
