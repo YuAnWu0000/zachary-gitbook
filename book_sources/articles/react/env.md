@@ -22,12 +22,14 @@
 所以我們可以在專案內新增一個.env.development 檔案:
 
 ```
+# .env.development
 REACT_APP_CLIENT_ID = myLocalClientId
 ```
 
 一個.env.production 檔案:
 
 ```
+# .env.production
 REACT_APP_CLIENT_ID = myProductionClientId
 ```
 
@@ -37,7 +39,33 @@ REACT_APP_CLIENT_ID = myProductionClientId
 
 ### 自行擴充.env
 
-要自行針對需要來擴充 env 種類，我認為最簡單的方式是使用 [dotenv-cli
+要自行針對需求來擴充 env 種類，我認為最簡單的方式是使用 [dotenv-cli
 ](https://www.npmjs.com/package/dotenv-cli) 套件。
 
 > 當然有志者也可以直接透過`react-app-rewired`套件編輯`config-overrides`檔案，自行編寫 webpack 規則。
+
+```
+// package.json
+"scripts": {
+  "start": "dotenv -e .env.development react-app-rewired start",
+  "build:uat": "dotenv -e .env.uat react-app-rewired build",
+  "build": "dotenv -e .env.production react-app-rewired build",
+  "test": "react-app-rewired test",
+}
+```
+
+```
+# .env.uat
+REACT_APP_CLIENT_ID = myUatClientId
+```
+
+如此一來便可以應對多種環境變數的情況了。<br>
+如果你想在開發者模式下模擬線上環境，也可以直接加上:<br>
+
+```
+"start:prod": "dotenv -e .env.production react-app-rewired start",
+```
+
+不過要注意的點是，此情況下 webpack 預設的 NODE_ENV 還是 development，如果程式內有進行判斷的要特別小心。
+
+有了 `dotenv-cli` 可以讓我們的環境變數擴充更方便，應對複雜的專案需求也可以任意混搭，實在是很方便！
