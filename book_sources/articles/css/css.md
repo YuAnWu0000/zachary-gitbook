@@ -1,3 +1,3 @@
 # Success of CSS
 
-### 寫好 CSS 沒有那麼難，只是有些地方你可能要小心...
+### Success of CSS means success of trusted relationship between you and designer.
