@@ -35,7 +35,7 @@ REACT_APP_CLIENT_ID = myLocalClientId
 REACT_APP_CLIENT_ID = myProductionClientId
 ```
 
-> ### 注意：一定要加上 REACT_APP 前綴 CRA 才會將這個變數打包進 process.env
+> ### 注意：一定要加上 REACT_APP 前綴，CRA 才會將這個變數打包進 process.env
 
 細心的你可能注意到了，那 uat 環境呢？這樣我們只設定了兩個變數版本呀？
 
@@ -64,13 +64,13 @@ REACT_APP_CLIENT_ID = myUatClientId
 ```
 
 如此一來便可以應對多種環境變數的情況了。<br>
-如果你想在開發者模式下模擬線上環境，也可以直接加上:<br>
+如果你想在開發者模式下模擬線上環境，也可以直接加上<br>
 
 ```
 "start:prod": "dotenv -e .env.production react-app-rewired start",
 ```
 
-不過要注意的點是，此情況下 webpack 預設的 NODE_ENV 還是 development，如果程式內有進行判斷的要特別小心。
+不過此情況下 webpack 預設的 NODE_ENV 還是 development，如果程式內有進行判斷的要注意一下。
 
 有了 `dotenv-cli` 可以讓我們的環境變數擴充更方便，應對複雜的專案需求也可以任意混搭，實在是很方便！
 
@@ -78,4 +78,4 @@ REACT_APP_CLIENT_ID = myUatClientId
 
 如果是手動部署，你現在已經可以透過在三台機器下不同的指令來讓程式引入不同的環境變數了。<br>
 
-但我認為要完全解放雙手，當一個懶人工程師 😎，需要搭配 CI/CD 才算是大功告成，這部分就期待我後續的文章吧！
+但我認為要完全解放雙手，當一個懶人工程師 😎，環境變數需要搭配 CI/CD 才算是大功告成，這部分就期待我後續的文章吧！
