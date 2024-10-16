@@ -44,6 +44,8 @@ REACT_APP_CLIENT_ID = myProductionClientId
 
 > 當然有志者也可以直接透過`react-app-rewired`套件編輯`config-overrides`檔案，自行編寫 webpack 規則。
 
+這邊我們的需求是新增一個 uat 的環境變數:
+
 ```
 // package.json
 "scripts": {
