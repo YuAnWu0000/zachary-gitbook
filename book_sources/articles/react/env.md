@@ -25,4 +25,10 @@
 REACT_APP_CLIENT_ID = myLocalClientId
 ```
 
-一個.env.production.檔案:
+一個.env.production 檔案:
+
+```
+REACT_APP_CLIENT_ID = myProductionClientId
+```
+
+> ### 注意：一定要加上 REACT_APP 前綴 CRA 才會將這個變數打包進 process.env
