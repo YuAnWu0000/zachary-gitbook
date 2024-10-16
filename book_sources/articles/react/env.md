@@ -13,8 +13,8 @@
 
 > 如果不是...那你可能要稍微了解一下 Webpack DefinePlugin，大部分的環境變數套件都是靠它實作的。
 
-簡單說，CRA 專案會在你執行指令時自動判斷要引入哪個對應的.env 檔:
+簡單說，CRA 專案會在你執行指令時自動判斷要引入哪個對應的.env 檔 (權重由大到小):
 
-- npm start : .env.development.local, .env.local, .env.development, .env
+- npm run start : .env.development.local, .env.local, .env.development, .env
 - npm run build : .env.production.local, .env.local, .env.production, .env
-- npm test : .env.test.local, .env.test, .env(note .env.local is missing)
+- npm run test : .env.test.local, .env.test, .env(note .env.local is missing)
