@@ -19,5 +19,6 @@
   - [搞定 Docker 跟 Nginx，輕鬆部署你的專案](./articles/devops/deploy-your-project.md)
   - [讓你的網站更安全，加上 SSL 憑證吧](./articles/devops/add-ssl.md)
   - [我的服務還好嗎？監控容器的小撇步](./articles/devops/monitor-container.md)
+  - [自架 gitlab-runner，搞定 gitlab-ci，從此一勞永逸吧](./articles/devops/gitlab-ci.md)
 - [Others](./articles/others/others.md)
   - [初探 OIDC ─ 揭開我們每天都在使用，卻不了解的黑盒子](./articles/others/my-first-oidc-research.md)
