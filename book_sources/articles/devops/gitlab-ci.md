@@ -1,6 +1,9 @@
 # 自架 gitlab-runner，搞定 gitlab-ci，從此一勞永逸吧
 
-<img src="../../images/forEach-async-await/meme.jpg" width="450" >
+在開始這一切之前，有人還不了解 gitlab CI 運作機制的嗎？我先在這邊附上艦長製的圖，非常淺顯易懂：<br>
+<img src="../../images/gitlab-ci/runner.png" width="450" >
+
+簡單說，
 
 ### 1. Install gitlab-runenr
 
