@@ -1,17 +1,31 @@
 # 自架 gitlab-runner，搞定 gitlab-ci，從此一勞永逸吧
 
-在開始這一切之前，有人還不了解 gitlab CI 運作機制的嗎？我先在這邊附上艦長製的圖，非常淺顯易懂：<br>
+在開始這一切之前，有人還不了解 gitlab CI 運作機制的嗎？我先在這邊附上艦長大大製的圖，非常淺顯易懂：<br>
+
 <img src="../../images/gitlab-ci/runner.png" width="450" >
 
 簡單說，當你跟 Gitlab 做出互動，例如: 下 tag 或是 push commit，Gitlab 會自動觸發你專案中的 `gitlab-ci.yml`。<br>
 接著 Gitlab 會需要找一台 server 來執行`gitlab-ci.yml`裡面的指令(Jobs)，這個執行的 server 就叫做 gitlab-runner。<br>
 最後 Gitlab 會將 gitlab-runner 的執行過程跟執行結果顯示於 Pipeline 給你看。
 
-### 1. Install gitlab-runenr
+### 1. Install gitlab-runner
 
 ```
 # Linux x86-64
 sudo curl -L --output /usr/local/bin/gitlab-runner "https://s3.dualstack.us-east-1.amazonaws.com/gitlab-runner-downloads/latest/binaries/gitlab-runner-linux-amd64"
+```
+
+如果你在內網需要透過 proxy 才能導向外部網站:<br>
+
+```
+# Linux x86-64
+sudo curl -L --output /usr/local/bin/gitlab-runner --proxy "http://your.proxy.ip:port" "https://s3.dualstack.us-east-1.amazonaws.com/gitlab-runner-downloads/latest/binaries/gitlab-runner-linux-amd64"
+```
+
+接著你需要給這個下載的 binary file 可執行的權限:<br>
+
+```
+sudo chmod +x /usr/local/bin/gitlab-runner
 ```
 
 ### References
