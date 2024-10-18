@@ -1,4 +1,13 @@
-# 自架 gitlab-runner，搞定 gitlab-ci，從此一勞永逸吧!
+# 自架 gitlab-runner，搞定 gitlab-ci，從此一勞永逸吧
+
+當
+
+### 1. Install gitlab-runenr
+
+```
+# Linux x86-64
+sudo curl -L --output /usr/local/bin/gitlab-runner "https://s3.dualstack.us-east-1.amazonaws.com/gitlab-runner-downloads/latest/binaries/gitlab-runner-linux-amd64"
+```
 
 ### References
 
