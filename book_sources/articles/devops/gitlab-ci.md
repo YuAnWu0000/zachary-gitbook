@@ -28,6 +28,24 @@ sudo curl -L --output /usr/local/bin/gitlab-runner --proxy "http://your.proxy.ip
 sudo chmod +x /usr/local/bin/gitlab-runner
 ```
 
+再來你需要新增一個名為 gitlab-runner 的使用者
+
+```
+sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash
+```
+
+這時候你也可以順便給他 sudo 免輸密碼的權限，這樣之後跑 CI 會方便一些:<br>
+https://stackoverflow.com/questions/19383887/how-to-use-sudo-in-build-script-for-gitlab-ci
+
+**最後就是安裝並啟動 gitlab-runner 了:**
+
+```
+sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
+sudo gitlab-runner start
+```
+
+### Register gitlab-runner
+
 ### References
 
 [GitLab CI 之 Runner 的 Executor 該如何選擇？](https://chengweichen.com/2021/03/gitlab-ci-executor.html)
