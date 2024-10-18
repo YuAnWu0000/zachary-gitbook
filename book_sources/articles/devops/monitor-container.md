@@ -34,5 +34,12 @@
 這個指令可以查看該 container 的 log，如果有在 container 當中使用 nginx，nginx 預設會將 access_log 的內容導出。<br>
 
 主要用來確認 request 是否有正確導入、來源 IP、裝置為何等。<br>
+當然，如果你的 container 一直啟動不了，也可以藉由 log 來查看錯誤訊息。<br>
+
+如果嫌 log 太多，可以只印出倒數 50 行，並用時間排序:
+
+```
+docker logs --tail 50 --follow --timestamps [container-name]
+```
 
 > ### 不過如果你有用反向代理，nginx 如何導流的 log 預設是不會顯示在這裡的，需要額外編輯 access_log 的格式。
