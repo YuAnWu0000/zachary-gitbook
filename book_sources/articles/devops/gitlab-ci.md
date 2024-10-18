@@ -51,7 +51,7 @@ sudo gitlab-runner start
 ### Register gitlab-runner
 
 這個步驟的目的是要將 gitlab-runner 與你的專案**建立關聯**，並且指定 **executer**。<br>
-好啦！又一個新名詞，那麼什麼是 executer 呢？<br>
+好啦！又一個新名詞，究竟什麼是 executer 呢？<br>
 
 ### References
 
