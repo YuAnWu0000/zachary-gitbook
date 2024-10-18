@@ -6,9 +6,13 @@
 
 簡單說，當你跟 Gitlab 做出互動，例如: 下 tag 或是 push commit，Gitlab 會自動觸發你專案中的 `gitlab-ci.yml`。<br>
 接著 Gitlab 會需要找一台 server 來執行`gitlab-ci.yml`裡面的指令(Jobs)，這個執行的 server 就叫做 gitlab-runner。<br>
-最後 Gitlab 會將 gitlab-runner 的執行過程跟執行結果顯示於 Pipeline 給你看。
+最後 Gitlab 會將 gitlab-runner 的執行過程跟執行結果顯示於 Pipeline 給你看。<br>
+
+廢話不多說，就讓我們開始吧~
 
 ### 1. Install gitlab-runner
+
+首先，先進入你的部署機器內的 bash，這一步驟主要是要將 runner 安裝在機器上，這樣之後跑 CI 時就會在這台機器上下達部署的指令了。
 
 ```
 # Linux x86-64
@@ -45,6 +49,9 @@ sudo gitlab-runner start
 ```
 
 ### Register gitlab-runner
+
+這個步驟的目的是要將 gitlab-runner 與你的專案**建立關聯**，並且指定 **executer**。<br>
+好啦！又一個新名詞，那麼什麼是 executer 呢？<br>
 
 ### References
 
