@@ -2,7 +2,7 @@
 
 在開始這一切之前，有人還不了解 gitlab CI 運作機制的嗎？我先在這邊附上艦長大大製的圖，非常淺顯易懂：<br>
 
-<img src="../../images/gitlab-ci/runner.png" width="800" >
+<img src="../../images/gitlab-ci/runner.png" width="700" >
 
 簡單說，當你跟 Gitlab 做出互動，例如: 下 tag 或是 push commit，Gitlab 會自動觸發你專案中的 `gitlab-ci.yml`。<br>
 接著 Gitlab 會需要找一台 server 來執行`gitlab-ci.yml`裡面的指令(Jobs)，這個執行的 server 就叫做 gitlab-runner。<br>
