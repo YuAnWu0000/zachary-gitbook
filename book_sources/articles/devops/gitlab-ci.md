@@ -87,7 +87,7 @@ sudo gitlab-runner register \
   詳情請見 [這裡](https://docs.gitlab.com/ee/ci/runners/new_creation_workflow.html)。
 - executor: 呈上所述，如果選擇 docker 請記得給一個預設的 docker-image。
 
-其他選項為 optional，可跳過。
+其他選項為 optional，可跳過。輸入之後你就成功註冊 gitlab-runner 了！<br>
 
 ### References
 
