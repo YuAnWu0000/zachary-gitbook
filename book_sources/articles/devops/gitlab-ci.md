@@ -56,7 +56,7 @@ sudo gitlab-runner start
 再度引用艦長大大的圖:<br>
 <img src="../../images/gitlab-ci/executer.png" width="600" >
 
-我認為可以把
+我認為可以把 executer 簡單想成執行環境，當一個 CI job 被指派到 gitlab-runner，這時候可以選擇對應的執行環境來執行它。
 
 ### References
 
