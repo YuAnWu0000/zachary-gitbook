@@ -71,7 +71,7 @@ sudo gitlab-runner start
 sudo gitlab-runner register
 ```
 
-接著會有一連串的輸入，參數會有以下幾項:<br>
+接著會有一連串的輸入，參數包含以下幾項:<br>
 
 ```
 sudo gitlab-runner register \
