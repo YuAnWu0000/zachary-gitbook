@@ -63,7 +63,13 @@ sudo gitlab-runner start
 當然也有其他方式供選擇，比如圖中的 SSH，可讓你連線至其他主機再執行 CI。<br>
 剩餘其他選項可參考[官方文件](https://docs.gitlab.com/runner/executors/)。<br>
 
-回歸正題，
+回歸正題，這個階段是要註冊 runner 到對應的 repo，需要輸入以下指令:<br>
+
+```
+sudo gitlab-runner register
+```
+
+接著會有
 
 ### References
 
