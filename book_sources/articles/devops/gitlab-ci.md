@@ -56,7 +56,10 @@ sudo gitlab-runner start
 再度引用艦長大大的圖:<br>
 <img src="../../images/gitlab-ci/executer.png" width="600" >
 
-我認為可以把 executer 簡單想成執行環境，當一個 CI job 被指派到 gitlab-runner，這時候可以選擇對應的執行環境來執行它。
+我認為可以把 executer 簡單想成執行環境，當一個 CI job 被指派到 gitlab-runner，這時候可以選擇對應的執行環境來執行它。<br>
+
+最直觀的方式是 Shell，亦即直接在該 runner 上執行 CI Job。<br>
+最常用的是 Docker，指的是在 runner 上開一個 container 並在 container 內部執行 CI。<br>
 
 ### References
 
