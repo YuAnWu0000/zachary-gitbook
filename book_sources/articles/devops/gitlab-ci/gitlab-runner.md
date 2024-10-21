@@ -83,18 +83,18 @@ sudo gitlab-runner register \
   --description "docker-runner"
 ```
 
-- **_url_**: 預設是`https://gitlab.com/`，如果公司自架 Gitlab 的話請輸入`http://gitlab.${domain}.com/`
+- **_url_**: 預設是`https://gitlab.com/`，如果公司自架 Gitlab 的話請輸入`http://gitlab.${domain}.com/`。
 
-- **_token_**: runner 在 install 的時候會自動存放在`/etc/gitlab-runner/config.toml`。<br>
+- **_token_**: runner 在 install 的時候會自動存放在`/etc/gitlab-runner/config.toml`，複製貼上即可。<br>
   **注意：Gitlab v15 以前是使用 registration token，但這邊的 token 是 runner authentication token，registration token 將在 Gitlab v18 以後被棄用，詳情請見 [這裡](https://docs.gitlab.com/ee/ci/runners/new_creation_workflow.html)。**<br>
 
 - **_executor_**: 呈上所述，如果選擇 docker 請記得給一個預設的 docker-image。
 
 其他選項為 optional，可跳過。輸入之後你就成功註冊 gitlab-runner 了！<br>
 
-你可以打開`/etc/gitlab-runner/config.toml`看看上面這些參數是否成功寫入，當然，如果日後想更改也可以直接改這個檔案而無需重新註冊。
+你現在可以打開`/etc/gitlab-runner/config.toml`看看上面這些參數是否成功寫入，當然，如果日後想更改也可以直接改這個檔案而無需重新註冊。
 
-> 補充一個我在公司內網踩過的坑：使用 docker executor 的時候，若有將 etc/hosts 設定傳入 container 的需求，可以在`/etc/gitlab-runner/config.toml`內加上`extra_hosts = ["example.com:x.x.x.x"]`。
+> 補充一個我在公司內網踩過的坑：使用 docker executor 的時候，若有將 etc/hosts 設定傳入 container 的需求，可以在`/etc/gitlab-runner/config.toml`內加上`extra_hosts = ["example.com:x.x.x.x"]`，通常公司有自架 DNS server 的時候會遇到。
 
 ### 結語
 
