@@ -94,6 +94,8 @@ sudo gitlab-runner register \
 
 你可以打開`/etc/gitlab-runner/config.toml`看看上面這些參數是否成功寫入，當然，如果日後想更改也可以直接改這個檔案而無需重新註冊。
 
+> 補充一個我在公司內網踩過的坑：使用 docker executor 的時候，若有將 etc/hosts 設定傳入 container 的需求，可以在`/etc/gitlab-runner/config.toml`內加上`extra_hosts = ["example.com:x.x.x.x"]`。
+
 ### 結語
 
 這個時候你的 gitlab-runner 已經就緒，下一步就是開始撰寫`.gitlab-ci.yml`了，敬請期待！
