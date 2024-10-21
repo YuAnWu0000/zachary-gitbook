@@ -60,12 +60,12 @@ sudo gitlab-runner start
 
 我認為可以把 executer 簡單想成執行環境，當一個 CI job 被指派到 gitlab-runner，我們可以選擇對應的執行環境來執行它。<br>
 
-最直觀的方式是 **Shell**，亦即直接在該 runner 上執行 CI Job。<br>
-最常用的是 **Docker**，指的是在 runner 上開一個 container 並在 container 內部執行 CI。<br>
+最直觀的方式是 **Shell**，亦即直接在該 runner server 上執行 CI Job。<br>
+最常用的是 **Docker**，指的是在 runner 上開一個 container 並在 container 內執行 CI。<br>
 當然也有其他方式供選擇，比如圖中的 SSH，可讓你連線至其他主機再執行 CI。<br>
 剩餘其他選項可參考[官方文件](https://docs.gitlab.com/runner/executors/)。<br>
 
-回歸正題，這個階段是要註冊 runner 到對應的 repo，需要你輸入以下指令:<br>
+言歸正傳，這個階段目的是要註冊 runner 到對應的 Gitlab repo，因此需要你輸入以下指令:<br>
 
 ```
 sudo gitlab-runner register
