@@ -90,6 +90,10 @@ sudo gitlab-runner register \
 
 其他選項為 optional，可跳過。輸入之後你就成功註冊 gitlab-runner 了！<br>
 
+### 結語
+
+這個時候你的 gitlab-runner 已經就緒，下一步就是開始撰寫`.gitlab-ci.yml`了，敬請期待！
+
 ### References
 
 [GitLab CI 之 Runner 的 Executor 該如何選擇？](https://chengweichen.com/2021/03/gitlab-ci-executor.html)<br>
