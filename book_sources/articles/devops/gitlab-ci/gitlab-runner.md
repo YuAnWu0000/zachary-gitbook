@@ -1,10 +1,10 @@
-# 解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner
+# 解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor
 
 身為一位忙碌的工程師，右手握滑鼠，左手~~衛生紙~~，左手按鍵盤，根本不想額外花心力在手動部署上，這時候你需要的就是一套完整的 CI/CD。
 
 CI/CD 的概念應該不用多做解釋，但在開始這一切之前，有人還不了解 gitlab CI 運作機制的嗎？我先在這邊附上艦長大大製的圖，非常淺顯易懂：<br>
 
-<img src="../../images/gitlab-ci/runner.png" width="700" >
+<img src="../../../images/gitlab-ci/runner.png" width="700" >
 
 簡單說，當你跟 Gitlab 做出互動，例如: 下 tag 或是 push commit，Gitlab 會自動觸發你專案中的 `gitlab-ci.yml`。<br>
 接著 Gitlab 會需要找一台 server 來執行`gitlab-ci.yml`裡面的指令(Jobs)，這個執行的 server 就叫做 gitlab-runner。<br>
@@ -56,7 +56,7 @@ sudo gitlab-runner start
 好啦！又一個新名詞，究竟什麼是 executer 呢？<br>
 
 再度引用艦長大大的圖:<br>
-<img src="../../images/gitlab-ci/executer.png" width="600" >
+<img src="../../../images/gitlab-ci/executer.png" width="600" >
 
 我認為可以把 executer 簡單想成執行環境，當一個 CI job 被指派到 gitlab-runner，這時候可以選擇對應的執行環境來執行它。<br>
 
@@ -91,6 +91,8 @@ sudo gitlab-runner register \
 - **_executor_**: 呈上所述，如果選擇 docker 請記得給一個預設的 docker-image。
 
 其他選項為 optional，可跳過。輸入之後你就成功註冊 gitlab-runner 了！<br>
+
+你可以打開`/etc/gitlab-runner/config.toml`看看上面這些參數是否成功寫入，當然，如果日後想更改也可以直接改這個檔案而無需重新註冊。
 
 ### 結語
 
