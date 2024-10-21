@@ -98,7 +98,7 @@ sudo gitlab-runner register \
 
 ### 結語
 
-這個時候你的 gitlab-runner 已經就緒，下一步就是開始撰寫`.gitlab-ci.yml`了，敬請期待！
+這個時候你的 gitlab-runner 已經準備就緒，接著就可以來正式撰寫`.gitlab-ci.yml`了，那麼我們下次見！
 
 ### References
 
