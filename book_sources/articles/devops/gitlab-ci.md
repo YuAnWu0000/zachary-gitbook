@@ -53,6 +53,11 @@ sudo gitlab-runner start
 這個步驟的目的是要將 gitlab-runner 與你的專案**建立關聯**，並且指定 **executer**。<br>
 好啦！又一個新名詞，究竟什麼是 executer 呢？<br>
 
+再度引用艦長大大的圖:<br>
+<img src="../../images/gitlab-ci/executer.png" width="600" >
+
+我認為可以把
+
 ### References
 
 [GitLab CI 之 Runner 的 Executor 該如何選擇？](https://chengweichen.com/2021/03/gitlab-ci-executor.html)<br>
