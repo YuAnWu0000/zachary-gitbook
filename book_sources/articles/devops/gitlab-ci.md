@@ -63,13 +63,13 @@ sudo gitlab-runner start
 當然也有其他方式供選擇，比如圖中的 SSH，可讓你連線至其他主機再執行 CI。<br>
 剩餘其他選項可參考[官方文件](https://docs.gitlab.com/runner/executors/)。<br>
 
-回歸正題，這個階段是要註冊 runner 到對應的 repo，需要輸入以下指令:<br>
+回歸正題，這個階段是要註冊 runner 到對應的 repo，需要你輸入以下指令:<br>
 
 ```
 sudo gitlab-runner register
 ```
 
-接著會有一連串的輸入，大概會有以下幾項:<br>
+接著會有一連串的輸入，參數會有以下幾項:<br>
 
 ```
 sudo gitlab-runner register \
@@ -81,11 +81,11 @@ sudo gitlab-runner register \
   --description "docker-runner"
 ```
 
-- url: 預設都是`https://gitlab.com/`，如果公司自架 Gitlab 的話請輸入`http://gitlab.${domain}.com/`
-- token: runner 在 install 的時候會自動存放在`/etc/gitlab-runner/config.toml`。<br>
+- **_url_**: 預設是`https://gitlab.com/`，如果公司自架 Gitlab 的話請輸入`http://gitlab.${domain}.com/`
+- **_token_**: runner 在 install 的時候會自動存放在`/etc/gitlab-runner/config.toml`。<br>
   **注意：Gitlab v15 以前是使用 registration token，但這邊的 token 是 runner authentication token，registration token 將在 Gitlab v18 以後被棄用。**<br>
   詳情請見 [這裡](https://docs.gitlab.com/ee/ci/runners/new_creation_workflow.html)。
-- executor: 呈上所述，如果選擇 docker 請記得給一個預設的 docker-image。
+- **_executor_**: 呈上所述，如果選擇 docker 請記得給一個預設的 docker-image。
 
 其他選項為 optional，可跳過。輸入之後你就成功註冊 gitlab-runner 了！<br>
 
