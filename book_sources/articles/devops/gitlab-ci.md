@@ -60,8 +60,10 @@ sudo gitlab-runner start
 
 最直觀的方式是 **Shell**，亦即直接在該 runner 上執行 CI Job。<br>
 最常用的是 **Docker**，指的是在 runner 上開一個 container 並在 container 內部執行 CI。<br>
-當然也有其他方式供選擇，比如圖中的 SSH，可讓你連線至其他主機並執行 CI。<br>
+當然也有其他方式供選擇，比如圖中的 SSH，可讓你連線至其他主機再執行 CI。<br>
 剩餘其他選項可參考[官方文件](https://docs.gitlab.com/runner/executors/)。<br>
+
+回歸正題，
 
 ### References
 
