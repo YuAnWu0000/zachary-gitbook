@@ -8,7 +8,7 @@
 接著 Gitlab 會需要找一台 server 來執行`gitlab-ci.yml`裡面的指令(Jobs)，這個執行的 server 就叫做 gitlab-runner。<br>
 最後 Gitlab 會將 gitlab-runner 的執行過程跟執行結果顯示於 Pipeline 給你看。<br>
 
-廢話不多說，就讓我們開始吧~
+講完了理論，就讓我們開始動手實作吧~
 
 ### 1. Install gitlab-runner
 
