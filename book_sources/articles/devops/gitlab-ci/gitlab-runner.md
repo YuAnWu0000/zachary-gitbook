@@ -41,7 +41,7 @@ sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/
 ```
 
 這時候你也可以順便給他 sudo 免輸密碼的權限，這樣之後跑 CI 會方便一些:<br>
-https://stackoverflow.com/questions/19383887/how-to-use-sudo-in-build-script-for-gitlab-ci
+指令可參考[這裡](https://stackoverflow.com/questions/19383887/how-to-use-sudo-in-build-script-for-gitlab-ci)。
 
 **最後就是安裝並啟動 gitlab-runner 了:**
 
