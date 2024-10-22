@@ -70,11 +70,11 @@ sudo gitlab-runner start
 當然也有其他方式供選擇，比如圖中的 SSH，可讓你連線至其他主機再執行 CI。<br>
 剩餘其他選項可參考[官方文件](https://docs.gitlab.com/runner/executors/)。<br>
 
-言歸正傳，這個階段目的是要註冊 runner 到對應的 Gitlab repo，因此請先到/Settings/CI/CD/Runners 點擊 "New Project Runner":<br>
+言歸正傳，這個階段目的是要註冊 runner 到對應的 Gitlab repo，因此請先打開 Gitlab 到 /Settings/CI/CD/Runners 並點擊 "New Project Runner":<br>
 
 <img src="../../../images/gitlab-ci/create_runner.png" width="700" >
 
-接著進行設定:<br>
+接著設定內容:<br>
 
 <img src="../../../images/gitlab-ci/set_runner.png" width="700" >
 
@@ -83,11 +83,11 @@ sudo gitlab-runner start
 - Protected: 只能執行 protected branch 上面的 CI job (預設 Master branch 是 protected)。
 - Lock to current projects: 只能執行當前專案的 CI job。
 
-```
-sudo gitlab-runner register
-```
+再來進行註冊:<br>
 
-接著會有一連串的輸入，參數包含以下幾項:<br>
+<img src="../../../images/gitlab-ci/register_runner.png" width="700" >
+
+選擇系統後，Step1 會有一連串的輸入，參數包含以下幾項:<br>
 
 ```
 sudo gitlab-runner register \
@@ -108,10 +108,8 @@ sudo gitlab-runner register \
 
 其他選項為 optional，可跳過。輸入之後你就成功註冊 gitlab-runner 了！<br>
 
-你現在可以打開`/etc/gitlab-runner/config.toml`看看上面這些參數是否成功寫入，當然，如果日後想更改也可以直接改這個檔案而無需重新註冊。
-
-註冊完畢以後你應該會在 Settings/CI/CD/Runners 看到這個畫面，紅三角變成綠燈就代表成功了！<br>
-<img src="../../../images/gitlab-ci/create_runner.png" width="700" >
+你現在可以打開`/etc/gitlab-runner/config.toml`看看上面這些參數是否有寫入，有的話就代表你成功了 🎉！<br>
+當然，如果日後想更改也可以直接改這個檔案而無需重新註冊。
 
 > 補充一個我在公司內網踩過的坑：使用 docker executor 的時候，若有將 etc/hosts 設定傳入 container 的需求，可以在`/etc/gitlab-runner/config.toml`內加上`extra_hosts = ["example.com:x.x.x.x"]`，通常公司有自架 DNS server 的時候會遇到。
 
