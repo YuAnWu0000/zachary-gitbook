@@ -53,6 +53,8 @@ sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab
 sudo gitlab-runner start
 ```
 
+> ### 在機器上安裝 gitlab-runner 後，接著就是想辦法跟你的 Gitlab repo 連動了~
+
 ### Register gitlab-runner
 
 這個步驟的目的是要將 gitlab-runner 與你的專案**建立關聯**，並且指定 **executer**。<br>
@@ -68,7 +70,18 @@ sudo gitlab-runner start
 當然也有其他方式供選擇，比如圖中的 SSH，可讓你連線至其他主機再執行 CI。<br>
 剩餘其他選項可參考[官方文件](https://docs.gitlab.com/runner/executors/)。<br>
 
-言歸正傳，這個階段目的是要註冊 runner 到對應的 Gitlab repo，因此需要你輸入以下指令:<br>
+言歸正傳，這個階段目的是要註冊 runner 到對應的 Gitlab repo，因此請先到/Settings/CI/CD/Runners 點擊 "New Project Runner":<br>
+
+<img src="../../../images/gitlab-ci/create_runner.png" width="700" >
+
+接著進行設定:<br>
+
+<img src="../../../images/gitlab-ci/set_runner.png" width="700" >
+
+- Tags: 作為 CI Job 指定 Runner 的標籤使用，可以自由取名，也可設定成多個，中間以逗號分隔。
+- Run untagged jobs: 有些沒有指定 tag 的 job 會分派到任意 runner 執行，你要不要開放這個 runner 可以執行那些沒有 tag 的 jobs。
+- Protected: 只能執行 protected branch 上面的 CI job (預設 Master branch 是 protected)。
+- Lock to current projects: 只能執行當前專案的 CI job。
 
 ```
 sudo gitlab-runner register
