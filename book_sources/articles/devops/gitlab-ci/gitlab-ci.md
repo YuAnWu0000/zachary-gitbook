@@ -14,6 +14,13 @@ deploy-job:
     - pwd
     - whoami
     - echo "This job deploys from the $CI_COMMIT_BRANCH branch."
-  only: master
-  tags: test-runner
+  only:
+    - master
+  tags:
+    - test-runner
 ```
+
+- stages: 定義這個 pipeline 有幾個不同階段，這個例子只有一個`deploy` (你在 Gitlab/CI/CD/Pipelines 就只會看到一個圈圈)。
+- deploy-job: 定義了一個 job 名稱為 `deploy-job`，內部可指定對應到哪個 stage。
+- script: 逐行執行的指令。
+- $GITLAB_USER_LOGIN: 此為 **Predefined Variables by Gitlab**，總共有哪些可參考[官方文件](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html#predefined-variables)。
