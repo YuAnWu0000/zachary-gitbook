@@ -80,7 +80,7 @@ sudo gitlab-runner start
 
 - Tags: 作為 CI Job 指定 Runner 的標籤使用，可以自由取名，也可設定成多個，中間以逗號分隔。
 - Run untagged jobs: 有些沒有指定 tag 的 job 會分派到任意 runner 執行，你要不要開放這個 runner 可以執行那些沒有 tag 的 jobs。
-- Protected: 只能執行 protected branch 上面的 CI job (預設 Master branch 是 protected)。
+- Protected: 只能執行 protected branch 上面的 CI job (預設只有 Master branch 是 protected)。
 - Lock to current projects: 只能執行當前專案的 CI job。
 
 再來進行註冊:<br>
