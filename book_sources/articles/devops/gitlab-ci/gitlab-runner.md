@@ -101,8 +101,8 @@ sudo gitlab-runner register \
 
 - **_url_**: 預設是`https://gitlab.com/`，如果公司自架 Gitlab 的話請輸入`http://gitlab.${domain}.com/`。
 
-- **_token_**: runner 在 install 的時候會自動存放在`/etc/gitlab-runner/config.toml`，複製貼上即可。<br>
-  **注意：Gitlab v15 以前是使用 registration token，但這邊的 token 是 runner authentication token，registration token 將在 Gitlab v18 以後被棄用，詳情請見 [這裡](https://docs.gitlab.com/ee/ci/runners/new_creation_workflow.html)。**<br>
+- **_token_**: 此為 **runner authentication token**，因為是私密資訊所以只會出現在此頁，之後將無法查看 (別擔心，這個範例 Runner 後來被我刪除了)。<br>
+  **注意：Gitlab v15 以前是使用 registration token，registration token 將在 Gitlab v18 以後被棄用，詳情請見 [這裡](https://docs.gitlab.com/ee/ci/runners/new_creation_workflow.html)。**<br>
 
 - **_executor_**: 呈上所述，如果選擇 docker 請記得給一個預設的 docker-image。
 
