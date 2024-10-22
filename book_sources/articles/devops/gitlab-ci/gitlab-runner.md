@@ -104,7 +104,7 @@ sudo gitlab-runner register \
 - **_token_**: 此為 **runner authentication token**，因為是私密資訊所以只會出現在此頁，之後將無法查看 (別擔心，這個範例 Runner 後來被我刪除了)。<br>
   **注意：Gitlab v15 以前是使用 registration token，registration token 將在 Gitlab v18 以後被棄用，詳情請見 [這裡](https://docs.gitlab.com/ee/ci/runners/new_creation_workflow.html)。**<br>
 
-- **_executor_**: 呈上所述，如果選擇 docker 請記得給一個預設的 docker-image。
+- **_executor_**: 呈上所述，因為我的專案已經有`docker-compose`所以我這邊直接選擇 **Shell**，如果選擇 **docker** 請記得給一個預設的 docker-image。
 
 其他選項為 optional，可跳過。輸入之後你可以:
 
