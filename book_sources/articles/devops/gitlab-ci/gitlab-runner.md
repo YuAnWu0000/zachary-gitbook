@@ -97,6 +97,9 @@ sudo gitlab-runner register \
 
 你現在可以打開`/etc/gitlab-runner/config.toml`看看上面這些參數是否成功寫入，當然，如果日後想更改也可以直接改這個檔案而無需重新註冊。
 
+註冊完畢以後你應該會在 Settings/CI/CD/Runners 看到這個畫面，紅三角變成綠燈就代表成功了！<br>
+<img src="../../../images/gitlab-ci/create_runner.png" width="700" >
+
 > 補充一個我在公司內網踩過的坑：使用 docker executor 的時候，若有將 etc/hosts 設定傳入 container 的需求，可以在`/etc/gitlab-runner/config.toml`內加上`extra_hosts = ["example.com:x.x.x.x"]`，通常公司有自架 DNS server 的時候會遇到。
 
 ### 結語
