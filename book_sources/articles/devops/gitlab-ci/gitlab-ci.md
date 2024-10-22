@@ -24,3 +24,13 @@ deploy-job:
 - deploy-job: 定義了一個 job 名稱為 `deploy-job`，內部可指定對應到哪個 stage。
 - script: 逐行執行的指令。
 - $GITLAB_USER_LOGIN: 此為 **Predefined Variables by Gitlab**，總共有哪些可參考[官方文件](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html#predefined-variables)。
+- pwd: 個人覺得顯示當前路徑 Debug 蠻方便的，如果 Pipelines 有什麼異常，可以直接進到機器的該目錄底下檢查，通常為`/home/gitlab-runner/builds/xxxxxxxx/0/your-project`的格式。
+- only: 限制這個 job 在某些條件下進行，**注意條件只能是 OR**，例如：<br>
+
+```
+only:
+  - master
+  - uat
+```
+
+**這個 job 會在 master 或是 uat 分支下運行，如果需要 AND 請轉用 `rules:`。**
