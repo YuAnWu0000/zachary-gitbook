@@ -106,10 +106,15 @@ sudo gitlab-runner register \
 
 - **_executor_**: 呈上所述，如果選擇 docker 請記得給一個預設的 docker-image。
 
-其他選項為 optional，可跳過。輸入之後你就成功註冊 gitlab-runner 了！<br>
+其他選項為 optional，可跳過。輸入之後你可以:
 
-你現在可以打開`/etc/gitlab-runner/config.toml`看看上面這些參數是否有寫入，有的話就代表你成功了 🎉！<br>
-當然，如果日後想更改也可以直接改這個檔案而無需重新註冊。
+```
+gitlab-runner run
+```
+
+成功就代表你完成註冊 gitlab-runner 了 🎉！當然，別忘了打開`/etc/gitlab-runner/config.toml`看看上面這些參數是否正確喔~<br>
+
+如果日後想更改也可以直接改 `config.toml` 而無需重新註冊。
 
 > 補充一個我在公司內網踩過的坑：使用 docker executor 的時候，若有將 etc/hosts 設定傳入 container 的需求，可以在`/etc/gitlab-runner/config.toml`內加上`extra_hosts = ["example.com:x.x.x.x"]`，通常公司有自架 DNS server 的時候會遇到。
 
