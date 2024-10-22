@@ -16,6 +16,9 @@ CI/CD 的概念應該不用多做解釋，但在開始這一切之前，有人�
 
 首先，先進入你的部署機器內的 terminal，這一步驟主要是將 runner 安裝在機器上，這樣之後跑 CI 就會在這台機器上跑。
 
+以下會用 download binary file 來示範，或是你也可以直接`apt install`:<br>
+https://docs.gitlab.com/runner/install/linux-repository.html?tab=Debian%2FUbuntu%2FMint#install-gitlab-runner
+
 ```
 # Linux x86-64
 sudo curl -L --output /usr/local/bin/gitlab-runner "https://s3.dualstack.us-east-1.amazonaws.com/gitlab-runner-downloads/latest/binaries/gitlab-runner-linux-amd64"
