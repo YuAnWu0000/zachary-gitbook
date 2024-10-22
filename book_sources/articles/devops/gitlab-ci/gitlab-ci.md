@@ -34,3 +34,5 @@ only:
 ```
 
 **這個 job 會在 master 或是 uat 分支下運行，如果需要 AND 請轉用 `rules:`。**
+
+- tags: 此 tag 非彼 tag，這是**指定要讓哪個 runner 跑的 tag**，還記得嗎？我們上一篇文章在建立 runner 的時候有輸入 tag，這時候就派上用場了。**注意跟 `only:` 一樣邏輯是 OR**。
