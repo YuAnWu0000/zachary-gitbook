@@ -72,11 +72,11 @@ sudo gitlab-runner start
 
 言歸正傳，這個階段目的是要註冊 runner 到對應的 Gitlab repo，因此請先打開 Gitlab 到 /Settings/CI/CD/Runners 並點擊 "New Project Runner":<br>
 
-<img src="../../../images/gitlab-ci/create_runner.png" width="700" >
+<img src="../../../images/gitlab-ci/create_runner.png" width="1000" >
 
 接著設定內容:<br>
 
-<img src="../../../images/gitlab-ci/set_runner.png" width="700" >
+<img src="../../../images/gitlab-ci/set_runner.png" width="1000" >
 
 - Tags: 作為 CI Job 指定 Runner 的標籤使用，可以自由取名，也可設定成多個，中間以逗號分隔。
 - Run untagged jobs: 有些沒有指定 tag 的 job 會分派到任意 runner 執行，你要不要開放這個 runner 可以執行那些沒有 tag 的 jobs。
@@ -85,7 +85,7 @@ sudo gitlab-runner start
 
 再來進行註冊:<br>
 
-<img src="../../../images/gitlab-ci/register_runner.png" width="700" >
+<img src="../../../images/gitlab-ci/register_runner.png" width="1000" >
 
 選擇系統後，Step1 會有一連串的輸入，參數包含以下幾項:<br>
 
