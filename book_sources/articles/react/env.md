@@ -79,3 +79,8 @@ REACT_APP_CLIENT_ID = myUatClientId
 如果是手動部署，你現在已經可以透過在三台機器下不同的指令來讓程式引入不同的環境變數了。<br>
 
 但我認為要完全解放雙手，當一個懶人工程師 😎，環境變數需要搭配 CI/CD 才算是大功告成，這部分就期待我後續的文章吧！
+
+**熱騰騰的文章產出囉:**<br>
+
+- [解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/gitlab-ci/gitlab-runner.html)<br>
+- [解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/gitlab-ci/gitlab-ci.html)
