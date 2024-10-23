@@ -64,7 +64,7 @@ tags:
 stages:
   - build
 build-for-uat:
-  stage: deploy
+  stage: build
   image: node:20
   script:
     - npm run build:uat
@@ -73,7 +73,7 @@ build-for-uat:
   tags:
     - uat-runner
 build-for-production:
-  stage: deploy
+  stage: build
   image: node:20
   script:
     - npm run build
@@ -85,4 +85,32 @@ build-for-production:
 
 需要注意的是要記得開兩台 runner，一台對應到 uat 環境，而另一台對應到 production 環境。
 
-不過由於我在之前就已經把`Dockerfile`, `docker-compose.yaml`, `nginx.config`都完成了 (詳情可看 [這裡](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/deploy-your-project.html))，所以我這邊使用的是**Shell executor**，目標是要根據不同的 branch 來執行不同的`docker compose up`指令。
+不過由於我在之前就已經把`Dockerfile`, `docker-compose.yaml`, `nginx.config`都完成了 (詳情可看 [這裡](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/deploy-your-project.html))，所以我這邊使用的是**Shell executor**，目標是要根據不同的 branch 來執行不同的`docker compose up`指令：
+
+```
+# .gitlab-ci.yml
+stages:
+  - deploy
+deploy-to-uat:
+  stage: deploy
+  script:
+    - echo "Hello, $GITLAB_USER_LOGIN!"
+    - pwd
+    - echo "This job deploys from the $CI_COMMIT_BRANCH branch."
+    - sudo docker compose --env-file .env.uat up --build -d
+  only:
+    - uat
+  tags:
+    - uat-runner
+deploy-to-production:
+  stage: deploy
+  script:
+    - echo "Hello, $GITLAB_USER_LOGIN!"
+    - pwd
+    - echo "This job deploys from the $CI_COMMIT_BRANCH branch."
+    - sudo docker compose --env-file .env.production up --build -d
+  only:
+    - master
+  tags:
+    - production-runner
+```
