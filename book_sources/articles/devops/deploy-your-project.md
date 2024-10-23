@@ -129,8 +129,8 @@ _3.3 `ports: 3000:80` 他會幫你映射容器的 80 port 給外面機器的 loc
 version: '3'
 services:
   web:
-    image: your-frontend-project:v0.0.1
-    container_name: your-frontend-project
+    image: your-project:v0.0.1
+    container_name: your-project
     build:
       context: .
     environment:
