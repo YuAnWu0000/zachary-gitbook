@@ -85,7 +85,7 @@ build-for-production:
 
 需要注意的是要記得開兩台 runner，一台對應到 uat 環境，而另一台對應到 production 環境。
 
-不過由於我在之前就已經把`Dockerfile`, `docker-compose.yaml`, `nginx.config`都完成了 (詳情可看 [這裡](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/deploy-your-project.html))，所以我這邊使用的是**Shell executor**，目標是要根據不同的 branch 來執行不同的`docker compose up`指令：
+不過由於我在之前就已經把`Dockerfile`, `docker-compose.yaml`, `nginx.conf`都完成了 (詳情可看 [這裡](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/deploy-your-project.html))，所以我這邊使用的是**Shell executor**，目標是要根據不同的 branch 來執行不同的`docker compose up`指令：
 
 ```
 # .gitlab-ci.yml
@@ -135,7 +135,7 @@ PROXY_URL=http://x.x.x.x:port
 
 這邊雖然與前端共用同一份環境變數，但別擔心，只要沒加上 REACT_APP 前綴就不會被 webpack 打包。<br>
 環境變數匯入以後，接著就是如何在 docker 內使用了~<br>
-首先你會需要在`docker-compose`內部加入 build 階段的環境變數：
+首先你會需要在`docker-compose`內部加入 build-time variables **(該變數只能在 build image 的階段使用，如果要在容器運行時使用請改用`environment:`)**：
 
 ```
 # docker-compose.yaml
@@ -148,7 +148,7 @@ services:
         PROXY_URL: ${PROXY_URL}
 ```
 
-然後在 Dockerfile 當中引入：
+然後在 Dockerfile 當中引入該變數：
 
 ```
 # Dockerfile
@@ -160,10 +160,14 @@ RUN npm config set proxy $PROXY_URL
 RUN npm config set https-proxy $PROXY_URL
 ...
 RUN if [ "$DEPLOY_ENV" = "uat" ]; then \
-      npm run build:aws; \
+      npm run build:uat; \
     else \
       npm run build; \
     fi
 ```
 
-> **注意 `if [ "$DEPLOY_ENV" = "uat" ]` 中括號內部一定要有左右空格，否則會語法錯誤，親身經歷。**
+> **注意 `if [ "$DEPLOY_ENV" = "uat" ]` 中括號內部一定要有左右空格，否則會語法錯誤，當初因為這個 Debug 了很久 😥。**
+
+到這裡你根據環境執行了不同的`npm run build`指令，也成功應對了每台機器不同 proxy 的狀況，實際測試看看吧！
+
+### 加入 SSL 憑證
