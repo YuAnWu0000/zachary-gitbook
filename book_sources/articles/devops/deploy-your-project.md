@@ -129,6 +129,8 @@ _3.3 `ports: 3000:80` 他會幫你映射容器的 80 port 給外面機器的 loc
 version: '3'
 services:
   web:
+    image: your-frontend-project:v0.0.1
+    container_name: your-frontend-project
     build:
       context: .
     environment:
@@ -136,6 +138,8 @@ services:
       - 'API_PORT=XXXX'
     ports:
       - 3000:80
+    restart:
+      - always
 ```
 
 ##### 4. 最後 Command Line 執行 `docker compose up --build -d` 就搞定了 💪
