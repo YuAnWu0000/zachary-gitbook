@@ -45,4 +45,14 @@ tags:
 
 **代表這個 job 只能在同時是 `test-runner` 又是 `production-runner` 的 runner 上面跑** (每個 runner 可以設定多個 tag)，如果一個 job 找不到符合條件的 runner，你會在 pipeline 看到它**永遠是 pending 的狀態**。
 
-> ### 把你的 commit push 到 master 吧！不久後你就可以看到 pipeline 的成功訊息了！
+> ### 把你的 commit push 到 master 吧！不久後你就可以看到 pipeline 的成功訊息了。
+
+接著讓我們把需要的功能逐個加入這個 CI 裡面吧~
+
+### 搭配環境變數
+
+如果是 React 專案的話，想必專案內一定會有多個 env 檔案，我們假設專案內有`.env.development`, `.env.uat`, `.env.production`，分別對應到三種不同的執行環境。
+
+> 不知道怎麼擴充使用 env 的，可以參考我之前寫的[這篇文章](https://yuanwu0000.github.io/zachary-gitbook/articles/react/env.html)
+
+這時候，我們要做的就是讓 CI 可以判斷不同的 Branch，然後執行出不同的 build 指令，例如在 uat 環境是 `npm run build:uat`，在 production 環境則是 `npm run build`。
