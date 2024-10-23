@@ -51,7 +51,7 @@ tags:
 
 ### 搭配環境變數
 
-如果是 React 專案的話，想必專案內一定會有多個 env 檔案，我們假設專案內有`.env.development`, `.env.uat`, `.env.production`，分別對應到三種不同的執行環境。
+如果是 React 專案的話，想必專案內可能會有多個 .env 檔案，我們假設專案內有`.env.development`, `.env.uat`, `.env.production`，分別對應到三種不同的執行環境。
 
 > 不知道怎麼擴充使用 env 的，可以參考我之前寫的[這篇文章](https://yuanwu0000.github.io/zachary-gitbook/articles/react/env.html)
 
