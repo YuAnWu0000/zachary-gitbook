@@ -25,12 +25,12 @@ _-out ./ssl/nginx-selfsigned.crt: 指定憑證儲存位置。_<br>
 
 ### 修改 nginx 設定，讓它監聽 https 的 443 port
 
-> 還記得我們前一篇文章學到的 nginx 跟 docker 嗎？
+> 還記得我們前一篇[文章](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/deploy-your-project.html)學到的 nginx 跟 docker 嗎？
 
 我們之前只有監聽 http 預設的 80 port<br>
-現在讓我們加上監聽 443 port 的部分：<br>
+現在讓我們加上監聽 443 port 的部分...<br>
 
-// default.conf.template
+**default.conf.template:**
 
 ```
 server {
@@ -105,8 +105,8 @@ services:
       - ./ssl:/etc/nginx/ssl
 ```
 
-新增 `volumes: - ./ssl:/etc/nginx/ssl` 讓 docker 內部的 `/etc/nginx/ssl` 可以直接掛載到外面的 `./ssl`。
-**也就是我們一開始用 openssl 產出來的私鑰跟憑證的存放位置。**
+- 讓容器內的 443 port 對應到外部的 3010 port。
+- 新增 `volumes: - ./ssl:/etc/nginx/ssl` 讓 docker 內部的 `/etc/nginx/ssl` 可以直接掛載到外面的 `./ssl`，**也就是我們一開始用 openssl 產出來的私鑰跟憑證的存放位置。**
 
 ### 重跑 `docker compose up --build -d` 就大功告成了！
 
