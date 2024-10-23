@@ -53,11 +53,11 @@ tags:
 
 如果是 React 專案的話，想必專案內可能會有多個 .env 檔案，我們假設專案內有`.env.development`, `.env.uat`, `.env.production`，分別對應到三種不同的執行環境。
 
-> 不知道怎麼擴充使用 env 的，可以參考我之前寫的[這篇文章](https://yuanwu0000.github.io/zachary-gitbook/articles/react/env.html)
+> 不知道怎麼擴充使用 env 的，可以參考我之前寫的[這篇文章](https://yuanwu0000.github.io/zachary-gitbook/articles/react/env.html)。
 
 這時候，我們要做的就是讓 CI 可以依據不同的 branch，執行不同的 build 指令，例如在 uat 環境是 `npm run build:uat`，在 production 環境則是 `npm run build`。
 
-一般來說如果你使用 docker executor，可以這樣做：
+一般來說如果你使用 **Docker executor**，可以這樣做：
 
 ```
 # .gitlab-ci.yml
@@ -85,7 +85,7 @@ build-for-production:
 
 **需要注意的是要記得開兩台 runner**，一台對應到 uat 環境，而另一台對應到 production 環境。
 
-不過由於我在之前就已經把`Dockerfile`, `docker-compose.yaml`, `nginx.conf`都完成了 (詳情可看[這篇文章](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/deploy-your-project.html))，所以我這邊使用的是**Shell executor**，目標是要根據不同的 branch 來執行不同的`docker compose up`指令：
+不過由於我在之前就已經把`Dockerfile`, `docker-compose.yaml`, `nginx.conf`都完成了 (詳情可看[這篇文章](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/deploy-your-project.html))，所以只需要 gitlab-ci 模擬手動部署的情境，因此我選擇使用 **Shell executor**，目標是要根據不同的 branch 來執行不同的`docker compose up`指令：
 
 ```
 # .gitlab-ci.yml
