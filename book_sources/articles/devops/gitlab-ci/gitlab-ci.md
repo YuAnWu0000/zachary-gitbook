@@ -134,4 +134,36 @@ PROXY_URL=http://x.x.x.x:port
 ```
 
 這邊雖然與前端共用同一份環境變數，但別擔心，只要沒加上 REACT_APP 前綴就不會被 webpack 打包。<br>
-環境變數匯入以後，接著就是如何在 docker 內使用了：
+環境變數匯入以後，接著就是如何在 docker 內使用了~<br>
+首先你會需要在`docker-compose`內部加入 build 階段的環境變數：
+
+```
+# docker-compose.yaml
+services:
+  web:
+    build:
+      context: .
+      args:
+        DEPLOY_ENV: ${DEPLOY_ENV}
+        PROXY_URL: ${PROXY_URL}
+```
+
+然後在 Dockerfile 當中引入：
+
+```
+# Dockerfile
+FROM node:20 as build
+ARG DEPLOY_ENV
+ARG PROXY_URL
+...
+RUN npm config set proxy $PROXY_URL
+RUN npm config set https-proxy $PROXY_URL
+...
+RUN if [ "$DEPLOY_ENV" = "uat" ]; then \
+      npm run build:aws; \
+    else \
+      npm run build; \
+    fi
+```
+
+> **注意 `if [ "$DEPLOY_ENV" = "uat" ]` 中括號內部一定要有左右空格，否則會語法錯誤，親身經歷。**
