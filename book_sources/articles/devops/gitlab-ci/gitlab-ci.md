@@ -20,7 +20,7 @@ deploy-job:
     - test-runner
 ```
 
-- _**stages**_: 定義這個 pipeline 有幾個不同階段，這個例子只有一個階段 `deploy` (你在 Gitlab/CI/CD/Pipelines 就只會看到一個圈圈)。
+- _**stages**_: 定義這個 pipeline 有幾個不同階段，這個例子只有一個階段 `deploy` (意味著你在 Gitlab/CI/CD/Pipelines 就只會看到一個圈圈)。
 - _**deploy-job**_: 定義了一個 job 名稱為 `deploy-job`，內部可指定對應到哪個 stage。
 - _**script**_: 逐行執行的指令。
 - _**$GITLAB_USER_LOGIN, $CI_COMMIT_BRANCH**_: 此為 **Predefined Variables**，總共有哪些可參考[官方文件](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html#predefined-variables)。
