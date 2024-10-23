@@ -134,13 +134,15 @@ services:
       - 'API_PORT=XXXX'
     ports:
       - 3000:80
-    restart:
-      - always
+    restart: always
 ```
 
-_3.1 `build: context .` 他會幫你在當前目錄下找尋 Dockerfile 並且運行 docker build。_<br>
-_3.2 `environment:` 對應到前面 `default.conf.template` 用到的環境變數 `${API_HOST}`, `${API_PORT}`。 (注意這是 run-time variables)_<br>
-_3.3 `ports: 3000:80` 他會幫你映射容器的 80 port 給外面機器的 localhost:3000。_<br>
+_3.1 `image:` 指定映像檔的名稱，可自行增加版號。_<br>
+_3.1 `container_name:` 指定 container 的名稱，沒有設定的話預設是 project_name-service_name-sequence_number，如果有指定要注意會因為命名衝突無法 scaling。_<br>
+_3.3 `build: context .` 他會幫你在當前目錄下找尋 Dockerfile 並且運行 docker build。_<br>
+_3.4 `environment:` 對應到前面 `default.conf.template` 用到的環境變數 `${API_HOST}`, `${API_PORT}`。 (注意這是 run-time variables)_<br>
+_3.5 `ports: - 3000:80` 他會幫你映射容器的 80 port 給外面機器的 localhost:3000。_<br>
+_3.6 `restart: always` 容器被關閉後會自動重啟，應對停電或其他意外狀況_<br>
 
 ##### 4. 最後 Command Line 執行 `docker compose up --build -d` 就搞定了 💪
 
