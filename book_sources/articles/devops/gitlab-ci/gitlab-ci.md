@@ -55,7 +55,7 @@ tags:
 
 > 不知道怎麼擴充使用 env 的，可以參考我之前寫的[這篇文章](https://yuanwu0000.github.io/zachary-gitbook/articles/react/env.html)
 
-這時候，我們要做的就是讓 CI 可以依據不同的 Branch，執行不同的 build 指令，例如在 uat 環境是 `npm run build:uat`，在 production 環境則是 `npm run build`。
+這時候，我們要做的就是讓 CI 可以依據不同的 branch，執行不同的 build 指令，例如在 uat 環境是 `npm run build:uat`，在 production 環境則是 `npm run build`。
 
 一般來說如果你使用 docker executor，可以這樣做：
 
