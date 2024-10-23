@@ -23,7 +23,7 @@ deploy-job:
 - **stages**: 定義這個 pipeline 有幾個不同階段，這個例子只有一個階段 `deploy` (意味著你在 Gitlab/CI/CD/Pipelines 就只會看到一個圈圈)。
 - **deploy-job**: 定義了一個 job 名為 `deploy-job`，內部可指定它對應到哪個 stage。
 - **script**: 逐行執行的指令。
-- **$GITLAB_USER_LOGIN, $CI_COMMIT_BRANCH**: 此為 **Predefined Variables**，總共有哪些可參考[官方文件](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html#predefined-variables)。
+- **$GITLAB_USER_LOGIN, $CI_COMMIT_BRANCH**: 此為 **Predefined Variables**，種類可參考[官方文件](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html#predefined-variables)。
 - **pwd**: 個人覺得顯示當前路徑 Debug 還蠻方便的，如果 pipeline 有什麼異常，可以直接進到機器的該目錄底下檢查，通常是`/home/gitlab-runner/builds/xxxxxxxx/0/your-project`。
 - **only**: 限制這個 job 在某些條件下進行，**注意條件是 OR**，例如：<br>
 
