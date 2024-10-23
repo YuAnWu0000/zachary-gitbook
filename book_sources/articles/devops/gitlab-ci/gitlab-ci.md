@@ -133,4 +133,5 @@ DEPLOY_ENV=production
 PROXY_URL=http://x.x.x.x:port
 ```
 
-可以注意到我們與前端共用同一份環境變數，但別擔心，只要沒加上 REACT_APP 前綴就不會被 webpack 打包進來。
+這邊雖然與前端共用同一份環境變數，但別擔心，只要沒加上 REACT_APP 前綴就不會被 webpack 打包。<br>
+環境變數匯入以後，接著就是如何在 docker 內使用了：
