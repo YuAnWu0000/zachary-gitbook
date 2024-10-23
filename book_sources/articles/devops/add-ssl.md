@@ -68,7 +68,7 @@ upstream api {
 }
 ```
 
-眼尖的讀者應該發現了，其實只有這三行不同：
+眼尖的讀者應該發現了，兩個 `server {}` 區塊其實只有這三行不同：
 
 ```
 listen 443 ssl;
@@ -84,21 +84,8 @@ ssl_certificate_key /etc/nginx/ssl/nginx-selfsigned.key
 ### 修改 Dockerfile
 
 ```
-FROM node:20 as build
-WORKDIR /app
-ADD package.json /app/
-ADD package-lock.json /app/
-RUN npm install
-
-COPY . /app/
-RUN npm run build
-
-FROM nginx:stable
-COPY --from=build /app/build /usr/share/nginx/html
-COPY default.conf.template /etc/nginx/templates/
-
+...
 EXPOSE 80 443
-
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
@@ -110,16 +97,13 @@ CMD ["nginx", "-g", "daemon off;"]
 version: '3'
 services:
   web:
-    build:
-      context: .
-    environment:
-      - 'API_HOST=X.X.X.X'
-      - 'API_PORT=XXXX'
+    ...
     ports:
       - 3000:80
       - 3010:443
     volumes:
       - ./ssl:/etc/nginx/ssl
+    ...
 ```
 
 新增 `volumes: - ./ssl:/etc/nginx/ssl` 讓 docker 內部的 `/etc/nginx/ssl` 可以直接掛載到外面的 `./ssl`。
