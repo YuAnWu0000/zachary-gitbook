@@ -121,10 +121,6 @@ CMD ["nginx", "-g", "daemon off;"]
 
 或是你也可以跟我一樣不想打 command，那就可以用 docker compose 來幫你達成，好處是你不用每次都去記上面的 command 要怎麼下，只需要在 `docker-compose.yaml` 裡面定義好要做的事就行了，而且這個檔案可以上到 git 讓你享有版控的好處 👏。
 
-_3.1 `build: context .` 他會幫你在當前目錄下找尋 Dockerfile 並且運行 docker build。_<br>
-_3.2 `environment:` 對應到前面 `default.conf.template` 用到的環境變數 `${API_HOST}`, `${API_PORT}`。_<br>
-_3.3 `ports: 3000:80` 他會幫你映射容器的 80 port 給外面機器的 localhost:3000。_<br>
-
 ```
 version: '3'
 services:
@@ -141,6 +137,10 @@ services:
     restart:
       - always
 ```
+
+_3.1 `build: context .` 他會幫你在當前目錄下找尋 Dockerfile 並且運行 docker build。_<br>
+_3.2 `environment:` 對應到前面 `default.conf.template` 用到的環境變數 `${API_HOST}`, `${API_PORT}`。 (注意這是 run-time variables)_<br>
+_3.3 `ports: 3000:80` 他會幫你映射容器的 80 port 給外面機器的 localhost:3000。_<br>
 
 ##### 4. 最後 Command Line 執行 `docker compose up --build -d` 就搞定了 💪
 

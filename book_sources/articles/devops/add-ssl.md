@@ -103,7 +103,6 @@ services:
       - 3010:443
     volumes:
       - ./ssl:/etc/nginx/ssl
-    ...
 ```
 
 新增 `volumes: - ./ssl:/etc/nginx/ssl` 讓 docker 內部的 `/etc/nginx/ssl` 可以直接掛載到外面的 `./ssl`。
