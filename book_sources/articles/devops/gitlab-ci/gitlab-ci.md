@@ -114,3 +114,23 @@ deploy-to-production:
   tags:
     - production-runner
 ```
+
+可以發現我們透過分支的不同來決定要使用哪個環境變數檔：
+
+```
+# .env.uat
+RAECT_APP_CLIENT_ID=xxx
+...
+DEPLOY_ENV=uat
+PROXY_URL=http://x.x.x.x:port
+```
+
+```
+# .env.production
+RAECT_APP_CLIENT_ID=xxx
+...
+DEPLOY_ENV=production
+PROXY_URL=http://x.x.x.x:port
+```
+
+可以注意到我們與前端共用同一份環境變數，但別擔心，只要沒加上 REACT_APP 前綴就不會被 webpack 打包進來。
