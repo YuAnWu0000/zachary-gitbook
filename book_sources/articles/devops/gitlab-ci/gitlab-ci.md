@@ -56,3 +56,31 @@ tags:
 > 不知道怎麼擴充使用 env 的，可以參考我之前寫的[這篇文章](https://yuanwu0000.github.io/zachary-gitbook/articles/react/env.html)
 
 這時候，我們要做的就是讓 CI 可以依據不同的 Branch，執行不同的 build 指令，例如在 uat 環境是 `npm run build:uat`，在 production 環境則是 `npm run build`。
+
+一般來說如果你使用 docker executor，可以這樣做：
+
+```
+# .gitlab-ci.yml
+stages:
+  - build
+build-for-uat:
+  stage: deploy
+  image: node:20
+  script:
+    - npm run build:uat
+  only:
+    - uat
+  tags:
+    - uat-runner
+build-for-production:
+  stage: deploy
+  image: node:20
+  script:
+    - npm run build
+  only:
+    - master
+  tags:
+    - production-runner
+```
+
+需要注意的是要記得開兩台 runner，一台對應到 uat 環境，而另一台對應到 production 環境。
