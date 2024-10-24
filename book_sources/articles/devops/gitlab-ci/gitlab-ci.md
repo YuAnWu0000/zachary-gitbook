@@ -35,7 +35,7 @@ only:
 
 **這個 job 只會在 master 分支或是下 tag 的時候觸發，如果需要 AND 請轉用 `rules:`。**
 
-- _**tags**_: 此 tag 非彼 tag，這是**指定要讓哪個 runner 跑的 tag**，還記得嗎？我們上一篇文章在建立 runner 的時候有輸入 tag，這時候就派上用場了。**注意跟 `only:` 不同，這邊的邏輯是 AND**。例如：<br>
+- **tags**: 此 tag 非彼 tag，這是**指定要讓哪個 runner 跑的 tag**，還記得嗎？我們上一篇文章在建立 runner 的時候有輸入 tag，這時候就派上用場了。**注意跟 `only:` 不同，這邊的邏輯是 AND**。例如：<br>
 
 ```
 tags:
@@ -85,7 +85,7 @@ build-for-production:
 
 **需要注意的是要記得開兩台 runner**，一台對應到 uat 環境，而另一台對應到 production 環境。
 
-不過由於我在之前就已經把`Dockerfile`, `docker-compose.yaml`, `nginx.conf`都完成了 (詳情可看[這篇文章](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/deploy-your-project.html))，所以只需要 gitlab-ci 模擬手動部署的情境，因此我選擇使用 **Shell executor**，目標是要根據不同的 branch 來執行不同的`docker compose up`指令：
+不過由於我在之前就已經把`Dockerfile`, `docker-compose.yaml`, `nginx.conf`都寫好了 (詳情可看[這篇文章](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/deploy-your-project.html))，所以只需要 gitlab-ci 模擬手動部署的指令，因此我選擇使用 **Shell executor**，目標是要根據不同的 branch 來執行不同的`docker compose up`指令：
 
 ```
 # .gitlab-ci.yml
@@ -94,9 +94,6 @@ stages:
 deploy-to-uat:
   stage: deploy
   script:
-    - echo "Hello, $GITLAB_USER_LOGIN!"
-    - pwd
-    - echo "This job deploys from the $CI_COMMIT_BRANCH branch."
     - sudo docker compose --env-file .env.uat up --build -d
   only:
     - uat
@@ -105,9 +102,6 @@ deploy-to-uat:
 deploy-to-production:
   stage: deploy
   script:
-    - echo "Hello, $GITLAB_USER_LOGIN!"
-    - pwd
-    - echo "This job deploys from the $CI_COMMIT_BRANCH branch."
     - sudo docker compose --env-file .env.production up --build -d
   only:
     - master
