@@ -166,6 +166,8 @@ RUN if [ "$DEPLOY_ENV" = "uat" ]; then \
 
 ### 加入 SSL 憑證
 
+現在來為你的網站加上 SSL 吧~關於如何設定 nginx 可以看[這裡](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/add-ssl.html)。
+
 ```
 # .gitlab-ci.yml
 stages:
