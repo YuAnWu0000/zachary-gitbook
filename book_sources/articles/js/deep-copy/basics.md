@@ -90,7 +90,7 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 > 1.a. Let lref be ? Evaluation of _LeftHandSideExpression_.
 
-把 `let testA` 作語法分析的結果放進 lref 中。
+把 `let testA` 作 `eval()` 的結果放進 lref 中。
 
 > 1.b. If IsAnonymousFunctionDefinition(_AssignmentExpression_) and IsIdentifierRef of _LeftHandSideExpression_ are both true...
 
@@ -99,7 +99,7 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 > 1.c.i. Let rref be ? Evaluation of _AssignmentExpression_.<br>
 > 1.c.ii. Let rval be ? GetValue(rref).
 
-先把 `{ a: 1 }` 作語法分析放進 rref 中，**再用 GetValue() 取得 rref 的值**。
+先把 `{ a: 1 }` 作 `eval()` 再放進 rref 中，**再用 GetValue() 取得 rref 的值**。
 
 > ### 於是問題來了，`GetValue()` 是什麼？
 
@@ -117,7 +117,7 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 > The Reference Record type is used to explain the behaviour of such operators as delete, typeof, the assignment operators, the super keyword and other language features. For example, the left-hand operand of an assignment is expected to produce a Reference Record.
 
-第一段話就相當重要，在規範中寫明，**_Reference Record_ 是一種為了解釋語言底層原理而被發明的型別，並不存在於實作當中**，特別這邊舉的例子剛好就是 assignment 的情況。據他所言，`let testA` 經過 `evaluate()` 的結果就會是一個 _Reference Record_。
+第一段話就相當重要，在規範中寫明，**_Reference Record_ 是一種為了解釋語言底層原理而被發明的型別，並不存在於實作當中**，特別這邊舉的例子剛好就是 assignment 的情況。據他所言，`let testA` 經過 `eval()` 的結果就會是一個 _Reference Record_。
 
 _Reference Record_ 具體包含了以下四個部分：
 
@@ -130,7 +130,7 @@ _Reference Record_ 具體包含了以下四個部分：
 
 ```
 let testA = { a: 1 }
-// testA 對應的 Reference Record
+// testA 經過 eval() 後對應的 Reference Record
 {
   base: EnvironmentRecord,
   name: 'testA',
