@@ -204,6 +204,19 @@ deploy-to-production:
 ```
 
 我們在 CI job 中新加入了 before_script 階段來預先建立 SSL 憑證的檔案，當中使用到兩個環境變數：**$NGINX_SSL_CERT**、**$NGINX_SSL_KEY**，請先記得到 `Settings/CI/CD/Variables` 進行設定：<br>
-另外 CI 也有 cache 的功能！讓檔案在不同 job 或 pipeline 當中共用，像這裡就把 ssl/內容快取住了。<br>
+(另外 CI 也有 cache 的功能！讓檔案在不同 job 或 pipeline 當中共用，像這裡就把 ssl/內容快取住了。)<br>
 
 <img src="../../../images/gitlab-ci/var.png" width="1000" >
+
+還記得嗎？我們之前在`docker-compose.yaml`檔案中有加上：<br>
+
+```
+volumes:
+  - ./ssl:/etc/nginx/ssl
+```
+
+所以我們在 CI 加上這個步驟以後，**container 內部的 nginx 就可以吃到掛載的 ssl 檔案了！**
+
+### 錨點 (Anchor)
+
+覺得 CI 重複的部分有點多，想要抽出來嗎？這邊剛好有一個被稱作錨點的 syntax 可以完成！當然，這完全是 optional 的，如果你跟我一樣是個有潔癖的工程師，那就繼續看下去吧！
