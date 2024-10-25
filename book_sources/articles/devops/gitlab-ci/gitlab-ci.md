@@ -192,7 +192,6 @@ deploy-to-production:
     - mkdir -p ssl/
     - echo "$NGINX_SSL_CERT" > ssl/nginx-ssl.crt
     - echo "$NGINX_SSL_KEY" > ssl/nginx-ssl.key
-
   script:
     - sudo docker compose --env-file .env.production up --build -d
   only:
