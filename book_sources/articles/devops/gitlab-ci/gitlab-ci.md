@@ -165,3 +165,27 @@ RUN if [ "$DEPLOY_ENV" = "uat" ]; then \
 到這裡你已經根據不同環境執行了對應的`npm run build`指令，也成功處理了每台機器不同 proxy 的狀況，趕快來測試看看吧！
 
 ### 加入 SSL 憑證
+
+```
+# .gitlab-ci.yml
+stages:
+  - deploy
+deploy-to-uat:
+  stage: deploy
+  before_script:
+    - echo "I'm going to bind ssl certificate for your website..."
+  script:
+    - sudo docker compose --env-file .env.uat up --build -d
+  only:
+    - uat
+  tags:
+    - uat-runner
+deploy-to-production:
+  stage: deploy
+  script:
+    - sudo docker compose --env-file .env.production up --build -d
+  only:
+    - master
+  tags:
+    - production-runner
+```
