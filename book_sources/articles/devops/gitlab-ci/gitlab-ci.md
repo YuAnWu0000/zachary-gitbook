@@ -189,6 +189,8 @@ deploy-to-production:
   before_script:
     - echo "I'm going to bind ssl certificate for your website..."
     - mkdir -p ssl/
+    - echo "$NGINX_SSL_CERT" > ssl/nginx-ssl.crt
+
   script:
     - sudo docker compose --env-file .env.production up --build -d
   only:
