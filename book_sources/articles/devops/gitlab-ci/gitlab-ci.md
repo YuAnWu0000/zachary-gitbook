@@ -220,3 +220,35 @@ volumes:
 ### 錨點 (Anchor)
 
 覺得 CI 重複的部分有點多，想要抽出來嗎？這邊剛好有一個被稱作錨點的 syntax 可以完成！當然，這完全是 optional 的，如果你跟我一樣是個有潔癖的工程師，那就繼續看下去吧！
+
+```
+# .gitlab-ci.yml
+stages:
+  - deploy
+cache:
+  path:
+    - ssl/
+.deploy-job: &deploy-job
+  stage: deploy
+  before_script:
+    - echo "I'm going to bind ssl certificate for your website..."
+    - mkdir -p ssl/
+    - echo "$NGINX_SSL_CERT" > ssl/nginx-ssl.crt
+    - echo "$NGINX_SSL_KEY" > ssl/nginx-ssl.key
+deploy-to-uat:
+  <<: *deploy-job
+  script:
+    - sudo docker compose --env-file .env.uat up --build -d
+  only:
+    - uat
+  tags:
+    - uat-runner
+deploy-to-production:
+  <<: *deploy-job
+  script:
+    - sudo docker compose --env-file .env.production up --build -d
+  only:
+    - master
+  tags:
+    - production-runner
+```
