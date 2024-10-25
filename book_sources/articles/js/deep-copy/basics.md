@@ -165,7 +165,7 @@ console.log(testA.a()) // { c: 1 }
 }
 ```
 
-相信各位應該可以了解為什麼規範中寫 `[[Base]]` 可以是 _EnvironmentRecord_ 也可以是基本型別了吧！因為上述的例子 `a` 的 base 值就是 `testA` 這個 object。
+相信各位應該可以了解為什麼規範中寫 `[[Base]]` 可以是 _EnvironmentRecord_ 也可以是基本型別了吧！因為上述的例子 `a` 的 base 值就是 `testA` 這個 object (**因為 testA.a 這時候 a 的 context 是 textA**，這個觀念對於要理解 `this` 也是很受用的)。
 
 當然，base 同樣也可以是 number or string，比如 `"hello world".toUpperCase()` 這時候 `toUpperCase` 的 base 值就是 `"hello world"` 這個 string。
 
