@@ -253,7 +253,7 @@ deploy-to-production:
     - production-runner
 ```
 
-嗯！看起來乾淨多了。
+嗯！看起來舒服多了。
 
 ### 結語
 
