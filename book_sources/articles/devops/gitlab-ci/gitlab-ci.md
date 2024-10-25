@@ -182,6 +182,8 @@ deploy-to-uat:
     - uat-runner
 deploy-to-production:
   stage: deploy
+  before_script:
+    - echo "I'm going to bind ssl certificate for your website..."
   script:
     - sudo docker compose --env-file .env.production up --build -d
   only:
