@@ -172,6 +172,9 @@ RUN if [ "$DEPLOY_ENV" = "uat" ]; then \
 # .gitlab-ci.yml
 stages:
   - deploy
+cache:
+  path:
+    - ssl/
 deploy-to-uat:
   stage: deploy
   before_script:
@@ -199,3 +202,8 @@ deploy-to-production:
   tags:
     - production-runner
 ```
+
+我們在 job 中新加入了 before_script 階段來預先建立 SSL 憑證的檔案，當中使用到兩個環境變數：$NGINX_SSL_CERT
+、$NGINX_SSL_KEY，請先記得到 `Settings/CI/CD/Variables` 進行設定：<br>
+
+<img src="../../../images/gitlab-ci/var.png" width="1000" >
