@@ -176,6 +176,7 @@ deploy-to-uat:
   stage: deploy
   before_script:
     - echo "I'm going to bind ssl certificate for your website..."
+    - mkdir -p ssl/
   script:
     - sudo docker compose --env-file .env.uat up --build -d
   only:
@@ -186,6 +187,7 @@ deploy-to-production:
   stage: deploy
   before_script:
     - echo "I'm going to bind ssl certificate for your website..."
+    - mkdir -p ssl/
   script:
     - sudo docker compose --env-file .env.production up --build -d
   only:
