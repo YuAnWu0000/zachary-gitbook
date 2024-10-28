@@ -115,8 +115,8 @@ deploy-to-production:
 # .env.uat
 RAECT_APP_CLIENT_ID=xxx
 ...
-DEPLOY_ENV=uat
-PROXY_URL=http://x.x.x.x:port
+DEPLOY_ENV=uat # 變數一
+PROXY_URL=http://x.x.x.x:port # 變數二
 ```
 
 ```
