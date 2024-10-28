@@ -123,11 +123,12 @@ PROXY_URL=http://x.x.x.x:port # 變數二
 # .env.production
 RAECT_APP_CLIENT_ID=xxx
 ...
-DEPLOY_ENV=production
-PROXY_URL=http://y.y.y.y:port
+DEPLOY_ENV=production # 變數一
+PROXY_URL=http://y.y.y.y:port # 變數二
 ```
 
 這邊雖然與前端共用同一份環境變數，但別擔心，只要沒加上 REACT_APP 前綴就不會被 webpack 打包。<br>
+這邊用到了兩個環境變數<br>
 環境變數匯入以後，接著就是如何在 docker 內使用了~<br>
 首先你會需要在`docker-compose`內部加入 build-time variables **(該變數只能在 build image 的階段使用，如果要在容器運行時使用請改用`environment`)**：
 
