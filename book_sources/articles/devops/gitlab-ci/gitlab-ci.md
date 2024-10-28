@@ -128,7 +128,11 @@ PROXY_URL=http://y.y.y.y:port # 變數二
 ```
 
 這邊雖然與前端共用同一份環境變數，但別擔心，只要沒加上 REACT_APP 前綴就不會被 webpack 打包。<br>
-這邊用到了兩個環境變數<br>
+我這次用到了兩個環境變數：<br>
+
+- DEPLOY_ENV: 讓 Dockerfile 判斷當下執行環境，然後根據環境來下不同的`npm run build`指令。
+- PROXY_URL: 不同機器上需要的代理伺服器 ip 也不同。
+
 環境變數匯入以後，接著就是如何在 docker 內使用了~<br>
 首先你會需要在`docker-compose`內部加入 build-time variables **(該變數只能在 build image 的階段使用，如果要在容器運行時使用請改用`environment`)**：
 
@@ -139,8 +143,8 @@ services:
     build:
       context: .
       args:
-        DEPLOY_ENV: ${DEPLOY_ENV}
-        PROXY_URL: ${PROXY_URL}
+        DEPLOY_ENV: ${DEPLOY_ENV} # 變數一
+        PROXY_URL: ${PROXY_URL} # 變數二
 ```
 
 然後在 Dockerfile 當中引入該變數：
