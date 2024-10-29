@@ -6,8 +6,8 @@ CI/CD 的概念應該不用多做解釋，但在開始這一切之前，有人�
 
 <img src="../../../images/gitlab-ci/runner.png" width="700" >
 
-簡單說，當你跟 Gitlab 做出互動，例如: 下 tag 或是 push commit，Gitlab 會自動觸發你專案中的 `gitlab-ci.yml`。<br>
-接著 Gitlab 會需要找一台 server 來執行`gitlab-ci.yml`裡面的指令(Jobs)，這個執行的 server 就叫做 **gitlab-runner**。<br>
+簡單說，當你跟 Gitlab 做出互動，例如: 下 tag 或是 push commit，Gitlab 會自動觸發你專案中的 `.gitlab-ci.yml`。<br>
+接著 Gitlab 會需要找一台 server 來執行`.gitlab-ci.yml`裡面的指令(Jobs)，這個執行的 server 就叫做 **gitlab-runner**。<br>
 最後 Gitlab 會將 gitlab-runner 的執行過程跟執行結果顯示於 Pipeline 給你看。<br>
 
 講完了理論，就讓我們開始動手實作吧~
@@ -16,7 +16,7 @@ CI/CD 的概念應該不用多做解釋，但在開始這一切之前，有人�
 
 首先，先進入你的部署機器內的 terminal，這一步驟主要是將 runner 安裝在機器上，這樣之後跑 CI 就會在這台機器上跑。
 
-以下會用 download binary file 來示範，或是你也可以直接`apt install`:<br>
+以下會以 download binary file 來示範，或是你也可以直接`apt install`:<br>
 https://docs.gitlab.com/runner/install/linux-repository.html?tab=Debian%2FUbuntu%2FMint#install-gitlab-runner
 
 ```
