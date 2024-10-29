@@ -220,7 +220,7 @@ volumes:
   - ./ssl:/etc/nginx/ssl
 ```
 
-所以我們在 CI 加上這個步驟以後，**container 內部的 nginx 就可以吃到掛載的 ssl 檔案了！**
+所以我們在 CI 加上這個步驟以後，**container 內部的 nginx 就可以吃到外部掛載的 ssl 檔案了！**
 
 ### 錨點 (Anchor)
 
