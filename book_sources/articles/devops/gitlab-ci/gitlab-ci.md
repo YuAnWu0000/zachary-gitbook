@@ -43,11 +43,11 @@ tags:
   - production-runner
 ```
 
-**代表這個 job 只能在同時是 `test-runner` 又是 `production-runner` 的 runner 上面跑** (每個 runner 可以設定多個 tag)，如果一個 job 找不到符合條件的 runner，你會在 pipeline 看到它**永遠是 pending 的狀態**。
+**代表這個 job 只能在同時具有 `test-runner` + `production-runner` 這兩個標籤的 runner 上面跑** (每個 runner 可以設定多個 tag)，如果一個 job 找不到符合條件的 runner，你會在 pipeline 看到它**永遠是 pending 的狀態**。
 
-> ### 把你的 commit push 到 master 吧！不久後你就可以看到 pipeline 的成功訊息了。
+> ### 有了上面這份 gitlab-ci 以後，趕快把你的 commit push 到 master 吧！不久後你就可以看到 pipeline 的成功訊息了。
 
-成功以後讓我們根據需求開始擴充這個 CI 吧~
+接著後讓我們根據需求開始擴充這個 CI 吧~
 
 ### 搭配環境變數
 
