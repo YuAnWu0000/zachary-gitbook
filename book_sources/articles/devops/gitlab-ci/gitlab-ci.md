@@ -171,7 +171,7 @@ RUN if [ "$DEPLOY_ENV" = "uat" ]; then \
 
 ### 加入 SSL 憑證
 
-現在來為你的網站加上 SSL 吧~關於如何設定 nginx.conf 可以看[這裡](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/add-ssl.html)。
+接下來為你的網站加上 SSL 吧~關於一些設定細節可以看[這篇文章](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/add-ssl.html)。
 
 ```
 # .gitlab-ci.yml
@@ -212,6 +212,8 @@ deploy-to-production:
 (另外 gitlab-ci 也有 cache 的功能可以讓檔案在不同 job 或 pipeline 當中共用，像這裡就把 ssl/內容快取住了。)<br>
 
 <img src="../../../images/gitlab-ci/var.png" width="1000" >
+
+設定變數的時候記得選擇 "Protect variable" 喔！畢竟 SSL 憑證算是私密資訊，這個設定會讓 Gitlab 額外判斷只有跑在 protected branch or tag 的 pipeline 才能取用該變數。
 
 還記得嗎？我們之前在`docker-compose.yaml`檔案中有加上：<br>
 
