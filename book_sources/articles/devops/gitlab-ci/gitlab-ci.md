@@ -1,7 +1,7 @@
 # 解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數
 
-上一篇搞定 gitlab-runner 的各種設定以後，我們馬上來建立一個簡單的 gitlab-ci 測試看看吧~<br>
-喔對了`.gitlab-ci.yml`，檔名前面記得加`.`，不要跟我一樣耍笨 😓。
+上一篇搞定 gitlab-runner 的各種設定以後，現在馬上讓我們來建立一個簡單的 gitlab-ci 測試看看吧~<br>
+喔對了`.gitlab-ci.yml`，檔名前面記得加`.`，不要跟我一樣耍笨喔 😓。
 
 ```
 # .gitlab-ci.yml
@@ -20,10 +20,10 @@ deploy-job:
     - test-runner
 ```
 
-- **stages**: 定義這個 pipeline 有幾個不同階段，這個例子只有一個階段 `deploy` (意味著你在 Gitlab/CI/CD/Pipelines 就只會看到一個圈圈)。
-- **deploy-job**: 定義了一個 job 名為 `deploy-job`，內部可指定它對應到哪個 stage。
-- **script**: 逐行執行的指令。
-- **$GITLAB_USER_LOGIN, $CI_COMMIT_BRANCH**: 此為 **Predefined Variables**，種類可參考[官方文件](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html#predefined-variables)。
+- **stages**: 定義這個 pipeline 有幾個不同階段，這個例子只有一個階段 `deploy` (意味著你在 Settings/CI/CD/Pipelines 就只會看到一個圈圈)。
+- **deploy-job**: 定義了一個 job 名為 `deploy-job`，`stage: deploy` 表示這個 job 對應到 `deploy` 階段。
+- **script**: 這邊寫下你需要在機器上運行的指令。
+- **$GITLAB_USER_LOGIN, $CI_COMMIT_BRANCH**: 此為 **Predefined Variables**，為 Gitlab 事先幫你定義好的一些變數，詳情可參考[官方文件](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html#predefined-variables)。
 - **pwd**: 個人覺得顯示當前路徑 Debug 還蠻方便的，如果 pipeline 有什麼異常，可以直接進到機器的該目錄底下檢查，通常是`/home/gitlab-runner/builds/xxxxxxxx/0/your-project`。
 - **only**: 限制這個 job 在某些條件下進行，**注意條件是 OR**，例如：<br>
 
