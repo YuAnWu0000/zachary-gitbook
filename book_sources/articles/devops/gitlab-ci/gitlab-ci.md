@@ -262,7 +262,7 @@ deploy-to-production:
 
 ### 結語
 
-實作到這邊，理論上你已經完成了專案的 CI/CD，它會自動根據不同 branch 的 commit push 來幫你把專案部署到不同機器上。<br>
+實作到這邊，理論上你已經完成了專案初步的 CI/CD，它會自動根據不同 branch 的 commit 來幫你把專案部署到不同機器上。<br>
 
 當然如果你想改為下 tag 的時候部署，可以這麼做：<br>
 
