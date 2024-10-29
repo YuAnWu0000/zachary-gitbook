@@ -116,7 +116,7 @@ gitlab-runner run
 
 這些設定如果日後想更改也可以直接改 `config.toml`，不需要重新註冊。
 
-> 補充一個我在公司內網踩過的坑：使用 docker executor 的時候，若有將 etc/hosts 設定傳入 container 的需求，可以在`/etc/gitlab-runner/config.toml`內加上`extra_hosts = ["example.com:x.x.x.x"]`，通常公司有自架 DNS server 的時候會遇到。
+> 補充一個我在公司內網踩過的坑：使用 docker executor 的時候，若有將 `etc/hosts` 設定傳入 container 的需求，可以在`/etc/gitlab-runner/config.toml`內加上`extra_hosts = ["example.com:x.x.x.x"]`，通常公司有自架 DNS server 的時候會遇到。
 
 ### 結語
 
