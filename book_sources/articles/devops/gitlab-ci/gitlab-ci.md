@@ -130,11 +130,11 @@ PROXY_URL=http://y.y.y.y:port # 變數二
 這邊雖然與前端共用同一份環境變數，但別擔心，只要沒加上 REACT_APP 前綴就不會被 webpack 打包。<br>
 我這次用到了兩個環境變數：<br>
 
-- DEPLOY_ENV: 讓 Dockerfile 判斷當下執行環境，然後根據環境來下不同的`npm run build`指令。
-- PROXY_URL: 不同機器上需要的代理伺服器 ip 也不同。
+- DEPLOY_ENV: 讓 Dockerfile 判斷當下執行環境，然後根據環境來下不同的 `npm run build` 指令。
+- PROXY_URL: 不同機器所需要的代理伺服器 ip 也不同。
 
 環境變數匯入以後，接著就是如何在 docker 內使用了~<br>
-首先你會需要在`docker-compose`內部加入 build-time variables **(該變數只能在 build image 的階段使用，如果要在容器運行時使用請改用`environment`)**：
+首先你會需要在 `docker-compose` 內部加入 **build-time variables (該變數只能在 build image 的階段使用，如果要在容器運行時使用請改用`environment`)**：
 
 ```
 # docker-compose.yaml
@@ -147,7 +147,7 @@ services:
         PROXY_URL: ${PROXY_URL} # 變數二
 ```
 
-然後在 Dockerfile 當中引入該變數：
+然後在 Dockerfile 當中引入該變數進行判斷：
 
 ```
 # Dockerfile
@@ -165,7 +165,7 @@ RUN if [ "$DEPLOY_ENV" = "uat" ]; then \
     fi
 ```
 
-> **注意 `if [ "$DEPLOY_ENV" = "uat" ]` 中括號內部一定要有左右空格，否則會語法錯誤，當初因為這個 Debug 了很久 😥。**
+> **注意： `if [ "$DEPLOY_ENV" = "uat" ]` 中括號內部一定要有左右空格，否則會語法錯誤，我當初因為這個 Debug 了很久 😥。**
 
 到這裡你已經根據不同環境執行了對應的 `npm run build` 指令，也成功處理了每台機器不同 proxy 的狀況，趕快來測試看看吧！
 
