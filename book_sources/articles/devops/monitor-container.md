@@ -49,5 +49,6 @@ docker logs --tail 50 --follow --timestamps [container-name]
 ```
 # nginx.conf
 log_format proxy_log '[$time_local] $remote_addr - $remote_user "$host$request_uri" '
-                     '$status $body_bytes'
+                     '$status $body_bytes_sent "$http_referer" '
+                     '"$http_user_agent" "$http_x_forwarded_for"'
 ```
