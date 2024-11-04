@@ -52,8 +52,9 @@ log_format proxy_log '[$time_local] $remote_addr - $remote_user "$host$request_u
                      '$status $body_bytes_sent "$http_referer" '
                      '"$http_user_agent" "$http_x_forwarded_for"'
                      ' Proxy: "$proxy_host" "$upstream_addr" ';
-
 access_log /var/log/nginx/access.log proxy_log;
+
+server {...}
 ```
 
 透過重新定義 `log_format` 就可以輸出任意格式的 log，Proxy 的結果可以參照 `$upstream_addr` 這個變數來查看最終這個 request 被導向了哪裡。
