@@ -43,3 +43,9 @@ docker logs --tail 50 --follow --timestamps [container-name]
 ```
 
 > ### 不過如果你有用反向代理，nginx 如何導流的 log 預設是不會顯示在這裡的，需要額外編輯 access_log 的格式。
+
+例如下面這樣：<br>
+
+```
+# nginx.conf
+```
