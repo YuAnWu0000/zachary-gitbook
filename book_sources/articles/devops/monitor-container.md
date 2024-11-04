@@ -56,3 +56,5 @@ log_format proxy_log '[$time_local] $remote_addr - $remote_user "$host$request_u
 access_log /var/log/nginx/access.log proxy_log;
 error_log /var/log/nginx/error.log crit;
 ```
+
+透過重新定義 `log_format` 就可以輸出任意格式的 log，Proxy 的結果可以參照`$upstream_addr`來查看最終這個 request 被導向了哪裡。
