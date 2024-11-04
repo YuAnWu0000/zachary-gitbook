@@ -57,3 +57,5 @@ access_log /var/log/nginx/access.log proxy_log;
 ```
 
 透過重新定義 `log_format` 就可以輸出任意格式的 log，Proxy 的結果可以參照 `$upstream_addr` 這個變數來查看最終這個 request 被導向了哪裡。
+
+最後記得將你自訂的格式名稱 `proxy_log` 加在 `access_log` 後面就大功告成了！
