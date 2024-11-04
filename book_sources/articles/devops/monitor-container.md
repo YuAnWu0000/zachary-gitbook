@@ -48,4 +48,5 @@ docker logs --tail 50 --follow --timestamps [container-name]
 
 ```
 # nginx.conf
+log_format proxy_log '[$time_local]'
 ```
