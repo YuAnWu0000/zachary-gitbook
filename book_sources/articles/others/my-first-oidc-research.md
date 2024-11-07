@@ -61,6 +61,8 @@ _**3.3 Authentik 回傳 access_token, refresh_token**_<br>
 _**3.4 前端將這兩個新的 token 儲存至 localStorage**_<br>
 _**3.5 重新進行 2.6 的登入流程**_<br>
 
+**全程都在背景執行，無需額外通知使用者。**
+
 > ### 補充說明：
 >
 > Unlike access tokens, refresh tokens are intended for use only with authorization servers and are never sent to resource servers.
