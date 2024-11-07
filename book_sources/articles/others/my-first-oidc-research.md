@@ -125,7 +125,7 @@ _4.9 在 IdP 登出後，利用前面提到的 `OpenID Connect Session Managemen
 
 > On the other hand, some logout notification methods from the OP to the RP are unreliable and therefore the notification might not be received.
 
-**spec 中的這段話也同樣表明依賴於第三方回覆有時是不可靠的，所以 RP 在跟 IdP 互動前預先登出算是合理行為 (畢竟已經取得使用者同意)。**
+**spec 中的這段話也同樣表明依賴於第三方回覆有時是不可靠的，所以 RP 在跟 IdP 互動前預先登出可以說是合理行為 (畢竟已經取得使用者同意)。**
 
 ### 最後的流程圖就會長這樣
 
