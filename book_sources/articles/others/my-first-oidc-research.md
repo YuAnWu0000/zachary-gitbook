@@ -115,7 +115,7 @@ _4.9 在 IdP 登出後，利用前面提到的 `OpenID Connect Session Managemen
 
 > ### 補充說明：<br>
 
-如果沒有進入 post logout 流程，下次使用者登入我們服務時，導去 Authentik 的瞬間會馬上導回來，使用者不需要重新輸入帳密 **(因為 IdP 的 session 並沒有被清除)**，乍看之下很方便，**但當他需要切換帳號時就會遇到困難。**<br>
+如果沒有進入 post logout 流程，則下次使用者登入我們服務時，導去 Authentik 的瞬間會馬上導回來，使用者不需要重新輸入帳密 **(因為 IdP 的 session 並沒有被清除)**，乍看之下很方便，**但當他需要切換帳號時就會遇到困難。**<br>
 
 另外有的人認為需要等到確定 revoke token 成功後再清除我們服務的 session 還有前端的 localStorage 等資訊，不然流程會不夠嚴謹，但我在 spec 中翻到了這麼一段話：
 
