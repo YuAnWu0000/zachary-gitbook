@@ -131,7 +131,7 @@ _4.9 在 IdP 登出後，利用前面提到的 `OpenID Connect Session Managemen
 
 <img src="../../images/my-first-oidc-research/final.png" width="1000" >
 
-希望我有把這整套 OIDC 的流程解釋清楚，幫助各位在使用第三方登入服務時更知道其背後的脈絡！那麼我們下篇文章見~
+希望我有把這整套 OIDC 的流程解釋清楚，幫助各位在使用第三方登入服務時更知道其背後的脈絡！那麼我們下篇文章見 👋
 
 ### References
 
