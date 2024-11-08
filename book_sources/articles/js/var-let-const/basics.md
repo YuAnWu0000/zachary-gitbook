@@ -1,4 +1,4 @@
-# 回答一題 var / let / const 就驚艷你的面試官 ─ 及格標準之語法特性
+# 回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇
 
 ### 「請解釋 var / let / const 的差別？」
 

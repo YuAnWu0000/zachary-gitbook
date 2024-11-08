@@ -1,4 +1,4 @@
-# 回答一題 var / let / const 就驚艷你的面試官 ─ 滿分標準之 hoisting 細節
+# 回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇
 
 接續上一篇的問題...
 
