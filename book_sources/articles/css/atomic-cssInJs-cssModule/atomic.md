@@ -132,6 +132,6 @@ _**Atomic css (Tailwind):** `button` 的每種狀態都是一個 string (class l
 
 然後在 DX 這塊幾乎沒有 css-in-js 的事，因為...它就真的有點囉唆。
 
-下篇:
+**下篇:**
 
 - [CSS Framework 到底怎麼選？Tailwind CSS ? styled components ? CSS Module ? (3) ─ 談擴展](https://yuanwu0000.github.io/zachary-gitbook/articles/css/atomic-cssInJs-cssModule/scalability.html)
