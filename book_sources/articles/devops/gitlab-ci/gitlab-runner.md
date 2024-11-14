@@ -122,7 +122,9 @@ gitlab-runner run
 
 這個時候你的 gitlab-runner 已經準備就緒，接著就可以來正式撰寫`.gitlab-ci.yml`了，我們下次見 👋！
 
-關於如何撰寫 CI 可參考：
+**關於如何撰寫 CI 可參考：**
+
+- [解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/gitlab-ci/gitlab-ci.html)
 
 ### References
 
