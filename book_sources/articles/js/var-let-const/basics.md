@@ -162,6 +162,6 @@ if (true) {
 
 **可見 JS interpreter 跟我們想得不太一樣，要能解釋這個問題，我們只能理解 JS interpreter 有對 `let` 做一定程度的 `hoisting` ，不然沒道理在還沒執行到第四行以前就影響了第三行的賦值行為，那到底為什麼官方會否認？這背後又有什麼愛恨情仇糾葛不清呢？還請各位客倌先別急躁，敬待小弟下回分曉。**
 
-下集在這：
+**奉上下集：**
 
 - [回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇](https://yuanwu0000.github.io/zachary-gitbook/articles/js/var-let-const/advanced.html)
