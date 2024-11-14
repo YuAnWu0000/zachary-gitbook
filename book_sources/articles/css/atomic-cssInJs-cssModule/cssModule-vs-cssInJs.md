@@ -210,6 +210,4 @@ export default MyButton
 
 下一篇同樣會以這個例子來著重講講 **Atomic css**。
 
-**下篇:**
-
 - [CSS Framework 到底怎麼選？Tailwind CSS ? styled components ? CSS Module ? (2) ─ 談體驗](https://yuanwu0000.github.io/zachary-gitbook/articles/css/atomic-cssInJs-cssModule/atomic.html)
