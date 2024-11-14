@@ -209,3 +209,7 @@ export default MyButton
 以上，對於 **CSS module** 以及 **styled components** 的介紹就先點到為止，相信讀者已經有點感覺了，我知道忽略了很多面相，這是因為暫時不想讓討論太發散，還請各位保持耐心。
 
 下一篇同樣會以這個例子來著重講講 **Atomic css**。
+
+下篇:
+
+- [CSS Framework 到底怎麼選？Tailwind CSS ? styled components ? CSS Module ? (2) ─ 談體驗](https://yuanwu0000.github.io/zachary-gitbook/articles/css/atomic-cssInJs-cssModule/atomic.html)
