@@ -122,6 +122,8 @@ gitlab-runner run
 
 這個時候你的 gitlab-runner 已經準備就緒，接著就可以來正式撰寫`.gitlab-ci.yml`了，我們下次見 👋！
 
+關於如何撰寫 CI 可參考：
+
 ### References
 
 [GitLab CI 之 Runner 的 Executor 該如何選擇？](https://chengweichen.com/2021/03/gitlab-ci-executor.html)<br>
