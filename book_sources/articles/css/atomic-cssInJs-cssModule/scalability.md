@@ -190,3 +190,7 @@ let totalStyles = twMerge(
 當然其他兩者也不算差，Tailwind 撇除偶爾會遇到奇怪的坑，搭配上 `twMerge` 也有很不錯的彈性，至於 CSS module 則是需要額外關注 css file 中 class 定義的順序性跟權重等等，如果有些 class 長期被覆蓋掉可能也不好發現，面對日漸複雜的業務有可能會留下比較多的 legacy code。
 
 下一篇就讓我們來談談效能吧！敬請期待！
+
+下集
+
+- [CSS Framework 到底怎麼選？Tailwind CSS ? styled components ? CSS Module ? (4) ─ 談效能](https://yuanwu0000.github.io/zachary-gitbook/articles/css/atomic-cssInJs-cssModule/performance.html)
