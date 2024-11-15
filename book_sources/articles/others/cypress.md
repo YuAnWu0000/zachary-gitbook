@@ -14,7 +14,7 @@ npm install cypress --save-dev
 
 ##### 防火牆問題
 
-大部分的公司內網應該都有鎖防火牆，比較常使用的 `registry.npmjs.org` 想必早已經加入白名單了，但 cypress 不單單只是個 npm 套件這麼簡單，作為一套測試框架，他有自己的 app 需要下載。
+大部分的公司內網應該都有鎖防火牆，比較常使用的 `registry.npmjs.org` 想必早已經加入白名單了，但 cypress 不單單只是個 npm 套件這麼簡單，作為一套測試框架，他有自己的 app 需要下載 (如此才有酷酷的 Web UI 可以使用)。
 
 這就導致了你在執行 `npm install cypress --save-dev` 時，需要額外開通 `https://download.cypress.io` 的防火牆。
 
