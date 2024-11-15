@@ -27,3 +27,5 @@ npm install cypress --save-dev
 如果你們公司有針對防火牆設定憑證，要注意 cypress 從版本 11 之後加上了對 CA 的認證，所有未經授權的 CA 都會被系統駁回。(詳情請見 [change log](https://docs.cypress.io/app/references/changelog#11-0-0))
 
 > Communication with the Cypress Dashboard will now verify CAs and reject any unauthorized calls. If you use a self-signed CA you will need to set npm_config_ca, npm_config_cafile, or NODE_EXTRA_CA_CERTS. Addresses #23980.
+
+因此，當你執行`npm i cypress`時，會跳出 `Error: self signed certificate in certificate chain` 而無法成功下載。
