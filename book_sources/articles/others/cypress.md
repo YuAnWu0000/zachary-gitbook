@@ -20,4 +20,4 @@ npm install cypress --save-dev
 
 然而，你會發現狀況依然沒有改善。
 
-原因是`https://download.cypress.io`
+原因是`https://download.cypress.io`會重導向至 `https://cdn.cypress.io`，因此你必須同時開通這兩個才行。
