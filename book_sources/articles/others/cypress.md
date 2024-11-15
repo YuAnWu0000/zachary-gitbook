@@ -2,6 +2,8 @@
 
 ### 安裝
 
+雖然 cypress 框架並不算小，但理論上一行指令便可以完成安裝。
+
 ```
 npm install cypress --save-dev
 ```
