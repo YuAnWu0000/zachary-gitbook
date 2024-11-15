@@ -23,4 +23,4 @@
   - [解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數](./articles/devops/gitlab-ci/gitlab-ci.md)
 - [Others](./articles/others/others.md)
   - [初探 OIDC ─ 揭開我們每天都在使用，卻不了解的黑盒子](./articles/others/my-first-oidc-research.md)
-  - [Cypress - 超強大的 E2E test framework ─ ](./articles/others/cypress.md)
+  - [Cypress - 一款超強大的 E2E test framework ─ ](./articles/others/cypress.md)
