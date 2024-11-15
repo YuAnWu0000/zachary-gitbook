@@ -21,3 +21,9 @@ npm install cypress --save-dev
 然而，你會發現狀況依然沒有改善。
 
 原因是`https://download.cypress.io`會重導向至 `https://cdn.cypress.io`，因此你必須同時開通這兩個才行。
+
+##### CA 憑證問題
+
+如果你們公司有針對防火牆設定憑證，要注意 cypress 從版本 11 之後加上了對 CA 的認證，所有未經授權的 CA 都會被系統駁回。(詳情請見 [change log](https://docs.cypress.io/app/references/changelog#11-0-0))
+
+> Communication with the Cypress Dashboard will now verify CAs and reject any unauthorized calls. If you use a self-signed CA you will need to set npm_config_ca, npm_config_cafile, or NODE_EXTRA_CA_CERTS. Addresses #23980.
