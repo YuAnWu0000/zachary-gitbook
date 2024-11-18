@@ -41,3 +41,7 @@ npm install cypress --save-dev
    Windows: `set NODE_EXTRA_CA_CERTS=path/to/certificate.crt`
 
 兩種方法則一即可。
+
+另外，如果發現改了以後還是遲遲拉不下來，可以試著 `npm cache clean --force` 重新清除快取。
+
+**注意**：如果你使用系統管理員下載，可能會因為 User 不同而使用不同的 npm config (優先級可參考[這篇文章](https://stackoverflow.com/questions/51330735/npm-config-global-vs-local))
