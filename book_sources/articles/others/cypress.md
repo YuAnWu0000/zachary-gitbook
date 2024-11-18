@@ -34,8 +34,10 @@ npm install cypress --save-dev
 
 1. 在 npm config 加上 root CA:<br>
    執行 `npm config set cafile /path/to/cert.pem`<br>
-   或是在.npmrc 內加上 `cafile=/path/to/cert.pem` 也是可以的。
+   或是在`.npmrc` 內加上 `cafile=/path/to/cert.pem` 也是可以的 (`.npmrc` 的優先級比較高)。
 
 2. 在系統變數加上 `NODE_EXTRA_CA_CERTS`:<br>
    Linux: `export NODE_EXTRA_CA_CERTS=path/to/certificate.crt`<br>
    Windows: `set NODE_EXTRA_CA_CERTS=path/to/certificate.crt`
+
+兩種方法則一即可。
