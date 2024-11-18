@@ -44,4 +44,5 @@ npm install cypress --save-dev
 
 另外，如果發現改了以後還是遲遲拉不下來，可以試著 `npm cache clean --force` 重新清除快取。
 
-**注意**：如果你使用系統管理員下載，可能會因為 User 不同而使用不同的 npm config (優先級可參考[這篇文章](https://stackoverflow.com/questions/51330735/npm-config-global-vs-local))。由於使用者不同，可能也會導致你的 Cypress.exe 被載入到不同的地方，以 Windows / Cypress 13.15.2 為例，預設路徑是 `C:\Users\{YOUR_NAME}\AppData\Local\Cypress\Cache\13.15.2\Cypress\Cypress.exe`，這會導致你 `cypress open` 找不到應用程式而開不起來。
+**注意**：如果你使用系統管理員下載，可能會因為 User 不同而使用不同的 npm config (優先級可參考[這篇文章](https://stackoverflow.com/questions/51330735/npm-config-global-vs-local))。<br>
+由於使用者不同，也會導致你的 Cypress.exe 被載入到不同的地方，以 Windows / Cypress 13.15.2 為例：預設路徑是 `C:\Users\{YOUR_NAME}\AppData\Local\Cypress\Cache\13.15.2\Cypress\Cypress.exe`，這會導致你 `cypress open` 找不到應用程式而開不起來。
