@@ -49,5 +49,5 @@ npm install cypress --save-dev
 
 ### References
 
-[Error: self signed certificate in certificate chain](https://github.com/cypress-io/cypress/issues/26796)<br>
-[feat: add reject unauthorized to api server calls and standardize CA usage #24493](https://github.com/cypress-io/cypress/pull/24493)
+[Github Issue: Error: self signed certificate in certificate chain](https://github.com/cypress-io/cypress/issues/26796)<br>
+[Github Issue: feat: add reject unauthorized to api server calls and standardize CA usage #24493](https://github.com/cypress-io/cypress/pull/24493)
