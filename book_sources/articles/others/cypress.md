@@ -28,7 +28,7 @@ npm install cypress --save-dev
 
 > Communication with the Cypress Dashboard will now verify CAs and reject any unauthorized calls. If you use a self-signed CA you will need to set npm_config_ca, npm_config_cafile, or NODE_EXTRA_CA_CERTS. Addresses #23980.
 
-因此，當你執行 `npm i cypress` 時，會跳出 `Error: self signed certificate in certificate chain` 而無法成功下載 (災情請見[這裡](https://github.com/cypress-io/cypress/issues/26796))。
+**因此，當你執行 `npm i cypress` 時，會跳出 `Error: self signed certificate in certificate chain` 而無法成功下載 (災情請見[這裡](https://github.com/cypress-io/cypress/issues/26796))。**
 
 解決方法有以下幾種：
 
