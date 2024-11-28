@@ -49,6 +49,14 @@ npm install cypress --save-dev
 
 ### 安裝好了，然後呢...?
 
+接著請在 package.json 加上:
+
+```
+"scripts": {
+  "e2e": "cypress open"
+}
+```
+
 ### References
 
 [Github Issue: Error: self signed certificate in certificate chain](https://github.com/cypress-io/cypress/issues/26796)<br>
