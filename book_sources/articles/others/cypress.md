@@ -57,6 +57,8 @@ npm install cypress --save-dev
 }
 ```
 
+並在 terminal 輸入:`npm run e2e`
+
 ### References
 
 [Github Issue: Error: self signed certificate in certificate chain](https://github.com/cypress-io/cypress/issues/26796)<br>
