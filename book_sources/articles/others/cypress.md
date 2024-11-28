@@ -58,6 +58,11 @@ npm install cypress --save-dev
 ```
 
 並在 terminal 輸入`npm run e2e`妳就會看到:
+<img src="../../images/cypress/start.png" width="1000" >
+點擊 e2e 後他會要妳選擇測試瀏覽器:
+<img src="../../images/cypress/browser.png" width="1000" >
+選完以後按下 Start 就會進到測試畫面了
+<img src="../../images/cypress/test.png" width="1000" >
 
 ### References
 
