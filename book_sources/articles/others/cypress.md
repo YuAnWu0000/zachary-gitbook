@@ -61,8 +61,10 @@ npm install cypress --save-dev
 <img src="../../images/cypress/start.png" width="1000" >
 點擊 e2e 後他會要妳選擇測試瀏覽器:
 <img src="../../images/cypress/browser.png" width="1000" >
-選完以後按下 Start 就會進到測試畫面了
+選完以後按下 Start 就會進到測試畫面了:
 <img src="../../images/cypress/test.png" width="1000" >
+左邊就是它給你的範例測試，幫助你快速了解 syntax 跟測試方法，
+使用手冊可看[這裡](https://example.cypress.io/)。
 
 ### References
 
