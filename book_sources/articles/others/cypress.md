@@ -57,7 +57,7 @@ npm install cypress --save-dev
 }
 ```
 
-並在 terminal 輸入:`npm run e2e`
+並在 terminal 輸入`npm run e2e`妳就會看到:
 
 ### References
 
