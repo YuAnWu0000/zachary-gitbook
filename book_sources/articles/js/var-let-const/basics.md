@@ -50,20 +50,20 @@ test();
 console.log(a);
 ```
 
-答案是: 1，原因是在非嚴格模式下，`a = 1` 若找不到賦值的變數會直接被"隱式宣告"成全域變數。
+答案是: 1，原因是在非嚴格模式下，`a = 1` 若找不到賦值的變數 `a` 會直接被"隱式宣告"成全域變數。
 
 - 但如果多加一行 `var a`...
 
 ```
 function test() {
-  var a;
   a = 1;
+  var a;
 }
 test();
 console.log(a);
 ```
 
-答案就會變成: `Uncaught ReferenceError: a is not defined`，因為這次在 function scope 底下找到 var 變數去賦值了，因此不會變成全域變數。
+答案就會變成: `Uncaught ReferenceError: a is not defined`，因為這次在 function scope 底下找到 var 變數去賦值了，所以 `a` 不會變成全域變數。
 
 ### let
 
