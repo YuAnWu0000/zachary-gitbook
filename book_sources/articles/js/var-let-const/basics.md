@@ -20,7 +20,7 @@ var a = 0;
 console.log(window.a); // 0
 ```
 
-- `var` 可重複宣告，以後宣告的為主。(指的是在同一個作用域底下)
+- `var` **可重複宣告**，以後宣告的為主。(指的是在同一個作用域底下)
 
 ```
 var a = 0;
@@ -28,7 +28,7 @@ var a = 1;
 console.log(window.a); // 1
 ```
 
-- 不同作用域的情況，在 function 裡面宣告的就只存在於該 function scope
+- 不同作用域的情況，在 function 裡面宣告的就**只存在於該 function scope。**
 
 ```
 var a = 0;
