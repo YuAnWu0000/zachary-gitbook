@@ -59,6 +59,7 @@ console.log(a);
 ```
 a = 0;
 function test() {
+  var a;
   a = 1;
   console.log(a);
 }
