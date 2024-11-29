@@ -13,14 +13,14 @@
 
 ### var
 
-- 在全域宣告的變數 `var`, 也會同時作為全域物件(前端為 `window`, 後端為 `global`)的屬性
+- 在全域宣告的變數 `var`，也會同時作為全域物件(前端為 `window`，後端為 `global`)的屬性
 
 ```
 var a = 0;
 console.log(window.a); // 0
 ```
 
-- `var` 可重複宣告, 以後宣告的為主。(指的是在同一個作用域底下)
+- `var` 可重複宣告，以後宣告的為主。(指的是在同一個作用域底下)
 
 ```
 var a = 0;
@@ -28,7 +28,7 @@ var a = 1;
 console.log(window.a); // 1
 ```
 
-- 不同作用域的情況, 在 function 裡面宣告的就只存在於該 function scope
+- 不同作用域的情況，在 function 裡面宣告的就只存在於該 function scope
 
 ```
 var a = 0;
@@ -40,34 +40,30 @@ test(); // 1
 console.log(a); // 0
 ```
 
-- 順帶一提, 下面這個範例你認為輸出為何?
+- 順帶一提，下面這個範例你認為輸出為何?
 
 ```
-a = 0;
 function test() {
   a = 1;
-  console.log(a);
 }
 test();
 console.log(a);
 ```
 
-答案是: 1 1
+答案是: 1，原因是在非嚴格模式下，`a = 1` 若找不到賦值的變數會直接被"隱式宣告"成全域變數。
 
-- 如果多加一行 `var a`
+- 但如果多加一行 `var a`...
 
 ```
-a = 0;
 function test() {
   var a;
   a = 1;
-  console.log(a);
 }
 test();
 console.log(a);
 ```
 
-答案就是: 1 0 了
+答案就會變成: `Uncaught ReferenceError: a is not defined`，因為這次在 function scope 底下找到 var 變數去賦值了，因此不會變成全域變數。
 
 ### let
 
