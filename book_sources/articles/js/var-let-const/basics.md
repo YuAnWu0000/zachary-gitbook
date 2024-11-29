@@ -45,12 +45,28 @@ console.log(a); // 0
 ```
 a = 0;
 function test() {
-  var a = 1;
+  a = 1;
   console.log(a);
 }
 test();
 console.log(a);
 ```
+
+答案是: 1 1
+
+- 如果多加一行 `var a`
+
+```
+a = 0;
+function test() {
+  a = 1;
+  console.log(a);
+}
+test();
+console.log(a);
+```
+
+答案就是: 1 0 了
 
 ### let
 
