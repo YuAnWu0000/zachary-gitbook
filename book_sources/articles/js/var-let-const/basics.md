@@ -40,6 +40,18 @@ test(); // 1
 console.log(a); // 0
 ```
 
+- 順帶一提, 下面這個範例你認為輸出為何?
+
+```
+a = 0;
+function test() {
+  var a = 1;
+  console.log(a);
+}
+test();
+console.log(a);
+```
+
 ### let
 
 - 作用於**Block Scope**
