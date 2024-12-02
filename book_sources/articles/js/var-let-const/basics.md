@@ -64,7 +64,7 @@ test();
 console.log(a);
 ```
 
-答案就會變成: `Uncaught ReferenceError: a is not defined`，**因為這次在 function scope 底下找到 var 變數去賦值了，所以 `a` 不會變成全域變數。**
+答案就會變成: `Uncaught ReferenceError: a is not defined`，**因為這次在 function scope 底下找到 var 變數去賦值了(var 有 hoisting)，所以 `a` 不會變成全域變數。**
 
 ### let
 
