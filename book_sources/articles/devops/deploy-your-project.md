@@ -40,7 +40,7 @@ upstream api {
 }
 ```
 
-至於其他非`/api`的情況，就應用`try_files $uri /index.html;`，讓 nginx 去`/usr/share/nginx/html/`底下找對應的靜態文件
+至於其他非 `/api` 的情況，就應用 `try_files $uri /index.html;`，讓 nginx 去 `/usr/share/nginx/html/` 底下找對應的靜態文件，如果找不到則統一回傳 `index.html`
 
 ###### 順帶一提，如果你的專案有用到 websocket 的話可以這樣寫...
 
