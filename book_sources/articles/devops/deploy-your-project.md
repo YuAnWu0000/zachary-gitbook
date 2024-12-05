@@ -91,7 +91,7 @@ upstream api {
 
 **Docker 可以幫你建造出獨立的執行環境，如此一來在一台機器上便可以同時運行多個專案而不用擔心互相干擾，這也就是所謂容器化的概念 (可以想像他就是輕量化的 VM💻)。**<br>
 
-要能建立容器需要你撰寫 Dockerfile 告訴他這個容器需要什麼東西，以下面為例，我使用官方提供 Nodejs 20 的 docker image 來建立我專案的執行環境。
+要能建立容器需要你撰寫 Dockerfile 告訴他這個容器需要什麼東西，以下面為例，我使用官方提供 Nodejs v20 的 docker image 來建立我專案的執行環境。
 
 ```
 FROM node:20 as build
