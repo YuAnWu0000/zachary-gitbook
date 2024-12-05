@@ -40,7 +40,7 @@ upstream api {
 }
 ```
 
-至於其他非 `/api` 的情況，就應用 `try_files $uri /index.html;`，讓 nginx 去 `/usr/share/nginx/html/` 底下找對應的靜態文件，如果找不到則統一回傳 `index.html`，讓前端自己來處理路由。
+至於其他非 `/api` 的情況，就應用 `try_files $uri /index.html;`，讓 nginx 去 `/usr/share/nginx/html/` 底下找對應的靜態文件，若找不到則統一回傳 `index.html`，讓前端自己來處理路由。
 
 ###### 順帶一提，如果你的專案有用到 websocket 的話可以這樣寫...
 
@@ -82,7 +82,7 @@ upstream api {
 }
 ```
 
-額外加上 /ws 的 matching (此路徑可自行決定)，然後設定 http upgrade 相關的 header 就可以了！
+額外加上 /ws 的 matching (此路徑可自行決定) 來導向 ws server，然後加上 http upgrade 相關的 header 設定就可以了！
 
 ##### 2. 在專案內新增 Dockerfile
 
