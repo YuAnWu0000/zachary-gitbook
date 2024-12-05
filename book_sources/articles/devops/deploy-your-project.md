@@ -112,7 +112,7 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-後面其實就是一步一步的把當前專案複製進去容器內，然後再用我們前面編輯過的 `default.conf.template` 來設定 nginx，並且 host build 完的靜態檔案在容器對外開放的 80 port。
+後面其實就是一步一步的把當前專案複製進去容器內，然後再用我們前面編輯過的 `default.conf.template` 來設定 nginx，並且 host build 完的靜態檔案 (ex: `index.html`) 在容器對外開放的 80 port。
 
 > 補充: `nginx -g "daemon off;"`之所以設定成"daemon off;"，是因為希望 nginx 在 container 的前台運行，這樣出錯時方便我們及時查看 docker log。
 
