@@ -66,6 +66,8 @@ npm install cypress --save-dev
 左邊就是它給你的範例測試，幫助你快速了解 syntax 跟測試方法，
 使用手冊可看[這裡](https://example.cypress.io/)。
 
+是不是很簡單呢？趕快著手撰寫你的測試吧！
+
 ### References
 
 [Github Issue: Error: self signed certificate in certificate chain](https://github.com/cypress-io/cypress/issues/26796)<br>
