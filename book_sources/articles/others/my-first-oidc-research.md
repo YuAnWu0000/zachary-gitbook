@@ -13,7 +13,7 @@ OIDC 是建構於 Oauth2 之上的一種"**身分驗證**"協議，常見的 Flo
 
 - **User:** 一般使用者 😎，在 OAuth2 中稱作 Resource Owner，在 OIDC 中則直接改為 End-User 方便理解。
 - **Relying Party (RP):** 在這個例子指的是 SPA 架構下的網站前端 💻。
-- **Identity Provider (IdP):** 我這邊用的是 Authentik，常見的有 Google, Facebook, Line...等第三方登入驗證服務，也可以稱作 OP (OpenID Provider) 🔑。
+- **Identity Provider (IdP):** 我這邊用的是 Authentik，常見的有 Google, Facebook, Line...等第三方登入驗證服務，在 OIDC 規範中稱作 OP (OpenID Provider) 🔑。
 - **Web Backend:** 也可以稱作 Resource Server 🔐。
 
 ### 1. 重導向的登入流程
