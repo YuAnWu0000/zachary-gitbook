@@ -1,7 +1,7 @@
 # 初探 OIDC ─ 揭開我們每天都在使用，卻不了解的黑盒子
 
 我多年前曾經串過 Google Oauth2，現在想要把技術債一次補齊，因此這篇文誕生了！🎉<br>
-OIDC 是建構於 Oauth2 之上的一種"**身分驗證**"協議，常見的 Flow 有三種，本文將著重介紹我所使用的 Hybrid Flow。<br>
+OIDC 是建構於 Oauth2 之上的一種"**身分驗證**"協議，常見的 Flow 有三種，本文將著重介紹我所使用的 Authorization Code Flow。<br>
 
 注意：請不要把 Oauth 與 OIDC 混為一談，**Oauth 是一種"授權"協議，沒有驗證功能**，`access_token` 本身只單純作為取得某權限的令牌使用，而且在 Oauth 中你沒辦法單純用 `access_token` 解析出他是誰。<br>
 
@@ -11,7 +11,7 @@ OIDC 是建構於 Oauth2 之上的一種"**身分驗證**"協議，常見的 Flo
 
 在講述任何流程之前，我喜歡先把角色定義好，避免流程搞懂但角色混淆而不知如何應用的情況 😥。
 
-- **User:** 一般使用者 😎。
+- **User:** 一般使用者 😎，在 OAuth2 中叫做 Resource Owner，在 OIDC 中則直接稱呼為 End-User。
 - **Relying Party (RP):** 在這邊指的是 SPA 架構下的網站前端 💻。
 - **Identity Provider (IdP):** 我這邊用的是 Authentik，常見的有 Google, Facebook, Line...等第三方登入驗證服務，也可以稱作 OP (OpenID Provider) 🔑。
 - **Web Backend:** 也可以稱作 Resource Server 🔐。
