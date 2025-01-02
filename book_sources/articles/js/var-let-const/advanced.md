@@ -94,9 +94,9 @@ function catName(name) {
 
 比如這題我會這樣問：<br>
 
-1. 請問你知道 var / let / const 的區別嗎？你會分別在什麼情況下使用他們？
-2. 你剛剛有提到常數的時候使用 const，那請問為什麼變更常數陣列或物件屬性不會報錯？ (by reference? by value?)
-3. 你剛剛有提到 function scope / block scope，那你可以解釋看看 let 在 for 底下的作用跟 var 有什麼不同嗎？
+1. 你覺得 ES6 為什麼要新增 let / const？ 他們的出現解決了 var 的什麼問題？
+2. 你剛剛有提到 function scope / block scope，那你可以解釋看看 let 在 for 底下的作用跟 var 有什麼不同嗎？
+3. 你剛剛有提到定義常數的時候使用 const，那請問為什麼變更陣列內容或物件屬性時不會報錯？ (by reference? by value?)
 4. 你說你認為 let 沒有 hoisting，那你可以解釋這個例子嗎 (這篇文章的例子)？另外你覺得 JS interpreter 對 let 做了什麼額外處理?
 
 這種根據回答來延伸問題的方式比較可以引導面試者表現出深度的**技術思維**跟**思考脈絡**，也可以建立起面試的**雙向回饋**，個人覺得要比起「你覺得 var / let / const 的差別是...?」「還有嗎？還有什麼？有一個你沒講到。」這種八股文考試要好的多。
