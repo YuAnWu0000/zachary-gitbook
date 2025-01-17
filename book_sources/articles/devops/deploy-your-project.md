@@ -98,6 +98,7 @@ FROM node:20 as build
 WORKDIR /app
 ADD package.json /app/
 ADD package-lock.json /app/
+RUN npm config set strict-ssl false
 RUN npm install
 
 COPY . /app/
