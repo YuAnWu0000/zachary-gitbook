@@ -18,9 +18,10 @@ export default Marquee;
 
 > 值得注意的是，因為左右還要預留空間給其他元件各 `30rem`，所以寬度用 `w-[(100vw-60rem)]` 來計算。
 
-2. 把 `animate-runMarquee`動畫新增在 `tailwind.config.js`:
+2. 把 `animate-runMarquee` 動畫新增在 tailwind 設定檔中:
 
 ```js
+// ./tailwind.config.js.js
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
