@@ -7,7 +7,6 @@
   },
   "plugins": [
     "edit-link",
-    "code",
     "ga",
     "-sharing",
     "sharing-plus@^0.0.2",
@@ -89,9 +88,6 @@
     },
     "ga": {
       "token": ""
-    },
-    "code": {
-      "copyButtons": true
     }
   }
 }
