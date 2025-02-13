@@ -19,27 +19,27 @@ CI/CD 的概念應該不用多做解釋，但在開始這一切之前，有人�
 以下會以 download binary file 來示範，或是你也可以直接`apt install`:<br>
 https://docs.gitlab.com/runner/install/linux-repository.html?tab=Debian%2FUbuntu%2FMint#install-gitlab-runner
 
-```
+```bash
 # Linux x86-64
 sudo curl -L --output /usr/local/bin/gitlab-runner "https://s3.dualstack.us-east-1.amazonaws.com/gitlab-runner-downloads/latest/binaries/gitlab-runner-linux-amd64"
 ```
 
 如果你在內網需要透過 proxy 才能導向外部網站:<br>
 
-```
+```bash
 # Linux x86-64
 sudo curl -L --output /usr/local/bin/gitlab-runner --proxy "http://your.proxy.ip:port" "https://s3.dualstack.us-east-1.amazonaws.com/gitlab-runner-downloads/latest/binaries/gitlab-runner-linux-amd64"
 ```
 
 接著你需要給這個下載的 binary file 可執行的權限:<br>
 
-```
+```bash
 sudo chmod +x /usr/local/bin/gitlab-runner
 ```
 
 再來你需要新增一個名為 gitlab-runner 的使用者
 
-```
+```bash
 sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash
 ```
 
@@ -48,7 +48,7 @@ sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/
 
 **最後就是安裝並啟動 gitlab-runner 了:**
 
-```
+```bash
 sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
 sudo gitlab-runner start
 ```
@@ -89,7 +89,7 @@ sudo gitlab-runner start
 
 選擇系統後，Step1 會有一連串的輸入，參數包含以下幾項:<br>
 
-```
+```bash
 sudo gitlab-runner register \
   --non-interactive \
   --url "https://gitlab.com/" \
@@ -108,7 +108,7 @@ sudo gitlab-runner register \
 
 其他選項為 optional，可跳過。輸入之後你可以:
 
-```
+```bash
 gitlab-runner run
 ```
 
