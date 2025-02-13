@@ -38,7 +38,7 @@
 
 如果嫌 log 太多，可以只印出倒數 50 行，並用時間排序:
 
-```
+```bash
 docker logs --tail 50 --follow --timestamps [container-name]
 ```
 
@@ -46,7 +46,7 @@ docker logs --tail 50 --follow --timestamps [container-name]
 
 例如下面這樣：<br>
 
-```
+```nginx
 # nginx.conf
 log_format proxy_log '[$time_local] $remote_addr - $remote_user "$host$request_uri" '
                      '$status $body_bytes_sent "$http_referer" '
