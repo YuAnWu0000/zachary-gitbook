@@ -20,7 +20,7 @@
 
 例如下面的設定就是去監聽 http 預設的 80 port，並且藉由比對 /api 的字串去做 rewrite，讓你的前端網頁在 call API 時可以直接用相對地址如: /api/profile，nginx 會直接作為 proxy 幫你把 /api/profile 導到真正 server 的位置: http://x.x.x.x:port/profile
 
-```bash
+```nginx
 server {
   include   /etc/nginx/mime.types;
   default_type  application/octet-stream;
@@ -44,7 +44,7 @@ upstream api {
 
 ###### 順帶一提，如果你的專案有用到 websocket 的話可以這樣寫...
 
-```bash
+```nginx
 map $http_upgrade $connection_upgrade {
   default Upgrade;
   '' close;
