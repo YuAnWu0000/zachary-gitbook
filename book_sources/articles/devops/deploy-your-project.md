@@ -20,7 +20,7 @@
 
 例如下面的設定就是去監聽 http 預設的 80 port，並且藉由比對 /api 的字串去做 rewrite，讓你的前端網頁在 call API 時可以直接用相對地址如: /api/profile，nginx 會直接作為 proxy 幫你把 /api/profile 導到真正 server 的位置: http://x.x.x.x:port/profile
 
-```
+```nginx
 server {
   include   /etc/nginx/mime.types;
   default_type  application/octet-stream;
@@ -44,7 +44,7 @@ upstream api {
 
 ###### 順帶一提，如果你的專案有用到 websocket 的話可以這樣寫...
 
-```
+```nginx
 map $http_upgrade $connection_upgrade {
   default Upgrade;
   '' close;
@@ -93,7 +93,7 @@ upstream api {
 
 要能建立容器需要你撰寫 Dockerfile 告訴他這個容器需要什麼東西，以下面為例，我使用官方提供 Nodejs v20 的 docker image 來建立我專案的執行環境。
 
-```
+```docker
 FROM node:20 as build
 WORKDIR /app
 ADD package.json /app/
@@ -124,7 +124,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 或是你也可以跟我一樣不想打 command，那就可以用 docker compose 來幫你達成，好處是你不用每次都去記上面的 command 要怎麼下，只需要在 `docker-compose.yaml` 裡面定義好要做的事就行了，而且這個檔案也可以上到 git 讓你享有版控的好處 👏。
 
-```
+```docker
 version: '3'
 services:
   web:
