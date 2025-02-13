@@ -3,7 +3,7 @@
 上一篇搞定 gitlab-runner 的各種設定以後，現在馬上讓我們來建立一個簡單的 gitlab-ci 測試看看吧~<br>
 喔對了`.gitlab-ci.yml`，檔名前面記得加`.`，不要跟我一樣耍笨喔 😓。
 
-```
+```yml
 # .gitlab-ci.yml
 stages:
   - deploy
@@ -27,7 +27,7 @@ deploy-job:
 - **pwd**: 個人覺得顯示當前路徑 Debug 還蠻方便的，如果 pipeline 有什麼異常，可以直接進到機器的該目錄底下檢查，通常是`/home/gitlab-runner/builds/xxxxxxxx/0/your-project`。
 - **only**: 限制這個 job 在某些條件下進行，**注意條件是 OR**，例如：<br>
 
-```
+```yml
 only:
   - master
   - tags
@@ -37,7 +37,7 @@ only:
 
 - **tags**: 此 tag 非彼 tag，這是**指定要讓哪個 runner 跑的 tag**，還記得嗎？我們上一篇文章在建立 runner 的時候有輸入 tag，這時候就派上用場了。**注意跟 `only:` 不同，這邊的邏輯是 AND**。例如：<br>
 
-```
+```yml
 tags:
   - test-runner
   - production-runner
@@ -59,7 +59,7 @@ tags:
 
 一般來說如果你使用 **Docker executor**，可以這樣做：
 
-```
+```yml
 # .gitlab-ci.yml
 stages:
   - build
@@ -87,7 +87,7 @@ build-for-production:
 
 不過由於我在之前就已經把`Dockerfile`, `docker-compose.yaml`, `nginx.conf`都寫好了 (詳情可看[這篇文章](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/deploy-your-project.html))，所以只需要 gitlab-ci 模擬手動部署的指令，因此我選擇使用 **Shell executor**，目標是要根據不同的 branch 來執行不同的`docker compose up`指令：
 
-```
+```yml
 # .gitlab-ci.yml
 stages:
   - deploy
@@ -111,7 +111,7 @@ deploy-to-production:
 
 可以發現我透過分支的不同引入了不同的環境變數檔，檔案內容為：
 
-```
+```bash
 # .env.uat
 RAECT_APP_CLIENT_ID=xxx
 ...
@@ -119,7 +119,7 @@ DEPLOY_ENV=uat # 變數一
 PROXY_URL=http://x.x.x.x:port # 變數二
 ```
 
-```
+```bash
 # .env.production
 RAECT_APP_CLIENT_ID=xxx
 ...
@@ -136,7 +136,7 @@ PROXY_URL=http://y.y.y.y:port # 變數二
 環境變數匯入以後，接著就是如何在 docker 內使用了~<br>
 首先你會需要在 `docker-compose` 內部加入 **build-time variables (該變數只能在 build image 的階段使用，如果要在容器運行時使用請改用`environment`)**：
 
-```
+```yml
 # docker-compose.yaml
 services:
   web:
@@ -149,7 +149,7 @@ services:
 
 然後在 Dockerfile 當中引入該變數進行判斷：
 
-```
+```docker
 # Dockerfile
 FROM node:20 as build
 ARG DEPLOY_ENV
@@ -173,7 +173,7 @@ RUN if [ "$DEPLOY_ENV" = "uat" ]; then \
 
 接下來為你的網站加上 SSL 吧~關於一些設定細節可以看[這篇文章](https://yuanwu0000.github.io/zachary-gitbook/articles/devops/add-ssl.html)。
 
-```
+```yml
 # .gitlab-ci.yml
 stages:
   - deploy
@@ -217,7 +217,7 @@ deploy-to-production:
 
 還記得嗎？我們之前在`docker-compose.yaml`檔案中有加上：<br>
 
-```
+```yml
 volumes:
   - ./ssl:/etc/nginx/ssl
 ```
@@ -228,7 +228,7 @@ volumes:
 
 覺得 CI 程式重複的部分有點多，想要抽離出來嗎？這邊剛好有一個被稱作錨點的 syntax 可以完成！當然，這完全是 optional 的，但如果你跟我一樣是個有潔癖的工程師，那就繼續看下去吧！
 
-```
+```yml
 # .gitlab-ci.yml
 stages:
   - deploy
@@ -268,14 +268,14 @@ deploy-to-production:
 
 當然如果你想改為下 tag 的時候部署，可以這麼做：<br>
 
-```
+```yml
 only:
   - tags
 ```
 
 或是你也可以簡單校驗一下 tag 格式：<br>
 
-```
+```yml
 only:
   - /^v\d+\.\d+\.\d+$/
 ```
