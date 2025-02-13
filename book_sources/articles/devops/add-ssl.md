@@ -93,7 +93,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ### 修改 docker-compose.yaml
 
-```bash
+```yml
 version: '3'
 services:
   web:

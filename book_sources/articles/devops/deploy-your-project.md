@@ -124,8 +124,8 @@ CMD ["nginx", "-g", "daemon off;"]
 
 或是你也可以跟我一樣不想打 command，那就可以用 docker compose 來幫你達成，好處是你不用每次都去記上面的 command 要怎麼下，只需要在 `docker-compose.yaml` 裡面定義好要做的事就行了，而且這個檔案也可以上到 git 讓你享有版控的好處 👏。
 
-```bash
-version: '3'
+```yml
+version: "3"
 services:
   web:
     image: your-project:v0.0.1
@@ -133,8 +133,8 @@ services:
     build:
       context: .
     environment:
-      - 'API_HOST=X.X.X.X'
-      - 'API_PORT=XXXX'
+      - "API_HOST=X.X.X.X"
+      - "API_PORT=XXXX"
     ports:
       - 3000:80
     restart: always
