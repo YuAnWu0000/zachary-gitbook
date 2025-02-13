@@ -8,7 +8,7 @@
 
 ### 產出自簽 SSL 憑證
 
-```
+```bash
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./ssl/nginx-selfsigned.key -out ./ssl/nginx-selfsigned.crt
 ```
 
@@ -32,7 +32,7 @@ _-out ./ssl/nginx-selfsigned.crt: 指定憑證儲存位置。_<br>
 
 **default.conf.template:**
 
-```
+```nginx
 server {
   include   /etc/nginx/mime.types;
   default_type  application/octet-stream;
@@ -70,7 +70,7 @@ upstream api {
 
 眼尖的讀者應該發現了，兩個 `server {}` 區塊其實只有這三行不同：
 
-```
+```nginx
 listen 443 ssl;
 ssl_certificate /etc/nginx/ssl/nginx-selfsigned.crt
 ssl_certificate_key /etc/nginx/ssl/nginx-selfsigned.key
@@ -83,7 +83,7 @@ ssl_certificate_key /etc/nginx/ssl/nginx-selfsigned.key
 
 ### 修改 Dockerfile
 
-```
+```docker
 ...
 EXPOSE 80 443
 CMD ["nginx", "-g", "daemon off;"]
@@ -93,7 +93,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ### 修改 docker-compose.yaml
 
-```
+```bash
 version: '3'
 services:
   web:
