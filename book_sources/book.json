@@ -7,6 +7,7 @@
   },
   "plugins": [
     "edit-link",
+    "copy-code-button",
     "ga",
     "-sharing",
     "sharing-plus@^0.0.2",
