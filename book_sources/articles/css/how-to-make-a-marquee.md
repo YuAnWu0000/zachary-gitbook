@@ -77,3 +77,9 @@ module.exports = {
 然後時間寫死的話，會導致跑馬燈的速率不一致 (距離/時間=速率, 而距離有可能隨著內容變長)。
 
 綜上所述，目前的問題是，**需要動態計算跑馬燈的結束位置跟時間**。
+
+### 結果
+
+<img src="../../images/how-to-make-a-marquee/dynamic.gif" width="1200" >
+
+<img src="../../images/how-to-make-a-marquee/dynamic_long.gif" width="1200" >
