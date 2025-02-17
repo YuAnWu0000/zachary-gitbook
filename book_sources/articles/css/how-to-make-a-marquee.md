@@ -132,6 +132,32 @@ useEffect(() => {
 </div>
 ```
 
+把剛剛的 css variables 引入 tailwind 的動畫中:
+
+```js
+// tailwind.config.js
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      keyframes: {
+        marquee: {
+          "0%": {
+            transform: "translateX(var(--startPosition))",
+          },
+          "100%": {
+            transform: "translateX(var(--endPosition))",
+          },
+        },
+      },
+      animation: {
+        runMarquee: "marquee var(--marqueeTime) linear infinite",
+      },
+    },
+  },
+};
+```
+
 ### 結果
 
 短文字:
@@ -139,4 +165,4 @@ useEffect(() => {
 長文字:
 <img src="../../images/how-to-make-a-marquee/dynamic_long.gif" width="1200" >
 
-這下我們就成功做出了可以動態因應文字長度，固定速率的跑馬燈，真是可喜可賀可口可樂！
+這下我們就成功做出了可以動態因應文字長度，固定速率的跑馬燈了，真是可喜可賀可口可樂！
