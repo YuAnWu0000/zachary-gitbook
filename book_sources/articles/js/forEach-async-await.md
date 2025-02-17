@@ -74,11 +74,11 @@ below was evaluated just now."<br>
 
 至於為什麼 console 當下數值會沒變更呢？這問題就牽涉到了我們今天的千古罪人，async/await 了！(async/await: 我可以告他嗎？)
 
-> 其實他倆兄弟是無辜的，前面只是玩笑話而已，各位客官請別太認真，我還不想背前科！
+> 其實他倆兄弟是無辜的，前面只是玩笑話而已，各位客官請別太認真，我還不想背前科啦！
 
 ### async / await
 
-我們都知道 **JavaScript 是單執行緒的語言，其內部有著 Event Loop 機制**，各位可能很困惑，奇怪，怎麼被威脅了一下，就開始講其他的東西不講 async/await 了呢？除了他們倆個手上的球棒真的很大根之外，其實，這些都是環環相扣的，觀念缺一不可。
+我們都知道 **JavaScript 是單執行緒的語言，其內部有著 Event Loop 機制**，各位可能很困惑，奇怪，怎麼被威脅了一下，就開始講其他的東西不講 async/await 了呢？其實，這些都是環環相扣的，觀念缺一不可。
 
 如果對 Event Loop 機制不理解的人，可以參照<a href="https://pjchender.blogspot.com/2017/08/javascript-learn-event-loop-stack-queue.html">這篇</a>文章
 
@@ -93,7 +93,7 @@ below was evaluated just now."<br>
 
 當你可以完全預測上面這個影片的走向時，我相信你就可以繼續閱讀以下的文章了。
 
-對這個視覺化 UI 有興趣的，可以參考<a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D">這個網站</a>
+btw，對這個視覺化 UI 有興趣的，可以參考<a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D">這個網站</a>
 
 ### 讓我們用上面影片的邏輯來重新檢視一下這個範例
 
