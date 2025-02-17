@@ -71,7 +71,7 @@ module.exports = {
 <img src="../../images/how-to-make-a-marquee/startPosition.PNG" width="1200" >
 
 至於結束位置，根據字體的長度不同會影響最左側的結束位置到底有多遠，**總之就是子節點的一倍寬度**。<br>
-有人可能會好奇為何不是-100%，原因是對內層向左滑動的 `<div></div>` 來說，-100%只代表父節點的寬度而不是他自己的寬度。
+有人可能會好奇為何不是-100%，原因是向左滑動的子節點來說，-100% 只代表父節點的寬度而不是他自己的寬度。
 <img src="../../images/how-to-make-a-marquee/endPosition.PNG" width="1200" >
 
 因此，我們可以歸納出兩個問題：
