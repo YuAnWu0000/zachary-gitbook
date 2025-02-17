@@ -97,20 +97,21 @@ btw，對這個視覺化 UI 有興趣的，可以參考<a href="http://latentfli
 
 ### 讓我們用上面影片的邏輯來重新檢視一下這個範例
 
-```
-async function buyEachOne() { // 希望拿到每種水果+1的結果
+```js
+async function buyEachOne() {
+  // 希望拿到每種水果+1的結果
   basket.forEach(async (item) => {
-    const newNumber = await shopping(item.number)
-    item.number = newNumber
-  })
-  console.log(basket)
+    const newNumber = await shopping(item.number);
+    item.number = newNumber;
+  });
+  console.log(basket);
 }
 function shopping(number) {
   return new Promise((resolve, reject) => {
-    setTimeout(function() {
-      resolve(number + 1)
-    }, 2000)
-  })
+    setTimeout(function () {
+      resolve(number + 1);
+    }, 2000);
+  });
 }
 ```
 
