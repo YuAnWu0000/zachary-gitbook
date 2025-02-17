@@ -140,17 +140,18 @@ function shopping(number) {
 其實這題的解決方式非常簡單，只要把 `forEach` 換成 `for...of` 就解決了！
 
 ```js
-async function buyEachOne() { // 希望拿到每種水果+1的結果
+async function buyEachOne() {
+  // 希望拿到每種水果+1的結果
   /* basket.forEach(async (item) => {
     const newNumber = await shopping(item.number)
     item.number = newNumber
   }); */
-  <!-- 改用for of -->
+  // 改用for of
   for (let item of basket) {
-    const newNumber = await shopping(item.number)
-    item.number = newNumber
+    const newNumber = await shopping(item.number);
+    item.number = newNumber;
   }
-  console.log(basket)
+  console.log(basket);
 }
 ```
 
