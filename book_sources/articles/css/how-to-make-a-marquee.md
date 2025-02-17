@@ -96,7 +96,6 @@ function checkMarquee(el) {
   const ratio = Math.round(scrollWidth / clientWidth);
   setMarqueeLengthRatio(ratio);
   setMarqueeTime(Math.round((ratio + 1) * RUN_ONCE_TIME));
-  console.log(clientWidth, scrollWidth);
 }
 ```
 
