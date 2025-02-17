@@ -118,6 +118,7 @@ useEffect(() => {
     [line-height:4.2rem] text-4xl overflow-hidden translate-x-0 border-gray-800
     bg-gray-200"
 >
+  {/* 加入 css variables */}
   <p
     style={{
       "--startPosition": "100%",
