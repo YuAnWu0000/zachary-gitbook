@@ -109,7 +109,7 @@ useEffect(() => {
 
 再稍稍改一下 template:
 
-```js
+```html
 <div
   ref={marqueeEl}
   className="relative top-[10rem] left-[30rem] right-[30rem] w-[calc(100vw-60rem)] h-[4.2rem]
@@ -132,7 +132,7 @@ useEffect(() => {
 </div>
 ```
 
-把剛剛的 css variables 引入 tailwind 的動畫中:
+把剛剛的 css variables 引入 tailwind 的設定中:
 
 ```js
 // tailwind.config.js
