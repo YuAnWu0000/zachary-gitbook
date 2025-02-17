@@ -105,8 +105,9 @@ function checkMarquee(el) {
 
 ### 結果
 
+短文字:
 <img src="../../images/how-to-make-a-marquee/dynamic.gif" width="1200" >
-
+長文字:
 <img src="../../images/how-to-make-a-marquee/dynamic_long.gif" width="1200" >
 
 這下我們就成功做出了可以動態因應文字長度，固定速率的跑馬燈，真是可喜可賀可口可樂！
