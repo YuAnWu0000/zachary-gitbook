@@ -83,6 +83,22 @@ module.exports = {
 
 ### Talk is cheap. Show me the code.
 
+```js
+// Marquee.js
+const RUN_ONCE_TIME = 4;
+const [marqueeLengthRatio, setMarqueeLengthRatio] = useState(100);
+const [marqueeTime, setMarqueeTime] = useState(0);
+
+function checkMarquee(el) {
+  const clientWidth = el.clientWidth;
+  const scrollWidth = el.scrollWidth;
+  const ratio = Math.round((scrollWidth / clientWidth) * 100);
+  setMarqueeLengthRatio(ratio);
+  setMarqueeTime(Math.round((ratio + 100) * RUN_ONCE_TIME) / 100);
+  console.log(clientWidth, scrollWidth);
+}
+```
+
 ### 結果
 
 <img src="../../images/how-to-make-a-marquee/dynamic.gif" width="1200" >
