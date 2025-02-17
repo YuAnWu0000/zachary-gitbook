@@ -65,7 +65,7 @@ module.exports = {
 
 ### 顯然我們需要一些動態的計算！
 
-讓我們拆解一下問題, 來思考一下跑馬燈的原理為何:
+> 讓我們來拆解一下問題, 思考一下跑馬燈的原理為何:
 
 首先，動畫的開始位置永遠都是 100%，如圖所示:
 <img src="../../images/how-to-make-a-marquee/startPosition.PNG" width="1200" >
