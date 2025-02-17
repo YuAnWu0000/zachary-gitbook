@@ -135,11 +135,11 @@ function shopping(number) {
 
 > ㄟ等等，講了這麼多，所以你到底有沒有幫你同事解決問題啊？
 
-阿對了，差點忘記在一邊懷疑人生的同事了，他目前正面壁喃喃自語著：「Javascript...從入門到放棄...」<br>
+阿對了，差點忘記在一邊懷疑人生的同事了，他目前正面壁畫著圈圈喃喃自語著：「Javascript...從入門到放棄...」<br>
 
 其實這題的解決方式非常簡單，只要把 `forEach` 換成 `for...of` 就解決了！
 
-```
+```js
 async function buyEachOne() { // 希望拿到每種水果+1的結果
   /* basket.forEach(async (item) => {
     const newNumber = await shopping(item.number)
@@ -158,7 +158,7 @@ async function buyEachOne() { // 希望拿到每種水果+1的結果
 
 > ### 這真是太神奇了札克！！(眼裡泛光的同事說道
 
-其實在懂了 Event Loop 的原理後，這樣的結果也沒什麼好驚訝的了。<br>
+其實在懂了 Event Loop 的原理後，這樣的結果也沒什麼好驚訝的了(驕傲貌。<br>
 `async / await` 的作用是保證當前函式的執行順序，而 `forEach` 與 `for` 的最大區別就在於 `forEach` 是傳入 callback 來執行，因此對於 `async/await` 來說，凍結的是那三個 callback 本身。<br>
 但 `for...of` 就不同了，它內部的 `await` 會凍結最近的 `async function`，也就是外層的 `buyEachOne()`，因此才會有我們想要的結果出現。
 
@@ -166,26 +166,26 @@ async function buyEachOne() { // 希望拿到每種水果+1的結果
 
 ### 如果你認為你已經理解上面的範例，那就不妨試試下面這個吧!
 
-```
+```js
 const example = async () => {
-  const nums = [1,2,3]
-  nums.forEach(async num => {
-    console.log('start ', num)
-    const result = await returnNum(num)
-    console.log('end ', num)
-  })
-  console.log('after forEach')
-}
-const returnNum = x => {
+  const nums = [1, 2, 3];
+  nums.forEach(async (num) => {
+    console.log("start ", num);
+    const result = await returnNum(num);
+    console.log("end ", num);
+  });
+  console.log("after forEach");
+};
+const returnNum = (x) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(x)
-    }, 500*(5-x))
+      resolve(x);
+    }, 500 * (5 - x));
   });
-}
+};
 example().then(() => {
-  console.log('done')
-})
+  console.log("done");
+});
 ```
 
 請給自己一段時間思考...<br>
