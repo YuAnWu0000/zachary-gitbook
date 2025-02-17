@@ -87,7 +87,7 @@ module.exports = {
 // Marquee.js
 const RUN_ONCE_TIME = 4;
 const [marqueeText, setMarqueeText] = useState("跑馬燈1跑馬燈2跑馬燈3跑馬燈4");
-const [marqueeLengthRatio, setMarqueeLengthRatio] = useState(100);
+const [marqueeLengthRatio, setMarqueeLengthRatio] = useState(1);
 const [marqueeTime, setMarqueeTime] = useState(0);
 
 function checkMarquee(el) {
