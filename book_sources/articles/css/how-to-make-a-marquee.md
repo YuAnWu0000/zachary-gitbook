@@ -100,6 +100,10 @@ function checkMarquee(el) {
 }
 ```
 
+先來講解最核心的部分，我們可以透過計算父節點 `clientWidth` 與 `scrollWidth` 的比例來決定結束位置跟動畫運行時間，假設 `scrollWidth` 是 `clientWidth` 的 1.5 倍，那結束位置就會是-150%，時間就會是 `(150+100)*RUN_ONCE_TIME/100` 秒。
+
+`RUN_ONCE_TIME`這個變數比較特別，指的是跑馬燈跑完一次父節點寬度的時間，你可以用手機的碼表簡單計時一下，抓出你要的速率大概跑一次會是幾秒鐘，然後再帶入上面的算式中。
+
 ### 結果
 
 <img src="../../images/how-to-make-a-marquee/dynamic.gif" width="1200" >
