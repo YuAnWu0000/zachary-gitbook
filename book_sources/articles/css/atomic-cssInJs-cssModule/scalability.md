@@ -137,11 +137,12 @@ const buttonStyles = css({
   size="big"
   isDisable={false}
   isHidden={true}
-  color: "yellow"
-  className={{ //客製化class
-    color: 'blue',
-    backgroundColor: 'red',
-    display: 'block'
+  color="yellow"
+  className={{
+    //客製化class
+    color: "blue",
+    backgroundColor: "red",
+    display: "block",
   }}
 />
 ```
