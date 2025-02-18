@@ -30,7 +30,7 @@ console.log(window.a); // 1
 
 - 不同作用域的情況，在 function 裡面宣告的就**只存在於該 function scope。**
 
-```
+```js
 var a = 0;
 function test() {
   var a = 1;
