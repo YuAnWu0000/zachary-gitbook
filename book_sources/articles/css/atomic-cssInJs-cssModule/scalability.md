@@ -39,11 +39,8 @@ const buttonStyles = css({
 
 **Atomic css:** 同樣是新增一行三元表達式輕鬆解決。<br>
 
-```
-let totalStyles = twMerge(
-  ...
-  isHidden ? 'hidden' : '',
-)
+```js
+let totalStyles = twMerge(...(isHidden ? "hidden" : ""));
 ```
 
 ##### 2. 增加一個 prop `color`，直接讓外部決定顏色為何
