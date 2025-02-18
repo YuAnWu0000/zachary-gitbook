@@ -156,7 +156,7 @@ const ButtonDefault = (props) => css`
 既然如此，那我們不要全部寫在同個 class 裡面，把他分開怎麼樣？就像 CSS module 分開定義 class 那樣！<br>
 於是我們來試試看用 Emotion 官方提供的另一種 css prop 語法實作:
 
-```
+```js
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 const buttonDefaultCSS = {
