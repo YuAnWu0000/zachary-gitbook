@@ -79,7 +79,7 @@ console.log(a); // Uncaught ReferenceError: a is not defined
 
 - 在**Block Scope**底下有宣告動作，則同名變數不得再宣告前賦值 **(這個錯誤訊息怪怪的，下面會詳細解釋。)**
 
-```
+```js
 var a = 123;
 if (true) {
   a = 456; // Uncaught ReferenceError: Cannot access 'a' before initialization
