@@ -61,7 +61,7 @@ if (true) {
 
 > 順帶一提如果是 function declaration 的情況
 
-```
+```js
 catName("Chloe");
 function catName(name) {
   console.log("My cat's name is " + name);
