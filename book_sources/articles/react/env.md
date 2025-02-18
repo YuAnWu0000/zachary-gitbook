@@ -17,9 +17,9 @@
 
 簡單說，CRA 專案會在你執行指令時自動判斷要引入哪個對應的.env 檔 (權重由大到小):
 
-- npm run start : .env.development.local, .env.local, .env.development, .env
-- npm run build : .env.production.local, .env.local, .env.production, .env
-- npm run test : .env.test.local, .env.test, .env(note .env.local is missing)
+- `npm run start` : .env.development.local, .env.local, .env.development, .env
+- `npm run build` : .env.production.local, .env.local, .env.production, .env
+- `npm run test` : .env.test.local, .env.test, .env(note .env.local is missing)
 
 所以我們可以在專案內新增一個.env.development 檔案:
 
