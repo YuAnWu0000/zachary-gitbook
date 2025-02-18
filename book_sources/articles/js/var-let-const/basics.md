@@ -15,7 +15,7 @@
 
 - 在全域宣告的變數 `var`，也會同時作為全域物件(前端為 `window`，後端為 `global`)的屬性
 
-```
+```js
 var a = 0;
 console.log(window.a); // 0
 ```
