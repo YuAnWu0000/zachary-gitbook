@@ -72,16 +72,16 @@ export default MyButton
 
 還記得在 CSS module 裡面你是怎麼宣告 class 的嗎？
 
-```
+```css
 .button {
   &-primary: {
-    ...
+    ...;
   }
   &-big {
-    ...
+    ...;
   }
   &-disable {
-    ...
+    ...;
   }
 }
 ```
