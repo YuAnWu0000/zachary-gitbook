@@ -70,7 +70,7 @@ console.log(a);
 
 - 作用於**Block Scope**
 
-```
+```js
 if (true) {
   let a = 0;
 }
