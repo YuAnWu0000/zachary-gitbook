@@ -100,7 +100,7 @@ module: {
 
 繼續往下探索，看到了這個 function：
 
-```
+```js
 // common function to get style loaders
   const getStyleLoaders = (cssOptions, preProcessor) => {
     const loaders = [
