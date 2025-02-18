@@ -128,7 +128,7 @@ _Reference Record_ 具體包含了以下四個部分：
 
 > 任何說明都沒有直接看範例來的好理解，以前面的範例來說...
 
-```
+```js
 let testA = { a: 1 }
 // testA 經過 eval() 後對應的 Reference Record
 {
