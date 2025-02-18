@@ -50,8 +50,7 @@ export function MyButton({ variant, size, status }) {
 <MyButton variant="primary" size="big" status="disable" />;
 ```
 
-```
-/* scss */
+```css
 .button {
   width: 120px;
   height: 30px;
