@@ -102,7 +102,7 @@ let a = 456; // Uncaught SyntaxError: Identifier 'a' has already been declared
 
 - 宣告後就不可更改
 
-```
+```js
 const a = 123;
 a = 456; // Uncaught TypeError: Assignment to constant variable.
 ```
