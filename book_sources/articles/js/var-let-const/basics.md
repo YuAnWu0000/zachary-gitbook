@@ -42,7 +42,7 @@ console.log(a); // 0
 
 - 順帶一提，下面這個範例你認為輸出為何?
 
-```
+```js
 function test() {
   a = 1;
 }
