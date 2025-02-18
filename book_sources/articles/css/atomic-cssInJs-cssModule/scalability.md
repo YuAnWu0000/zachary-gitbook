@@ -30,11 +30,11 @@
 
 **css-in-js:** 單個 prop 影響單一屬性的情況下，新增一行三元表達式輕鬆解決。<br>
 
-```
+```js
 const buttonStyles = css({
-    ...
-    display: `${isHidden ? 'none' : 'block'}`
-  })
+  ...
+  display: `${isHidden ? 'none' : 'block'}`
+})
 ```
 
 **Atomic css:** 同樣是新增一行三元表達式輕鬆解決。<br>
