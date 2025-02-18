@@ -136,16 +136,16 @@ const BigButton = styled.div`
 
 例如下面這樣:
 
-```
+```js
 const ButtonDefault = (props) => css`
-  width: ${props.isBig ? '200px' : '120px'};
-  height: ${props.isBig ? '50px' : '30px'};
-  fontSize: ${props.isBig ? '16px' : '14px'};
-  fontWeight: 500;
+  width: ${props.isBig ? "200px" : "120px"};
+  height: ${props.isBig ? "50px" : "30px"};
+  fontsize: ${props.isBig ? "16px" : "14px"};
+  fontweight: 500;
   color: white;
   background-color: black;
-  pointer-events: ${props.isDisable ? 'none' : 'auto'};
-`
+  pointer-events: ${props.isDisable ? "none" : "auto"};
+`;
 ```
 
 乍看之下蠻簡潔的沒什麼問題，但你可以明顯感覺到這種寫法的脆弱性，那就是：<br>
