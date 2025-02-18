@@ -78,8 +78,8 @@ export function MyButton({ variant, size, status }) {
 ##### 而 styled components (emotion) 則是:
 
 ```js
-import styled from '@emotion/styled'
-import { css } from '@emotion/react'
+import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 const ButtonDefault = (props) => css`
   width: 120px;
   height: 30px;
@@ -87,22 +87,25 @@ const ButtonDefault = (props) => css`
   font-weight: 500;
   color: white;
   background-color: black;
-  pointer-events: ${props.isDisable ? 'none' : 'auto'};
-`
+  pointer-events: ${props.isDisable ? "none" : "auto"};
+`;
 const PrimaryButton = styled.div`
   ${ButtonDefault};
   font-weight: bold;
   background-color: green;
   border-radius: 10px;
-`
+`;
 const BigButton = styled.div`
   ${ButtonDefault};
   width: 200px;
   height: 50px;
-`
+`;
+```
+
+```html
 // how to use
-<PrimaryButton isDisable={true}>Button</PrimaryButton>
-<BigButton isDisable={true}>Button</BigButton>
+<PrimaryButton isDisable="{true}">Button</PrimaryButton>
+<BigButton isDisable="{true}">Button</BigButton>
 ```
 
 > ##### _你可能會納悶，為什麼要把 CSS 的事情挪到 JS 裡面來做呢？你看他到頭來還是寫 css syntax 呀？_
@@ -123,10 +126,10 @@ const BigButton = styled.div`
 
 但眼尖的讀者應該有發現，這邊的寫法跟 CSS module 有些許不同。
 
-```js
+```html
 // how to use
-<PrimaryButton isDisable={true}>Button</PrimaryButton>
-<BigButton isDisable={true}>Button</BigButton>
+<PrimaryButton isDisable="{true}">Button</PrimaryButton>
+<BigButton isDisable="{true}">Button</BigButton>
 ```
 
 **現在我們的 `button` 不能同時是 `primary` 也是 `big` 了。**
