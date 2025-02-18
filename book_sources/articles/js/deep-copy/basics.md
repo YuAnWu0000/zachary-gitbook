@@ -143,7 +143,7 @@ let testA = { a: 1 }
 
 > 我們再來舉個例子 🌰：
 
-```
+```js
 let testA = {
   a: function() {
     let b = { c: 1 }
