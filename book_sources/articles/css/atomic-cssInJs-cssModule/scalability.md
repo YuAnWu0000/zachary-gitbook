@@ -19,7 +19,7 @@
 }
 ```
 
-```js
+```html
 <div
   className={`button button-${variant} button-${size} button-${status}
     ${isHidden ? "hidden" : ""}`}
@@ -82,24 +82,20 @@ let totalStyles = twMerge(...`text-${color}-500`);
 }
 ```
 
-```js
+```html
 // 子組件內
 <div
   className={`button button-${variant} button-${size} button-${status}
-    ${isHidden ? 'hidden' : ''} ${className}`}
+    ${isHidden ? "hidden" : ""} ${className}`}
   style={{ color }}
 >
   Button
 </div>
-// 外部使用
-<MyButton
-  variant="primary"
-  size="big"
-  status="disable"
-  isHidden={true}
-  color="yellow"
-  className="button-special" // 客製化class
-/>
+```
+
+```html
+// 外部使用 <MyButton variant="primary" size="big" status="disable"
+isHidden={true} color="yellow" className="button-special" // 客製化class />
 ```
 
 來，猜猜看，出來的 button 長什麼樣子？<br>
@@ -139,8 +135,7 @@ const buttonStyles = css({
   isHidden={true}
   color="yellow"
   className={{
-    //客製化class
-    color: "blue",
+    //客製化class color: "blue",
     backgroundColor: "red",
     display: "block",
   }}
