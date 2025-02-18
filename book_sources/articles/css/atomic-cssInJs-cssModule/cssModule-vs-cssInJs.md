@@ -77,8 +77,7 @@ export function MyButton({ variant, size, status }) {
 
 ##### 而 styled components (emotion) 則是:
 
-```
-// jsx
+```js
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 const ButtonDefault = (props) => css`
