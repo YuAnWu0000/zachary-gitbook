@@ -40,7 +40,7 @@ access "a" before declaration.** (儘管取得的值是 undefined，但起碼不
 
 > 那麼 `let` 呢？
 
-```
+```js
 console.log(a); // Uncaught ReferenceError: a is not defined
 let a = 123;
 ```
