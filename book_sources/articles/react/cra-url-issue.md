@@ -121,20 +121,21 @@ module: {
 
 經過一段時間的測試後，**我發現這種寫法可以順利覆寫我要的屬性，並且解決這個問題 🙌：**
 
-```
+```js
 // config-overrides.js
-const path = require('path')
+const path = require("path");
 module.exports = function override(config) {
-  const targetRegex = /\.css$/
-  const targetPackage = /css-loader/
+  const targetRegex = /\.css$/;
+  const targetPackage = /css-loader/;
   // to make url() in css worked
   config.module.rules
     .find((r) => r.oneOf)
     .oneOf.find((r) => r.test.toString() === targetRegex.toString())
-    .use.find((o) => o.loader && targetPackage.test(o.loader)).options.url =
-    false
-  return config
-}
+    .use.find(
+      (o) => o.loader && targetPackage.test(o.loader)
+    ).options.url = false;
+  return config;
+};
 ```
 
 結果：<br>
