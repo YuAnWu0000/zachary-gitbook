@@ -135,7 +135,7 @@ console.log(a); // 0
 
 - 指向`Object`或是`Array`的時候更改其屬性不會報錯(store by reference 所以只確保指標沒有變)
 
-```
+```js
 const foo = { a: 0 };
 foo.b = 1; // ok
 foo = {}; // Uncaught TypeError: Assignment to constant variable.
