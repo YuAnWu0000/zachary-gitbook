@@ -153,20 +153,20 @@ const buttonStyles = css({
 
 **Atomic css:** 同樣是新增一行輕鬆解決 👌。<br>
 
-```
+```js
 // 子組件內
 let totalStyles = twMerge(
   defaultStyles,
-  variantStyles[variant] ? variantStyles[variant] : '',
-  sizeStyles[size] ? sizeStyles[size] : '',
-  isDisable ? disableStyles : '',
-  isHidden ? 'hidden' : '',
+  variantStyles[variant] ? variantStyles[variant] : "",
+  sizeStyles[size] ? sizeStyles[size] : "",
+  isDisable ? disableStyles : "",
+  isHidden ? "hidden" : "",
   textColor,
   className // 新增這行
-)
+);
 ```
 
-```
+```js
 // 外部使用
 <MyButton
   variant="primary"
