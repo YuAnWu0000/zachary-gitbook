@@ -26,17 +26,17 @@ junior 程度的工程師能夠解釋到這裡基本上就過關了，但是，�
 
 ### 再一個簡單的範例：
 
-```
-let testA = { a: 1 }
-let testB = 1
-let testC = { c: 1 }
+```js
+let testA = { a: 1 };
+let testB = 1;
+let testC = { c: 1 };
 function change() {
-  testA = { a: 2 }
-  testB = 3
-  testC.c = 2
+  testA = { a: 2 };
+  testB = 3;
+  testC.c = 2;
 }
-change()
-console.log(testA, testB, testC) // {a: 2} 3 {c: 2}
+change();
+console.log(testA, testB, testC); // {a: 2} 3 {c: 2}
 ```
 
 這邊我們在函數裡面**直接操作外部變數**，一切都是那麼符合預期，直到...
