@@ -30,7 +30,7 @@
 
 > 接著讓我們來看看例子：
 
-```
+```js
 console.log(a); // undefined
 var a = 123;
 ```
