@@ -72,7 +72,7 @@ let totalStyles = twMerge(...`text-${color}-500`);
 
 **CSS module:** 新增一個 className prop 放入子組件的 className 即可。<br>
 
-```
+```css
 /* scss */
 /* 定義在最後面 */
 .button-special {
@@ -80,6 +80,9 @@ let totalStyles = twMerge(...`text-${color}-500`);
   background-color: red;
   display: block;
 }
+```
+
+```js
 // 子組件內
 <div
   className={`button button-${variant} button-${size} button-${status}
@@ -115,19 +118,19 @@ let totalStyles = twMerge(...`text-${color}-500`);
 
 **css-in-js:** 在子組件內新增一行輕鬆解決 👊。(正常來說應該是外部把 css prop 傳入啦，在這邊為了方便比較就先統一命名成 className)<br>
 
-```
+```js
 // 子組件內
 const buttonStyles = css({
-    ...variantButtonCSS[variant],
-    ...sizeButtonCSS[size],
-    ...(isDisable ? disableCSS : null),
-    display: `${isHidden ? 'none' : 'block'}`,
-    color,
-    ...className // 新增這行
-  })
+  ...variantButtonCSS[variant],
+  ...sizeButtonCSS[size],
+  ...(isDisable ? disableCSS : null),
+  display: `${isHidden ? "none" : "block"}`,
+  color,
+  ...className, // 新增這行
+});
 ```
 
-```
+```js
 // 外部使用
 <MyButton
   variant="primary"
