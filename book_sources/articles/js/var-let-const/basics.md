@@ -141,7 +141,7 @@ foo.b = 1; // ok
 foo = {}; // Uncaught TypeError: Assignment to constant variable.
 ```
 
-```
+```js
 const foo = [0];
 foo.push(1); // ok
 foo = []; // Uncaught TypeError: Assignment to constant variable.
@@ -151,7 +151,7 @@ foo = []; // Uncaught TypeError: Assignment to constant variable.
 
 - 為何同樣的例子 `var` 不會噴錯？
 
-```
+```js
 console.log(a); // undefined
 var a = 123;
 ```
