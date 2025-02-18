@@ -50,11 +50,10 @@ let totalStyles = twMerge(...(isHidden ? "hidden" : ""));
 
 **css-in-js:** 直接將 prop 塞進 css object，結束。<br>
 
-```
+```js
 const buttonStyles = css({
-    ...
-    color
-  })
+  ...color,
+});
 ```
 
 **Atomic css:** 大概又是新增一行就 OK 了吧...<br>
