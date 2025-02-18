@@ -23,14 +23,14 @@
 
 所以我們可以在專案內新增一個.env.development 檔案:
 
-```
+```sh
 # .env.development
 REACT_APP_CLIENT_ID = myLocalClientId
 ```
 
 一個.env.production 檔案:
 
-```
+```sh
 # .env.production
 REACT_APP_CLIENT_ID = myProductionClientId
 ```
@@ -48,7 +48,7 @@ REACT_APP_CLIENT_ID = myProductionClientId
 
 這邊我們的需求是新增一個 uat 的環境變數:
 
-```
+```json
 // package.json
 "scripts": {
   "start": "dotenv -e .env.development react-app-rewired start",
@@ -58,7 +58,7 @@ REACT_APP_CLIENT_ID = myProductionClientId
 }
 ```
 
-```
+```sh
 # .env.uat
 REACT_APP_CLIENT_ID = myUatClientId
 ```
