@@ -38,17 +38,16 @@ function MyButton() {
 
 ##### 對於這點 CSS module 可以透過一些技巧來綁定 對應的 class📌:
 
-```
-// jsx
+```js
 export function MyButton({ variant, size, status }) {
   return (
     <div className={`button button-${variant} button-${size} button-${status}`}>
       Button
     </div>
-  )
+  );
 }
 // how to use
-<MyButton variant="primary" size="big" status="disable"/>
+<MyButton variant="primary" size="big" status="disable" />;
 ```
 
 ```
