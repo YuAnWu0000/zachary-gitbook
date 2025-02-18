@@ -12,13 +12,12 @@
 
 假設我們今天有個 Button component，先來個最傳統的版本 (以 React 為例)：<br>
 
-```
-// jsx
+```js
 function MyButton() {
-  return <div className="button">Button</div>
+  return <div className="button">Button</div>;
 }
 // how to use
-<MyButton />
+<MyButton />;
 ```
 
 ```
