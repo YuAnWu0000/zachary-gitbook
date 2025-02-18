@@ -123,7 +123,7 @@ const BigButton = styled.div`
 
 但眼尖的讀者應該有發現，這邊的寫法跟 CSS module 有些許不同。
 
-```
+```js
 // how to use
 <PrimaryButton isDisable={true}>Button</PrimaryButton>
 <BigButton isDisable={true}>Button</BigButton>
