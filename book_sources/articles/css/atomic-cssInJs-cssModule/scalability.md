@@ -58,11 +58,8 @@ const buttonStyles = css({
 
 **Atomic css:** 大概又是新增一行就 OK 了吧...<br>
 
-```
-let totalStyles = twMerge(
-  ...
-  `text-${color}-500`,
-)
+```js
+let totalStyles = twMerge(...`text-${color}-500`);
 ```
 
 這時候你發現顏色卻沒有變 😥，打開 console 一查發現 className 有指定對，但是沒有對應的 class。<br>
