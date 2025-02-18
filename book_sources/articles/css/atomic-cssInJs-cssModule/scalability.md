@@ -12,15 +12,17 @@
 
 **CSS module:** 新增一個 class，然後透過三元來判斷是否加入<br>
 
-```
+```css
 /* scss */
 .hidden {
   display: none;
 }
-// jsx
+```
+
+```js
 <div
   className={`button button-${variant} button-${size} button-${status}
-    ${isHidden ? 'hidden' : ''}`} // 新增一個三元
+    ${isHidden ? "hidden" : ""}`}
 >
   Button
 </div>
