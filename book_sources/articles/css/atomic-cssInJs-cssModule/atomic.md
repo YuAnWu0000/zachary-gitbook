@@ -2,31 +2,30 @@
 
 前一篇講到，假設我們有一個接收三個 props 的 button component，以 CSS module 的方式會這樣做:
 
-```
-// jsx
+```js
 export function MyButton({ variant, size, status }) {
   return (
     <div className={`button button-${variant} button-${size} button-${status}`}>
       Button
     </div>
-  )
+  );
 }
 // how to use
-<MyButton variant="primary" size="big" status="disable"/>
+<MyButton variant="primary" size="big" status="disable" />;
 ```
 
-```
+```css
 /* scss */
 .button {
   ...
   &-primary: {
-    ...
+    ...;
   }
   &-big {
-    ...
+    ...;
   }
   &-disable {
-    ...
+    ...;
   }
 }
 ```
