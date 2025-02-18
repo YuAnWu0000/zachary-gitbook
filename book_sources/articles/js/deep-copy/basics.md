@@ -13,11 +13,11 @@
 
 ### 一個簡單的範例：
 
-```
-let testA = { a: 1 }
-let testB = testA
-testB.a = 2
-console.log(testA) // { a: 2 }
+```js
+let testA = { a: 1 };
+let testB = testA;
+testB.a = 2;
+console.log(testA); // { a: 2 }
 ```
 
 因為物件的 assignment 在 javascript 裡面等於將**記憶體位址** pass 給另一個變數，也是所謂的 **call by reference** (注意：這個用詞可能不夠**精確**，後面會提到)，所以 testB 跟 testA 實際上是**同一個物件**，更改 testB 的屬性當然也就會改到 testA。<br>
