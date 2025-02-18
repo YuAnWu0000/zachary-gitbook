@@ -132,7 +132,7 @@ useEffect(() => {
 </div>
 ```
 
-把剛剛的 css variables 引入 tailwind 的設定中:
+再把剛剛的 css variables 引入 tailwind 的設定中:
 
 ```js
 // tailwind.config.js
