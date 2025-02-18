@@ -55,7 +55,7 @@ console.log(a);
 
 - 但如果多加一行 `var a`...
 
-```
+```js
 function test() {
   a = 1;
   var a;
