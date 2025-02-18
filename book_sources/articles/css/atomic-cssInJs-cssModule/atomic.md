@@ -32,7 +32,7 @@ export function MyButton({ variant, size, status }) {
 
 ### 那麼 Atomic css 又是如何將組件的 props 跟 style 綁定的呢 😕？ (以 Tailwind 為例)
 
-```
+```js
 import { twMerge } from 'tailwind-merge'
 const MyButton = ({ variant, size, isDisable }) => {
   const defaultStyles =
