@@ -20,13 +20,12 @@ function MyButton() {
 <MyButton />;
 ```
 
-```
-/* css */
+```css
 .button {
   width: 120px;
   height: 30px;
-  fontSize: 14px;
-  fontWeight: 500;
+  fontsize: 14px;
+  fontweight: 500;
   color: white;
   background-color: black;
 }
