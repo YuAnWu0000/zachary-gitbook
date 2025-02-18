@@ -156,7 +156,7 @@ console.log(a); // undefined
 var a = 123;
 ```
 
-```
+```js
 console.log(a); // Uncaught ReferenceError: a is not defined
 let a = 123;
 ```
@@ -167,7 +167,7 @@ let a = 123;
 
 等等，你確定？看看剛才這個例子：
 
-```
+```js
 var a = 123;
 if (true) {
   a = 456; // Uncaught ReferenceError: Cannot access 'a' before initialization at <anonymous>:3:7
@@ -177,7 +177,7 @@ if (true) {
 
 **注意：如果把 let 刪掉是不會報錯的**
 
-```
+```js
 var a = 123;
 if (true) {
   a = 456; // ok
