@@ -2,7 +2,11 @@
 
 ### 接著讓我們來談談可擴展性 ☕ (scalability)
 
-基於前面的案例，思考下面這幾種擴充情境
+假設我們現在有一個按鈕：
+
+<img src="../../../images/atomic-cssInJs-cssModule/btn_basic.PNG" width="200" >
+
+基於前面的案例，思考以下幾種擴充情境：
 
 1. 增加一個 prop `isHidden`，設置`display: none`。
 2. 增加一個 prop `color`，直接讓外部決定顏色為何。
