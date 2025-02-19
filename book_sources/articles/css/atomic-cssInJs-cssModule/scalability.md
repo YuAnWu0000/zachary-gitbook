@@ -55,7 +55,7 @@ let totalStyles = twMerge(...(isHidden ? "hidden" : ""));
 ```html
 <div
   className={`button button-${variant} button-${size} button-${status}
-    ${isHidden ? 'hidden' : ''} ${className}`}
+    ${isHidden ? 'hidden' : ''}`}
   style={{ color }}
 >
   Button
@@ -89,9 +89,9 @@ let totalStyles = twMerge(...`text-${color}-500`);
 ```css
 /* scss */
 /* 定義在最後面 */
-.button-special {
-  color: blue;
-  background-color: red;
+.button-custom {
+  background-color: #2196f3;
+  color: white;
   display: block;
 }
 ```
@@ -107,9 +107,16 @@ let totalStyles = twMerge(...`text-${color}-500`);
 </div>
 ```
 
-```html
-// 外部使用 <MyButton variant="primary" size="big" status="disable"
-isHidden={true} color="yellow" className="button-special" // 客製化class />
+```js
+// 外部使用
+<MyButton
+  variant="primary"
+  size="big"
+  status="disable"
+  isHidden={false}
+  color="yellow"
+  className="button-custom" // 客製化class
+/>
 ```
 
 來，猜猜看，出來的 button 長什麼樣子？<br>
@@ -117,7 +124,7 @@ isHidden={true} color="yellow" className="button-special" // 客製化class />
 .<br>
 .<br>
 
-![button images](../../../images/atomic-cssInJs-cssModule/buttonCssModule.png)
+<img src="../../../images/atomic-cssInJs-cssModule/btn_css_module.PNG" width="200" >
 
 嗯？好像有點怪怪的？原因如下：<br>
 首先，我們把 `.button-special` 定義在最底下，因此在同階層的情況下它的優先級比 `.hidden` 高，這也是為什麼儘管設定了 `isHidden={true}` 但依然不管用的原因。<br>
@@ -149,15 +156,16 @@ const buttonStyles = css({
   isHidden={true}
   color="yellow"
   className={{
-    //客製化class color: "blue",
-    backgroundColor: "red",
+    backgroundColor: "#2196f3",
+    color: "white",
     display: "block",
   }}
 />
 ```
 
 結果：<br>
-![button images](../../../images/atomic-cssInJs-cssModule/buttonCssInJs.png)<br>
+<img src="../../../images/atomic-cssInJs-cssModule/btn_css_prop.PNG" width="200" >
+
 非常好！完全是我們預期的行為！**而要預測此行為只需要關注模板內 object 的組合順序就可以了！**
 
 **Atomic css:** 同樣是新增一行輕鬆解決 👌。<br>
