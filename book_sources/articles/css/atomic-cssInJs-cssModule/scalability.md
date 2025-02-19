@@ -113,7 +113,7 @@ let totalStyles = twMerge(...`text-${color}-500`);
   variant="primary"
   size="big"
   status="disable"
-  isHidden={false}
+  isHidden={true}
   color="yellow"
   className="button-custom" // 客製化class
 />
