@@ -52,6 +52,16 @@ let totalStyles = twMerge(...(isHidden ? "hidden" : ""));
 **CSS module:** 因為 CSS module 的設計是以 class 為最小單位，不好直接應對屬性值。<br>
 因此除了`style={{ color }}`幾乎沒有太優雅的方式，但行內樣式又有著難以被覆蓋的問題 😓。<br>
 
+```html
+<div
+  className={`button button-${variant} button-${size} button-${status}
+    ${isHidden ? 'hidden' : ''} ${className}`}
+  style={{ color }}
+>
+  Button
+</div>
+```
+
 **css-in-js:** 直接將 prop 塞進 css object，結束。<br>
 
 ```js
