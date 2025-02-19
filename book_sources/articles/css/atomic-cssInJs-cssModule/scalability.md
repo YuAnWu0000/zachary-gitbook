@@ -16,7 +16,7 @@
 
 #### 1. 增加一個 prop `isHidden`，設置`display: none`
 
-**CSS module:** 新增一個 class，然後透過三元來判斷是否加入<br>
+1.1. **CSS module:** 新增一個 class，然後透過三元來判斷是否加入<br>
 
 ```css
 /* scss */
@@ -34,7 +34,7 @@
 </div>
 ```
 
-**css-in-js:** 單個 prop 影響單一屬性的情況下，新增一行三元表達式輕鬆解決。<br>
+1.2. **css-in-js:** 單個 prop 影響單一屬性的情況下，新增一行三元表達式輕鬆解決。<br>
 
 ```js
 const buttonStyles = css({
@@ -43,7 +43,7 @@ const buttonStyles = css({
 })
 ```
 
-**Atomic css:** 同樣是新增一行三元表達式輕鬆解決。<br>
+1.3. **Atomic css:** 同樣是新增一行輕鬆解決。<br>
 
 ```js
 let totalStyles = twMerge(..., (isHidden && "hidden"));
