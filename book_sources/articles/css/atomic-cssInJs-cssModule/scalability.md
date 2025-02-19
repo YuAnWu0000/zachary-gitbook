@@ -88,7 +88,7 @@ let totalStyles = twMerge(...,`text-${color}-500`);
 
 ```css
 /* scss */
-/* 定義在最後面 */
+/* 定義在最下面 */
 .button-custom {
   background-color: #2196f3;
   color: white;
