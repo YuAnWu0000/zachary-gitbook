@@ -12,7 +12,7 @@
 2. 增加一個 prop `color`，直接讓外部決定顏色為何。
 3. 讓外部可以傳客製化的`className`進來。
 
-##### 1. 增加一個 prop `isHidden`，設置`display: none`
+#### 1. 增加一個 prop `isHidden`，設置`display: none`
 
 **CSS module:** 新增一個 class，然後透過三元來判斷是否加入<br>
 
@@ -47,7 +47,7 @@ const buttonStyles = css({
 let totalStyles = twMerge(..., (isHidden && "hidden"));
 ```
 
-##### 2. 增加一個 prop `color`，直接讓外部決定文字顏色為何
+#### 2. 增加一個 prop `color`，直接讓外部決定文字顏色為何
 
 **CSS module:** 因為 CSS module 的設計是以 class 為最小單位，不好直接應對屬性值。<br>
 因此除了`style={{ color }}`幾乎沒有太優雅的方式，但行內樣式又有著難以被覆蓋的問題 😓。<br>
@@ -82,7 +82,7 @@ let totalStyles = twMerge(...,`text-${color}-500`);
 
 兩種方式解決：要馬就直接把`color-yellow-500`當成 prop 傳入，要馬就直接傳入自定義的 className，不要讓外部只傳屬性進來，畢竟 Atomic css 在設計思想上的最小單位也是 class。
 
-##### 3. 讓外部可以傳客製化的`className`進來
+#### 3. 讓外部可以傳客製化的`className`進來
 
 **CSS module:** 新增一個 className prop 放入子組件的 className 即可。<br>
 
