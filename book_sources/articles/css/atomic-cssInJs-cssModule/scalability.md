@@ -196,7 +196,8 @@ let totalStyles = twMerge(
 ```
 
 結果：<br>
-![button images](../../../images/atomic-cssInJs-cssModule/buttonAtomicCss.png)<br>
+<img src="../../../images/atomic-cssInJs-cssModule/btn_tailwind.PNG" width="200" >
+
 同樣是預期內的結果，我們也只需要關注模板本身就好了。
 
 ---
