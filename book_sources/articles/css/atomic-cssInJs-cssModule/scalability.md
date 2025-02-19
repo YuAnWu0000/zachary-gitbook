@@ -47,7 +47,7 @@ const buttonStyles = css({
 let totalStyles = twMerge(...(isHidden ? "hidden" : ""));
 ```
 
-##### 2. 增加一個 prop `color`，直接讓外部決定顏色為何
+##### 2. 增加一個 prop `color`，直接讓外部決定文字顏色為何
 
 **CSS module:** 因為 CSS module 的設計是以 class 為最小單位，不好直接應對屬性值。<br>
 因此除了`style={{ color }}`幾乎沒有太優雅的方式，但行內樣式又有著難以被覆蓋的問題 😓。<br>
