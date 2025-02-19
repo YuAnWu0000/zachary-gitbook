@@ -90,7 +90,7 @@ let totalStyles = twMerge(...,`text-${color}-500`);
 
 #### 3. 讓外部可以傳客製化的`className`進來
 
-**CSS module:** 新增一個 className prop 放入組件的 className 即可。<br>
+3.1. **CSS module:** 新增一個 className prop 放入組件的 className 即可。<br>
 
 ```css
 /* scss */
@@ -140,7 +140,7 @@ let totalStyles = twMerge(...,`text-${color}-500`);
 
 **由這個例子可以看出，如果樣式出現非預期的結果，CSS module 需要同時關注模板 & 樣式 (這通常是兩個檔案)，其中尤其是 CSS，你必須確認順序性跟權重的問題，我認為這就是它 DX 相比於其他兩者不太友善的地方。**<br>
 
-**css-in-js:** 在子組件內新增一行輕鬆解決 👊。(正常來說應該是外部把 css prop 傳入啦，在這邊為了方便比較就先統一命名成 className)<br>
+3.2. **css-in-js:** 在子組件內新增一行輕鬆解決 👊。(正常來說應該是外部把 css prop 傳入啦，在這邊為了方便比較就先統一命名成 className)<br>
 
 ```js
 // 子組件內
@@ -175,7 +175,7 @@ const buttonStyles = css({
 
 非常好！完全是我們預期的行為！**而要預測此行為只需要關注模板內 object 的組合順序就可以了！**<br>
 
-**Atomic css:** 同樣是新增一行輕鬆解決 👌。<br>
+3.3. **Atomic css:** 同樣是新增一行輕鬆解決 👌。<br>
 
 ```js
 // 組件內
