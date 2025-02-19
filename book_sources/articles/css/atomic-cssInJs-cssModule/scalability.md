@@ -53,7 +53,7 @@ let totalStyles = twMerge(..., (isHidden && "hidden"));
 
 #### 2. 增加一個 prop `color`，直接讓外部決定文字顏色為何
 
-**CSS module:** 因為 CSS module 的設計是以 class 為最小單位，不好直接應對屬性值。<br>
+2.1. **CSS module:** 因為 CSS module 的設計是以 class 為最小單位，不好直接應對屬性值。<br>
 因此除了`style={{ color }}`幾乎沒有太優雅的方式，但行內樣式又有著難以被覆蓋的問題 😓。<br>
 
 ```html
@@ -66,7 +66,7 @@ let totalStyles = twMerge(..., (isHidden && "hidden"));
 </div>
 ```
 
-**css-in-js:** 直接將 prop 塞進 css object，結束。<br>
+2.2. **css-in-js:** 直接將 prop 塞進 css object，結束。<br>
 
 ```js
 const buttonStyles = css({
@@ -74,7 +74,7 @@ const buttonStyles = css({
 });
 ```
 
-**Atomic css:** 大概又是新增一行就 OK 了吧...<br>
+2.3. **Atomic css:** 大概又是新增一行就 OK 了吧...<br>
 
 ```js
 let totalStyles = twMerge(...,`text-${color}-500`);
