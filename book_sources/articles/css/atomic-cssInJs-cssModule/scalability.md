@@ -44,7 +44,7 @@ const buttonStyles = css({
 **Atomic css:** 同樣是新增一行三元表達式輕鬆解決。<br>
 
 ```js
-let totalStyles = twMerge(...(isHidden ? "hidden" : ""));
+let totalStyles = twMerge(..., (isHidden && "hidden"));
 ```
 
 ##### 2. 增加一個 prop `color`，直接讓外部決定文字顏色為何
@@ -73,7 +73,7 @@ const buttonStyles = css({
 **Atomic css:** 大概又是新增一行就 OK 了吧...<br>
 
 ```js
-let totalStyles = twMerge(...`text-${color}-500`);
+let totalStyles = twMerge(...,`text-${color}-500`);
 ```
 
 這時候你發現顏色卻沒有變 😥，打開 console 一查發現 className 有指定對，但是沒有對應的 class。<br>
