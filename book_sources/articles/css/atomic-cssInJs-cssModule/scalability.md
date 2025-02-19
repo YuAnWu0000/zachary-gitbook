@@ -12,6 +12,8 @@
 2. 增加一個 prop `color`，直接讓外部決定顏色為何。
 3. 讓外部可以傳客製化的`className`進來。
 
+---
+
 #### 1. 增加一個 prop `isHidden`，設置`display: none`
 
 **CSS module:** 新增一個 class，然後透過三元來判斷是否加入<br>
@@ -47,6 +49,8 @@ const buttonStyles = css({
 let totalStyles = twMerge(..., (isHidden && "hidden"));
 ```
 
+---
+
 #### 2. 增加一個 prop `color`，直接讓外部決定文字顏色為何
 
 **CSS module:** 因為 CSS module 的設計是以 class 為最小單位，不好直接應對屬性值。<br>
@@ -80,11 +84,13 @@ let totalStyles = twMerge(...,`text-${color}-500`);
 
 恭喜你又踩到一個坑，原因是 **Tailwind 會在 compile time 透過字串掃描來決定整個專案會用到哪一些 utility class**，因此這種字串拼接的方式並不會被 scan 到，該 class 也不會被打包進來，顏色當然也就不會變了。<br>
 
-兩種方式解決：要馬就直接把`color-yellow-500`當成 prop 傳入，要馬就直接傳入自定義的 className，不要讓外部只傳屬性進來，畢竟 Atomic css 在設計思想上的最小單位也是 class。
+**兩種方式解決**：要馬就直接把`color-yellow-500`當成 prop 傳入，要馬就直接傳入自定義的 className，不要讓外部只傳屬性進來，畢竟 Atomic css 在設計思想上的最小單位也是 class。
+
+---
 
 #### 3. 讓外部可以傳客製化的`className`進來
 
-**CSS module:** 新增一個 className prop 放入子組件的 className 即可。<br>
+**CSS module:** 新增一個 className prop 放入組件的 className 即可。<br>
 
 ```css
 /* scss */
@@ -96,8 +102,8 @@ let totalStyles = twMerge(...,`text-${color}-500`);
 }
 ```
 
-```html
-// 子組件內
+```js
+// 組件內
 <div
   className={`button button-${variant} button-${size} button-${status}
     ${isHidden ? "hidden" : ""} ${className}`}
@@ -127,11 +133,12 @@ let totalStyles = twMerge(...,`text-${color}-500`);
 <img src="../../../images/atomic-cssInJs-cssModule/btn_css_module.PNG" width="200" >
 
 嗯？好像有點怪怪的？原因如下：<br>
+
 首先，我們把 `.button-special` 定義在最底下，因此在同階層的情況下它的優先級比 `.hidden` 高，這也是為什麼儘管設定了 `isHidden={true}` 但依然不管用的原因。<br>
 
-另外前面提到的 `color prop`，因為組件內部是直接套用 `style={{ color }}`，因此它的優先級最高，導致我們無法將字體顏色變更為 `.button-special` 內部定義的白色。
+至於前面提到的 `color prop`，因為組件內部是直接套用 `style={{ color }}`，因此它的優先級最高，導致我們無法將字體顏色變更為 `.button-special` 內部定義的白色。
 
-**由這個例子可以看出，如果樣式出現非預期的結果，CSS module 需要同時關注模板 & 樣式 (這通常是兩個檔案)，其中尤其是 CSS，你必須確認順序性跟權重的問題，我認為這就是它 DX 相比於其他兩者不太友善的地方。**
+**由這個例子可以看出，如果樣式出現非預期的結果，CSS module 需要同時關注模板 & 樣式 (這通常是兩個檔案)，其中尤其是 CSS，你必須確認順序性跟權重的問題，我認為這就是它 DX 相比於其他兩者不太友善的地方。**<br>
 
 **css-in-js:** 在子組件內新增一行輕鬆解決 👊。(正常來說應該是外部把 css prop 傳入啦，在這邊為了方便比較就先統一命名成 className)<br>
 
@@ -166,12 +173,12 @@ const buttonStyles = css({
 結果：<br>
 <img src="../../../images/atomic-cssInJs-cssModule/btn_css_prop.PNG" width="200" >
 
-非常好！完全是我們預期的行為！**而要預測此行為只需要關注模板內 object 的組合順序就可以了！**
+非常好！完全是我們預期的行為！**而要預測此行為只需要關注模板內 object 的組合順序就可以了！**<br>
 
 **Atomic css:** 同樣是新增一行輕鬆解決 👌。<br>
 
 ```js
-// 子組件內
+// 組件內
 let totalStyles = twMerge(
   defaultStyles,
   variantStyles[variant] ? variantStyles[variant] : "",
@@ -200,7 +207,7 @@ let totalStyles = twMerge(
 
 同樣是預期內的結果，我們也只需要關注模板本身就好了。
 
----
+### 總結
 
 由上面的例子可以清楚看出三種 CSS framework 在面對業務擴展時的 scalability，**我認為在三者當中就屬 css-in-js 的功能最強大 💪**，因為它利用 JS 的語法特性可以更優雅的應對各種不同的場景，我想這也是這麼多 UI library 採用 css-in-js 作為解決方案的原因，畢竟在面對眾多用戶的前提下，**抽象化 (abstraction)、彈性 (flexibility)、可擴展性 (scalability)，就會是首要考量。**<br>
 
