@@ -42,10 +42,15 @@ for (ley key in test) {
 }
 ```
 
+但這樣會遇到一個問題...
+
 ```js
 const test = { a: { aa: 1 } }
 const copy
-copy[a] = test.a
+for (ley key in test) {
+  copy[key] = test[key]
+}
+test.a.aa = 2 // copy.a.aa 也會被改成 2
 ```
 
 可以發現，要完整"複製"一個物件，需要把物件
