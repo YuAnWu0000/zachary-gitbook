@@ -73,7 +73,7 @@ function deepCopy(obj) {
 }
 const copy = deepCopy(obj);
 obj.a.aa = 2;
-console.log(copy.a.aa); // 1
+console.log(copy.a.aa); // 不受影響，依舊是 1
 ```
 
 **如此一來你便完成的最基礎的深拷貝了！**
