@@ -10,6 +10,7 @@
   - [回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇](./articles/js/var-let-const/basics.md)
   - [回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇](./articles/js/var-let-const/advanced.md)
   - [關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？](./articles/js/deep-copy/basics.md)
+  - [面試官：前面講了這麼多，還是你直接實作一個深拷貝給我看看？](./articles/js/deep-copy/implement.md)
 - [Success of css](./articles/css/css.md)
   - [CSS Framework 到底該怎麼選? ─ 談案例](./articles/css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.md)
   - [CSS Framework 到底該怎麼選? ─ 談體驗](./articles/css/atomic-cssInJs-cssModule/atomic.md)
