@@ -62,14 +62,19 @@ const obj = { a: { aa: 1 } };
 function deepCopy(obj) {
   let obj_c = {};
   for (let key in obj) {
+    // 判斷是物件的話則重複呼叫
     if (typeof obj[key] === "object") {
       obj_c[key] = deepCopy(obj[key]);
     } else {
+      // 原始型別直接複製出來
       obj_c[key] = obj[key];
     }
   }
   return obj_c;
 }
-let obj_copy = deepCopy(obj);
-obj_copy.b.a = 2; // won't affect the original obj
+const copy = deepCopy(obj);
+obj.a.aa = 2;
+console.log(copy.a.aa); // 1
 ```
+
+**如此一來你便完成的最基礎的深拷貝了！**
