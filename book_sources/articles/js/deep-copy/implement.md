@@ -33,3 +33,19 @@ copy[b] = 1 // 複製成功
 ```
 
 可以發現，我們需要把`test`物件中的每個屬性都遍歷一遍，因此我們需要一個迴圈：
+
+```js
+const test = { a: 1, b: 1 }
+const copy
+for (ley key in test) {
+  copy[key] = test[key]
+}
+```
+
+```js
+const test = { a: { aa: 1 } }
+const copy
+copy[a] = test.a
+```
+
+可以發現，要完整"複製"一個物件，需要把物件
