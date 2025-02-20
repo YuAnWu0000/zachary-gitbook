@@ -39,6 +39,7 @@ let copy = {};
 for (let key in obj) {
   copy[key] = obj[key];
 }
+obj.a = 2; // copy.a 依舊是 1，複製成功
 ```
 
 但這樣會遇到一個問題...
