@@ -10,49 +10,73 @@
 首先，我們都知道以下這樣是行不通的：
 
 ```js
-const test = { a: 1 };
-let copy = test;
-test.a = 2; // copy.a 也會是 2
+const obj = { a: 1 };
+let copy = obj;
+obj.a = 2; // copy.a 也會是 2
 ```
 
-因為 copy 跟 test **共用同一份記憶體位址。**
+因為 copy 跟 obj **共用同一份記憶體位址。**
 
 接著，我們試著來找出深拷貝的 base case：
 
 ```js
-const test = { a: 1 };
+const obj = { a: 1 };
 let copy;
 copy[a] = 1; // 複製成功
 ```
 
 ```js
-const test = { a: 1, b: 1 };
+const obj = { a: 1, b: 1 };
 let copy;
 copy[a] = 1; // 複製成功
 copy[b] = 1; // 複製成功
 ```
 
-因為我們需要把`test`物件中的每個屬性都遍歷一遍，所以我們需要一個迴圈：
+因為我們需要把 `obj` 物件中的每個屬性都遍歷一遍，所以我們需要一個迴圈：
 
 ```js
-const test = { a: 1, b: 1 };
+const obj = { a: 1, b: 1 };
 let copy;
-for (let key in test) {
-  copy[key] = test[key];
+for (let key in obj) {
+  copy[key] = obj[key];
 }
 ```
 
 但這樣會遇到一個問題...
 
 ```js
-const test = { a: { aa: 1 } };
+const obj = { a: { aa: 1 } };
 let copy;
-for (let key in test) {
-  copy[key] = test[key];
+for (let key in obj) {
+  copy[key] = obj[key];
 }
-test.a.aa = 2; // copy.a.aa 也會被改成 2
+obj.a.aa = 2; // copy.a.aa 也會被改成 2
 ```
 
-原因是這個例子裡我們**只複製了一層的物件**，並且沒有判斷 `test[a]` 的型別，如果 `test[a]` 同樣是物件的話，就又會遇到最開頭的問題。
+原因是這個例子裡我們**只複製了一層的物件**，並且沒有判斷 `obj.a` 的型別，如果 `obj.a` 同樣是物件的話，就又會遇到最開頭的問題。
 
 可以發現，要"深度複製"一個物件，我們需要只能一層一層的把物件的**原始型別 (primitive)** 抓出來，並且遇到同樣是物件的屬性時，再重新"呼叫"一次，沒有錯，有感覺了嗎？遇到這種情況就是該遞迴出場了：
+
+```
+let obj = {
+  a: 1,
+  b: { a: 1 }
+}
+function deepCopy(obj) {
+  // Your code here
+  // typeof null === 'object'
+  if (obj === null || typeof obj !== 'object') return obj
+  // typeof [] === 'object'
+  let obj_c = Array.isArray(obj) ? [] : {}
+  for (let key in obj) {
+    if (typeof obj[key] === 'object') {
+      obj_c[key] = deepCopy(obj[key])
+    } else {
+      obj_c[key] = obj[key]
+    }
+  }
+  return obj_c
+}
+let obj_copy = deepCopy(obj)
+obj_copy.b.a = 2 // won't affect the original obj
+```
