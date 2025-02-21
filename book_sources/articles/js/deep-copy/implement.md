@@ -127,7 +127,7 @@ console.log(deepCopy(1)); // {}
 
 ```js
 for (let key in "abc") {
-  console.log(key); // 0, 1, 2
+  console.log(key); // 印出index: 0, 1, 2
 }
 ```
 
