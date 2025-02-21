@@ -118,9 +118,9 @@ console.log(copy[0].a); // 不受影響依舊是 1, 深度複製成功
 比方說，上面的程式傳入一些奇怪的參數...
 
 ```js
-const copy = deepCopy(null);
-const copy = deepCopy(null);
-const copy = deepCopy(null);
-const copy = deepCopy(null);
-const copy = deepCopy(null);
+console.log(deepCopy(null)); // {}
+console.log(deepCopy("abc")); // { 0: 'a', 1: 'b', 2: 'c' }
+console.log(deepCopy(1)); // {}
 ```
+
+發現問題了嗎？
