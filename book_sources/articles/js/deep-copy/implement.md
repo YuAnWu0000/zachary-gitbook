@@ -111,3 +111,16 @@ console.log(copy[0].a); // 不受影響依舊是 1, 深度複製成功
      console.log(key); // 0, 1, 2
    }
    ```
+   好！到這你已經完成陣列的擴充了。
+
+### 面試官：你考慮過哪些 edge case 了呢？
+
+比方說，上面的程式傳入一些奇怪的參數...
+
+```js
+const copy = deepCopy(null);
+const copy = deepCopy(null);
+const copy = deepCopy(null);
+const copy = deepCopy(null);
+const copy = deepCopy(null);
+```
