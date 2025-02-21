@@ -123,4 +123,19 @@ console.log(deepCopy("abc")); // { 0: 'a', 1: 'b', 2: 'c' }
 console.log(deepCopy(1)); // {}
 ```
 
-發現問題了嗎？
+發現問題了嗎？看來是我們的 type check 做的不夠確實，前面的程式都假定了傳進的參數一定是`object`，所以我們還需要多加一行判斷：
+
+```js
+function deepCopy(obj) {
+  if (!obj || typeof obj !== "object") return obj; // 加入此行
+  let obj_c = Array.isArray(obj) ? [] : {};
+  for (let key in obj) {
+    if (typeof obj[key] === "object") {
+      obj_c[key] = deepCopy(obj[key]);
+    } else {
+      obj_c[key] = obj[key];
+    }
+  }
+  return obj_c;
+}
+```
