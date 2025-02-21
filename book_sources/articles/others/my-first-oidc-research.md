@@ -127,7 +127,7 @@ _4.9 在 IdP 登出後，利用前面提到的 `OpenID Connect Session Managemen
 
 **spec 中的這段話也同樣表明依賴於第三方回覆有時是不可靠的，所以 RP 在跟 IdP 互動前預先登出可以說是合理行為 (畢竟也已經取得使用者同意)。**
 
-> p.s. Authentik 官方對於 `/revoke` 的實作並沒有如同規範 `RFC 7009` 的建議加上 CORS, 這點對於前後端分離的架構要實作登出不太友好, 因此我有去 github 上提 issue: https://github.com/goauthentik/authentik/issues/11057。<br>
+> p.s. Authentik 官方對於 `/revoke` 的實作並沒有如同規範 `RFC 7009` 的建議加上 CORS, 這點對於前後端分離的架構要實作登出不太友好, 因此我有去 github 上提 issue: https://github.com/goauthentik/authentik/issues/11057<br>
 > 這點就只能希望官方盡快加上了~
 
 ### 最後的最後，流程圖就會長這樣：
