@@ -108,7 +108,7 @@ console.log(copy[0].a); // 不受影響依舊是 1, 深度複製成功
 2. `for...in` 這個語法可以同時適用於 `object` & `array`，ex:
    ```js
    for (let key in ["a", "b", "c"]) {
-     console.log(key); // 0, 1, 2
+     console.log(key); // 印出index: 0, 1, 2
    }
    ```
    好！到這你已經完成陣列的擴充了。
