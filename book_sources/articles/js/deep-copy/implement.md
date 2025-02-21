@@ -82,4 +82,27 @@ console.log(copy.a.aa); // 不受影響依舊是 1, 深度複製成功
 ### 面試官：接下來可以請你加上陣列的擴充嗎？
 
 沒問題，讓我再吞一顆鎮定劑...<br>
-開玩笑的！其實有了前面的 prototype 之後，擴充陣列其實只需要多幾個判斷就可以搞定：
+開玩笑的！其實有了前面的 prototype 之後，擴充陣列其實只需要加一個判斷就可以搞定：
+
+```js
+const arr = [{ a: 1 }, 2, 3];
+function deepCopy(obj) {
+  let obj_c = Array.isArray(obj) ? [] : {};
+  for (let key in obj) {
+    if (typeof obj[key] === "object") {
+      obj_c[key] = deepCopy(obj[key]);
+    } else {
+      obj_c[key] = obj[key];
+    }
+  }
+  return obj_c;
+}
+const copy = deepCopy(arr);
+arr[0].a = 2;
+console.log(copy[0].a); // 不受影響依舊是 1, 深度複製成功
+```
+
+咦？怎麼比想像中的簡單？有兩個原因：
+
+1. `typeof [] === 'object'`，由於 javascript 原生並沒有`array`型別，所以無須多寫一個`else if`。
+2. `for...in`這個迴圈語法可以通用於`object`&`array`。
