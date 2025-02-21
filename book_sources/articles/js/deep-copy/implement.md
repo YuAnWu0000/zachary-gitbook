@@ -151,8 +151,8 @@ console.log(deepCopy("abc")); // abc
 console.log(deepCopy(1)); // 1
 ```
 
-注意這邊可千萬不能只有判斷 `typeof obj !== "object"`，因為 `typeof null`其實也是 `object`，這會導致 null 並沒有 early return 回來，而是繼續進到後面的步驟。
+注意這邊可千萬不能只有判斷 `typeof obj !== "object"`，因為 `typeof null`其實也是 `object`，這會導致 `null` 並沒有 early return 回來，而是繼續進到後面的步驟。
 
-到這邊，相信你的面試已經過關了，如果他還要考 `new Date()` 跟 `Symbol()` 的處理的話，那我只能說...
+**到這邊，相信你的面試已經過關了**，如果他還堅持要考 `new Date()` 跟 `Symbol()` 的處理的話，那我只能說...
 
 塊陶鴨~
