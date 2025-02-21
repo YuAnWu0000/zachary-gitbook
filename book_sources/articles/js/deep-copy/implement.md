@@ -62,7 +62,7 @@ const obj = { a: { aa: 1 } };
 function deepCopy(obj) {
   let obj_c = {};
   for (let key in obj) {
-    // 判斷是物件的話則進入遞迴
+    // 判斷是物件的話則開啟遞迴
     if (typeof obj[key] === "object") {
       obj_c[key] = deepCopy(obj[key]);
     } else {
