@@ -105,4 +105,9 @@ console.log(copy[0].a); // 不受影響依舊是 1, 深度複製成功
 咦？怎麼比想像中的簡單？有兩個原因：
 
 1. `typeof [] === 'object'`，由於 javascript 原生並沒有`array`型別，所以無須多寫一個`else if`。
-2. `for...in`這個迴圈語法可以通用於`object`&`array`。
+2. `for...in` 這個語法可以同時適用於 `object` & `array`，EX:
+   ```js
+   for (let key in ["a", "b", "c"]) {
+     console.log(key); // 0, 1, 2
+   }
+   ```
