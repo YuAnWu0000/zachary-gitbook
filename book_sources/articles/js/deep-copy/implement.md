@@ -123,7 +123,7 @@ console.log(deepCopy("abc")); // { 0: 'a', 1: 'b', 2: 'c' }
 console.log(deepCopy(1)); // {}
 ```
 
-可以看到連字串都被強制轉成物件了，原理其實跟前面`array`有點像：
+可以看到連字串都被強制轉成物件了，原理其實跟前面 `array` 有點像：
 
 ```js
 for (let key in "abc") {
@@ -131,8 +131,7 @@ for (let key in "abc") {
 }
 ```
 
-結論就是我們的 type check 做的不夠確實，前面的程式都假定了傳進的參數一定是`object`。
-所以我們還需要多加一行判斷：
+結論就是我們的 type check 做的不夠確實，因此還需要多加一行判斷：
 
 ```js
 function deepCopy(obj) {
@@ -151,3 +150,5 @@ console.log(deepCopy(null)); // null
 console.log(deepCopy("abc")); // abc
 console.log(deepCopy(1)); // 1
 ```
+
+注意這邊可千萬不能只有判斷 `typeof obj !== "object"`，因為 `typeof null`其實也是 `object`，這會導致 null 並沒有 early return 回來，而是繼續進到後面的步驟。
