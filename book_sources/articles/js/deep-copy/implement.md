@@ -62,8 +62,8 @@ const obj = { a: { aa: 1 } };
 function deepCopy(obj) {
   let obj_c = {};
   for (let key in obj) {
-    // 判斷是物件的話則開啟遞迴
     if (typeof obj[key] === "object") {
+      // 判斷是物件的話則開啟遞迴
       obj_c[key] = deepCopy(obj[key]);
     } else {
       // 是原始型別則直接複製出來
