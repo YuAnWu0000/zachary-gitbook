@@ -87,7 +87,7 @@ console.log(copy.a.aa); // 不受影響依舊是 1, 深度複製成功
 ```js
 const arr = [{ a: 1 }, 2, 3];
 function deepCopy(obj) {
-  let obj_c = Array.isArray(obj) ? [] : {};
+  let obj_c = Array.isArray(obj) ? [] : {}; // 加入此行
   for (let key in obj) {
     if (typeof obj[key] === "object") {
       obj_c[key] = deepCopy(obj[key]);
@@ -153,6 +153,6 @@ console.log(deepCopy(1)); // 1
 
 注意這邊可千萬不能只有判斷 `typeof obj !== "object"`，因為 `typeof null`其實也是 `object`，這會導致 null 並沒有 early return 回來，而是繼續進到後面的步驟。
 
-到這邊，相信你的面試已經過關了，如果他還要考`new Date()`跟`Symbol()`的處理的話，那我只能說...
+到這邊，相信你的面試已經過關了，如果他還要考 `new Date()` 跟 `Symbol()` 的處理的話，那我只能說...
 
 塊陶鴨~
