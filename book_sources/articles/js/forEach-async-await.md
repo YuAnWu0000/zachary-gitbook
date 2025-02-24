@@ -80,7 +80,9 @@ below was evaluated just now."<br>
 
 我們都知道 **JavaScript 是單執行緒的語言，其內部有著 Event Loop 機制**，各位可能很困惑，奇怪，怎麼被威脅了一下，就開始講其他的東西不講 async/await 了呢？其實，這些都是環環相扣的，觀念缺一不可。
 
-如果對 Event Loop 機制不理解的人，可以參照<a href="https://pjchender.blogspot.com/2017/08/javascript-learn-event-loop-stack-queue.html">這篇</a>文章
+簡單說，為了讓 javescript 這樣的單線程語言不會堵塞，瀏覽器藉由 Event Loop 機制幫我們暫時處理一些麻煩任務，等到主程式執行完畢以後再回來 callback，以求在前端能有最低的延遲。
+
+如果還是對 Event Loop 機制不理解的人，可以參照<a href="https://pjchender.blogspot.com/2017/08/javascript-learn-event-loop-stack-queue.html">這篇</a>文章
 
 **文章真的非常重要**<br>
 **文章真的非常重要**<br>
