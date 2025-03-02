@@ -76,7 +76,7 @@ console.log(testA, testB, testC); // {a: 1} 1 {c: 2}
 
 我看到 ECMA 其中的[這個](https://262.ecma-international.org/15.0/index.html#sec-assignment-operators-runtime-semantics-evaluation)章節詳細定義了 javascript 如何處理 variable assignment。
 
-<img src="../../../images/deep-copy-basics/assignment.PNG" width="1000" >
+<img src="../../../images/deep-copy/basics/assignment.PNG" width="1000" >
 
 以前面的例子來說：
 `let testA = { a: 1 }`
@@ -103,7 +103,7 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 > ### 於是問題來了，`GetValue()` 是什麼？
 
-<img src="../../../images/deep-copy-basics/getValue.PNG" width="1000" >
+<img src="../../../images/deep-copy/basics/getValue.PNG" width="1000" >
 
 由定義可以看出，`GetValue()` 可以取得該變數對應的實際"值"，步驟如下：
 
@@ -113,7 +113,7 @@ _AssignmentExpression_ = `{ a: 1 }`<br>
 
 ### Reference Record
 
-<img src="../../../images/deep-copy-basics/referenceRecord.PNG" width="1000" >
+<img src="../../../images/deep-copy/basics/referenceRecord.PNG" width="1000" >
 
 > The Reference Record type is used to explain the behaviour of such operators as delete, typeof, the assignment operators, the super keyword and other language features. For example, the left-hand operand of an assignment is expected to produce a Reference Record.
 
