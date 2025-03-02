@@ -43,27 +43,26 @@ https://github.com/facebook/create-react-app/issues/9937
 就在群眾焦頭爛額的時候救世主出現了：
 <img src="../../images/cra-url-issue/url_webpack.png" width="600" height="">
 
-這位大神提到可以將`css-loader` 內部的 url 改為 false解決這個問題！
+這位大神提到可以將`css-loader` 內部的 url 改為 false 來解決這個問題！
 
-那就讓我們趕快來看看 `css-loader` 的 options 定義：
+我們趕快來看看 `css-loader` 的 options 定義：
 ![url def](../../images/cra-url-issue/optionsUrlDef.png)
 
-從文件中可以看到：<br>
-當 `url: true`（預設值）時，Webpack 會自動處理圖片的相對路徑等等，並且把它從 `src/` 底下複製一份到 `dist/`。<br>
-然而當 `url: false`，Webpack 會忽略 url() 內的路徑，也就是說
+從文件中可以發現：<br>
+
+當 `url: true`（預設值）時，Webpack 會自動處理圖片的相對路徑，並且把它從 `src/` 底下複製一份到 `dist/`。<br>
+
+然而當 `url: false` 時，Webpack 會忽略 url() 內的路徑，也就是說，如果你是這樣用：<br>
+`<div className="bg-[url('/images/cat.jpg')]">`<br>
+webpack就再也不會自動幫你自動去 `src/` 底下找圖片並且複製到 `dist/` 了，而是保留你的原始路徑，因此，只要你有把圖片放進 `public/images` 底下，你的 `dist/` 裡面原本就會有一包 `images/`，這時候上面的絕對路徑就可以幫你把圖片抓出來。
 
 **所以這個方法的確可以解決我們的問題！**
 
 那麼接下來的目光應該是要放在如何更改 `webpack` 的設定檔：
 
-
-OK！那當前的目標就是要想辦法擴充 `create-react-app` 預設的 webpack config，然後把 `css-loader` 內部的 url 改為 false。
-
-
+前面那位大神用的是 `craco` 擴充 `create-react-app` 預設的 webpack config，但我看了一些推薦文，最後決定使用 `react-app-rewired` 套件來幫我進行擴充，目標是把 `css-loader` 內部的 url 改為 false。
 
 因為只需要動到少部分的 config，我這裡不傾向 eject 出來維護整個 webpack config，**這樣如果未來套件更新我會很難在本地端同步。**
-
-看了一些推薦文，最後決定使用`react-app-rewired`套件來幫我進行擴充。
 
 那麼...要怎麼擴充呢？只能去看看 `react-scripts` 的 webpack config 裡面都做了些什麼事了 😓...
 
