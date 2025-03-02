@@ -1,5 +1,7 @@
 # 回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇
 
+<img src="../../../images/var-let-const/meme.png" width="450" >
+
 ### 「請解釋 var / let / const 的差別？」
 
 一道經典的前端面試題，告訴我，你的回答是不是只有下列幾種：<br>
