@@ -38,7 +38,7 @@ https://github.com/facebook/create-react-app/issues/9937
 
 <img src="../../images/cra-url-issue/commit.png" width="600" height="">
 
-我繼續爬完了 issue，發現整件事的起因是有個contributor發了個PR，透過 `resolve-url-loader` 套件把所有`url()`的根目錄從`public/`改為`src/`，所以才有了這麼多的事情 (相關commit看[這裡](https://github.com/facebook/create-react-app/commit/fa648daca1dedd97aec4fa3bae8752c4dcf37e6f))。
+我繼續爬完了 issue，發現整件事的起因是有個 contributor 發了個 PR，透過 `resolve-url-loader` 套件把所有`url()`的根目錄從`public/`改為`src/`，所以才有了這麼多的事情 (相關commit看[這裡](https://github.com/facebook/create-react-app/commit/fa648daca1dedd97aec4fa3bae8752c4dcf37e6f))。
 
 這個 breaking change 並沒有特別在 CRA 的官方文件中提到，因此也讓開發者們哀鴻遍野。
 
