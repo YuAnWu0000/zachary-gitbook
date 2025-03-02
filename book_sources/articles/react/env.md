@@ -1,4 +1,4 @@
-# 還在為不同環境變數寫 if else? 你需要的是.env
+# 常常在VM裡面改東改西? 你需要的是.env
 
 <img src="../../images/env/meme.png" width="550" >
 
