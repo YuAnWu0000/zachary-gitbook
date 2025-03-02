@@ -1,5 +1,7 @@
 # 搞定 Docker 跟 Nginx，輕鬆部署你的專案
 
+<img src="../../images/deploy-your-project/meme.png" width="500" >
+
 「诶我把後端服務部署到 AWS 機器上囉！你看要不要也把你的前端專案部署上去。」<br>
 「哦...好！可是我完全沒碰過 Docker 跟 Nginx 耶！」<br>
 「......」<br>
