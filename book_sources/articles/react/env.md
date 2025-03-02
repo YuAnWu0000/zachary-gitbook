@@ -1,5 +1,7 @@
 # 還在為不同環境變數寫 if else? 你需要的是.env
 
+<img src="../../images/env/meme.png" width="550" >
+
 公司的前端專案需要三個執行環境，分別是 develpoment, uat, production，當你費盡千辛萬苦將專案分別部署上三台機器以後，發現需要根據執行環境來判斷 CLIENT_ID，這時候，你會怎麼做？
 
 才一個變數而已，我分別在三台機器上面改就好了。
