@@ -35,14 +35,16 @@ https://github.com/facebook/create-react-app/issues/9937
 
 ### 這種無謂增加 bundle size 的作法應該要想辦法避免！慶幸自己剛剛選擇了追根究柢！
 
-我繼續爬完了 issue，發現整件事的起因是因為 CRA 升上 4.X 版本後將`css-loader`的 options 改掉，**變成預設把 image 路徑指向 src 底下**，所以才有了這麼多的事情。
+![url commit](../../images/cra-url-issue/commit.png)
+我繼續爬完了 issue，發現整件事的起因是有個contributor發了個PR，透過 `resolve-url-loader` 把所有`url()`的根目錄從`public/`改為`src/`，所以才有了這麼多的事情 (相關commit看[這裡](https://github.com/facebook/create-react-app/commit/fa648daca1dedd97aec4fa3bae8752c4dcf37e6f))。
+
 
 那麼接下來的目光應該是要放在如何更改 `webpack` 的設定檔：
 
 首先讓我們來看看 `css-loader` 的 options 定義：
 ![url def](../../images/cra-url-issue/optionsUrlDef.png)
 
-OK！那當前的目標就是要想辦法擴充 `create-react-app` 預設的 webpack config，然後把 `css-loader` 內部的 url 改為 false (預設值)。
+OK！那當前的目標就是要想辦法擴充 `create-react-app` 預設的 webpack config，然後把 `css-loader` 內部的 url 改為 false。
 
 因為只需要動到少部分的 config，我這裡不傾向 eject 出來維護整個 webpack config，**這樣如果未來套件更新我會很難在本地端同步。**
 
