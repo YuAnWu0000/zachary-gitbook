@@ -1,5 +1,7 @@
 # Cannot resolve url() ─ CRA 用 url() 引入圖片的坑
 
+<img src="../../images/cra-url-Issue/meme.png" width="400" >
+
 ### 專案使用 create-react-app + Tailwind CSS，使用以下寫法時遇到路徑無法解析的問題
 
 `<div className="bg-[url('/images/cat.jpg')]">`
