@@ -1,6 +1,6 @@
 # 解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor
 
-<img src="../../../images/gitlab-ci/meme.png" width="800" >
+<img src="../../../images/gitlab-ci/meme.png" width="550" >
 
 
 身為一位忙碌的工程師，右手握滑鼠，左手~~衛生紙~~，左手按鍵盤，根本不想額外花心力在手動部署上，這時候你需要的就是一套完整的 CI/CD。
