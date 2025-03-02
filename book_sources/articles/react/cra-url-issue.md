@@ -54,9 +54,10 @@ https://github.com/facebook/create-react-app/issues/9937
 
 然而當 `url: false` 時，Webpack 會忽略 url() 內的路徑，也就是說，如果你是這樣用：<br>
 `<div className="bg-[url('/images/cat.jpg')]">`<br>
-webpack就再也不會自動幫你自動去 `src/` 底下找圖片並且複製到 `dist/` 了，而是保留你的原始路徑，因此，只要你有把圖片放進 `public/images` 底下，你的 `dist/` 裡面原本就會有一包 `images/`，這時候上面的絕對路徑就可以幫你把圖片抓出來。
 
-**所以這個方法的確可以解決我們的問題！**
+webpack 就再也不會自動幫你去 `src/` 底下找圖片並且複製到 `dist/` 了，變成保留你的原始路徑，因此，只要你有把圖片放進 `public/images` 底下，你的 `dist/` 裡面原本就會有一包 `images/`，這時候上面的絕對路徑就可以幫你把圖片抓出來。
+
+### 所以這個方法的確可以解決我們的問題！
 
 那麼接下來的目光應該是要放在如何更改 `webpack` 的設定檔：
 
