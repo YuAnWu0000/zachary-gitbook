@@ -1,5 +1,7 @@
 # 關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？
 
+<img src="../../../images/deep-copy/basics/meme.png" width="500" >
+
 身為前端工程師，我想你一定在面試時遇過這樣的問題：<br>
 
 「請解釋深淺拷貝的不同？」<br>

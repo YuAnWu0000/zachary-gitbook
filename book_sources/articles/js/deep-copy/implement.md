@@ -1,7 +1,5 @@
 # 面試官：前面講了這麼多，還是你直接實作一個深拷貝給我看看？
 
-<img src="../../../images/deep-copy/implement/meme.png" width="500" >
-
 面試官：那些比較麻煩的資料型別可以暫時忽略，比如： `Symbol`, `Date`...為求簡化，`Array` 也暫時忽略好了，先單純考慮 `Object` 來實作。
 
 我心理 OS：我可以用講的咪？我打字會緊張耶 QQ
