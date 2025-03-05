@@ -1,5 +1,7 @@
 # 製作跑馬燈一點都不難，你只需要知道這些小訣竅
 
+<img src="../../images/how-to-make-a-marquee/meme.png" width="600" >
+
 ### 專案需要一個公告跑馬燈的新功能，你會想怎麼實作？
 
 1. 首先新增一個 component:

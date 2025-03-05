@@ -1,5 +1,7 @@
 # Cypress ─ 一款超強大的 E2E test framework
 
+<img src="../../images/cypress/meme.png" width="600" >
+
 ### 安裝
 
 雖然 cypress 框架並不算小，但理論上 npm 一行指令便可以完成安裝。

@@ -1,5 +1,7 @@
 # Cannot resolve url() ─ CRA 用 url() 引入圖片的坑
 
+<img src="../../images/cra-url-Issue/meme.png" width="450">
+
 ### 專案使用 create-react-app + Tailwind CSS，使用以下寫法時遇到路徑無法解析的問題
 
 `<div className="bg-[url('/images/cat.jpg')]">`
@@ -23,10 +25,9 @@ https://github.com/facebook/create-react-app/issues/9937
 
 因為我實在是太好奇了，於是繼續往下滑 issue，直至看到這個評論：
 
-<!-- ![seo](../../images/cra-url-issue/seo.png) -->
-<img src="../../images/cra-url-issue/seo.png" width="600" height="">
+<img src="../../images/cra-url-issue/seo_issue.png" width="1000" height="">
 
-大意是說上面那種方式，是由 `react-scripts` 幫你把用到的圖片打包進專案，並且將路徑設置為 `static/media/cat.{hash}.png`來對應，雖然一樣可以載入圖片，這樣會導致每次 build 完都有不同的 hash 值，**這會令 google 爬蟲爬不到穩定的圖片來源，因而降低網站 SEO。**
+大意是說上面那種方式，是由 `webpack` 幫你把用到的圖片打包進專案，並且將路徑設置為 `static/media/cat.{hash}.png`來對應，雖然一樣可以載入圖片，這樣會導致每次 build 完都有不同的 hash 值，**這會令 google 爬蟲爬不到穩定的圖片來源，因而降低網站 SEO。**
 
 於是我實際 build 了一下剛剛的專案，發現：<br>
 ![no public build](../../images/cra-url-issue/noPublicBuild.png)
@@ -35,18 +36,36 @@ https://github.com/facebook/create-react-app/issues/9937
 
 ### 這種無謂增加 bundle size 的作法應該要想辦法避免！慶幸自己剛剛選擇了追根究柢！
 
-我繼續爬完了 issue，發現整件事的起因是因為 CRA 升上 4.X 版本後將`css-loader`的 options 改掉，**變成預設把 image 路徑指向 src 底下**，所以才有了這麼多的事情。
+<img src="../../images/cra-url-issue/commit.png" width="1000" height="">
+
+我繼續爬完了 issue，發現整件事的起因是有個 contributor 發了個 PR，透過 `resolve-url-loader` 套件把所有`url()`的根目錄從`public/`改為`src/`，所以才有了這麼多的事情 (相關commit看[這裡](https://github.com/facebook/create-react-app/commit/fa648daca1dedd97aec4fa3bae8752c4dcf37e6f))。
+
+這個 breaking change 並沒有特別在 CRA 的官方文件中提到，因此也讓開發者們哀鴻遍野。
+
+就在群眾焦頭爛額的時候救世主出現了：<br>
+<img src="../../images/cra-url-issue/url_webpack.png" width="1000" height="">
+
+這位大神提到可以將`css-loader` 內部的 `url` 改為 `false` 來解決這個問題！
+
+我們趕快來看看 `css-loader` 的 options 定義：
+![url def](../../images/cra-url-issue/optionsUrlDef.png)
+
+從文件中可以發現：<br>
+
+當 `url: true`（預設值）時，Webpack 會自動處理圖片的相對路徑，並且把它從 `src/` 底下複製一份到 `dist/`。<br>
+
+然而當 `url: false` 時，Webpack 會忽略 url() 內的路徑，也就是說，如果你是這樣用：<br>
+`<div className="bg-[url('/images/cat.jpg')]">`<br>
+
+webpack 就再也不會自動幫你去 `src/` 底下找圖片並且複製到 `dist/` 了，變成保留你的原始路徑，因此，只要你有把圖片放進 `public/images` 底下，你的 `dist/` 裡面原本就會有一包 `images/`，這時候上面的絕對路徑就可以幫你把圖片抓出來。
+
+### 這個方法的確可以解決我們的問題！
 
 那麼接下來的目光應該是要放在如何更改 `webpack` 的設定檔：
 
-首先讓我們來看看 `css-loader` 的 options 定義：
-![url def](../../images/cra-url-issue/optionsUrlDef.png)
-
-OK！那當前的目標就是要想辦法擴充 `create-react-app` 預設的 webpack config，然後把 `css-loader` 內部的 url 改為 false (預設值)。
+前面那位大神用的是 `craco` 擴充 `create-react-app` 預設的 webpack config，但我看了一些推薦文，最後決定使用 `react-app-rewired` 套件來幫我進行擴充，目標是把 `css-loader` 內部的 `url` 改為 `false`。
 
 因為只需要動到少部分的 config，我這裡不傾向 eject 出來維護整個 webpack config，**這樣如果未來套件更新我會很難在本地端同步。**
-
-看了一些推薦文，最後決定使用`react-app-rewired`套件來幫我進行擴充。
 
 那麼...要怎麼擴充呢？只能去看看 `react-scripts` 的 webpack config 裡面都做了些什麼事了 😓...
 

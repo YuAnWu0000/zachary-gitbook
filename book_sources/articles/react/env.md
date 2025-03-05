@@ -1,4 +1,6 @@
-# 還在為不同環境變數寫 if else? 你需要的是.env
+# 常常在VM裡面改東改西? 你需要的是.env
+
+<img src="../../images/env/meme.png" width="550" >
 
 公司的前端專案需要三個執行環境，分別是 develpoment, uat, production，當你費盡千辛萬苦將專案分別部署上三台機器以後，發現需要根據執行環境來判斷 CLIENT_ID，這時候，你會怎麼做？
 
