@@ -1,0 +1,835 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../others/others.html" />
+    
+    
+    <link rel="prev" href="gitlab-runner.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    關於我
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../vue/vue.html">
+            
+                <a href="../../vue/vue.html">
+            
+                    
+                    Vue the world differently
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../react/react.html">
+            
+                <a href="../../react/react.html">
+            
+                    
+                    React with surprise
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../react/cra-url-issue.html">
+            
+                <a href="../../react/cra-url-issue.html">
+            
+                    
+                    Cannot resolve url() ─ CRA 用 url() 引入圖片的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../react/env.html">
+            
+                <a href="../../react/env.html">
+            
+                    
+                    常常在VM裡面改東改西? 你需要的是.env
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../js/js.html">
+            
+                <a href="../../js/js.html">
+            
+                    
+                    Don't skip javascript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../js/forEach-async-await.html">
+            
+                <a href="../../js/forEach-async-await.html">
+            
+                    
+                    async / await 在 forEach 裡面不起作用？你是否搞錯了什麼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../js/var-let-const/basics.html">
+            
+                <a href="../../js/var-let-const/basics.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../js/var-let-const/advanced.html">
+            
+                <a href="../../js/var-let-const/advanced.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../js/deep-copy/basics.html">
+            
+                <a href="../../js/deep-copy/basics.html">
+            
+                    
+                    關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../js/deep-copy/implement.html">
+            
+                <a href="../../js/deep-copy/implement.html">
+            
+                    
+                    面試官：前面講了這麼多，還是你直接實作一個深拷貝給我看看？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../css/css.html">
+            
+                <a href="../../css/css.html">
+            
+                    
+                    Success of css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../css/atomic-cssInJs-cssModule/atomic.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/atomic.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談體驗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../css/atomic-cssInJs-cssModule/scalability.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/scalability.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談擴展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../css/atomic-cssInJs-cssModule/performance.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/performance.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談效能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../css/how-to-make-a-marquee.html">
+            
+                <a href="../../css/how-to-make-a-marquee.html">
+            
+                    
+                    製作跑馬燈一點都不難，你只需要知道這些小訣竅
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../devops.html">
+            
+                <a href="../devops.html">
+            
+                    
+                    Dive into the world of DevOps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../deploy-your-project.html">
+            
+                <a href="../deploy-your-project.html">
+            
+                    
+                    搞定 Docker 跟 Nginx，輕鬆部署你的專案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../add-ssl.html">
+            
+                <a href="../add-ssl.html">
+            
+                    
+                    讓你的網站更安全，加上 SSL 憑證吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../monitor-container.html">
+            
+                <a href="../monitor-container.html">
+            
+                    
+                    我的服務還好嗎？監控容器的小撇步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="gitlab-runner.html">
+            
+                <a href="gitlab-runner.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.5" data-path="gitlab-ci.html">
+            
+                <a href="gitlab-ci.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../others/others.html">
+            
+                <a href="../../others/others.html">
+            
+                    
+                    Others
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../others/my-first-oidc-research.html">
+            
+                <a href="../../others/my-first-oidc-research.html">
+            
+                    
+                    初探 OIDC ─ 揭開我們每天都在使用，卻不了解的黑盒子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../others/cypress.html">
+            
+                <a href="../../others/cypress.html">
+            
+                    
+                    Cypress ─ 一款超強大的 E2E test framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x89E3;&#x653E;&#x5DE5;&#x7A0B;&#x5E2B;&#x7684;&#x96D9;&#x624B;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x597D;&#x7684;-cicd-&#x2500;-&#x641E;&#x5B9A;-gitlab-ci--&#x74B0;&#x5883;&#x8B8A;&#x6578;">&#x89E3;&#x653E;&#x5DE5;&#x7A0B;&#x5E2B;&#x7684;&#x96D9;&#x624B;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x597D;&#x7684; CI/CD &#x2500; &#x641E;&#x5B9A; gitlab-ci + &#x74B0;&#x5883;&#x8B8A;&#x6578;</h1>
+<p>&#x4E0A;&#x4E00;&#x7BC7;&#x641E;&#x5B9A; gitlab-runner &#x7684;&#x5404;&#x7A2E;&#x8A2D;&#x5B9A;&#x4EE5;&#x5F8C;&#xFF0C;&#x73FE;&#x5728;&#x99AC;&#x4E0A;&#x8B93;&#x6211;&#x5011;&#x4F86;&#x5EFA;&#x7ACB;&#x4E00;&#x500B;&#x7C21;&#x55AE;&#x7684; gitlab-ci &#x6E2C;&#x8A66;&#x770B;&#x770B;&#x5427;~<br>
+&#x5594;&#x5C0D;&#x4E86;<code>.gitlab-ci.yml</code>&#xFF0C;&#x6A94;&#x540D;&#x524D;&#x9762;&#x8A18;&#x5F97;&#x52A0;<code>.</code>&#xFF0C;&#x4E0D;&#x8981;&#x8DDF;&#x6211;&#x4E00;&#x6A23;&#x800D;&#x7B28;&#x5594; &#x1F613;&#x3002;</p>
+<pre><code class="lang-yml"><span class="hljs-comment"># .gitlab-ci.yml</span>
+<span class="hljs-attr">stages:</span>
+<span class="hljs-bullet">  -</span> deploy
+<span class="hljs-attr">deploy-job:</span>
+<span class="hljs-attr">  stage:</span> deploy
+<span class="hljs-attr">  script:</span>
+<span class="hljs-bullet">    -</span> echo <span class="hljs-string">&quot;Hello, $GITLAB_USER_LOGIN!&quot;</span>
+<span class="hljs-bullet">    -</span> pwd
+<span class="hljs-bullet">    -</span> whoami
+<span class="hljs-bullet">    -</span> echo <span class="hljs-string">&quot;This job deploys from the $CI_COMMIT_BRANCH branch.&quot;</span>
+<span class="hljs-attr">  only:</span>
+<span class="hljs-bullet">    -</span> master
+<span class="hljs-attr">  tags:</span>
+<span class="hljs-bullet">    -</span> test-runner
+</code></pre>
+<ul>
+<li><strong>stages</strong>: &#x5B9A;&#x7FA9;&#x9019;&#x500B; pipeline &#x6709;&#x5E7E;&#x500B;&#x4E0D;&#x540C;&#x968E;&#x6BB5;&#xFF0C;&#x9019;&#x500B;&#x4F8B;&#x5B50;&#x53EA;&#x6709;&#x4E00;&#x500B;&#x968E;&#x6BB5; <code>deploy</code> (&#x610F;&#x5473;&#x8457;&#x4F60;&#x5728; Settings/CI/CD/Pipelines &#x5C31;&#x53EA;&#x6703;&#x770B;&#x5230;&#x4E00;&#x500B;&#x5708;&#x5708;)&#x3002;</li>
+<li><strong>deploy-job</strong>: &#x5B9A;&#x7FA9;&#x4E86;&#x4E00;&#x500B; job &#x540D;&#x70BA; <code>deploy-job</code>&#xFF0C;<code>stage: deploy</code> &#x8868;&#x793A;&#x9019;&#x500B; job &#x5C0D;&#x61C9;&#x5230; <code>deploy</code> &#x968E;&#x6BB5;&#x3002;</li>
+<li><strong>script</strong>: &#x9019;&#x908A;&#x5BEB;&#x4E0B;&#x4F60;&#x9700;&#x8981;&#x5728;&#x6A5F;&#x5668;&#x4E0A;&#x904B;&#x884C;&#x7684;&#x6307;&#x4EE4;&#x3002;</li>
+<li><strong>$GITLAB_USER_LOGIN, $CI_COMMIT_BRANCH</strong>: &#x6B64;&#x70BA; <strong>Predefined Variables</strong>&#xFF0C;&#x70BA; Gitlab &#x4E8B;&#x5148;&#x5E6B;&#x4F60;&#x5B9A;&#x7FA9;&#x597D;&#x7684;&#x4E00;&#x4E9B;&#x8B8A;&#x6578;&#xFF0C;&#x8A73;&#x60C5;&#x53EF;&#x53C3;&#x8003;<a href="https://docs.gitlab.com/ee/ci/variables/predefined_variables.html#predefined-variables" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x4EF6;</a>&#x3002;</li>
+<li><strong>pwd</strong>: &#x500B;&#x4EBA;&#x89BA;&#x5F97;&#x986F;&#x793A;&#x7576;&#x524D;&#x8DEF;&#x5F91; Debug &#x9084;&#x883B;&#x65B9;&#x4FBF;&#x7684;&#xFF0C;&#x5982;&#x679C; pipeline &#x6709;&#x4EC0;&#x9EBC;&#x7570;&#x5E38;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x9032;&#x5230;&#x6A5F;&#x5668;&#x7684;&#x8A72;&#x76EE;&#x9304;&#x5E95;&#x4E0B;&#x6AA2;&#x67E5;&#xFF0C;&#x901A;&#x5E38;&#x662F;<code>/home/gitlab-runner/builds/xxxxxxxx/0/your-project</code>&#x3002;</li>
+<li><strong>only</strong>: &#x9650;&#x5236;&#x9019;&#x500B; job &#x5728;&#x67D0;&#x4E9B;&#x689D;&#x4EF6;&#x4E0B;&#x9032;&#x884C;&#xFF0C;<strong>&#x6CE8;&#x610F;&#x689D;&#x4EF6;&#x662F; OR</strong>&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<br></li>
+</ul>
+<pre><code class="lang-yml"><span class="hljs-attr">only:</span>
+<span class="hljs-bullet">  -</span> master
+<span class="hljs-bullet">  -</span> tags
+</code></pre>
+<p><strong>&#x9019;&#x500B; job &#x53EA;&#x6703;&#x5728; master &#x5206;&#x652F;&#x6216;&#x662F;&#x4E0B; tag &#x7684;&#x6642;&#x5019;&#x89F8;&#x767C;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981; AND &#x8ACB;&#x8F49;&#x7528; <code>rules:</code>&#x3002;</strong></p>
+<ul>
+<li><strong>tags</strong>: &#x6B64; tag &#x975E;&#x5F7C; tag&#xFF0C;&#x9019;&#x662F;<strong>&#x6307;&#x5B9A;&#x8981;&#x8B93;&#x54EA;&#x500B; runner &#x8DD1;&#x7684; tag</strong>&#xFF0C;&#x9084;&#x8A18;&#x5F97;&#x55CE;&#xFF1F;&#x6211;&#x5011;&#x4E0A;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x5728;&#x5EFA;&#x7ACB; runner &#x7684;&#x6642;&#x5019;&#x6709;&#x8F38;&#x5165; tag&#xFF0C;&#x9019;&#x6642;&#x5019;&#x5C31;&#x6D3E;&#x4E0A;&#x7528;&#x5834;&#x4E86;&#x3002;<strong>&#x6CE8;&#x610F;&#x8DDF; <code>only:</code> &#x4E0D;&#x540C;&#xFF0C;&#x9019;&#x908A;&#x7684;&#x908F;&#x8F2F;&#x662F; AND</strong>&#x3002;&#x4F8B;&#x5982;&#xFF1A;<br></li>
+</ul>
+<pre><code class="lang-yml"><span class="hljs-attr">tags:</span>
+<span class="hljs-bullet">  -</span> test-runner
+<span class="hljs-bullet">  -</span> production-runner
+</code></pre>
+<p><strong>&#x4EE3;&#x8868;&#x9019;&#x500B; job &#x53EA;&#x80FD;&#x5728;&#x540C;&#x6642;&#x5177;&#x6709; <code>test-runner</code> + <code>production-runner</code> &#x9019;&#x5169;&#x500B;&#x6A19;&#x7C64;&#x7684; runner &#x4E0A;&#x9762;&#x8DD1;</strong> (&#x6BCF;&#x500B; runner &#x53EF;&#x4EE5;&#x8A2D;&#x5B9A;&#x591A;&#x500B; tag)&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x500B; job &#x627E;&#x4E0D;&#x5230;&#x7B26;&#x5408;&#x689D;&#x4EF6;&#x7684; runner&#xFF0C;&#x4F60;&#x6703;&#x5728; pipeline &#x770B;&#x5230;&#x5B83;<strong>&#x6C38;&#x9060;&#x662F; pending &#x7684;&#x72C0;&#x614B;</strong>&#x3002;</p>
+<blockquote>
+<h3 id="&#x6709;&#x4E86;&#x4E0A;&#x9762;&#x9019;&#x4EFD;-gitlab-ci-&#x4EE5;&#x5F8C;&#xFF0C;&#x8D95;&#x5FEB;&#x628A;&#x4F60;&#x7684;-commit-push-&#x5230;-master-&#x5427;&#xFF01;&#x4E0D;&#x4E45;&#x5F8C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;-pipeline-&#x7684;&#x6210;&#x529F;&#x8A0A;&#x606F;&#x4E86;&#x3002;">&#x6709;&#x4E86;&#x4E0A;&#x9762;&#x9019;&#x4EFD; gitlab-ci &#x4EE5;&#x5F8C;&#xFF0C;&#x8D95;&#x5FEB;&#x628A;&#x4F60;&#x7684; commit push &#x5230; master &#x5427;&#xFF01;&#x4E0D;&#x4E45;&#x5F8C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230; pipeline &#x7684;&#x6210;&#x529F;&#x8A0A;&#x606F;&#x4E86;&#x3002;</h3>
+</blockquote>
+<p>&#x63A5;&#x8457;&#x5F8C;&#x8B93;&#x6211;&#x5011;&#x6839;&#x64DA;&#x9700;&#x6C42;&#x958B;&#x59CB;&#x64F4;&#x5145;&#x9019;&#x500B; CI &#x5427;~</p>
+<h3 id="&#x642D;&#x914D;&#x74B0;&#x5883;&#x8B8A;&#x6578;">&#x642D;&#x914D;&#x74B0;&#x5883;&#x8B8A;&#x6578;</h3>
+<p>&#x5982;&#x679C;&#x662F; React &#x5C08;&#x6848;&#x7684;&#x8A71;&#xFF0C;&#x53EF;&#x80FD;&#x6703;&#x6709;&#x591A;&#x500B; .env &#x6A94;&#x6848;&#xFF0C;&#x6211;&#x5011;&#x5047;&#x8A2D;&#x5C08;&#x6848;&#x5167;&#x6709;<code>.env.development</code>, <code>.env.uat</code>, <code>.env.production</code>&#xFF0C;&#x5206;&#x5225;&#x5C0D;&#x61C9;&#x5230;&#x4E09;&#x7A2E;&#x4E0D;&#x540C;&#x7684;&#x57F7;&#x884C;&#x74B0;&#x5883;&#x3002;</p>
+<blockquote>
+<p>&#x4E0D;&#x77E5;&#x9053;&#x600E;&#x9EBC;&#x64F4;&#x5145;&#x4F7F;&#x7528; env &#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x53C3;&#x8003;&#x6211;&#x4E4B;&#x524D;&#x5BEB;&#x7684;<a href="https://yuanwu0000.github.io/zachary-gitbook/articles/react/env.html" target="_blank">&#x9019;&#x7BC7;&#x6587;&#x7AE0;</a>&#x3002;</p>
+</blockquote>
+<p>&#x9019;&#x6642;&#x5019;&#xFF0C;&#x6211;&#x5011;&#x8981;&#x505A;&#x7684;&#x5C31;&#x662F;&#x8B93; CI &#x53EF;&#x4EE5;&#x4F9D;&#x64DA;&#x4E0D;&#x540C;&#x7684; branch&#xFF0C;&#x57F7;&#x884C;&#x4E0D;&#x540C;&#x7684; build &#x6307;&#x4EE4;&#xFF0C;&#x4F8B;&#x5982;&#x5728; uat &#x74B0;&#x5883;&#x662F; <code>npm run build:uat</code>&#xFF0C;&#x5728; production &#x74B0;&#x5883;&#x5247;&#x662F; <code>npm run build</code>&#x3002;</p>
+<p>&#x4E00;&#x822C;&#x4F86;&#x8AAA;&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528; <strong>Docker executor</strong>&#xFF0C;&#x53EF;&#x4EE5;&#x9019;&#x6A23;&#x505A;&#xFF1A;</p>
+<pre><code class="lang-yml"><span class="hljs-comment"># .gitlab-ci.yml</span>
+<span class="hljs-attr">stages:</span>
+<span class="hljs-bullet">  -</span> build
+<span class="hljs-attr">build-for-uat:</span>
+<span class="hljs-attr">  stage:</span> build
+<span class="hljs-attr">  image:</span> node:<span class="hljs-number">20</span>
+<span class="hljs-attr">  script:</span>
+<span class="hljs-bullet">    -</span> npm run build:uat
+<span class="hljs-attr">  only:</span>
+<span class="hljs-bullet">    -</span> uat
+<span class="hljs-attr">  tags:</span>
+<span class="hljs-bullet">    -</span> uat-runner
+<span class="hljs-attr">build-for-production:</span>
+<span class="hljs-attr">  stage:</span> build
+<span class="hljs-attr">  image:</span> node:<span class="hljs-number">20</span>
+<span class="hljs-attr">  script:</span>
+<span class="hljs-bullet">    -</span> npm run build
+<span class="hljs-attr">  only:</span>
+<span class="hljs-bullet">    -</span> master
+<span class="hljs-attr">  tags:</span>
+<span class="hljs-bullet">    -</span> production-runner
+</code></pre>
+<p><strong>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x8981;&#x8A18;&#x5F97;&#x958B;&#x5169;&#x53F0; runner</strong>&#xFF0C;&#x4E00;&#x53F0;&#x5C0D;&#x61C9;&#x5230; uat &#x74B0;&#x5883;&#xFF0C;&#x800C;&#x53E6;&#x4E00;&#x53F0;&#x5C0D;&#x61C9;&#x5230; production &#x74B0;&#x5883;&#x3002;</p>
+<p>&#x4E0D;&#x904E;&#x7531;&#x65BC;&#x6211;&#x5728;&#x4E4B;&#x524D;&#x5C31;&#x5DF2;&#x7D93;&#x628A;<code>Dockerfile</code>, <code>docker-compose.yaml</code>, <code>nginx.conf</code>&#x90FD;&#x5BEB;&#x597D;&#x4E86; (&#x8A73;&#x60C5;&#x53EF;&#x770B;<a href="https://yuanwu0000.github.io/zachary-gitbook/articles/devops/deploy-your-project.html" target="_blank">&#x9019;&#x7BC7;&#x6587;&#x7AE0;</a>)&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x9700;&#x8981; gitlab-ci &#x6A21;&#x64EC;&#x624B;&#x52D5;&#x90E8;&#x7F72;&#x7684;&#x6307;&#x4EE4;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x9078;&#x64C7;&#x4F7F;&#x7528; <strong>Shell executor</strong>&#xFF0C;&#x76EE;&#x6A19;&#x662F;&#x8981;&#x6839;&#x64DA;&#x4E0D;&#x540C;&#x7684; branch &#x4F86;&#x57F7;&#x884C;&#x4E0D;&#x540C;&#x7684;<code>docker compose up</code>&#x6307;&#x4EE4;&#xFF1A;</p>
+<pre><code class="lang-yml"><span class="hljs-comment"># .gitlab-ci.yml</span>
+<span class="hljs-attr">stages:</span>
+<span class="hljs-bullet">  -</span> deploy
+<span class="hljs-attr">deploy-to-uat:</span>
+<span class="hljs-attr">  stage:</span> deploy
+<span class="hljs-attr">  script:</span>
+<span class="hljs-bullet">    -</span> sudo docker compose --env-file .env.uat up --build -d
+<span class="hljs-attr">  only:</span>
+<span class="hljs-bullet">    -</span> uat
+<span class="hljs-attr">  tags:</span>
+<span class="hljs-bullet">    -</span> uat-runner
+<span class="hljs-attr">deploy-to-production:</span>
+<span class="hljs-attr">  stage:</span> deploy
+<span class="hljs-attr">  script:</span>
+<span class="hljs-bullet">    -</span> sudo docker compose --env-file .env.production up --build -d
+<span class="hljs-attr">  only:</span>
+<span class="hljs-bullet">    -</span> master
+<span class="hljs-attr">  tags:</span>
+<span class="hljs-bullet">    -</span> production-runner
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x767C;&#x73FE;&#x6211;&#x900F;&#x904E;&#x5206;&#x652F;&#x7684;&#x4E0D;&#x540C;&#x5F15;&#x5165;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x74B0;&#x5883;&#x8B8A;&#x6578;&#x6A94;&#xFF0C;&#x6A94;&#x6848;&#x5167;&#x5BB9;&#x70BA;&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># .env.uat</span>
+RAECT_APP_CLIENT_ID=xxx
+...
+DEPLOY_ENV=uat <span class="hljs-comment"># &#x8B8A;&#x6578;&#x4E00;</span>
+PROXY_URL=http://x.x.x.x:port <span class="hljs-comment"># &#x8B8A;&#x6578;&#x4E8C;</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-comment"># .env.production</span>
+RAECT_APP_CLIENT_ID=xxx
+...
+DEPLOY_ENV=production <span class="hljs-comment"># &#x8B8A;&#x6578;&#x4E00;</span>
+PROXY_URL=http://y.y.y.y:port <span class="hljs-comment"># &#x8B8A;&#x6578;&#x4E8C;</span>
+</code></pre>
+<p>&#x9019;&#x908A;&#x96D6;&#x7136;&#x8207;&#x524D;&#x7AEF;&#x5171;&#x7528;&#x540C;&#x4E00;&#x4EFD;&#x74B0;&#x5883;&#x8B8A;&#x6578;&#xFF0C;&#x4F46;&#x5225;&#x64D4;&#x5FC3;&#xFF0C;&#x53EA;&#x8981;&#x6C92;&#x52A0;&#x4E0A; REACT_APP &#x524D;&#x7DB4;&#x5C31;&#x4E0D;&#x6703;&#x88AB; webpack &#x6253;&#x5305;&#x3002;<br>
+&#x6211;&#x9019;&#x6B21;&#x7528;&#x5230;&#x4E86;&#x5169;&#x500B;&#x74B0;&#x5883;&#x8B8A;&#x6578;&#xFF1A;<br></p>
+<ul>
+<li>DEPLOY_ENV: &#x8B93; Dockerfile &#x5224;&#x65B7;&#x7576;&#x4E0B;&#x57F7;&#x884C;&#x74B0;&#x5883;&#xFF0C;&#x7136;&#x5F8C;&#x6839;&#x64DA;&#x74B0;&#x5883;&#x4F86;&#x4E0B;&#x4E0D;&#x540C;&#x7684; <code>npm run build</code> &#x6307;&#x4EE4;&#x3002;</li>
+<li>PROXY_URL: &#x4E0D;&#x540C;&#x6A5F;&#x5668;&#x6240;&#x9700;&#x8981;&#x7684;&#x4EE3;&#x7406;&#x4F3A;&#x670D;&#x5668; ip &#x4E5F;&#x4E0D;&#x540C;&#x3002;</li>
+</ul>
+<p>&#x74B0;&#x5883;&#x8B8A;&#x6578;&#x532F;&#x5165;&#x4EE5;&#x5F8C;&#xFF0C;&#x63A5;&#x8457;&#x5C31;&#x662F;&#x5982;&#x4F55;&#x5728; docker &#x5167;&#x4F7F;&#x7528;&#x4E86;~<br>
+&#x9996;&#x5148;&#x4F60;&#x6703;&#x9700;&#x8981;&#x5728; <code>docker-compose</code> &#x5167;&#x90E8;&#x52A0;&#x5165; <strong>build-time variables (&#x8A72;&#x8B8A;&#x6578;&#x53EA;&#x80FD;&#x5728; build image &#x7684;&#x968E;&#x6BB5;&#x4F7F;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x5728;&#x5BB9;&#x5668;&#x904B;&#x884C;&#x6642;&#x4F7F;&#x7528;&#x8ACB;&#x6539;&#x7528;<code>environment</code>)</strong>&#xFF1A;</p>
+<pre><code class="lang-yml"><span class="hljs-comment"># docker-compose.yaml</span>
+<span class="hljs-attr">services:</span>
+<span class="hljs-attr">  web:</span>
+<span class="hljs-attr">    build:</span>
+<span class="hljs-attr">      context:</span> .
+<span class="hljs-attr">      args:</span>
+<span class="hljs-attr">        DEPLOY_ENV:</span> ${DEPLOY_ENV} <span class="hljs-comment"># &#x8B8A;&#x6578;&#x4E00;</span>
+<span class="hljs-attr">        PROXY_URL:</span> ${PROXY_URL} <span class="hljs-comment"># &#x8B8A;&#x6578;&#x4E8C;</span>
+</code></pre>
+<p>&#x7136;&#x5F8C;&#x5728; Dockerfile &#x7576;&#x4E2D;&#x5F15;&#x5165;&#x8A72;&#x8B8A;&#x6578;&#x9032;&#x884C;&#x5224;&#x65B7;&#xFF1A;</p>
+<pre><code class="lang-docker"><span class="hljs-comment"># Dockerfile</span>
+<span class="hljs-keyword">FROM</span> node:<span class="hljs-number">20</span> as build
+ARG DEPLOY_ENV
+ARG PROXY_URL
+...
+<span class="hljs-keyword">RUN</span> <span class="bash">npm config <span class="hljs-built_in">set</span> proxy <span class="hljs-variable">$PROXY_URL</span>
+</span><span class="hljs-keyword">RUN</span> <span class="bash">npm config <span class="hljs-built_in">set</span> https-proxy <span class="hljs-variable">$PROXY_URL</span>
+</span>...
+<span class="hljs-keyword">RUN</span> <span class="bash"><span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$DEPLOY_ENV</span>&quot;</span> = <span class="hljs-string">&quot;uat&quot;</span> ]; <span class="hljs-keyword">then</span> \
+      npm run build:uat; \
+    <span class="hljs-keyword">else</span> \
+      npm run build; \
+    <span class="hljs-keyword">fi</span>
+</span></code></pre>
+<blockquote>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A; <code>if [ &quot;$DEPLOY_ENV&quot; = &quot;uat&quot; ]</code> &#x4E2D;&#x62EC;&#x865F;&#x5167;&#x90E8;&#x4E00;&#x5B9A;&#x8981;&#x6709;&#x5DE6;&#x53F3;&#x7A7A;&#x683C;&#xFF0C;&#x5426;&#x5247;&#x6703;&#x8A9E;&#x6CD5;&#x932F;&#x8AA4;&#xFF0C;&#x6211;&#x7576;&#x521D;&#x56E0;&#x70BA;&#x9019;&#x500B; Debug &#x4E86;&#x5F88;&#x4E45; &#x1F625;&#x3002;</strong></p>
+</blockquote>
+<p>&#x5230;&#x9019;&#x88E1;&#x4F60;&#x5DF2;&#x7D93;&#x6839;&#x64DA;&#x4E0D;&#x540C;&#x74B0;&#x5883;&#x57F7;&#x884C;&#x4E86;&#x5C0D;&#x61C9;&#x7684; <code>npm run build</code> &#x6307;&#x4EE4;&#xFF0C;&#x4E5F;&#x6210;&#x529F;&#x8655;&#x7406;&#x4E86;&#x6BCF;&#x53F0;&#x6A5F;&#x5668;&#x4E0D;&#x540C; proxy &#x7684;&#x72C0;&#x6CC1;&#xFF0C;&#x82E5;&#x6709;&#x9700;&#x8981;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x65B0;&#x589E;&#x5176;&#x4ED6;&#x74B0;&#x5883;&#x8B8A;&#x6578;&#xFF0C;&#x8D95;&#x5FEB;&#x4F86;&#x6E2C;&#x8A66;&#x770B;&#x770B;&#x5427;&#xFF01;</p>
+<h3 id="&#x52A0;&#x5165;-ssl-&#x6191;&#x8B49;">&#x52A0;&#x5165; SSL &#x6191;&#x8B49;</h3>
+<p>&#x63A5;&#x4E0B;&#x4F86;&#x70BA;&#x4F60;&#x7684;&#x7DB2;&#x7AD9;&#x52A0;&#x4E0A; SSL &#x5427;~&#x95DC;&#x65BC;&#x4E00;&#x4E9B;&#x8A2D;&#x5B9A;&#x7D30;&#x7BC0;&#x53EF;&#x4EE5;&#x770B;<a href="https://yuanwu0000.github.io/zachary-gitbook/articles/devops/add-ssl.html" target="_blank">&#x9019;&#x7BC7;&#x6587;&#x7AE0;</a>&#x3002;</p>
+<pre><code class="lang-yml"><span class="hljs-comment"># .gitlab-ci.yml</span>
+<span class="hljs-attr">stages:</span>
+<span class="hljs-bullet">  -</span> deploy
+<span class="hljs-attr">cache:</span>
+<span class="hljs-attr">  path:</span>
+<span class="hljs-bullet">    -</span> ssl/
+<span class="hljs-attr">deploy-to-uat:</span>
+<span class="hljs-attr">  stage:</span> deploy
+<span class="hljs-attr">  before_script:</span>
+<span class="hljs-bullet">    -</span> echo <span class="hljs-string">&quot;I&apos;m going to bind ssl certificate for your website...&quot;</span>
+<span class="hljs-bullet">    -</span> mkdir -p ssl/
+<span class="hljs-bullet">    -</span> echo <span class="hljs-string">&quot;$NGINX_SSL_CERT&quot;</span> &gt; ssl/nginx-ssl.crt
+<span class="hljs-bullet">    -</span> echo <span class="hljs-string">&quot;$NGINX_SSL_KEY&quot;</span> &gt; ssl/nginx-ssl.key
+<span class="hljs-attr">  script:</span>
+<span class="hljs-bullet">    -</span> sudo docker compose --env-file .env.uat up --build -d
+<span class="hljs-attr">  only:</span>
+<span class="hljs-bullet">    -</span> uat
+<span class="hljs-attr">  tags:</span>
+<span class="hljs-bullet">    -</span> uat-runner
+<span class="hljs-attr">deploy-to-production:</span>
+<span class="hljs-attr">  stage:</span> deploy
+<span class="hljs-attr">  before_script:</span>
+<span class="hljs-bullet">    -</span> echo <span class="hljs-string">&quot;I&apos;m going to bind ssl certificate for your website...&quot;</span>
+<span class="hljs-bullet">    -</span> mkdir -p ssl/
+<span class="hljs-bullet">    -</span> echo <span class="hljs-string">&quot;$NGINX_SSL_CERT&quot;</span> &gt; ssl/nginx-ssl.crt
+<span class="hljs-bullet">    -</span> echo <span class="hljs-string">&quot;$NGINX_SSL_KEY&quot;</span> &gt; ssl/nginx-ssl.key
+<span class="hljs-attr">  script:</span>
+<span class="hljs-bullet">    -</span> sudo docker compose --env-file .env.production up --build -d
+<span class="hljs-attr">  only:</span>
+<span class="hljs-bullet">    -</span> master
+<span class="hljs-attr">  tags:</span>
+<span class="hljs-bullet">    -</span> production-runner
+</code></pre>
+<p>&#x6211;&#x5011;&#x5728; job &#x4E2D;&#x65B0;&#x52A0;&#x5165;&#x4E86; <code>before_script</code> &#x968E;&#x6BB5;&#x4F86;&#x9810;&#x5148;&#x5EFA;&#x7ACB; SSL &#x6191;&#x8B49;&#x7684;&#x6A94;&#x6848;&#xFF0C;&#x7576;&#x4E2D;&#x4F7F;&#x7528;&#x5230;&#x7684;&#x5169;&#x500B;&#x74B0;&#x5883;&#x8B8A;&#x6578;&#xFF1A;<strong>$NGINX_SSL_CERT</strong>&#x3001;<strong>$NGINX_SSL_KEY</strong> &#x8ACB;&#x5148;&#x5230; <code>Settings/CI/CD/Variables</code> &#x9032;&#x884C;&#x8A2D;&#x5B9A;&#xFF1A;<br>
+(&#x53E6;&#x5916; gitlab-ci &#x4E5F;&#x6709; cache &#x7684;&#x529F;&#x80FD;&#x53EF;&#x4EE5;&#x8B93;&#x6A94;&#x6848;&#x5728;&#x4E0D;&#x540C; job &#x6216; pipeline &#x7576;&#x4E2D;&#x5171;&#x7528;&#xFF0C;&#x50CF;&#x9019;&#x88E1;&#x5C31;&#x628A; ssl/&#x5167;&#x5BB9;&#x5FEB;&#x53D6;&#x4F4F;&#x4E86;&#x3002;)<br></p>
+<p><img src="../../../images/gitlab-ci/var.png" width="1000"></p>
+<p>&#x8A2D;&#x5B9A;&#x8B8A;&#x6578;&#x7684;&#x6642;&#x5019;&#x8A18;&#x5F97;&#x9078;&#x64C7; &quot;Protect variable&quot; &#x5594;&#xFF01;&#x7562;&#x7ADF; SSL &#x6191;&#x8B49;&#x7B97;&#x662F;&#x79C1;&#x5BC6;&#x8CC7;&#x8A0A;&#xFF0C;&#x9019;&#x500B;&#x8A2D;&#x5B9A;&#x6703;&#x8B93; Gitlab &#x984D;&#x5916;&#x5224;&#x65B7;&#x53EA;&#x6709;&#x8DD1;&#x5728; protected branch or tag &#x7684; pipeline &#x624D;&#x80FD;&#x53D6;&#x7528;&#x8A72;&#x8B8A;&#x6578;&#x3002;</p>
+<p>&#x9084;&#x8A18;&#x5F97;&#x55CE;&#xFF1F;&#x6211;&#x5011;&#x4E4B;&#x524D;&#x5728;<code>docker-compose.yaml</code>&#x6A94;&#x6848;&#x4E2D;&#x6709;&#x52A0;&#x4E0A;&#xFF1A;<br></p>
+<pre><code class="lang-yml"><span class="hljs-attr">volumes:</span>
+<span class="hljs-bullet">  -</span> ./ssl:/etc/nginx/ssl
+</code></pre>
+<p>&#x6240;&#x4EE5;&#x6211;&#x5011;&#x5728; CI &#x52A0;&#x4E0A;&#x9019;&#x500B;&#x6B65;&#x9A5F;&#x4EE5;&#x5F8C;&#xFF0C;<strong>container &#x5167;&#x90E8;&#x7684; nginx &#x5C31;&#x53EF;&#x4EE5;&#x5403;&#x5230;&#x5916;&#x90E8;&#x639B;&#x8F09;&#x7684; ssl &#x6A94;&#x6848;&#x4E86;&#xFF01;</strong></p>
+<h3 id="&#x9328;&#x9EDE;-anchor">&#x9328;&#x9EDE; (Anchor)</h3>
+<p>&#x89BA;&#x5F97; CI &#x7A0B;&#x5F0F;&#x91CD;&#x8907;&#x7684;&#x90E8;&#x5206;&#x6709;&#x9EDE;&#x591A;&#xFF0C;&#x60F3;&#x8981;&#x62BD;&#x96E2;&#x51FA;&#x4F86;&#x55CE;&#xFF1F;&#x9019;&#x908A;&#x525B;&#x597D;&#x6709;&#x4E00;&#x500B;&#x88AB;&#x7A31;&#x4F5C;&#x9328;&#x9EDE;&#x7684; syntax &#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#xFF01;&#x7576;&#x7136;&#xFF0C;&#x9019;&#x5B8C;&#x5168;&#x662F; optional &#x7684;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x4F60;&#x8DDF;&#x6211;&#x4E00;&#x6A23;&#x662F;&#x500B;&#x6709;&#x6F54;&#x7656;&#x7684;&#x5DE5;&#x7A0B;&#x5E2B;&#xFF0C;&#x90A3;&#x5C31;&#x7E7C;&#x7E8C;&#x770B;&#x4E0B;&#x53BB;&#x5427;&#xFF01;</p>
+<pre><code class="lang-yml"><span class="hljs-comment"># .gitlab-ci.yml</span>
+<span class="hljs-attr">stages:</span>
+<span class="hljs-bullet">  -</span> deploy
+<span class="hljs-attr">cache:</span>
+<span class="hljs-attr">  path:</span>
+<span class="hljs-bullet">    -</span> ssl/
+.deploy-job: &amp;deploy-job
+<span class="hljs-attr">  stage:</span> deploy
+<span class="hljs-attr">  before_script:</span>
+<span class="hljs-bullet">    -</span> echo <span class="hljs-string">&quot;I&apos;m going to bind ssl certificate for your website...&quot;</span>
+<span class="hljs-bullet">    -</span> mkdir -p ssl/
+<span class="hljs-bullet">    -</span> echo <span class="hljs-string">&quot;$NGINX_SSL_CERT&quot;</span> &gt; ssl/nginx-ssl.crt
+<span class="hljs-bullet">    -</span> echo <span class="hljs-string">&quot;$NGINX_SSL_KEY&quot;</span> &gt; ssl/nginx-ssl.key
+<span class="hljs-attr">deploy-to-uat:</span>
+  &lt;&lt;: *deploy-job
+<span class="hljs-attr">  script:</span>
+<span class="hljs-bullet">    -</span> sudo docker compose --env-file .env.uat up --build -d
+<span class="hljs-attr">  only:</span>
+<span class="hljs-bullet">    -</span> uat
+<span class="hljs-attr">  tags:</span>
+<span class="hljs-bullet">    -</span> uat-runner
+<span class="hljs-attr">deploy-to-production:</span>
+  &lt;&lt;: *deploy-job
+<span class="hljs-attr">  script:</span>
+<span class="hljs-bullet">    -</span> sudo docker compose --env-file .env.production up --build -d
+<span class="hljs-attr">  only:</span>
+<span class="hljs-bullet">    -</span> master
+<span class="hljs-attr">  tags:</span>
+<span class="hljs-bullet">    -</span> production-runner
+</code></pre>
+<p>&#x55EF;&#xFF01;&#x770B;&#x8D77;&#x4F86;&#x8212;&#x670D;&#x591A;&#x4E86;&#x3002;</p>
+<h3 id="&#x4E00;&#x4E9B;&#x88DC;&#x5145;">&#x4E00;&#x4E9B;&#x88DC;&#x5145;</h3>
+<p>&#x5BE6;&#x4F5C;&#x5230;&#x9019;&#x908A;&#xFF0C;&#x7406;&#x8AD6;&#x4E0A;&#x4F60;&#x5DF2;&#x7D93;&#x5B8C;&#x6210;&#x4E86;&#x5C08;&#x6848;&#x521D;&#x6B65;&#x7684; CI/CD&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x81EA;&#x52D5;&#x5224;&#x65B7;&#x4E0D;&#x540C; branch &#x7684; commit &#x4F86;&#x5E6B;&#x4F60;&#x628A;&#x5C08;&#x6848;&#x90E8;&#x7F72;&#x5230;&#x4E0D;&#x540C;&#x6A5F;&#x5668;&#x4E0A;&#x3002;<br></p>
+<p>&#x7576;&#x7136;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x6539;&#x70BA;&#x4E0B; tag &#x7684;&#x6642;&#x5019;&#x90E8;&#x7F72;&#xFF0C;&#x53EF;&#x4EE5;&#x9019;&#x9EBC;&#x505A;&#xFF1A;<br></p>
+<pre><code class="lang-yml"><span class="hljs-attr">only:</span>
+<span class="hljs-bullet">  -</span> tags
+</code></pre>
+<p>&#x6216;&#x662F;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x7C21;&#x55AE;&#x6821;&#x9A57;&#x4E00;&#x4E0B; tag &#x683C;&#x5F0F;&#xFF1A;<br></p>
+<pre><code class="lang-yml"><span class="hljs-attr">only:</span>
+<span class="hljs-bullet">  -</span> /^v\d+\.\d+\.\d+$/
+</code></pre>
+<p>&#x7E3D;&#x4E4B;&#xFF0C;&#x9019;&#x4EFD; CI &#x9084;&#x6709;&#x5F88;&#x591A;&#x5730;&#x65B9;&#x53EF;&#x4EE5;&#x8B93;&#x4F60;&#x64F4;&#x5145;&#xFF0C;&#x9019;&#x90E8;&#x5206;&#x5C31;&#x7559;&#x7D66;&#x8B80;&#x8005;&#x81EA;&#x5DF1;&#x6316;&#x6398;&#x4E86; (&#x4F8B;&#x5982;&#x4E32;&#x63A5;&#x81EA;&#x52D5;&#x5316;&#x6E2C;&#x8A66;)&#x3002;<br></p>
+<h3 id="&#x7D50;&#x8A9E;">&#x7D50;&#x8A9E;</h3>
+<p>&#x9084;&#x8A18;&#x5F97;&#x6211;&#x7B2C;&#x4E00;&#x6B21;&#x62FC;&#x62FC;&#x6E4A;&#x6E4A; CI/CD &#x7684;&#x904E;&#x7A0B;&#xFF0C;&#x81EA;&#x5DF1;&#x770B; pipeline log&#xFF0C;&#x81EA;&#x5DF1;&#x9032; container &#x5075;&#x932F;&#xFF0C;&#x4E00;&#x884C;&#x4E00;&#x884C;&#x7684;&#x64B0;&#x5BEB; yml&#xFF0C;&#x6700;&#x5F8C;&#x7576;&#x6211;&#x5728; Gitlab &#x770B;&#x5230;&#x90A3;&#x500B;&#x6253;&#x52FE;&#x7684;&#x7DA0;&#x8272;&#x5708;&#x5708;&#xFF0C;&#x7C97;&#x4FD7;&#x4E00;&#x9EDE;&#x8B1B;&#xFF0C;&#x5C31;&#x50CF;&#x662F;&#x4E09;&#x5929;&#x4FBF;&#x79D8;&#x7D42;&#x65BC;&#x66A2;&#x901A;&#x7684;&#x90A3;&#x7A2E;&#x611F;&#x89BA;&#xFF0C;&#x5982;&#x679C;&#x53EF;&#x4EE5;&#xFF0C;&#x6211;&#x4E5F;&#x60F3;&#x8B93;&#x4F60;&#x7D93;&#x6B77;&#x90A3;&#x7A2E;&#x5C08;&#x5C6C;&#x65BC;&#x5DE5;&#x7A0B;&#x5E2B;&#x7684;&#x7F8E;&#x597D;&#x6642;&#x523B; (&#x9664;&#x4E86;&#x5473;&#x9053;&#x4EE5;&#x5916; &#x1F61D;)&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="gitlab-runner.html" class="navigation navigation-prev " aria-label="Previous page: 解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../others/others.html" class="navigation navigation-next " aria-label="Next page: Others">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數","level":"1.6.5","depth":2,"next":{"title":"Others","level":"1.7","depth":1,"path":"articles/others/others.md","ref":"./articles/others/others.md","articles":[{"title":"初探 OIDC ─ 揭開我們每天都在使用，卻不了解的黑盒子","level":"1.7.1","depth":2,"path":"articles/others/my-first-oidc-research.md","ref":"./articles/others/my-first-oidc-research.md","articles":[]},{"title":"Cypress ─ 一款超強大的 E2E test framework","level":"1.7.2","depth":2,"path":"articles/others/cypress.md","ref":"./articles/others/cypress.md","articles":[]}]},"previous":{"title":"解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor","level":"1.6.4","depth":2,"path":"articles/devops/gitlab-ci/gitlab-runner.md","ref":"./articles/devops/gitlab-ci/gitlab-runner.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","copy-code-button","ga","-sharing","sharing-plus@^0.0.2","my-toolbar","expandable-chapters"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"printLog":false,"multipleH1":false,"mode":"float","showGoTop":true,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"my-toolbar":{"buttons":[{"label":"Github","icon":"fa fa-github","url":"https://github.com/YuAnWu0000","position":"right","text":"Github","target":"_blank"},{"label":"LinkedIn","icon":"fa fa-linkedin","url":"https://www.linkedin.com/in/yu-an-wu-486ab5160/","position":"right","text":"LinkedIn","target":"_blank"}]},"copy-code-button":{},"ga":{"configuration":"auto","token":""},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"edit-link":{"label":"Edit This Page","base":"https://yuanwu0000.github.io/zachary-gitbook"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{}},"gitbook":"*"},"file":{"path":"articles/devops/gitlab-ci/gitlab-ci.md","mtime":"2025-03-05T09:14:54.861Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-03-05T09:15:20.469Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-my-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

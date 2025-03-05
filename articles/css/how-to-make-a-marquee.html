@@ -1,0 +1,746 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>製作跑馬燈一點都不難，你只需要知道這些小訣竅 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../devops/devops.html" />
+    
+    
+    <link rel="prev" href="atomic-cssInJs-cssModule/performance.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    關於我
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../vue/vue.html">
+            
+                <a href="../vue/vue.html">
+            
+                    
+                    Vue the world differently
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../react/react.html">
+            
+                <a href="../react/react.html">
+            
+                    
+                    React with surprise
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../react/cra-url-issue.html">
+            
+                <a href="../react/cra-url-issue.html">
+            
+                    
+                    Cannot resolve url() ─ CRA 用 url() 引入圖片的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../react/env.html">
+            
+                <a href="../react/env.html">
+            
+                    
+                    常常在VM裡面改東改西? 你需要的是.env
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../js/js.html">
+            
+                <a href="../js/js.html">
+            
+                    
+                    Don't skip javascript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../js/forEach-async-await.html">
+            
+                <a href="../js/forEach-async-await.html">
+            
+                    
+                    async / await 在 forEach 裡面不起作用？你是否搞錯了什麼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../js/var-let-const/basics.html">
+            
+                <a href="../js/var-let-const/basics.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../js/var-let-const/advanced.html">
+            
+                <a href="../js/var-let-const/advanced.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../js/deep-copy/basics.html">
+            
+                <a href="../js/deep-copy/basics.html">
+            
+                    
+                    關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../js/deep-copy/implement.html">
+            
+                <a href="../js/deep-copy/implement.html">
+            
+                    
+                    面試官：前面講了這麼多，還是你直接實作一個深拷貝給我看看？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="css.html">
+            
+                <a href="css.html">
+            
+                    
+                    Success of css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                <a href="atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="atomic-cssInJs-cssModule/atomic.html">
+            
+                <a href="atomic-cssInJs-cssModule/atomic.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談體驗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="atomic-cssInJs-cssModule/scalability.html">
+            
+                <a href="atomic-cssInJs-cssModule/scalability.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談擴展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="atomic-cssInJs-cssModule/performance.html">
+            
+                <a href="atomic-cssInJs-cssModule/performance.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談效能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.5" data-path="how-to-make-a-marquee.html">
+            
+                <a href="how-to-make-a-marquee.html">
+            
+                    
+                    製作跑馬燈一點都不難，你只需要知道這些小訣竅
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../devops/devops.html">
+            
+                <a href="../devops/devops.html">
+            
+                    
+                    Dive into the world of DevOps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../devops/deploy-your-project.html">
+            
+                <a href="../devops/deploy-your-project.html">
+            
+                    
+                    搞定 Docker 跟 Nginx，輕鬆部署你的專案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../devops/add-ssl.html">
+            
+                <a href="../devops/add-ssl.html">
+            
+                    
+                    讓你的網站更安全，加上 SSL 憑證吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../devops/monitor-container.html">
+            
+                <a href="../devops/monitor-container.html">
+            
+                    
+                    我的服務還好嗎？監控容器的小撇步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../devops/gitlab-ci/gitlab-runner.html">
+            
+                <a href="../devops/gitlab-ci/gitlab-runner.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../devops/gitlab-ci/gitlab-ci.html">
+            
+                <a href="../devops/gitlab-ci/gitlab-ci.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../others/others.html">
+            
+                <a href="../others/others.html">
+            
+                    
+                    Others
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../others/my-first-oidc-research.html">
+            
+                <a href="../others/my-first-oidc-research.html">
+            
+                    
+                    初探 OIDC ─ 揭開我們每天都在使用，卻不了解的黑盒子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../others/cypress.html">
+            
+                <a href="../others/cypress.html">
+            
+                    
+                    Cypress ─ 一款超強大的 E2E test framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >製作跑馬燈一點都不難，你只需要知道這些小訣竅</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x88FD;&#x4F5C;&#x8DD1;&#x99AC;&#x71C8;&#x4E00;&#x9EDE;&#x90FD;&#x4E0D;&#x96E3;&#xFF0C;&#x4F60;&#x53EA;&#x9700;&#x8981;&#x77E5;&#x9053;&#x9019;&#x4E9B;&#x5C0F;&#x8A23;&#x7AC5;">&#x88FD;&#x4F5C;&#x8DD1;&#x99AC;&#x71C8;&#x4E00;&#x9EDE;&#x90FD;&#x4E0D;&#x96E3;&#xFF0C;&#x4F60;&#x53EA;&#x9700;&#x8981;&#x77E5;&#x9053;&#x9019;&#x4E9B;&#x5C0F;&#x8A23;&#x7AC5;</h1>
+<p><img src="../../images/how-to-make-a-marquee/meme.png" width="600"></p>
+<h3 id="&#x5C08;&#x6848;&#x9700;&#x8981;&#x4E00;&#x500B;&#x516C;&#x544A;&#x8DD1;&#x99AC;&#x71C8;&#x7684;&#x65B0;&#x529F;&#x80FD;&#xFF0C;&#x4F60;&#x6703;&#x60F3;&#x600E;&#x9EBC;&#x5BE6;&#x4F5C;&#xFF1F;">&#x5C08;&#x6848;&#x9700;&#x8981;&#x4E00;&#x500B;&#x516C;&#x544A;&#x8DD1;&#x99AC;&#x71C8;&#x7684;&#x65B0;&#x529F;&#x80FD;&#xFF0C;&#x4F60;&#x6703;&#x60F3;&#x600E;&#x9EBC;&#x5BE6;&#x4F5C;&#xFF1F;</h3>
+<ol>
+<li>&#x9996;&#x5148;&#x65B0;&#x589E;&#x4E00;&#x500B; component:</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-comment">// src/components/Marquee.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Marquee</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;relative top-[10rem] left-[30rem] right-[30rem] w-[(100vw-60rem)] h-[4.2rem] text-primary text-center italic [text-shadow:2px_2px_0px_#ffffff,_0_0_4px_#0f6513] whitespace-nowrap [line-height:4.2rem] text-4xl overflow-hidden translate-x-0 border-gray-800 bg-gray-200&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;w-full animate-runMarquee&quot;</span>&gt;</span>&#x9019;&#x662F;&#x4E00;&#x500B;&#x8DD1;&#x99AC;&#x71C8;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> Marquee;
+</code></pre>
+<blockquote>
+<p>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x56E0;&#x70BA;&#x5DE6;&#x53F3;&#x9084;&#x8981;&#x9810;&#x7559;&#x7A7A;&#x9593;&#x7D66;&#x5176;&#x4ED6;&#x5143;&#x4EF6;&#x5404; <code>30rem</code>&#xFF0C;&#x6240;&#x4EE5;&#x5BEC;&#x5EA6;&#x7528; <code>w-[(100vw-60rem)]</code> &#x4F86;&#x8A08;&#x7B97;&#x3002;</p>
+</blockquote>
+<ol>
+<li>&#x628A; <code>animate-runMarquee</code> &#x52D5;&#x756B;&#x65B0;&#x589E;&#x5728; tailwind &#x8A2D;&#x5B9A;&#x6A94;&#x4E2D;:</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-comment">// tailwind.config.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+  content: [<span class="hljs-string">&quot;./src/**/*.{js,jsx,ts,tsx}&quot;</span>],
+  theme: {
+    extend: {
+      keyframes: {
+        marquee: {
+          <span class="hljs-string">&quot;0%&quot;</span>: {
+            transform: <span class="hljs-string">&quot;translateX(100%)&quot;</span>,
+          },
+          <span class="hljs-string">&quot;100%&quot;</span>: {
+            transform: <span class="hljs-string">&quot;translateX(-100%)&quot;</span>,
+          },
+        },
+      },
+      animation: {
+        runMarquee: <span class="hljs-string">&quot;marquee 7s linear infinite&quot;</span>,
+      },
+    },
+  },
+};
+</code></pre>
+<blockquote>
+<p>&#x52D5;&#x756B;&#x539F;&#x7406;&#x5206;&#x70BA;&#x5167;&#x5916;&#x90E8;&#x5169;&#x500B; DOM, &#x5167;&#x90E8;&#x900F;&#x904E; <code>translateX()</code> &#x4F86;&#x79FB;&#x52D5;, &#x5916;&#x90E8;&#x52A0;&#x4E0A; <code>overflow:hidden;</code>&#x5373;&#x53EF;&#x51FA;&#x73FE;&#x8DD1;&#x99AC;&#x71C8;&#x6548;&#x679C; (&#x6642;&#x9593; 7 &#x79D2;&#x66AB;&#x6642;&#x5BEB;&#x6B7B;)&#x3002;</p>
+</blockquote>
+<p>&#x7D50;&#x679C;&#x5C31;&#x6703;&#x50CF;&#x9019;&#x6A23;:
+<img src="../../images/how-to-make-a-marquee/basic.gif" width="1200"></p>
+<h3 id="&#x5927;&#x529F;&#x544A;&#x6210;&#xFF1F;&#x7B49;&#x7B49;&#xFF0C;&#x5982;&#x679C;&#x9019;&#x9EBC;&#x7C21;&#x55AE;&#x90A3;&#x6211;&#x5BEB;&#x9019;&#x7BC7;&#x8981;&#x5E79;&#x561B;&#xFF1F;">&#x5927;&#x529F;&#x544A;&#x6210;&#xFF1F;&#x7B49;&#x7B49;&#xFF0C;&#x5982;&#x679C;&#x9019;&#x9EBC;&#x7C21;&#x55AE;&#x90A3;&#x6211;&#x5BEB;&#x9019;&#x7BC7;&#x8981;&#x5E79;&#x561B;&#xFF1F;</h3>
+<p>&#x4F60;&#x767C;&#x73FE;&#x4E86;&#x55CE;&#xFF1F;&#x9019;&#x500B;&#x7248;&#x672C;&#x7684;&#x8DD1;&#x99AC;&#x71C8;&#x6642;&#x9593;&#x662F;&#x5BEB;&#x6B7B;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x7BA1;&#x6587;&#x5B57;&#x6709;&#x591A;&#x9577;&#x4ED6;&#x8F2A;&#x8A62;&#x7684;&#x6642;&#x9593;&#x90FD;&#x662F; 7 &#x79D2;&#xFF0C;&#x5047;&#x5982;&#x6211;&#x5011;&#x628A;&#x6587;&#x5B57;&#x9577;&#x5EA6;&#x6539;&#x4E00;&#x4E0B;...</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;w-full animate-runMarquee&quot;</span>&gt;</span>
+  &#x8DD1;&#x99AC;&#x71C8;1&#x8DD1;&#x99AC;&#x71C8;2&#x8DD1;&#x99AC;&#x71C8;3&#x8DD1;&#x99AC;&#x71C8;4&#x8DD1;&#x99AC;&#x71C8;5&#x8DD1;&#x99AC;&#x71C8;6&#x8DD1;&#x99AC;&#x71C8;7&#x8DD1;&#x99AC;&#x71C8;8&#x8DD1;&#x99AC;&#x71C8;9&#x8DD1;&#x99AC;&#x71C8;10
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<p><img src="../../images/how-to-make-a-marquee/basic_long.gif" width="1200"></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6587;&#x5B57;&#x90FD;&#x9084;&#x6C92;&#x986F;&#x793A;&#x5B8C;&#x5C31;&#x4E2D;&#x65B7;&#x91CD;&#x4F86;&#x4E86;&#xFF0C;&#x6839;&#x672C;&#x770B;&#x4E0D;&#x5230; <strong><em>&#x8DD1;&#x99AC;&#x71C8; 8 &#x8DD1;&#x99AC;&#x71C8; 9 &#x8DD1;&#x99AC;&#x71C8; 10</em></strong> &#xFF0C;&#x6211;&#x5011;&#x7E3D;&#x4E0D;&#x53EF;&#x80FD;&#x6BCF;&#x6B21;&#x90FD;&#x53BB;&#x624B;&#x52D5;&#x8ABF;&#x6574;&#x52D5;&#x756B;&#x6642;&#x9593;&#x5427;&#xFF1F;(&#x66F4;&#x4F55;&#x6CC1;&#x9019;&#x6587;&#x5B57;&#x672C;&#x8EAB;&#x662F;&#x5F8C;&#x7AEF;&#x4F86;&#x7684;)</p>
+<h3 id="&#x986F;&#x7136;&#x6211;&#x5011;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x52D5;&#x614B;&#x7684;&#x8A08;&#x7B97;&#xFF01;">&#x986F;&#x7136;&#x6211;&#x5011;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x52D5;&#x614B;&#x7684;&#x8A08;&#x7B97;&#xFF01;</h3>
+<blockquote>
+<p>&#x9996;&#x5148;&#xFF0C;&#x8B93;&#x6211;&#x5011;&#x4F86;&#x62C6;&#x89E3;&#x4E00;&#x4E0B;&#x554F;&#x984C;&#xFF0C;&#x601D;&#x8003;&#x4E00;&#x4E0B;&#x8DD1;&#x99AC;&#x71C8;&#x7684;&#x539F;&#x7406;&#x70BA;&#x4F55;:</p>
+</blockquote>
+<p>&#x56E0;&#x70BA;&#x8981;&#x5F9E; container &#x7684;&#x6700;&#x53F3;&#x908A;&#x958B;&#x59CB;&#x79FB;&#x52D5;&#xFF0C;&#x6240;&#x4EE5;&#x52D5;&#x756B;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x6C38;&#x9060;&#x90FD;&#x662F; 100%&#xFF0C;&#x5982;&#x5716;&#x6240;&#x793A;:
+<img src="../../images/how-to-make-a-marquee/startPosition.PNG" width="1200"></p>
+<p>&#x81F3;&#x65BC;&#x7D50;&#x675F;&#x4F4D;&#x7F6E;&#xFF0C;&#x6839;&#x64DA;&#x5B57;&#x9AD4;&#x7684;&#x9577;&#x5EA6;&#x4E0D;&#x540C;&#x6703;&#x5F71;&#x97FF;&#x6700;&#x5DE6;&#x908A;&#x7684;&#x7D50;&#x675F;&#x4F4D;&#x7F6E;&#x5230;&#x5E95;&#x6709;&#x591A;&#x9060;&#xFF0C;<strong>&#x7E3D;&#x4E4B;&#x5C31;&#x662F;&#x5B50;&#x7BC0;&#x9EDE;&#x7684;&#x4E00;&#x500D;&#x5BEC;&#x5EA6;</strong>&#x3002;<br>
+&#x6709;&#x4EBA;&#x53EF;&#x80FD;&#x6703;&#x597D;&#x5947;&#x70BA;&#x4F55;&#x4E0D;&#x662F; -100%&#xFF0C;&#x539F;&#x56E0;&#x662F;&#x5C0D;&#x65BC;&#x5411;&#x5DE6;&#x6ED1;&#x52D5;&#x7684;&#x5B50;&#x7BC0;&#x9EDE;&#x4F86;&#x8AAA;&#xFF0C;-100% &#x53EA;&#x4EE3;&#x8868;&#x7236;&#x7BC0;&#x9EDE;&#x7684;&#x5BEC;&#x5EA6;&#x800C;&#x4E0D;&#x662F;&#x4ED6;&#x81EA;&#x5DF1;&#x7684;&#x5BEC;&#x5EA6;&#x3002;
+<img src="../../images/how-to-make-a-marquee/endPosition.PNG" width="1200"></p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x6B78;&#x7D0D;&#x51FA;&#x5169;&#x500B;&#x554F;&#x984C;&#xFF1A;</p>
+<ol>
+<li>&#x524D;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x6C38;&#x9060;&#x5C07;&#x7D50;&#x675F;&#x4F4D;&#x7F6E;&#x5BEB;&#x6B7B;&#x70BA; -100%&#xFF0C;&#x6C92;&#x6709;&#x52D5;&#x614B;&#x7B97;&#x51FA;&#x5B50;&#x7BC0;&#x9EDE;&#x7684;&#x5BEC;&#x5EA6;&#xFF0C;&#x56E0;&#x800C;&#x5C0E;&#x81F4;&#x8DD1;&#x99AC;&#x71C8;&#x6C92;&#x6709;&#x5168;&#x90E8;&#x986F;&#x793A;&#x5B8C;&#x7562;&#x5C31;&#x88AB;&#x5207;&#x6389;&#x4E86;&#x3002;</li>
+<li>&#x6642;&#x9593;&#x5BEB;&#x6B7B;&#x7684;&#x8A71;&#xFF0C;&#x6703;&#x5C0E;&#x81F4;&#x8DD1;&#x99AC;&#x71C8;&#x7684;&#x901F;&#x7387;&#x4E0D;&#x4E00;&#x81F4; (&#x8DDD;&#x96E2;/&#x6642;&#x9593;=&#x901F;&#x7387;, &#x800C;&#x8DDD;&#x96E2;&#x6709;&#x53EF;&#x80FD;&#x96A8;&#x8457;&#x5167;&#x5BB9;&#x8B8A;&#x9577;)&#x3002;</li>
+</ol>
+<p>&#x7D9C;&#x4E0A;&#x6240;&#x8FF0;&#xFF0C;&#x76EE;&#x524D;&#x6211;&#x5011;&#x9700;&#x8981;&#x505A;&#x7684;&#x662F;&#xFF1A;<strong>&#x6839;&#x64DA;&#x6587;&#x5B57;&#x9577;&#x5EA6;&#x52D5;&#x614B;&#x8A08;&#x7B97;&#x8DD1;&#x99AC;&#x71C8;&#x7684;&#x7D50;&#x675F;&#x4F4D;&#x7F6E;&#x8DDF;&#x6642;&#x9593;</strong>&#x3002;</p>
+<h3 id="talk-is-cheap-show-me-the-code">Talk is cheap. Show me the code.</h3>
+<pre><code class="lang-js"><span class="hljs-comment">// Marquee.js</span>
+<span class="hljs-keyword">const</span> RUN_ONCE_TIME = <span class="hljs-number">4</span>;
+<span class="hljs-keyword">const</span> [marqueeText, setMarqueeText] = useState(<span class="hljs-string">&quot;&#x8DD1;&#x99AC;&#x71C8;1&#x8DD1;&#x99AC;&#x71C8;2&#x8DD1;&#x99AC;&#x71C8;3&#x8DD1;&#x99AC;&#x71C8;4&quot;</span>);
+<span class="hljs-keyword">const</span> [marqueeLengthRatio, setMarqueeLengthRatio] = useState(<span class="hljs-number">1</span>);
+<span class="hljs-keyword">const</span> [marqueeTime, setMarqueeTime] = useState(<span class="hljs-number">0</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkMarquee</span>(<span class="hljs-params">el</span>) </span>{
+  <span class="hljs-keyword">const</span> clientWidth = el.clientWidth;
+  <span class="hljs-keyword">const</span> scrollWidth = el.scrollWidth;
+  <span class="hljs-keyword">const</span> ratio = <span class="hljs-built_in">Math</span>.round(scrollWidth / clientWidth);
+  setMarqueeLengthRatio(ratio);
+  setMarqueeTime(<span class="hljs-built_in">Math</span>.round((ratio + <span class="hljs-number">1</span>) * RUN_ONCE_TIME));
+}
+
+useEffect(() =&gt; {
+  checkMarquee(marqueeEl.current);
+}, [marqueeText]);
+</code></pre>
+<p>&#x5148;&#x4F86;&#x8B1B;&#x89E3;&#x6700;&#x6838;&#x5FC3;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x900F;&#x904E;&#x8A08;&#x7B97;&#x7236;&#x7BC0;&#x9EDE; <code>clientWidth</code> &#x8207; <code>scrollWidth</code> &#x7684;&#x6BD4;&#x4F8B;&#x4F86;&#x6C7A;&#x5B9A;&#x7D50;&#x675F;&#x4F4D;&#x7F6E;&#x8DDF;&#x52D5;&#x756B;&#x904B;&#x884C;&#x6642;&#x9593; (<code>clientWidth</code> &#x70BA;&#x7236;&#xFF0C;<code>scrollWidth</code> &#x70BA;&#x5B50;)&#xFF0C;&#x5047;&#x8A2D; <code>scrollWidth</code> &#x662F; <code>clientWidth</code> &#x7684; 1.5 &#x500D;&#xFF0C;&#x90A3;&#x7D50;&#x675F;&#x4F4D;&#x7F6E;&#x5C31;&#x6703;&#x662F; <code>-150%</code>&#xFF0C;&#x6642;&#x9593;&#x5C31;&#x6703;&#x662F; <code>(1.5 + 1) * RUN_ONCE_TIME</code> &#x79D2; (&#x7E3D;&#x8DDD;&#x96E2;&#x662F;&#x5F9E; 100% &#x5230; -150%&#xFF0C;&#x6240;&#x4EE5;&#x662F; 250%&#xFF0C;&#x4E5F;&#x5C31;&#x662F; 2.5 &#x500D;&#x7684; container &#x5BEC;&#x5EA6;)&#x3002;</p>
+<p><code>RUN_ONCE_TIME</code> &#x9019;&#x500B;&#x5E38;&#x6578;&#x6BD4;&#x8F03;&#x7279;&#x5225;&#xFF0C;&#x4EE3;&#x8868;&#x7684;&#x662F;&#x8DD1;&#x99AC;&#x71C8;&#x8DD1;&#x5B8C;&#x4E00;&#x6B21;&#x7236;&#x7BC0;&#x9EDE;&#x5BEC;&#x5EA6;&#x7684;&#x6642;&#x9593;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7528;&#x624B;&#x6A5F;&#x7684;&#x78BC;&#x8868;&#x7C21;&#x55AE;&#x8A08;&#x6642;&#x4E00;&#x4E0B;&#xFF0C;&#x6293;&#x51FA;&#x4F60;&#x8981;&#x7684;&#x901F;&#x7387;&#x5927;&#x6982;&#x8DD1;&#x4E00;&#x6B21; 100% &#x6703;&#x662F;&#x5E7E;&#x79D2;&#x9418;&#xFF0C;&#x7136;&#x5F8C;&#x518D;&#x5C07;&#x5176;&#x5E36;&#x5165;&#x4E0A;&#x9762;&#x7684;&#x7B97;&#x5F0F;&#x4E2D;&#xFF0C;&#x9019;&#x908A;&#x6211;&#x66AB;&#x5B9A;&#x70BA; 4 &#x79D2;&#x3002;</p>
+<p>&#x63A5;&#x8457;&#x4F60;&#x9700;&#x8981;&#x628A;&#x525B;&#x525B;&#x7684;&#x8B8A;&#x6578;&#x5E36;&#x5165; template:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">ref</span>=<span class="hljs-string">{marqueeEl}</span>
+  <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;relative top-[10rem] left-[30rem] right-[30rem] w-[calc(100vw-60rem)] h-[4.2rem]
+    text-primary text-center italic
+    [text-shadow:2px_2px_0px_#ffffff,_0_0_4px_#0f6513] whitespace-nowrap
+    [line-height:4.2rem] text-4xl overflow-hidden translate-x-0 border-gray-800
+    bg-gray-200&quot;</span>
+&gt;</span>
+  {/* &#x52A0;&#x5165; css variables */}
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>
+    <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span>
+      &quot;<span class="hljs-attr">--startPosition</span>&quot;<span class="hljs-attr">:</span> &quot;<span class="hljs-attr">100</span>%&quot;,
+      &quot;<span class="hljs-attr">--endPosition</span>&quot;<span class="hljs-attr">:</span> `<span class="hljs-attr">-</span>${<span class="hljs-attr">marqueeLengthRatio</span> * <span class="hljs-attr">100</span>}%`,
+      &quot;<span class="hljs-attr">--marqueeTime</span>&quot;<span class="hljs-attr">:</span> `${<span class="hljs-attr">marqueeTime</span>}<span class="hljs-attr">s</span>`,
+    }}
+    <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;animate-runMarquee&quot;</span>
+  &gt;</span>
+    {marqueeText}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>&#x6700;&#x5F8C;&#x518D;&#x5F15;&#x5165;&#x5230; tailwind &#x7684;&#x8A2D;&#x5B9A;&#x4E2D;:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// tailwind.config.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+  content: [<span class="hljs-string">&quot;./src/**/*.{js,jsx,ts,tsx}&quot;</span>],
+  theme: {
+    extend: {
+      keyframes: {
+        marquee: {
+          <span class="hljs-string">&quot;0%&quot;</span>: {
+            transform: <span class="hljs-string">&quot;translateX(var(--startPosition))&quot;</span>,
+          },
+          <span class="hljs-string">&quot;100%&quot;</span>: {
+            transform: <span class="hljs-string">&quot;translateX(var(--endPosition))&quot;</span>,
+          },
+        },
+      },
+      animation: {
+        runMarquee: <span class="hljs-string">&quot;marquee var(--marqueeTime) linear infinite&quot;</span>,
+      },
+    },
+  },
+};
+</code></pre>
+<h3 id="&#x7D50;&#x679C;">&#x7D50;&#x679C;</h3>
+<p>&#x77ED;&#x6587;&#x5B57;:
+<img src="../../images/how-to-make-a-marquee/dynamic.gif" width="1200">
+&#x9577;&#x6587;&#x5B57;:
+<img src="../../images/how-to-make-a-marquee/dynamic_long.gif" width="1200"></p>
+<p>&#x9019;&#x4E0B;&#x6211;&#x5011;&#x5C31;&#x6210;&#x529F;&#x505A;&#x51FA;&#x4E86;&#x53EF;&#x4EE5;&#x52D5;&#x614B;&#x56E0;&#x61C9;&#x6587;&#x5B57;&#x9577;&#x5EA6;&#x4E26;&#x56FA;&#x5B9A;&#x901F;&#x7387;&#x7684;&#x8DD1;&#x99AC;&#x71C8;&#x4E86;&#xFF0C;&#x771F;&#x662F;&#x53EF;&#x559C;&#x53EF;&#x8CC0;&#x53EF;&#x53E3;&#x53EF;&#x6A02;&#xFF01;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="atomic-cssInJs-cssModule/performance.html" class="navigation navigation-prev " aria-label="Previous page: CSS Framework 到底該怎麼選? ─ 談效能">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../devops/devops.html" class="navigation navigation-next " aria-label="Next page: Dive into the world of DevOps">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"製作跑馬燈一點都不難，你只需要知道這些小訣竅","level":"1.5.5","depth":2,"next":{"title":"Dive into the world of DevOps","level":"1.6","depth":1,"path":"articles/devops/devops.md","ref":"./articles/devops/devops.md","articles":[{"title":"搞定 Docker 跟 Nginx，輕鬆部署你的專案","level":"1.6.1","depth":2,"path":"articles/devops/deploy-your-project.md","ref":"./articles/devops/deploy-your-project.md","articles":[]},{"title":"讓你的網站更安全，加上 SSL 憑證吧","level":"1.6.2","depth":2,"path":"articles/devops/add-ssl.md","ref":"./articles/devops/add-ssl.md","articles":[]},{"title":"我的服務還好嗎？監控容器的小撇步","level":"1.6.3","depth":2,"path":"articles/devops/monitor-container.md","ref":"./articles/devops/monitor-container.md","articles":[]},{"title":"解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor","level":"1.6.4","depth":2,"path":"articles/devops/gitlab-ci/gitlab-runner.md","ref":"./articles/devops/gitlab-ci/gitlab-runner.md","articles":[]},{"title":"解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數","level":"1.6.5","depth":2,"path":"articles/devops/gitlab-ci/gitlab-ci.md","ref":"./articles/devops/gitlab-ci/gitlab-ci.md","articles":[]}]},"previous":{"title":"CSS Framework 到底該怎麼選? ─ 談效能","level":"1.5.4","depth":2,"path":"articles/css/atomic-cssInJs-cssModule/performance.md","ref":"./articles/css/atomic-cssInJs-cssModule/performance.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","copy-code-button","ga","-sharing","sharing-plus@^0.0.2","my-toolbar","expandable-chapters"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"printLog":false,"multipleH1":false,"mode":"float","showGoTop":true,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"my-toolbar":{"buttons":[{"label":"Github","icon":"fa fa-github","url":"https://github.com/YuAnWu0000","position":"right","text":"Github","target":"_blank"},{"label":"LinkedIn","icon":"fa fa-linkedin","url":"https://www.linkedin.com/in/yu-an-wu-486ab5160/","position":"right","text":"LinkedIn","target":"_blank"}]},"copy-code-button":{},"ga":{"configuration":"auto","token":""},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"edit-link":{"label":"Edit This Page","base":"https://yuanwu0000.github.io/zachary-gitbook"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{}},"gitbook":"*"},"file":{"path":"articles/css/how-to-make-a-marquee.md","mtime":"2025-03-05T09:14:54.861Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-03-05T09:15:20.469Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-my-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

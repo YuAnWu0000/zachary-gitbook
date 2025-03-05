@@ -1,0 +1,762 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="advanced.html" />
+    
+    
+    <link rel="prev" href="../forEach-async-await.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    關於我
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../vue/vue.html">
+            
+                <a href="../../vue/vue.html">
+            
+                    
+                    Vue the world differently
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../react/react.html">
+            
+                <a href="../../react/react.html">
+            
+                    
+                    React with surprise
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../react/cra-url-issue.html">
+            
+                <a href="../../react/cra-url-issue.html">
+            
+                    
+                    Cannot resolve url() ─ CRA 用 url() 引入圖片的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../react/env.html">
+            
+                <a href="../../react/env.html">
+            
+                    
+                    常常在VM裡面改東改西? 你需要的是.env
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../js.html">
+            
+                <a href="../js.html">
+            
+                    
+                    Don't skip javascript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../forEach-async-await.html">
+            
+                <a href="../forEach-async-await.html">
+            
+                    
+                    async / await 在 forEach 裡面不起作用？你是否搞錯了什麼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="basics.html">
+            
+                <a href="basics.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="advanced.html">
+            
+                <a href="advanced.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../deep-copy/basics.html">
+            
+                <a href="../deep-copy/basics.html">
+            
+                    
+                    關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../deep-copy/implement.html">
+            
+                <a href="../deep-copy/implement.html">
+            
+                    
+                    面試官：前面講了這麼多，還是你直接實作一個深拷貝給我看看？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../css/css.html">
+            
+                <a href="../../css/css.html">
+            
+                    
+                    Success of css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../css/atomic-cssInJs-cssModule/atomic.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/atomic.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談體驗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../css/atomic-cssInJs-cssModule/scalability.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/scalability.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談擴展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../css/atomic-cssInJs-cssModule/performance.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/performance.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談效能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../css/how-to-make-a-marquee.html">
+            
+                <a href="../../css/how-to-make-a-marquee.html">
+            
+                    
+                    製作跑馬燈一點都不難，你只需要知道這些小訣竅
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../devops/devops.html">
+            
+                <a href="../../devops/devops.html">
+            
+                    
+                    Dive into the world of DevOps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../devops/deploy-your-project.html">
+            
+                <a href="../../devops/deploy-your-project.html">
+            
+                    
+                    搞定 Docker 跟 Nginx，輕鬆部署你的專案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../devops/add-ssl.html">
+            
+                <a href="../../devops/add-ssl.html">
+            
+                    
+                    讓你的網站更安全，加上 SSL 憑證吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../devops/monitor-container.html">
+            
+                <a href="../../devops/monitor-container.html">
+            
+                    
+                    我的服務還好嗎？監控容器的小撇步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../devops/gitlab-ci/gitlab-runner.html">
+            
+                <a href="../../devops/gitlab-ci/gitlab-runner.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../devops/gitlab-ci/gitlab-ci.html">
+            
+                <a href="../../devops/gitlab-ci/gitlab-ci.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../others/others.html">
+            
+                <a href="../../others/others.html">
+            
+                    
+                    Others
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../others/my-first-oidc-research.html">
+            
+                <a href="../../others/my-first-oidc-research.html">
+            
+                    
+                    初探 OIDC ─ 揭開我們每天都在使用，卻不了解的黑盒子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../others/cypress.html">
+            
+                <a href="../../others/cypress.html">
+            
+                    
+                    Cypress ─ 一款超強大的 E2E test framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x56DE;&#x7B54;&#x4E00;&#x984C;-var--let--const-&#x5C31;&#x9A5A;&#x8277;&#x4F60;&#x7684;&#x9762;&#x8A66;&#x5B98;-&#x2500;-&#x8A9E;&#x6CD5;&#x7279;&#x6027;&#x7BC7;">&#x56DE;&#x7B54;&#x4E00;&#x984C; var / let / const &#x5C31;&#x9A5A;&#x8277;&#x4F60;&#x7684;&#x9762;&#x8A66;&#x5B98; &#x2500; &#x8A9E;&#x6CD5;&#x7279;&#x6027;&#x7BC7;</h1>
+<p><img src="../../../images/var-let-const/meme.png" width="450"></p>
+<h3 id="&#x300C;&#x8ACB;&#x89E3;&#x91CB;-var--let--const-&#x7684;&#x5DEE;&#x5225;&#xFF1F;&#x300D;">&#x300C;&#x8ACB;&#x89E3;&#x91CB; var / let / const &#x7684;&#x5DEE;&#x5225;&#xFF1F;&#x300D;</h3>
+<p>&#x4E00;&#x9053;&#x7D93;&#x5178;&#x7684;&#x524D;&#x7AEF;&#x9762;&#x8A66;&#x984C;&#xFF0C;&#x544A;&#x8A34;&#x6211;&#xFF0C;&#x4F60;&#x7684;&#x56DE;&#x7B54;&#x662F;&#x4E0D;&#x662F;&#x53EA;&#x6709;&#x4E0B;&#x5217;&#x5E7E;&#x7A2E;&#xFF1A;<br>
+&#x300C;<code>var</code> &#x662F; function scope&#xFF1B; <code>let</code> / <code>const</code> &#x662F; block scope&#x3002;&#x300D;<br>
+&#x300C;<code>var</code> &#x53EF;&#x4EE5;&#x88AB;&#x91CD;&#x8907;&#x5BA3;&#x544A;&#xFF1B; <code>let</code> / <code>const</code> &#x4E0D;&#x884C;&#x3002;&#x300D;<br>
+&#x300C;<code>const</code> &#x5BA3;&#x544A;&#x4EE5;&#x5F8C;&#x5C31;&#x4E0D;&#x80FD;&#x91CD;&#x65B0;&#x8CE6;&#x503C;&#x3002;&#x300D;<br></p>
+<p>&#x6700;&#x8FD1;&#x5728;&#x6E96;&#x5099;&#x9762;&#x8A66;&#x7684;&#x904E;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x767C;&#x73FE;&#x9019;&#x500B;&#x984C;&#x76EE;&#x770B;&#x4F3C;&#x7C21;&#x55AE;&#xFF0C;&#x4F46;&#x5176;&#x5BE6;&#x5305;&#x542B;&#x8457;&#x8D85;&#x7D1A;&#x591A; JS &#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;&#xFF0C;&#x5C0D;&#x9762;&#x8A66;&#x5B98;&#x4F86;&#x8AAA;&#xFF0C;follow up &#x53EF;&#x4EE5;&#x5EF6;&#x4F38;&#x5230;&#x5404;&#x500B;&#x4E0D;&#x540C;&#x7684;&#x8B70;&#x984C;&#x5982;&#xFF1A;hoisting, variable life cycle, GC, scope and context &#x7B49;&#x6BD4;&#x8F03;&#x6709;&#x9451;&#x5225;&#x5EA6;&#x7684;&#x984C;&#x76EE;&#xFF0C;&#x5982;&#x679C;&#x53EA;&#x56DE;&#x7B54;&#x5F97;&#x51FA;&#x4E0A;&#x9762;&#x7684;&#x7B54;&#x6848;&#x5BE6;&#x5728;&#x6709;&#x9EDE;&#x53EF;&#x60DC;&#x3002;</p>
+<blockquote>
+<p>&#x6DF1;&#x5165;&#x5C55;&#x958B;&#x4EE5;&#x524D;&#xFF0C;&#x5148;&#x8B93;&#x6211;&#x5011;&#x8907;&#x7FD2;&#x4E00;&#x4E0B;&#x8B8A;&#x6578;&#x57FA;&#x672C;&#x7279;&#x6027;&#x5427;&#xFF01;&#x7562;&#x7ADF;&#x8981;&#x60F3;&#x8003;&#x5230;&#x6EFF;&#x5206;&#xFF0C;&#x5F97;&#x5148;&#x53CA;&#x683C;&#x3002; (&#x9019;&#x4EC0;&#x9EBC;&#x5EE2;&#x8A71; &#x1F61D;)</p>
+</blockquote>
+<h3 id="var">var</h3>
+<ul>
+<li>&#x5728;&#x5168;&#x57DF;&#x5BA3;&#x544A;&#x7684;&#x8B8A;&#x6578; <code>var</code>&#xFF0C;&#x4E5F;&#x6703;&#x540C;&#x6642;&#x4F5C;&#x70BA;&#x5168;&#x57DF;&#x7269;&#x4EF6;(&#x524D;&#x7AEF;&#x70BA; <code>window</code>&#xFF0C;&#x5F8C;&#x7AEF;&#x70BA; <code>global</code>)&#x7684;&#x5C6C;&#x6027;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> a = <span class="hljs-number">0</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.a); <span class="hljs-comment">// 0</span>
+</code></pre>
+<ul>
+<li><code>var</code> <strong>&#x53EF;&#x91CD;&#x8907;&#x5BA3;&#x544A;</strong>&#xFF0C;&#x4EE5;&#x5F8C;&#x5BA3;&#x544A;&#x7684;&#x70BA;&#x4E3B;&#x3002;(&#x6307;&#x7684;&#x662F;&#x5728;&#x540C;&#x4E00;&#x500B;&#x4F5C;&#x7528;&#x57DF;&#x5E95;&#x4E0B;)</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> a = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.a); <span class="hljs-comment">// 1</span>
+</code></pre>
+<ul>
+<li>&#x4E0D;&#x540C;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x60C5;&#x6CC1;&#xFF0C;&#x5728; function &#x88E1;&#x9762;&#x5BA3;&#x544A;&#x7684;&#x5C31;<strong>&#x53EA;&#x5B58;&#x5728;&#x65BC;&#x8A72; function scope&#x3002;</strong></li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> a = <span class="hljs-number">0</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>;
+  <span class="hljs-built_in">console</span>.log(a);
+}
+test(); <span class="hljs-comment">// 1</span>
+<span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// 0</span>
+</code></pre>
+<ul>
+<li>&#x9806;&#x5E36;&#x4E00;&#x63D0;&#xFF0C;&#x4E0B;&#x9762;&#x9019;&#x500B;&#x7BC4;&#x4F8B;&#x4F60;&#x8A8D;&#x70BA;&#x8F38;&#x51FA;&#x70BA;&#x4F55;?</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) </span>{
+  a = <span class="hljs-number">1</span>;
+}
+test();
+<span class="hljs-built_in">console</span>.log(a);
+</code></pre>
+<p>&#x7B54;&#x6848;&#x662F;: 1&#xFF0C;&#x539F;&#x56E0;&#x662F;&#x5728;&#x975E;&#x56B4;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;<code>a = 1</code> &#x82E5;&#x627E;&#x4E0D;&#x5230;&#x8CE6;&#x503C;&#x7684;&#x8B8A;&#x6578; <code>a</code>&#xFF0C;<strong>&#x5247;&#x6703;&#x76F4;&#x63A5;&#x88AB;&quot;&#x96B1;&#x542B;&#x5F0F;&#x5BA3;&#x544A;&quot;&#x6210;&#x5168;&#x57DF;&#x8B8A;&#x6578;&#x3002;</strong><br>
+&#x6CE8;&#x610F;: &#x5982;&#x679C;&#x63A1;&#x7528;&#x96B1;&#x542B;&#x5F0F;&#x5BA3;&#x544A;&#x662F;<strong>&#x53EF;&#x4EE5;&#x88AB; <code>delete</code> &#x522A;&#x9664;&#x7684;</strong>&#xFF0C;&#x56E0;&#x70BA;&#x5B83;&#x8996;&#x70BA;&#x5E6B; windows &#x65B0;&#x589E;&#x5C6C;&#x6027;&#xFF0C;&#x76F8;&#x5C0D;&#x7684;&#x5176;&#x4ED6;&#x5BA3;&#x544A;&#x65B9;&#x5F0F;&#x7686;&#x7121;&#x6CD5;&#x88AB; <code>delete</code>&#x3002;</p>
+<ul>
+<li>&#x4F46;&#x5982;&#x679C;&#x591A;&#x52A0;&#x4E00;&#x884C; <code>var a</code>...</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) </span>{
+  a = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">var</span> a;
+}
+test();
+<span class="hljs-built_in">console</span>.log(a);
+</code></pre>
+<p>&#x7B54;&#x6848;&#x5C31;&#x6703;&#x8B8A;&#x6210;: <code>Uncaught ReferenceError: a is not defined</code>&#xFF0C;<strong>&#x56E0;&#x70BA;&#x9019;&#x6B21;&#x5728; function scope &#x5E95;&#x4E0B;&#x627E;&#x5230; var &#x8B8A;&#x6578;&#x53BB;&#x8CE6;&#x503C;&#x4E86;(var &#x6709; hoisting)&#xFF0C;&#x6240;&#x4EE5; <code>a</code> &#x4E0D;&#x6703;&#x8B8A;&#x6210;&#x5168;&#x57DF;&#x8B8A;&#x6578;&#x3002;</strong></p>
+<h3 id="let">let</h3>
+<ul>
+<li>&#x4F5C;&#x7528;&#x65BC;<strong>Block Scope</strong></li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
+  <span class="hljs-keyword">let</span> a = <span class="hljs-number">0</span>;
+}
+<span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// Uncaught ReferenceError: a is not defined</span>
+</code></pre>
+<ul>
+<li>&#x5728;<strong>Block Scope</strong>&#x5E95;&#x4E0B;&#x6709;&#x5BA3;&#x544A;&#x52D5;&#x4F5C;&#xFF0C;&#x5247;&#x540C;&#x540D;&#x8B8A;&#x6578;&#x4E0D;&#x5F97;&#x518D;&#x5BA3;&#x544A;&#x524D;&#x8CE6;&#x503C; <strong>(&#x9019;&#x500B;&#x932F;&#x8AA4;&#x8A0A;&#x606F;&#x602A;&#x602A;&#x7684;&#xFF0C;&#x4E0B;&#x9762;&#x6703;&#x8A73;&#x7D30;&#x89E3;&#x91CB;&#x3002;)</strong></li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> a = <span class="hljs-number">123</span>;
+<span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
+  a = <span class="hljs-number">456</span>; <span class="hljs-comment">// Uncaught ReferenceError: Cannot access &apos;a&apos; before initialization</span>
+  <span class="hljs-keyword">let</span> a;
+}
+</code></pre>
+<p><strong>&#x4E0A;&#x9762;&#x9019;&#x7A2E;&#x5728;&#x5BA3;&#x544A;&#x524D;&#x8CE6;&#x503C;&#x5931;&#x6557;&#x7684;&#x60C5;&#x6CC1;&#x4E5F;&#x7A31;&#x4F5C;&#x66AB;&#x6642;&#x6027;&#x6B7B;&#x5340; TDZ(Temporal Dead Zone)</strong></p>
+<ul>
+<li>&#x4E0D;&#x53EF;&#x91CD;&#x8907;&#x5BA3;&#x544A;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> a = <span class="hljs-number">123</span>;
+<span class="hljs-keyword">let</span> a = <span class="hljs-number">456</span>; <span class="hljs-comment">// Uncaught SyntaxError: Identifier &apos;a&apos; has already been declared</span>
+</code></pre>
+<h3 id="const">const</h3>
+<p><strong>let &#x7684;&#x7279;&#x6027;&#x90FD;&#x6709;, &#x65B0;&#x589E;&#x4EE5;&#x4E0B;:</strong></p>
+<ul>
+<li>&#x5BA3;&#x544A;&#x5F8C;&#x5C31;&#x4E0D;&#x53EF;&#x66F4;&#x6539;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> a = <span class="hljs-number">123</span>;
+a = <span class="hljs-number">456</span>; <span class="hljs-comment">// Uncaught TypeError: Assignment to constant variable.</span>
+</code></pre>
+<ul>
+<li>&#x4E5F;&#x4E0D;&#x53EF;&#x55AE;&#x7368;&#x5BA3;&#x544A;&#x4E0D;&#x7D66;&#x503C;<br><blockquote>
+<p><a href="https://262.ecma-international.org/15.0/index.html#prod-BindingList" target="_blank">ECMA 262 15th</a>: It is a Syntax Error if <em>Initializer</em> is not present and IsConstantDeclaration of the <em>LexicalDeclaration</em> containing this <em>LexicalBinding</em> is true.</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> a; <span class="hljs-comment">// Uncaught SyntaxError: Missing initializer in const declaration</span>
+</code></pre>
+<ul>
+<li>&#x540C;&#x500B;&#x4F5C;&#x7528;&#x57DF;&#x5E95;&#x4E0B;&#xFF0C;&#x4E0D;&#x53EF;&#x4EE5;&#x91CD;&#x8907;&#x5BA3;&#x544A; const</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> a = <span class="hljs-number">123</span>;
+<span class="hljs-keyword">const</span> a = <span class="hljs-number">456</span>; <span class="hljs-comment">// Uncaught SyntaxError: Identifier &apos;a&apos; has already been declared</span>
+</code></pre>
+<ul>
+<li>&#x4E0D;&#x540C;&#x4F5C;&#x7528;&#x57DF;&#x5E95;&#x4E0B;&#x5247;&#x53EF;&#x4EE5;&#x91CD;&#x8907;&#x5BA3;&#x544A;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> a = <span class="hljs-number">0</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>;
+  <span class="hljs-built_in">console</span>.log(a);
+}
+test(); <span class="hljs-comment">// 1</span>
+<span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// 0</span>
+</code></pre>
+<ul>
+<li>&#x6307;&#x5411;<code>Object</code>&#x6216;&#x662F;<code>Array</code>&#x7684;&#x6642;&#x5019;&#x66F4;&#x6539;&#x5176;&#x5C6C;&#x6027;&#x4E0D;&#x6703;&#x5831;&#x932F;(store by reference &#x6240;&#x4EE5;&#x53EA;&#x78BA;&#x4FDD;&#x6307;&#x6A19;&#x6C92;&#x6709;&#x8B8A;)</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> foo = { a: <span class="hljs-number">0</span> };
+foo.b = <span class="hljs-number">1</span>; <span class="hljs-comment">// ok</span>
+foo = {}; <span class="hljs-comment">// Uncaught TypeError: Assignment to constant variable.</span>
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> foo = [<span class="hljs-number">0</span>];
+foo.push(<span class="hljs-number">1</span>); <span class="hljs-comment">// ok</span>
+foo = []; <span class="hljs-comment">// Uncaught TypeError: Assignment to constant variable.</span>
+</code></pre>
+<h3 id="&#x63A5;&#x8457;&#x958B;&#x59CB;&#x4E0A;&#x9EDE;&#x5F37;&#x5EA6;">&#x63A5;&#x8457;&#x958B;&#x59CB;&#x4E0A;&#x9EDE;&#x5F37;&#x5EA6;</h3>
+<ul>
+<li>&#x70BA;&#x4F55;&#x540C;&#x6A23;&#x7684;&#x4F8B;&#x5B50; <code>var</code> &#x4E0D;&#x6703;&#x5674;&#x932F;&#xFF1F;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// undefined</span>
+<span class="hljs-keyword">var</span> a = <span class="hljs-number">123</span>;
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// Uncaught ReferenceError: a is not defined</span>
+<span class="hljs-keyword">let</span> a = <span class="hljs-number">123</span>;
+</code></pre>
+<blockquote>
+<p>MDN: In ECMAScript 2015, let bindings are not subject to Variable Hoisting, which means that let declarations do not move to the top of the current execution context.</p>
+</blockquote>
+<p><strong>&#x807D;&#x8D77;&#x4F86;&#x662F;&#x56E0;&#x70BA; <code>var</code> &#x6709; <code>hoisting</code> &#x800C; <code>let</code> &#x6C92;&#x6709;&#x3002;</strong><br></p>
+<p>&#x7B49;&#x7B49;&#xFF0C;&#x4F60;&#x78BA;&#x5B9A;&#xFF1F;&#x770B;&#x770B;&#x525B;&#x624D;&#x9019;&#x500B;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> a = <span class="hljs-number">123</span>;
+<span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
+  a = <span class="hljs-number">456</span>; <span class="hljs-comment">// Uncaught ReferenceError: Cannot access &apos;a&apos; before initialization at &lt;anonymous&gt;:3:7</span>
+  <span class="hljs-keyword">let</span> a;
+}
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x628A; let &#x522A;&#x6389;&#x662F;&#x4E0D;&#x6703;&#x5831;&#x932F;&#x7684;</strong></p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> a = <span class="hljs-number">123</span>;
+<span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
+  a = <span class="hljs-number">456</span>; <span class="hljs-comment">// ok</span>
+}
+</code></pre>
+<p>&#x800C;&#x4E14;&#x6700;&#x8A6D;&#x7570;&#x7684;&#x9EDE;&#x662F;&#x5B83;&#x7ADF;&#x7136;&#x5831;&#x932F;&#x5728;&#x7B2C;&#x4E09;&#x884C;&#xFF0C;&#x5982;&#x679C; JS &#x662F;&#x9010;&#x884C;&#x57F7;&#x884C;&#x7684;&#xFF0C;&#x90A3;&#x5230;&#x7B2C;&#x4E09;&#x884C; <code>a = 456</code> &#x70BA;&#x6B62;&#x61C9;&#x8A72;&#x4E0D;&#x6703;&#x51FA;&#x932F;&#x624D;&#x5C0D;&#x3002;<br></p>
+<p><strong>&#x53EF;&#x898B; JS interpreter &#x8DDF;&#x6211;&#x5011;&#x60F3;&#x5F97;&#x4E0D;&#x592A;&#x4E00;&#x6A23;&#xFF0C;&#x8981;&#x80FD;&#x89E3;&#x91CB;&#x9019;&#x500B;&#x554F;&#x984C;&#xFF0C;&#x6211;&#x5011;&#x53EA;&#x80FD;&#x7406;&#x89E3; JS interpreter &#x6709;&#x5C0D; <code>let</code> &#x505A;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x7684; <code>hoisting</code> &#xFF0C;&#x4E0D;&#x7136;&#x6C92;&#x9053;&#x7406;&#x5728;&#x9084;&#x6C92;&#x57F7;&#x884C;&#x5230;&#x7B2C;&#x56DB;&#x884C;&#x4EE5;&#x524D;&#x5C31;&#x5F71;&#x97FF;&#x4E86;&#x7B2C;&#x4E09;&#x884C;&#x7684;&#x8CE6;&#x503C;&#x884C;&#x70BA;&#xFF0C;&#x90A3;&#x5230;&#x5E95;&#x70BA;&#x4EC0;&#x9EBC;&#x5B98;&#x65B9;&#x6703;&#x5426;&#x8A8D;&#xFF1F;&#x9019;&#x80CC;&#x5F8C;&#x53C8;&#x6709;&#x4EC0;&#x9EBC;&#x611B;&#x6068;&#x60C5;&#x4EC7;&#x7CFE;&#x845B;&#x4E0D;&#x6E05;&#x5462;&#xFF1F;&#x9084;&#x8ACB;&#x5404;&#x4F4D;&#x5BA2;&#x500C;&#x5148;&#x5225;&#x6025;&#x8E81;&#xFF0C;&#x656C;&#x5F85;&#x5C0F;&#x5F1F;&#x4E0B;&#x56DE;&#x5206;&#x66C9;&#x3002;</strong></p>
+<p><strong>&#x4E0B;&#x96C6;&#xFF1A;</strong></p>
+<ul>
+<li><a href="https://yuanwu0000.github.io/zachary-gitbook/articles/js/var-let-const/advanced.html" target="_blank">&#x56DE;&#x7B54;&#x4E00;&#x984C; var / let / const &#x5C31;&#x9A5A;&#x8277;&#x4F60;&#x7684;&#x9762;&#x8A66;&#x5B98; &#x2500; hoisting &#x7D30;&#x7BC0;&#x7BC7;</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../forEach-async-await.html" class="navigation navigation-prev " aria-label="Previous page: async / await 在 forEach 裡面不起作用？你是否搞錯了什麼">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="advanced.html" class="navigation navigation-next " aria-label="Next page: 回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇","level":"1.4.2","depth":2,"next":{"title":"回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇","level":"1.4.3","depth":2,"path":"articles/js/var-let-const/advanced.md","ref":"./articles/js/var-let-const/advanced.md","articles":[]},"previous":{"title":"async / await 在 forEach 裡面不起作用？你是否搞錯了什麼","level":"1.4.1","depth":2,"path":"articles/js/forEach-async-await.md","ref":"./articles/js/forEach-async-await.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","copy-code-button","ga","-sharing","sharing-plus@^0.0.2","my-toolbar","expandable-chapters"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"printLog":false,"multipleH1":false,"mode":"float","showGoTop":true,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"my-toolbar":{"buttons":[{"label":"Github","icon":"fa fa-github","url":"https://github.com/YuAnWu0000","position":"right","text":"Github","target":"_blank"},{"label":"LinkedIn","icon":"fa fa-linkedin","url":"https://www.linkedin.com/in/yu-an-wu-486ab5160/","position":"right","text":"LinkedIn","target":"_blank"}]},"copy-code-button":{},"ga":{"configuration":"auto","token":""},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"edit-link":{"label":"Edit This Page","base":"https://yuanwu0000.github.io/zachary-gitbook"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{}},"gitbook":"*"},"file":{"path":"articles/js/var-let-const/basics.md","mtime":"2025-03-05T09:14:54.862Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-03-05T09:15:20.469Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-my-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

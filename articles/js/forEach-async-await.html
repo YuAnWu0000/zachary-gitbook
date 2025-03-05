@@ -1,0 +1,772 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>async / await 在 forEach 裡面不起作用？你是否搞錯了什麼 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="var-let-const/basics.html" />
+    
+    
+    <link rel="prev" href="js.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    關於我
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../vue/vue.html">
+            
+                <a href="../vue/vue.html">
+            
+                    
+                    Vue the world differently
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../react/react.html">
+            
+                <a href="../react/react.html">
+            
+                    
+                    React with surprise
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../react/cra-url-issue.html">
+            
+                <a href="../react/cra-url-issue.html">
+            
+                    
+                    Cannot resolve url() ─ CRA 用 url() 引入圖片的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../react/env.html">
+            
+                <a href="../react/env.html">
+            
+                    
+                    常常在VM裡面改東改西? 你需要的是.env
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="js.html">
+            
+                <a href="js.html">
+            
+                    
+                    Don't skip javascript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="forEach-async-await.html">
+            
+                <a href="forEach-async-await.html">
+            
+                    
+                    async / await 在 forEach 裡面不起作用？你是否搞錯了什麼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="var-let-const/basics.html">
+            
+                <a href="var-let-const/basics.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="var-let-const/advanced.html">
+            
+                <a href="var-let-const/advanced.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="deep-copy/basics.html">
+            
+                <a href="deep-copy/basics.html">
+            
+                    
+                    關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="deep-copy/implement.html">
+            
+                <a href="deep-copy/implement.html">
+            
+                    
+                    面試官：前面講了這麼多，還是你直接實作一個深拷貝給我看看？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../css/css.html">
+            
+                <a href="../css/css.html">
+            
+                    
+                    Success of css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                <a href="../css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../css/atomic-cssInJs-cssModule/atomic.html">
+            
+                <a href="../css/atomic-cssInJs-cssModule/atomic.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談體驗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../css/atomic-cssInJs-cssModule/scalability.html">
+            
+                <a href="../css/atomic-cssInJs-cssModule/scalability.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談擴展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../css/atomic-cssInJs-cssModule/performance.html">
+            
+                <a href="../css/atomic-cssInJs-cssModule/performance.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談效能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../css/how-to-make-a-marquee.html">
+            
+                <a href="../css/how-to-make-a-marquee.html">
+            
+                    
+                    製作跑馬燈一點都不難，你只需要知道這些小訣竅
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../devops/devops.html">
+            
+                <a href="../devops/devops.html">
+            
+                    
+                    Dive into the world of DevOps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../devops/deploy-your-project.html">
+            
+                <a href="../devops/deploy-your-project.html">
+            
+                    
+                    搞定 Docker 跟 Nginx，輕鬆部署你的專案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../devops/add-ssl.html">
+            
+                <a href="../devops/add-ssl.html">
+            
+                    
+                    讓你的網站更安全，加上 SSL 憑證吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../devops/monitor-container.html">
+            
+                <a href="../devops/monitor-container.html">
+            
+                    
+                    我的服務還好嗎？監控容器的小撇步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../devops/gitlab-ci/gitlab-runner.html">
+            
+                <a href="../devops/gitlab-ci/gitlab-runner.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../devops/gitlab-ci/gitlab-ci.html">
+            
+                <a href="../devops/gitlab-ci/gitlab-ci.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../others/others.html">
+            
+                <a href="../others/others.html">
+            
+                    
+                    Others
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../others/my-first-oidc-research.html">
+            
+                <a href="../others/my-first-oidc-research.html">
+            
+                    
+                    初探 OIDC ─ 揭開我們每天都在使用，卻不了解的黑盒子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../others/cypress.html">
+            
+                <a href="../others/cypress.html">
+            
+                    
+                    Cypress ─ 一款超強大的 E2E test framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >async / await 在 forEach 裡面不起作用？你是否搞錯了什麼</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="async--await-&#x5728;-foreach-&#x88E1;&#x9762;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#xFF1F;&#x4F60;&#x662F;&#x5426;&#x641E;&#x932F;&#x4E86;&#x4EC0;&#x9EBC;">async / await &#x5728; forEach &#x88E1;&#x9762;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#xFF1F;&#x4F60;&#x662F;&#x5426;&#x641E;&#x932F;&#x4E86;&#x4EC0;&#x9EBC;</h1>
+<p><img src="../../images/forEach-async-await/meme.jpg" width="450"></p>
+<h3 id="&#x300C;&#x311F;zachary&#x4F60;&#x53EF;&#x4EE5;&#x904E;&#x4F86;&#x5E6B;&#x6211;&#x901A;&#x9748;&#x4E00;&#x4E0B;&#x55CE;&#xFF1F;&#x300D;">&#x300C;&#x311F;~Zachary~~&#x4F60;&#x53EF;&#x4EE5;&#x904E;&#x4F86;&#x5E6B;&#x6211;&#x901A;&#x9748;&#x4E00;&#x4E0B;&#x55CE;&#xFF1F;&#x300D;</h3>
+<p>&#x524D;&#x5E7E;&#x5929;&#x516C;&#x53F8;&#x540C;&#x4E8B;&#x5BEB;&#x7A0B;&#x5F0F;&#x9047;&#x5230;&#x4E86; forEach &#x52A0;&#x4E0A; async/await &#x7684;&#x7D44;&#x5408;&#x62F3;&#xFF0C;&#x5361;&#x95DC;&#x4E86;&#x8A31;&#x4E45;&#x4ECD;&#x4E0D;&#x660E;&#x6240;&#x4EE5;&#xFF0C;
+&#x65BC;&#x662F;&#x53EB;&#x4E0A;&#x6211;&#x5E6B;&#x5FD9;&#x89E3;&#x60D1;&#xFF0C;&#x8EAB;&#x70BA;&#x901A;&#x9748;&#x738B;&#x7684;&#x6211;&#xFF0C;&#x76EF;&#x8457;&#x4ED6;&#x5982;&#x4E0B;&#x7684;&#x7A0B;&#x5F0F;&#x78BC;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> basket = [
+  {
+    name: <span class="hljs-string">&quot;apple&quot;</span>,
+    number: <span class="hljs-number">1</span>,
+  },
+  {
+    name: <span class="hljs-string">&quot;banana&quot;</span>,
+    number: <span class="hljs-number">2</span>,
+  },
+  {
+    name: <span class="hljs-string">&quot;mango&quot;</span>,
+    number: <span class="hljs-number">3</span>,
+  },
+];
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buyEachOne</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// &#x5E0C;&#x671B;&#x62FF;&#x5230;&#x6BCF;&#x7A2E;&#x6C34;&#x679C;+1&#x7684;&#x7D50;&#x679C;</span>
+  basket.forEach(<span class="hljs-keyword">async</span> (item) =&gt; {
+    <span class="hljs-keyword">const</span> newNumber = <span class="hljs-keyword">await</span> shopping(item.number);
+    item.number = newNumber;
+  });
+  <span class="hljs-built_in">console</span>.log(basket);
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shopping</span>(<span class="hljs-params">number</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      resolve(number + <span class="hljs-number">1</span>);
+    }, <span class="hljs-number">2000</span>);
+  });
+}
+buyEachOne();
+</code></pre>
+<blockquote>
+<p>&#x6211;&#x5C07;&#x6982;&#x5FF5;&#x68B3;&#x7406;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x6D41;&#x7A0B;&#x7C21;&#x5316;&#x70BA;&#x83DC;&#x7C43;&#x4E2D;&#x6709;&#x82E5;&#x5E72;&#x7A2E;&#x6C34;&#x679C;&#xFF0C;&#x6211;&#x60F3;&#x70BA;&#x6BCF;&#x6A23;&#x6C34;&#x679C;&#x90FD;&#x591A;&#x6DFB;&#x8CFC;&#x4E00;&#x9846;&#xFF0C;&#x6BCF;&#x6B21;&#x8CFC;&#x8CB7;&#x9808;&#x82B1;&#x8CBB;&#x5169;&#x79D2;&#x7684;&#x6642;&#x9593;&#xFF0C;&#x8CFC;&#x8CB7;&#x5B8C;&#x6210;&#x5F8C;&#x5C07;&#x83DC;&#x7C43;&#x4E2D;&#x6240;&#x6709;&#x6C34;&#x679C;&#x7684;&#x65B0;&#x6578;&#x91CF;&#x6253;&#x5370;&#x51FA;&#x4F86;&#x3002;</p>
+</blockquote>
+<p>&#x597D;&#x7684;&#xFF01;&#x56DE;&#x5230;&#x554F;&#x984C;...<br></p>
+<p>&#x300C;&#x5230;&#x5E95;&#x70BA;&#x4EC0;&#x9EBC; console &#x51FA;&#x4F86;&#x6578;&#x91CF;&#x6C92;&#x6709;&#x8B8A;&#x554A;&#xFF01;&#x300D;&#x4ED6;&#x4E00;&#x81C9;&#x61CA;&#x60F1;&#x7684;&#x62B1;&#x8457;&#x982D;&#x4F4E;&#x9CF4;<br>
+<img src="../../images/forEach-async-await/console.jpg" width="268" height="110"></p>
+<!-- ![console](../../images/forEach-async-await/console.jpg) -->
+<p>&#x300C;&#x800C;&#x4E14;...&#x9EDE;&#x4E86;&#x4E00;&#x4E0B;&#x7BAD;&#x982D;...&#x300D;<br>
+<img src="../../images/forEach-async-await/console_expand.jpg" width="176" height="268"></p>
+<!-- ![console](../../images/forEach-async-await/console_expand.jpg) -->
+<p>&#x300C;&#x4F60;&#x770B;&#xFF01;&#x6211;&#x8981;&#x7684;&#x503C;&#x53C8;&#x9577;&#x51FA;&#x4F86;&#x5566;&#xFF01;&#x662F;&#x600E;&#x6A23;&#xFF0C;&#x70BA;&#x4EC0;&#x9EBC; js &#x7684;&#x4E16;&#x754C;&#x9019;&#x9EBC;&#x8907;&#x96DC;&#x554A;&#x554A;&#xFF1F;&#x300D;<br></p>
+<p>&#x898B;&#x4ED6;&#x958B;&#x59CB;&#x6B47;&#x65AF;&#x5E95;&#x91CC;&#xFF0C;&#x540C;&#x6A23;&#x4E5F;&#x6DF1;&#x611F;&#x56F0;&#x60D1;&#x7684;&#x6211;&#x958B;&#x59CB;&#x5728;&#x7DB2;&#x8DEF;&#x4E0A;&#x627E;&#x5C0B;&#x76F8;&#x95DC;&#x8CC7;&#x6599;&#xFF0C;&#x767C;&#x73FE;&#x6703;&#x9020;&#x6210;&#x9019;&#x7A2E;&#x73FE;&#x8C61;&#x5176;&#x5BE6;&#x53EF;&#x4EE5;&#x6B78;&#x548E;&#x65BC;&#x5169;&#x500B;&#x539F;&#x56E0;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8AAA;&#xFF0C;&#x9020;&#x6210;&#x6211;&#x540C;&#x4E8B;&#x5D29;&#x6F70;&#x7684;&#x72AF;&#x4EBA;&#xFF0C;&#x6709;&#x5169;&#x4F4D;&#xFF01;<br></p>
+<p><strong>Chrome DevTool, Async/Await</strong><br></p>
+<p>&#x5C31;&#x662F;&#x4F60;&#x5011;(&#x6307; &#x261D;&#xFE0F;</p>
+<blockquote>
+<h3 id="&#x91CB;&#x8FE6;&#x725F;&#x5C3C;&#x300A;&#x6CD5;&#x53E5;&#x7D93;&#x300B;&#x4E2D;&#x6709;&#x8A00;&#xFF1A;&#x83AB;&#x8F15;&#x5C0F;&#x60E1;&#xFF0C;&#x4EE5;&#x70BA;&#x7121;&#x7F6A;&#xFF0C;&#x5C0F;&#x60E1;&#x6240;&#x7A4D;&#xFF0C;&#x8DB3;&#x4EE5;&#x6EC5;&#x8EAB;&#x3002;">&#x91CB;&#x8FE6;&#x725F;&#x5C3C;&#x300A;&#x6CD5;&#x53E5;&#x7D93;&#x300B;&#x4E2D;&#x6709;&#x8A00;&#xFF1A;&#x83AB;&#x8F15;&#x5C0F;&#x60E1;&#xFF0C;&#x4EE5;&#x70BA;&#x7121;&#x7F6A;&#xFF0C;&#x5C0F;&#x60E1;&#x6240;&#x7A4D;&#xFF0C;&#x8DB3;&#x4EE5;&#x6EC5;&#x8EAB;&#x3002;</h3>
+</blockquote>
+<h3 id="chrome-devtool">Chrome DevTool</h3>
+<p>&#x6211;&#x5011;&#x5148;&#x8AAA;&#x884C;&#x5C0F;&#x60E1;&#x7684;&#x5147;&#x624B;&#xFF0C;Chrome DevTool&#xFF01;&#x6C92;&#x932F;&#xFF0C;&#x5C31;&#x662F;&#x4F60;&#xFF01;(Chrome:
+&#x95DC;&#x6211;&#x5C41;&#x4E8B;&#x3002;)<br>
+&#x4E8B;&#x5BE6;&#x4E0A;&#x53EA;&#x8981;&#x4F60;&#x628A;&#x9F20;&#x6A19;&#x79FB;&#x5230;&#x4E0A;&#x5716;&#x7684;&#x85CD;&#x8272; icon&#xFF0C;&#x5C31;&#x6703;&#x51FA;&#x73FE; tooltip &#x544A;&#x8A34;&#x4F60;&#x539F;&#x56E0;&#x4E86;&#xFF1A;&quot;Value
+below was evaluated just now.&quot;<br>
+&#x610F;&#x601D;&#x662F;&#xFF1A;&#x4EE5; chrome &#x4F86;&#x8AAA;&#xFF0C;&#x5C55;&#x958B;&#x524D;&#x7684;&#x6578;&#x503C;&#x662F; console &#x7576;&#x4E0B;&#x7684;&#x503C;&#xFF0C;&#x800C;<strong>&#x5C55;&#x958B;&#x5F8C;&#x5247;&#x662F;&#x73FE;&#x5728;&#x5B58;&#x653E;&#x5728;&#x8A18;&#x61B6;&#x9AD4;&#x4E2D;&#x6700;&#x65B0;&#x7684;&#x503C;</strong>&#xFF0C;&#x9019;&#x5176;&#x5BE6;&#x662F; chrome &#x7684;&#x4E00;&#x500B;&#x5C0F;&#x5DE7;&#x601D;&#xFF0C;&#x8B93;&#x958B;&#x767C;&#x8005;&#x80FD;&#x5920;&#x66F4;&#x597D;&#x5730;&#x8FFD;&#x8E64;&#x8A72;&#x5730;&#x5740;&#x7684;&#x503C;&#x524D;&#x5F8C;&#x70BA;&#x4F55;&#xFF0C;&#x53EA;&#x662F;&#x5728;&#x9019;&#x500B;&#x4F8B;&#x5B50;&#x4E2D;&#x4E0D;&#x5E78;&#x8B8A;&#x6210;&#x82E6;&#x60F1;&#x6211;&#x540C;&#x4E8B;&#x7684;&#x4E00;&#x500B;&#x76F2;&#x9EDE;&#x3002;</p>
+<p>&#x81F3;&#x65BC;&#x70BA;&#x4EC0;&#x9EBC; console &#x7576;&#x4E0B;&#x6578;&#x503C;&#x6703;&#x6C92;&#x8B8A;&#x66F4;&#x5462;&#xFF1F;&#x9019;&#x554F;&#x984C;&#x5C31;&#x727D;&#x6D89;&#x5230;&#x4E86;&#x6211;&#x5011;&#x4ECA;&#x5929;&#x7684;&#x5343;&#x53E4;&#x7F6A;&#x4EBA;&#xFF0C;async/await &#x4E86;&#xFF01;(async/await: &#x6211;&#x53EF;&#x4EE5;&#x544A;&#x4ED6;&#x55CE;&#xFF1F;)</p>
+<blockquote>
+<p>&#x5176;&#x5BE6;&#x4ED6;&#x5006;&#x5144;&#x5F1F;&#x662F;&#x7121;&#x8F9C;&#x7684;&#xFF0C;&#x524D;&#x9762;&#x53EA;&#x662F;&#x73A9;&#x7B11;&#x8A71;&#x800C;&#x5DF2;&#xFF0C;&#x5404;&#x4F4D;&#x5BA2;&#x5B98;&#x8ACB;&#x5225;&#x592A;&#x8A8D;&#x771F;&#xFF0C;&#x6211;&#x9084;&#x4E0D;&#x60F3;&#x80CC;&#x524D;&#x79D1;&#x5566;&#xFF01;</p>
+</blockquote>
+<h3 id="async--await">async / await</h3>
+<p>&#x6211;&#x5011;&#x90FD;&#x77E5;&#x9053; <strong>JavaScript &#x662F;&#x55AE;&#x57F7;&#x884C;&#x7DD2;&#x7684;&#x8A9E;&#x8A00;&#xFF0C;&#x5176;&#x5167;&#x90E8;&#x6709;&#x8457; Event Loop &#x6A5F;&#x5236;</strong>&#xFF0C;&#x5404;&#x4F4D;&#x53EF;&#x80FD;&#x5F88;&#x56F0;&#x60D1;&#xFF0C;&#x5947;&#x602A;&#xFF0C;&#x600E;&#x9EBC;&#x88AB;&#x5A01;&#x8105;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x5C31;&#x958B;&#x59CB;&#x8B1B;&#x5176;&#x4ED6;&#x7684;&#x6771;&#x897F;&#x4E0D;&#x8B1B; async/await &#x4E86;&#x5462;&#xFF1F;&#x5176;&#x5BE6;&#xFF0C;&#x9019;&#x4E9B;&#x90FD;&#x662F;&#x74B0;&#x74B0;&#x76F8;&#x6263;&#x7684;&#xFF0C;&#x89C0;&#x5FF5;&#x7F3A;&#x4E00;&#x4E0D;&#x53EF;&#x3002;</p>
+<p>&#x7C21;&#x55AE;&#x8AAA;&#xFF0C;&#x70BA;&#x4E86;&#x8B93; javescript &#x9019;&#x6A23;&#x7684;&#x55AE;&#x7DDA;&#x7A0B;&#x8A9E;&#x8A00;&#x4E0D;&#x6703;&#x5835;&#x585E;&#xFF0C;&#x700F;&#x89BD;&#x5668;&#x85C9;&#x7531; Event Loop &#x6A5F;&#x5236;&#x5E6B;&#x6211;&#x5011;&#x66AB;&#x6642;&#x8655;&#x7406;&#x4E00;&#x4E9B;&#x9EBB;&#x7169;&#x4EFB;&#x52D9;&#xFF0C;&#x7B49;&#x5230;&#x4E3B;&#x7A0B;&#x5F0F;&#x57F7;&#x884C;&#x5B8C;&#x7562;&#x4EE5;&#x5F8C;&#x518D;&#x56DE;&#x4F86; callback&#xFF0C;&#x4EE5;&#x5C0B;&#x6C42;&#x66F4;&#x597D;&#x7684;&#x6548;&#x80FD;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x9084;&#x662F;&#x5C0D; Event Loop &#x6A5F;&#x5236;&#x4E0D;&#x7406;&#x89E3;&#x7684;&#x4EBA;&#xFF0C;&#x53EF;&#x4EE5;&#x53C3;&#x7167;<a href="https://pjchender.blogspot.com/2017/08/javascript-learn-event-loop-stack-queue.html" target="_blank">&#x9019;&#x7BC7;</a>&#x6587;&#x7AE0;</p>
+<p><strong>&#x6587;&#x7AE0;&#x771F;&#x7684;&#x975E;&#x5E38;&#x91CD;&#x8981;</strong><br>
+<strong>&#x6587;&#x7AE0;&#x771F;&#x7684;&#x975E;&#x5E38;&#x91CD;&#x8981;</strong><br>
+<strong>&#x6587;&#x7AE0;&#x771F;&#x7684;&#x975E;&#x5E38;&#x91CD;&#x8981;</strong><br></p>
+<p>&#x6211;&#x6C7A;&#x5B9A;&#x7B49;&#x4F60;&#x770B;&#x5B8C;&#x518D;&#x7E7C;&#x7E8C;&#x8B1B;&#x89E3;&#xFF0C;&#x653E;&#x5FC3;&#xFF0C;&#x6211;&#x5F88;&#x9592;&#xFF0C; &#x6211;&#x53EF;&#x4EE5;&#x5728;&#x9019;&#x7B49;&#x4F60;&#x4E00;&#x5929;&#x90FD;&#x4E0D;&#x662F;&#x554F;&#x984C;&#x3002;<br>
+&#x81F3;&#x65BC;&#x5982;&#x4F55;&#x7B97;&#x662F;&#x5B8C;&#x5168;&#x7406;&#x89E3; Event Loop&#xFF1F; &#x5C0D;&#x4E0D;&#x8D77;&#xFF0C;&#x53EF;&#x80FD;&#x8981;&#x8ACB;&#x4F60;&#x53BB;&#x554F; Brendan Eich&#xFF0C;&#x4E0D;&#x904E;...<br></p>
+<p><a href="https://www.youtube.com/watch?v=YOo001UM8PI" target="_blank"><img src="https://img.youtube.com/vi/YOo001UM8PI/0.jpg" alt="YouTube video"></a></p>
+<p>&#x7576;&#x4F60;&#x53EF;&#x4EE5;&#x5B8C;&#x5168;&#x9810;&#x6E2C;&#x4E0A;&#x9762;&#x9019;&#x500B;&#x5F71;&#x7247;&#x7684;&#x8D70;&#x5411;&#x6642;&#xFF0C;&#x6211;&#x76F8;&#x4FE1;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x7E7C;&#x7E8C;&#x95B1;&#x8B80;&#x4EE5;&#x4E0B;&#x7684;&#x6587;&#x7AE0;&#x4E86;&#x3002;</p>
+<p>btw&#xFF0C;&#x5C0D;&#x9019;&#x500B;&#x8996;&#x89BA;&#x5316; UI &#x6709;&#x8208;&#x8DA3;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x53C3;&#x8003;<a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D" target="_blank">&#x9019;&#x500B;&#x7DB2;&#x7AD9;</a></p>
+<h3 id="&#x8B93;&#x6211;&#x5011;&#x7528;&#x4E0A;&#x9762;&#x5F71;&#x7247;&#x7684;&#x908F;&#x8F2F;&#x4F86;&#x91CD;&#x65B0;&#x6AA2;&#x8996;&#x4E00;&#x4E0B;&#x9019;&#x500B;&#x7BC4;&#x4F8B;">&#x8B93;&#x6211;&#x5011;&#x7528;&#x4E0A;&#x9762;&#x5F71;&#x7247;&#x7684;&#x908F;&#x8F2F;&#x4F86;&#x91CD;&#x65B0;&#x6AA2;&#x8996;&#x4E00;&#x4E0B;&#x9019;&#x500B;&#x7BC4;&#x4F8B;</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buyEachOne</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// &#x5E0C;&#x671B;&#x62FF;&#x5230;&#x6BCF;&#x7A2E;&#x6C34;&#x679C;+1&#x7684;&#x7D50;&#x679C;</span>
+  basket.forEach(<span class="hljs-keyword">async</span> (item) =&gt; {
+    <span class="hljs-keyword">const</span> newNumber = <span class="hljs-keyword">await</span> shopping(item.number);
+    item.number = newNumber;
+  });
+  <span class="hljs-built_in">console</span>.log(basket);
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shopping</span>(<span class="hljs-params">number</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      resolve(number + <span class="hljs-number">1</span>);
+    }, <span class="hljs-number">2000</span>);
+  });
+}
+</code></pre>
+<p>&#x6211;&#x5011;&#x9996;&#x5148;&#x89C0;&#x5BDF; <code>buyEachOne()</code> &#x9019;&#x500B; function&#xFF0C;&#x7A0B;&#x5F0F;&#x5148;&#x7528; <code>forEach()</code> &#x5C0D; <code>basket</code> &#x9032;&#x884C;&#x904D;&#x6B77;&#xFF0C;<strong>&#x4F9D;&#x5E8F;&#x57F7;&#x884C;</strong>&#x4E09;&#x500B; callback&#xFF1A;</p>
+<p>&#x57F7;&#x884C;&#x5230; <code>await shopping()</code> &#x7684;&#x6642;&#x5019;&#x767C;&#x73FE;&#x9047;&#x5230;&#x4E86; <code>setTimeOut()</code>&#xFF0C;&#x56E0;&#x6B64;&#x5C07; <code>setTimeOut()</code> &#x4EA4;&#x7531; Web APIs &#x9032;&#x884C;&#x8655;&#x7406;&#xFF0C;&#x7136;&#x5F8C;&#x7531;&#x65BC; <code>await</code> &#x7684;&#x6548;&#x679C;&#xFF0C;&#x66AB;&#x6642;&#x51CD;&#x7D50;&#x5167;&#x90E8;&#x57F7;&#x884C;&#x74B0;&#x5883;&#xFF0C;&#x81F3;&#x6B64;&#xFF0C;&#x7B2C;&#x4E00;&#x500B; callback &#x8655;&#x7406;&#x5B8C;&#x7562;&#x3002;<strong>&#x9019;&#x6A23;&#x7684;&#x6D41;&#x7A0B;&#x6703;&#x91CD;&#x8907;&#x4E0D;&#x9593;&#x65B7;&#x5730;&#x57F7;&#x884C;&#x4E09;&#x6B21;&#x3002;</strong></p>
+<p><code>forEach()</code> &#x7684;&#x4E09;&#x500B; callback &quot;&#x8655;&#x7406;&quot;&#x5B8C;&#x4EE5;&#x5F8C; (<strong>&#x6CE8;&#x610F;&#xFF1A;&#x6B64;&#x6642;&#x4E09;&#x500B; callback &#x5167;&#x90E8;&#x4ECD;&#x7136;&#x662F;&#x51CD;&#x7D50;&#x72C0;&#x614B;&#xFF0C;&#x56E0;&#x70BA;&#x5728;&#x7B49;&#x5F85;<code>setTimeout()</code></strong>)&#xFF0C;&#x63A5;&#x8457;&#x7A0B;&#x5F0F;&#x57F7;&#x884C;&#x5230;&#x5916;&#x9762; <code>console.log()</code> &#x9019;&#x4E00;&#x884C;&#xFF0C;&#x6240;&#x4EE5;&#x624D;&#x6709;&#x4E86;&#x4E0A;&#x9762; chrome &#x7684;&#x8F38;&#x51FA;&#xFF1A;<strong>&#x6C34;&#x679C;&#x5011;&#x4E26;&#x6C92;&#x6709;&#x5F97;&#x5230; +1 &#x7684;&#x7D50;&#x679C;</strong>&#x3002;</p>
+<blockquote>
+<p>&#x8A66;&#x60F3;&#x5982;&#x679C;&#x55AE;&#x57F7;&#x884C;&#x7DD2;&#x7684; JS &#x6C92;&#x6709; Web API &#x8F14;&#x52A9;&#xFF0C;&#x800C;&#x662F;&#x505C;&#x7559;&#x5728;&#x539F;&#x5730;&#x7B49;&#x5F85;&#x4E09;&#x500B; callback &#x57F7;&#x884C;&#x5B8C;&#x7562;&#xFF0C;&#x90A3;&#x7E3D;&#x5171;&#x5C31;&#x9700;&#x8981;&#x7B49;&#x5F85; 2*3=6 &#x79D2;&#x7684;&#x6642;&#x9593;&#xFF0C;&#x7DB2;&#x9801;&#x5982;&#x679C;&#x963B;&#x585E;&#x516D;&#x79D2;&#xFF0C;&#x4F7F;&#x7528;&#x8005;&#x65E9;&#x5C31;&#x5DF2;&#x7D93;&#x8DD1;&#x5149;&#x5149;&#x4E86; :P</p>
+</blockquote>
+<p><strong>&#x5169;&#x79D2;&#x4E4B;&#x5F8C;&#xFF0C;&#x525B;&#x525B;&#x88AB;&#x6211;&#x5011;&#x66AB;&#x6642;&#x7F6E;&#x4E4B;&#x4E0D;&#x7406;&#x7684;&#x90A3;&#x4E09;&#x500B; <code>setTimeout</code> &#x4E5F;&#x5728; Event Loop &#x6A5F;&#x5236;&#x5E6B;&#x52A9;&#x4E0B;&#x5C07;&#x5F8C;&#x7E8C;&#x7A0B;&#x5F0F;&#x585E;&#x5165;&#x5DE5;&#x4F5C;&#x4F47;&#x5217;(task queue)&#x7576;&#x4E2D;&#x4E86;&#x3002;</strong></p>
+<p>&#x7576; call stack &#x4E2D;&#x7684;&#x4E8B;&#x4EF6;&#x57F7;&#x884C;&#x5B8C;&#x7562;&#x4E4B;&#x5F8C;&#xFF0C;Event Loop &#x6703;&#x5C07;&#x5DE5;&#x4F5C;&#x4F47;&#x5217;(task queue)&#x4E2D;&#x7684;&#x4E8B;&#x4EF6;&#x9010;&#x4E00;&#x585E;&#x5165; stack &#x4E2D;&#x4E26;&#x57F7;&#x884C;&#xFF0C;&#x76F4;&#x5230;&#x9019;&#x6642;&#x5019;&#xFF0C;&#x90A3;&#x4E09;&#x500B; callback &#x624D;&#x7D50;&#x675F;&#x51CD;&#x7D50;&#x7E7C;&#x7E8C;&#x904B;&#x884C;&#xFF0C;&#x800C;&#x6C34;&#x679C;&#x7684;&#x6578;&#x91CF;<strong>&#x624D;&#x9010;&#x4E00;&#x53D6;&#x5F97;&#x66F4;&#x65B0;</strong>&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;&#x4F60;&#x73FE;&#x5728;&#x61C9;&#x8A72;&#x77E5;&#x9053;&#x70BA;&#x4EC0;&#x9EBC;&#x5927;&#x5BB6;&#x6703;&#x8AAA; <code>setTimeout</code> &#x6C92;&#x6709;&#x90A3;&#x9EBC;&quot;&#x7CBE;&#x78BA;&quot;&#x4E86;&#xFF0C;&#x56E0;&#x70BA; JS &#x53EA;&#x4FDD;&#x8B49;&#x5728;&#x7B49;&#x5F85;&#x5169;&#x79D2;&#x5F8C;&#x628A;&#x4EFB;&#x52D9;&#x4E1F;&#x5230; task queue&#xFF0C;&#x4F46;&#x4EFB;&#x52D9;&#x5177;&#x9AD4;&#x57F7;&#x884C;&#x6642;&#x9593;&#x9084;&#x662F;&#x8981;&#x770B;&#x5B83;&#x5728; queue &#x88E1;&#x9762;&#x6392;&#x968A;&#x7B49;&#x4E86;&#x591A;&#x4E45;&#x624D;&#x57F7;&#x884C;&#x3002;</strong></p>
+<h3 id="&#x9084;&#x8A18;&#x5F97;&#x958B;&#x982D;&#x7684;&#x90A3;&#x5F35;&#x8FF7;&#x56E0;&#x55CE;&#xFF1F;">&#x9084;&#x8A18;&#x5F97;&#x958B;&#x982D;&#x7684;&#x90A3;&#x5F35;&#x8FF7;&#x56E0;&#x55CE;&#xFF1F;</h3>
+<p>&#x6211;&#x66FE;&#x770B;&#x904E;&#x4E0D;&#x5C11;&#x4EBA;&#x8AAA; <code>async / await</code> &#x5728; <code>forEach</code> &#x4E2D;&#x662F;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#x7684;&#xFF0C;&#x4F46;&#x4E8B;&#x5BE6;&#x4E26;&#x4E0D;&#x662F;&#x9019;&#x6A23;&#xFF0C;&#x4EE5;&#x7D50;&#x679C;&#x4F86;&#x8AAA;&#xFF0C;<code>async / await</code> &#x4F9D;&#x820A;&#x4FDD;&#x8B49;&#x4E86;&#x51FD;&#x5F0F;&#x5167;&#x90E8;&#x7684;&#x57F7;&#x884C;&#x9806;&#x5E8F;&#xFF0C;&#x6BD4;&#x5982;&#x5728;&#x9019;&#x500B;&#x4F8B;&#x5B50;&#xFF0C;&#x5C31;&#x662F;<strong>&#x7B49;&#x5F85;&#x4E86;&#x5169;&#x79D2;&#x5F8C;&#x624D;&#x66F4;&#x65B0;&#x6C34;&#x679C;&#x7684;&#x6578;&#x91CF;</strong>&#xFF0C;&#x4F46;&#x4ED6;<strong>&#x4E0D;&#x80FD;&#x4FDD;&#x8B49;&#x7684;&#x662F;&#xFF0C;&#x51FD;&#x5F0F;&#x5916;&#x90E8; JS interpreter &#x6703;&#x5148;&#x8DF3;&#x904E;&#x4ED6;&#x4F86;&#x57F7;&#x884C;&#x5176;&#x4ED6;&#x7A0B;&#x5F0F;&#x3002;</strong>(async / await&#xFF1A;&#x8AAA;&#x5F97;&#x4E0D;&#x932F;&#xFF0C;&#x4ECA;&#x5929;&#x5C31;&#x9952;&#x4F60;&#x4E00;&#x547D;)</p>
+<blockquote>
+<p>&#x311F;&#x7B49;&#x7B49;&#xFF0C;&#x8B1B;&#x4E86;&#x9019;&#x9EBC;&#x591A;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x5230;&#x5E95;&#x6709;&#x6C92;&#x6709;&#x5E6B;&#x4F60;&#x540C;&#x4E8B;&#x89E3;&#x6C7A;&#x554F;&#x984C;&#x554A;&#xFF1F;</p>
+</blockquote>
+<p>&#x963F;&#x5C0D;&#x4E86;&#xFF0C;&#x5DEE;&#x9EDE;&#x5FD8;&#x8A18;&#x5728;&#x4E00;&#x908A;&#x61F7;&#x7591;&#x4EBA;&#x751F;&#x7684;&#x540C;&#x4E8B;&#x4E86;&#xFF0C;&#x4ED6;&#x76EE;&#x524D;&#x6B63;&#x9762;&#x58C1;&#x756B;&#x8457;&#x5708;&#x5708;&#x5583;&#x5583;&#x81EA;&#x8A9E;&#x8457;&#xFF1A;&#x300C;Javascript...&#x5F9E;&#x5165;&#x9580;&#x5230;&#x653E;&#x68C4;...&#x300D;<br></p>
+<p>&#x5176;&#x5BE6;&#x9019;&#x984C;&#x7684;&#x89E3;&#x6C7A;&#x65B9;&#x5F0F;&#x975E;&#x5E38;&#x7C21;&#x55AE;&#xFF0C;&#x53EA;&#x8981;&#x628A; <code>forEach</code> &#x63DB;&#x6210; <code>for...of</code> &#x5C31;&#x89E3;&#x6C7A;&#x4E86;&#xFF01;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buyEachOne</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// &#x5E0C;&#x671B;&#x62FF;&#x5230;&#x6BCF;&#x7A2E;&#x6C34;&#x679C;+1&#x7684;&#x7D50;&#x679C;</span>
+  <span class="hljs-comment">/* basket.forEach(async (item) =&gt; {
+    const newNumber = await shopping(item.number)
+    item.number = newNumber
+  }); */</span>
+  <span class="hljs-comment">// &#x6539;&#x7528;for of</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> basket) {
+    <span class="hljs-keyword">const</span> newNumber = <span class="hljs-keyword">await</span> shopping(item.number);
+    item.number = newNumber;
+  }
+  <span class="hljs-built_in">console</span>.log(basket);
+}
+</code></pre>
+<p><img src="../../images/forEach-async-await/console_right.jpg" width="268" height=""></p>
+<blockquote>
+<h3 id="&#x9019;&#x771F;&#x662F;&#x592A;&#x795E;&#x5947;&#x4E86;&#x672D;&#x514B;&#xFF01;&#xFF01;&#x773C;&#x88E1;&#x6CDB;&#x5149;&#x7684;&#x540C;&#x4E8B;&#x8AAA;&#x9053;">&#x9019;&#x771F;&#x662F;&#x592A;&#x795E;&#x5947;&#x4E86;&#x672D;&#x514B;&#xFF01;&#xFF01;(&#x773C;&#x88E1;&#x6CDB;&#x5149;&#x7684;&#x540C;&#x4E8B;&#x8AAA;&#x9053;</h3>
+</blockquote>
+<p>&#x5176;&#x5BE6;&#x5728;&#x61C2;&#x4E86; Event Loop &#x7684;&#x539F;&#x7406;&#x5F8C;&#xFF0C;&#x9019;&#x6A23;&#x7684;&#x7D50;&#x679C;&#x4E5F;&#x6C92;&#x4EC0;&#x9EBC;&#x597D;&#x9A5A;&#x8A1D;&#x7684;&#x4E86;(&#x9A55;&#x50B2;&#x8C8C;&#x3002;<br>
+<code>async / await</code> &#x7684;&#x4F5C;&#x7528;&#x662F;&#x4FDD;&#x8B49;&#x7576;&#x524D;&#x51FD;&#x5F0F;&#x7684;&#x57F7;&#x884C;&#x9806;&#x5E8F;&#xFF0C;&#x800C; <code>forEach</code> &#x8207; <code>for</code> &#x7684;&#x6700;&#x5927;&#x5340;&#x5225;&#x5C31;&#x5728;&#x65BC; <code>forEach</code> &#x662F;&#x50B3;&#x5165; callback &#x4F86;&#x57F7;&#x884C;&#xFF0C;&#x56E0;&#x6B64;&#x5C0D;&#x65BC; <code>async/await</code> &#x4F86;&#x8AAA;&#xFF0C;&#x51CD;&#x7D50;&#x7684;&#x662F;&#x90A3;&#x4E09;&#x500B; callback &#x672C;&#x8EAB;&#x3002;<br>
+&#x4F46; <code>for...of</code> &#x5C31;&#x4E0D;&#x540C;&#x4E86;&#xFF0C;&#x5B83;&#x5167;&#x90E8;&#x7684; <code>await</code> &#x6703;&#x51CD;&#x7D50;&#x6700;&#x8FD1;&#x7684; <code>async function</code>&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5916;&#x5C64;&#x7684; <code>buyEachOne()</code>&#xFF0C;&#x56E0;&#x6B64;&#x624D;&#x6703;&#x6709;&#x6211;&#x5011;&#x60F3;&#x8981;&#x7684;&#x7D50;&#x679C;&#x51FA;&#x73FE;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;&#x9019;&#x7A2E;&#x540C;&#x6B65;&#x5BEB;&#x6CD5;&#x901A;&#x5E38;&#x53EA;&#x6703;&#x51FA;&#x73FE;&#x5728;&#x591A;&#x500B; API &#x76F8;&#x4E92;&#x4F9D;&#x8CF4;&#x4E14;&#x9700;&#x4FDD;&#x8B49;&#x9806;&#x5E8F;&#x6027;&#x7684;&#x60C5;&#x6CC1;&#xFF0C;&#x6B64;&#x505A;&#x6CD5;&#x5BB9;&#x6613;&#x6709;&#x7DB2;&#x9801;&#x963B;&#x585E;&#x7684;&#x554F;&#x984C;&#xFF0C;&#x8ACB;&#x5C0F;&#x5FC3;&#x4F7F;&#x7528;&#x3002;&#x63A8;&#x85A6;&#x5728;&#x53EF;&#x63A5;&#x53D7;&#x4F75;&#x767C;&#x7684;&#x60C5;&#x6CC1;&#x4E0B;&#x591A;&#x7528;<code>Promise.all()</code>&#xFF0C;&#x6C92;&#x6709;&#x4EE5;&#x4E0A;&#x9700;&#x6C42;&#x7684;&#x8A71;&#x76F4;&#x63A5; forEach &#x9001;&#x51FA;&#x4E5F;&#x6C92;&#x554F;&#x984C;&#xFF0C;&#x91CD;&#x9EDE;&#x662F;&#x77E5;&#x9053;&#x4F60;&#x81EA;&#x5DF1;&#x5728;&#x5BEB;&#x4EC0;&#x9EBC;&#xFF01;</strong></p>
+<h3 id="&#x5982;&#x679C;&#x4F60;&#x8A8D;&#x70BA;&#x4F60;&#x5DF2;&#x7D93;&#x7406;&#x89E3;&#x4E0A;&#x9762;&#x7684;&#x7BC4;&#x4F8B;&#xFF0C;&#x90A3;&#x5C31;&#x4E0D;&#x59A8;&#x8A66;&#x8A66;&#x4E0B;&#x9762;&#x9019;&#x500B;&#x5427;">&#x5982;&#x679C;&#x4F60;&#x8A8D;&#x70BA;&#x4F60;&#x5DF2;&#x7D93;&#x7406;&#x89E3;&#x4E0A;&#x9762;&#x7684;&#x7BC4;&#x4F8B;&#xFF0C;&#x90A3;&#x5C31;&#x4E0D;&#x59A8;&#x8A66;&#x8A66;&#x4E0B;&#x9762;&#x9019;&#x500B;&#x5427;!</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> example = <span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">const</span> nums = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+  nums.forEach(<span class="hljs-keyword">async</span> (num) =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;start &quot;</span>, num);
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> returnNum(num);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;end &quot;</span>, num);
+  });
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;after forEach&quot;</span>);
+};
+<span class="hljs-keyword">const</span> returnNum = (x) =&gt; {
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+    setTimeout(() =&gt; {
+      resolve(x);
+    }, <span class="hljs-number">500</span> * (<span class="hljs-number">5</span> - x));
+  });
+};
+example().then(() =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;done&quot;</span>);
+});
+</code></pre>
+<p>&#x8ACB;&#x7D66;&#x81EA;&#x5DF1;&#x4E00;&#x6BB5;&#x6642;&#x9593;&#x601D;&#x8003;...<br>
+.<br>
+.<br>
+.<br>
+.<br>
+.<br>
+.<br>
+.<br>
+.<br>
+.<br></p>
+<p>&#x89E3;&#x7B54; &#x2193;<br>
+<img src="../../images/forEach-async-await/testAns.jpg" width="268" height=""><br>
+&#x5E0C;&#x671B;&#x6709;&#x8DDF;&#x4F60;&#x5FC3;&#x76EE;&#x4E2D;&#x60F3;&#x7684;&#x4E00;&#x6A23;&#xFF01;&#x5982;&#x679C;&#x9084;&#x662F;&#x6709;&#x7591;&#x60D1;&#xFF0C;&#x95DC;&#x9375;&#x5B57; <strong>micro task</strong> &#x53BB;&#x641C;&#x5C0B;&#x770B;&#x770B; :)</p>
+<h3 id="&#x7D50;&#x8A9E;">&#x7D50;&#x8A9E;</h3>
+<p>&#x4ECA;&#x5929;&#x5E36;&#x5404;&#x4F4D;&#x770B;&#x4E86; <code>forEach</code> &amp; <code>async / await</code> &#x5E38;&#x898B;&#x7684;&#x8FF7;&#x601D;&#xFF0C;&#x7701;&#x7565;&#x4E86;&#x8A31;&#x591A;&#x66F4;&#x7D30;&#x7BC0;&#x7684;&#x5167;&#x5BB9;&#xFF0C;&#x53EA;&#x55AE;&#x7D14;&#x8B1B;&#x89E3;&#x9019;&#x500B;&#x5BE6;&#x4F5C;&#x6848;&#x4F8B;&#xFF0C;&#x5E0C;&#x671B;&#x9019;&#x7A2E;&#x6DF1;&#x5165;&#x6DFA;&#x51FA;&#x7684;&#x5167;&#x5BB9;&#x53EF;&#x4EE5;&#x5E6B;&#x52A9;&#x5230;&#x5927;&#x5BB6;&#xFF01;<br>
+&#x4E00;&#x65B9;&#x9762;&#x662F;&#x62CB;&#x78DA;&#x5F15;&#x7389;&#xFF0C;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#x9019;&#x7BC7;&#x6587;&#x7AE0;&#x4E5F;&#x662F;&#x5BEB;&#x7D66;&#x7576;&#x521D;&#x7684;&#x81EA;&#x5DF1;&#xFF0C;&#x5E0C;&#x671B;&#x7576;&#x521D;&#x56F0;&#x60D1;&#x7684;&#x81EA;&#x5DF1;&#x5728;&#x7DB2;&#x8DEF;&#x4E0A;&#x770B;&#x5230;&#x9019;&#x7BC7;&#x6587;&#x7AE0;&#xFF0C;&#x9664;&#x4E86;&#x611F;&#x5230;&#x6709;&#x8DA3;&#x4EE5;&#x5916;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5C0D; JS &#x7684; Event Loop &#x6A5F;&#x5236;&#x6FC0;&#x8D77;&#x6C42;&#x77E5;&#x617E;&#xFF0C;&#x53BB;&#x627E;&#x5C0B;&#x66F4;&#x591A;&#x7DB2;&#x8DEF;&#x8CC7;&#x6599;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4E00;&#x53E5;&#x300C;&#x6539;&#x7528; for...of &#x53EF;&#x4EE5;&#x8036;&#xFF01;&#x5C31;&#x9019;&#x6A23;&#x5427;&#x3002;&#x300D;</p>
+<h3 id="references">References</h3>
+<p><a href="https://pjchender.blogspot.com/2017/08/javascript-learn-event-loop-stack-queue.html" target="_blank">https://pjchender.blogspot.com/2017/08/javascript-learn-event-loop-stack-queue.html</a>
+<a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ&amp;t=2s" target="_blank">https://www.youtube.com/watch?v=8aGhZQkoFbQ&amp;t=2s</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="js.html" class="navigation navigation-prev " aria-label="Previous page: Don't skip javascript">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="var-let-const/basics.html" class="navigation navigation-next " aria-label="Next page: 回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"async / await 在 forEach 裡面不起作用？你是否搞錯了什麼","level":"1.4.1","depth":2,"next":{"title":"回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇","level":"1.4.2","depth":2,"path":"articles/js/var-let-const/basics.md","ref":"./articles/js/var-let-const/basics.md","articles":[]},"previous":{"title":"Don't skip javascript","level":"1.4","depth":1,"path":"articles/js/js.md","ref":"./articles/js/js.md","articles":[{"title":"async / await 在 forEach 裡面不起作用？你是否搞錯了什麼","level":"1.4.1","depth":2,"path":"articles/js/forEach-async-await.md","ref":"./articles/js/forEach-async-await.md","articles":[]},{"title":"回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇","level":"1.4.2","depth":2,"path":"articles/js/var-let-const/basics.md","ref":"./articles/js/var-let-const/basics.md","articles":[]},{"title":"回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇","level":"1.4.3","depth":2,"path":"articles/js/var-let-const/advanced.md","ref":"./articles/js/var-let-const/advanced.md","articles":[]},{"title":"關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？","level":"1.4.4","depth":2,"path":"articles/js/deep-copy/basics.md","ref":"./articles/js/deep-copy/basics.md","articles":[]},{"title":"面試官：前面講了這麼多，還是你直接實作一個深拷貝給我看看？","level":"1.4.5","depth":2,"path":"articles/js/deep-copy/implement.md","ref":"./articles/js/deep-copy/implement.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","copy-code-button","ga","-sharing","sharing-plus@^0.0.2","my-toolbar","expandable-chapters"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"printLog":false,"multipleH1":false,"mode":"float","showGoTop":true,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"my-toolbar":{"buttons":[{"label":"Github","icon":"fa fa-github","url":"https://github.com/YuAnWu0000","position":"right","text":"Github","target":"_blank"},{"label":"LinkedIn","icon":"fa fa-linkedin","url":"https://www.linkedin.com/in/yu-an-wu-486ab5160/","position":"right","text":"LinkedIn","target":"_blank"}]},"copy-code-button":{},"ga":{"configuration":"auto","token":""},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"edit-link":{"label":"Edit This Page","base":"https://yuanwu0000.github.io/zachary-gitbook"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{}},"gitbook":"*"},"file":{"path":"articles/js/forEach-async-await.md","mtime":"2025-03-05T09:14:54.862Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-03-05T09:15:20.469Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-my-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,695 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="gitlab-ci.html" />
+    
+    
+    <link rel="prev" href="../monitor-container.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    關於我
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../vue/vue.html">
+            
+                <a href="../../vue/vue.html">
+            
+                    
+                    Vue the world differently
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../react/react.html">
+            
+                <a href="../../react/react.html">
+            
+                    
+                    React with surprise
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../react/cra-url-issue.html">
+            
+                <a href="../../react/cra-url-issue.html">
+            
+                    
+                    Cannot resolve url() ─ CRA 用 url() 引入圖片的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../react/env.html">
+            
+                <a href="../../react/env.html">
+            
+                    
+                    常常在VM裡面改東改西? 你需要的是.env
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../js/js.html">
+            
+                <a href="../../js/js.html">
+            
+                    
+                    Don't skip javascript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../js/forEach-async-await.html">
+            
+                <a href="../../js/forEach-async-await.html">
+            
+                    
+                    async / await 在 forEach 裡面不起作用？你是否搞錯了什麼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../js/var-let-const/basics.html">
+            
+                <a href="../../js/var-let-const/basics.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../js/var-let-const/advanced.html">
+            
+                <a href="../../js/var-let-const/advanced.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../js/deep-copy/basics.html">
+            
+                <a href="../../js/deep-copy/basics.html">
+            
+                    
+                    關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../js/deep-copy/implement.html">
+            
+                <a href="../../js/deep-copy/implement.html">
+            
+                    
+                    面試官：前面講了這麼多，還是你直接實作一個深拷貝給我看看？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../css/css.html">
+            
+                <a href="../../css/css.html">
+            
+                    
+                    Success of css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../css/atomic-cssInJs-cssModule/atomic.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/atomic.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談體驗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../css/atomic-cssInJs-cssModule/scalability.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/scalability.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談擴展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../css/atomic-cssInJs-cssModule/performance.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/performance.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談效能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../css/how-to-make-a-marquee.html">
+            
+                <a href="../../css/how-to-make-a-marquee.html">
+            
+                    
+                    製作跑馬燈一點都不難，你只需要知道這些小訣竅
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../devops.html">
+            
+                <a href="../devops.html">
+            
+                    
+                    Dive into the world of DevOps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../deploy-your-project.html">
+            
+                <a href="../deploy-your-project.html">
+            
+                    
+                    搞定 Docker 跟 Nginx，輕鬆部署你的專案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../add-ssl.html">
+            
+                <a href="../add-ssl.html">
+            
+                    
+                    讓你的網站更安全，加上 SSL 憑證吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../monitor-container.html">
+            
+                <a href="../monitor-container.html">
+            
+                    
+                    我的服務還好嗎？監控容器的小撇步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.4" data-path="gitlab-runner.html">
+            
+                <a href="gitlab-runner.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="gitlab-ci.html">
+            
+                <a href="gitlab-ci.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../others/others.html">
+            
+                <a href="../../others/others.html">
+            
+                    
+                    Others
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../others/my-first-oidc-research.html">
+            
+                <a href="../../others/my-first-oidc-research.html">
+            
+                    
+                    初探 OIDC ─ 揭開我們每天都在使用，卻不了解的黑盒子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../others/cypress.html">
+            
+                <a href="../../others/cypress.html">
+            
+                    
+                    Cypress ─ 一款超強大的 E2E test framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x89E3;&#x653E;&#x5DE5;&#x7A0B;&#x5E2B;&#x7684;&#x96D9;&#x624B;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x597D;&#x7684;-cicd-&#x2500;-&#x641E;&#x5B9A;-gitlab-runner--executor">&#x89E3;&#x653E;&#x5DE5;&#x7A0B;&#x5E2B;&#x7684;&#x96D9;&#x624B;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x597D;&#x7684; CI/CD &#x2500; &#x641E;&#x5B9A; gitlab-runner + executor</h1>
+<p><img src="../../../images/gitlab-ci/meme.png" width="550"></p>
+<p>&#x8EAB;&#x70BA;&#x4E00;&#x4F4D;&#x5FD9;&#x788C;&#x7684;&#x5DE5;&#x7A0B;&#x5E2B;&#xFF0C;&#x53F3;&#x624B;&#x63E1;&#x6ED1;&#x9F20;&#xFF0C;&#x5DE6;&#x624B;<del>&#x885B;&#x751F;&#x7D19;</del>&#xFF0C;&#x5DE6;&#x624B;&#x6309;&#x9375;&#x76E4;&#xFF0C;&#x6839;&#x672C;&#x4E0D;&#x60F3;&#x984D;&#x5916;&#x82B1;&#x5FC3;&#x529B;&#x5728;&#x624B;&#x52D5;&#x90E8;&#x7F72;&#x4E0A;&#xFF0C;&#x9019;&#x6642;&#x5019;&#x4F60;&#x9700;&#x8981;&#x7684;&#x5C31;&#x662F;&#x4E00;&#x5957;&#x5B8C;&#x6574;&#x7684; CI/CD&#x3002;</p>
+<p>CI/CD &#x7684;&#x6982;&#x5FF5;&#x61C9;&#x8A72;&#x4E0D;&#x7528;&#x591A;&#x505A;&#x89E3;&#x91CB;&#xFF0C;&#x4F46;&#x5728;&#x958B;&#x59CB;&#x9019;&#x4E00;&#x5207;&#x4E4B;&#x524D;&#xFF0C;&#x6709;&#x4EBA;&#x9084;&#x4E0D;&#x4E86;&#x89E3; gitlab CI &#x904B;&#x4F5C;&#x6A5F;&#x5236;&#x7684;&#x55CE;&#xFF1F;&#x6211;&#x5148;&#x5728;&#x9019;&#x908A;&#x9644;&#x4E0A;&#x8266;&#x9577;&#x5927;&#x5927;&#x88FD;&#x7684;&#x5716;&#xFF0C;&#x975E;&#x5E38;&#x6DFA;&#x986F;&#x6613;&#x61C2;&#xFF1A;<br></p>
+<p><img src="../../../images/gitlab-ci/runner.png" width="700"></p>
+<p>&#x7C21;&#x55AE;&#x8AAA;&#xFF0C;&#x7576;&#x4F60;&#x8DDF; Gitlab &#x505A;&#x51FA;&#x4E92;&#x52D5;&#xFF0C;&#x4F8B;&#x5982;: &#x4E0B; tag &#x6216;&#x662F; push commit&#xFF0C;Gitlab &#x6703;&#x81EA;&#x52D5;&#x89F8;&#x767C;&#x4F60;&#x5C08;&#x6848;&#x4E2D;&#x7684; <code>.gitlab-ci.yml</code>&#x3002;<br>
+&#x63A5;&#x8457; Gitlab &#x6703;&#x9700;&#x8981;&#x627E;&#x4E00;&#x53F0; server &#x4F86;&#x57F7;&#x884C;<code>.gitlab-ci.yml</code>&#x88E1;&#x9762;&#x7684;&#x6307;&#x4EE4;(Jobs)&#xFF0C;&#x9019;&#x500B;&#x57F7;&#x884C;&#x7684; server &#x5C31;&#x53EB;&#x505A; <strong>gitlab-runner</strong>&#x3002;<br>
+&#x6700;&#x5F8C; Gitlab &#x6703;&#x5C07; gitlab-runner &#x7684;&#x57F7;&#x884C;&#x904E;&#x7A0B;&#x8DDF;&#x57F7;&#x884C;&#x7D50;&#x679C;&#x986F;&#x793A;&#x65BC; Pipeline &#x7D66;&#x4F60;&#x770B;&#x3002;<br></p>
+<p>&#x8B1B;&#x5B8C;&#x4E86;&#x7406;&#x8AD6;&#xFF0C;&#x5C31;&#x8B93;&#x6211;&#x5011;&#x958B;&#x59CB;&#x52D5;&#x624B;&#x5BE6;&#x4F5C;&#x5427;~</p>
+<h3 id="1-install-gitlab-runner">1. Install gitlab-runner</h3>
+<p>&#x9996;&#x5148;&#xFF0C;&#x5148;&#x9032;&#x5165;&#x4F60;&#x7684;&#x90E8;&#x7F72;&#x6A5F;&#x5668;&#x5167;&#x7684; terminal&#xFF0C;&#x9019;&#x4E00;&#x6B65;&#x9A5F;&#x4E3B;&#x8981;&#x662F;&#x5C07; runner &#x5B89;&#x88DD;&#x5728;&#x6A5F;&#x5668;&#x4E0A;&#xFF0C;&#x9019;&#x6A23;&#x4E4B;&#x5F8C;&#x8DD1; CI &#x5C31;&#x6703;&#x5728;&#x9019;&#x53F0;&#x6A5F;&#x5668;&#x4E0A;&#x8DD1;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x6703;&#x4EE5; download binary file &#x4F86;&#x793A;&#x7BC4;&#xFF0C;&#x6216;&#x662F;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;<code>apt install</code>:<br>
+<a href="https://docs.gitlab.com/runner/install/linux-repository.html?tab=Debian%2FUbuntu%2FMint#install-gitlab-runner" target="_blank">https://docs.gitlab.com/runner/install/linux-repository.html?tab=Debian%2FUbuntu%2FMint#install-gitlab-runner</a></p>
+<pre><code class="lang-bash"><span class="hljs-comment"># Linux x86-64</span>
+sudo curl -L --output /usr/<span class="hljs-built_in">local</span>/bin/gitlab-runner <span class="hljs-string">&quot;https://s3.dualstack.us-east-1.amazonaws.com/gitlab-runner-downloads/latest/binaries/gitlab-runner-linux-amd64&quot;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x5728;&#x5167;&#x7DB2;&#x9700;&#x8981;&#x900F;&#x904E; proxy &#x624D;&#x80FD;&#x5C0E;&#x5411;&#x5916;&#x90E8;&#x7DB2;&#x7AD9;:<br></p>
+<pre><code class="lang-bash"><span class="hljs-comment"># Linux x86-64</span>
+sudo curl -L --output /usr/<span class="hljs-built_in">local</span>/bin/gitlab-runner --proxy <span class="hljs-string">&quot;http://your.proxy.ip:port&quot;</span> <span class="hljs-string">&quot;https://s3.dualstack.us-east-1.amazonaws.com/gitlab-runner-downloads/latest/binaries/gitlab-runner-linux-amd64&quot;</span>
+</code></pre>
+<p>&#x63A5;&#x8457;&#x4F60;&#x9700;&#x8981;&#x7D66;&#x9019;&#x500B;&#x4E0B;&#x8F09;&#x7684; binary file &#x53EF;&#x57F7;&#x884C;&#x7684;&#x6B0A;&#x9650;:<br></p>
+<pre><code class="lang-bash">sudo chmod +x /usr/<span class="hljs-built_in">local</span>/bin/gitlab-runner
+</code></pre>
+<p>&#x518D;&#x4F86;&#x4F60;&#x9700;&#x8981;&#x65B0;&#x589E;&#x4E00;&#x500B;&#x540D;&#x70BA; gitlab-runner &#x7684;&#x4F7F;&#x7528;&#x8005;</p>
+<pre><code class="lang-bash">sudo useradd --comment <span class="hljs-string">&apos;GitLab Runner&apos;</span> --create-home gitlab-runner --shell /bin/bash
+</code></pre>
+<p>&#x9019;&#x6642;&#x5019;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x9806;&#x4FBF;&#x7D66;&#x4ED6; sudo &#x514D;&#x8F38;&#x5BC6;&#x78BC;&#x7684;&#x6B0A;&#x9650;&#xFF0C;&#x9019;&#x6A23;&#x4E4B;&#x5F8C;&#x8DD1; CI &#x6703;&#x65B9;&#x4FBF;&#x4E00;&#x4E9B;:<br>
+&#x6307;&#x4EE4;&#x53EF;&#x53C3;&#x8003;<a href="https://stackoverflow.com/questions/19383887/how-to-use-sudo-in-build-script-for-gitlab-ci" target="_blank">&#x9019;&#x88E1;</a>&#x3002;</p>
+<p><strong>&#x6700;&#x5F8C;&#x5C31;&#x662F;&#x5B89;&#x88DD;&#x4E26;&#x555F;&#x52D5; gitlab-runner &#x4E86;:</strong></p>
+<pre><code class="lang-bash">sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
+sudo gitlab-runner start
+</code></pre>
+<blockquote>
+<h3 id="&#x5728;&#x6A5F;&#x5668;&#x4E0A;&#x5B89;&#x88DD;-gitlab-runner-&#x5F8C;&#xFF0C;&#x63A5;&#x8457;&#x5C31;&#x662F;&#x60F3;&#x8FA6;&#x6CD5;&#x8DDF;&#x4F60;&#x7684;-gitlab-repo-&#x9023;&#x52D5;&#x4E86;">&#x5728;&#x6A5F;&#x5668;&#x4E0A;&#x5B89;&#x88DD; gitlab-runner &#x5F8C;&#xFF0C;&#x63A5;&#x8457;&#x5C31;&#x662F;&#x60F3;&#x8FA6;&#x6CD5;&#x8DDF;&#x4F60;&#x7684; Gitlab repo &#x9023;&#x52D5;&#x4E86;~</h3>
+</blockquote>
+<h3 id="register-gitlab-runner">Register gitlab-runner</h3>
+<p>&#x9019;&#x500B;&#x6B65;&#x9A5F;&#x7684;&#x76EE;&#x7684;&#x662F;&#x8981;&#x5C07; gitlab-runner &#x8207;&#x4F60;&#x7684;&#x5C08;&#x6848;<strong>&#x5EFA;&#x7ACB;&#x95DC;&#x806F;</strong>&#xFF0C;&#x4E26;&#x4E14;&#x6307;&#x5B9A; <strong>executer</strong>&#x3002;<br>
+&#x597D;&#x5566;&#xFF01;&#x53C8;&#x4E00;&#x500B;&#x65B0;&#x540D;&#x8A5E;&#xFF0C;&#x7A76;&#x7ADF;&#x4EC0;&#x9EBC;&#x662F; executer &#x5462;&#xFF1F;<br></p>
+<p>&#x5BB9;&#x8A31;&#x6211;&#x518D;&#x5EA6;&#x5F15;&#x7528;&#x8266;&#x9577;&#x5927;&#x5927;&#x7684;&#x5716;:<br>
+<img src="../../../images/gitlab-ci/executer.png" width="600"></p>
+<p>&#x6211;&#x8A8D;&#x70BA;&#x53EF;&#x4EE5;&#x628A; executer &#x7C21;&#x55AE;&#x60F3;&#x6210;&#x57F7;&#x884C;&#x74B0;&#x5883;&#xFF0C;&#x7576;&#x4E00;&#x500B; CI job &#x88AB;&#x6307;&#x6D3E;&#x5230; gitlab-runner&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x9078;&#x64C7;&#x5C0D;&#x61C9;&#x7684;&#x57F7;&#x884C;&#x74B0;&#x5883;&#x4F86;&#x57F7;&#x884C;&#x5B83;&#x3002;<br></p>
+<p>&#x6700;&#x76F4;&#x89C0;&#x7684;&#x65B9;&#x5F0F;&#x662F; <strong>Shell</strong>&#xFF0C;&#x4EA6;&#x5373;&#x76F4;&#x63A5;&#x5728;&#x8A72; runner server &#x4E0A;&#x57F7;&#x884C; CI Job&#x3002;<br>
+&#x6700;&#x5E38;&#x7528;&#x7684;&#x662F; <strong>Docker</strong>&#xFF0C;&#x6307;&#x7684;&#x662F;&#x5728; runner &#x4E0A;&#x958B;&#x4E00;&#x500B; container &#x4E26;&#x5728; container &#x5167;&#x57F7;&#x884C; CI&#x3002;<br>
+&#x7576;&#x7136;&#x4E5F;&#x6709;&#x5176;&#x4ED6;&#x65B9;&#x5F0F;&#x4F9B;&#x9078;&#x64C7;&#xFF0C;&#x6BD4;&#x5982;&#x5716;&#x4E2D;&#x7684; SSH&#xFF0C;&#x53EF;&#x8B93;&#x4F60;&#x9023;&#x7DDA;&#x81F3;&#x5176;&#x4ED6;&#x4E3B;&#x6A5F;&#x518D;&#x57F7;&#x884C; CI&#x3002;<br>
+&#x5269;&#x9918;&#x5176;&#x4ED6;&#x9078;&#x9805;&#x53EF;&#x53C3;&#x8003;<a href="https://docs.gitlab.com/runner/executors/" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x4EF6;</a>&#x3002;<br></p>
+<p>&#x8A00;&#x6B78;&#x6B63;&#x50B3;&#xFF0C;&#x9019;&#x500B;&#x968E;&#x6BB5;&#x76EE;&#x7684;&#x662F;&#x8981;&#x8A3B;&#x518A; runner &#x5230;&#x5C0D;&#x61C9;&#x7684; Gitlab repo&#xFF0C;&#x56E0;&#x6B64;&#x8ACB;&#x5148;&#x6253;&#x958B; Gitlab &#x5230; /Settings/CI/CD/Runners &#x4E26;&#x9EDE;&#x64CA; &quot;New Project Runner&quot;:<br></p>
+<p><img src="../../../images/gitlab-ci/create_runner.png" width="1000"></p>
+<p>&#x63A5;&#x8457;&#x8A2D;&#x5B9A;&#x5167;&#x5BB9;:<br></p>
+<p><img src="../../../images/gitlab-ci/set_runner.png" width="1000"></p>
+<ul>
+<li><strong>Tags</strong>: &#x4F5C;&#x70BA; CI Job &#x6307;&#x5B9A; Runner &#x7684;&#x6A19;&#x7C64;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x53D6;&#x540D;&#xFF0C;&#x4E5F;&#x53EF;&#x8A2D;&#x5B9A;&#x6210;&#x591A;&#x500B;&#xFF0C;&#x4E2D;&#x9593;&#x4EE5;&#x9017;&#x865F;&#x5206;&#x9694;&#x3002;</li>
+<li><strong>Run untagged jobs</strong>: &#x6709;&#x4E9B;&#x6C92;&#x6709;&#x6307;&#x5B9A; tag &#x7684; job &#x6703;&#x5206;&#x6D3E;&#x5230;&#x4EFB;&#x610F; runner &#x57F7;&#x884C;&#xFF0C;&#x4F60;&#x8981;&#x4E0D;&#x8981;&#x958B;&#x653E;&#x9019;&#x500B; runner &#x53EF;&#x4EE5;&#x57F7;&#x884C;&#x90A3;&#x4E9B;&#x6C92;&#x6709; tag &#x7684; jobs&#x3002;</li>
+<li><strong>Protected</strong>: &#x53EA;&#x80FD;&#x57F7;&#x884C; protected branch &#x4E0A;&#x9762;&#x7684; CI job (&#x9810;&#x8A2D;&#x53EA;&#x6709; Master branch &#x662F; protected)&#x3002;</li>
+<li><strong>Lock to current projects</strong>: &#x53EA;&#x80FD;&#x57F7;&#x884C;&#x7576;&#x524D;&#x5C08;&#x6848;&#x7684; CI job&#x3002;</li>
+</ul>
+<p>&#x518D;&#x4F86;&#x9032;&#x884C;&#x8A3B;&#x518A;:<br></p>
+<p><img src="../../../images/gitlab-ci/register_runner.png" width="1000"></p>
+<p>&#x9078;&#x64C7;&#x7CFB;&#x7D71;&#x5F8C;&#xFF0C;Step1 &#x6703;&#x6709;&#x4E00;&#x9023;&#x4E32;&#x7684;&#x8F38;&#x5165;&#xFF0C;&#x53C3;&#x6578;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x5E7E;&#x9805;:<br></p>
+<pre><code class="lang-bash">sudo gitlab-runner register \
+  --non-interactive \
+  --url <span class="hljs-string">&quot;https://gitlab.com/&quot;</span> \
+  --token <span class="hljs-string">&quot;<span class="hljs-variable">$RUNNER_TOKEN</span>&quot;</span> \
+  --executor <span class="hljs-string">&quot;docker&quot;</span> \
+  --docker-image alpine:latest \
+  --description <span class="hljs-string">&quot;docker-runner&quot;</span>
+</code></pre>
+<ul>
+<li><p><strong><em>url</em></strong>: &#x9810;&#x8A2D;&#x662F;<code>https://gitlab.com/</code>&#xFF0C;&#x5982;&#x679C;&#x516C;&#x53F8;&#x81EA;&#x67B6; Gitlab &#x7684;&#x8A71;&#x8ACB;&#x8F38;&#x5165;<code>http://gitlab.${domain}.com/</code>&#x3002;</p>
+</li>
+<li><p><strong><em>token</em></strong>: &#x6B64;&#x70BA; <strong>runner authentication token</strong>&#xFF0C;&#x56E0;&#x70BA;&#x662F;&#x79C1;&#x5BC6;&#x8CC7;&#x8A0A;&#x6240;&#x4EE5;&#x53EA;&#x6703;&#x51FA;&#x73FE;&#x5728;&#x6B64;&#x9801;&#xFF0C;&#x4E4B;&#x5F8C;&#x5C07;&#x7121;&#x6CD5;&#x67E5;&#x770B; (&#x5225;&#x64D4;&#x5FC3;&#xFF0C;&#x9019;&#x500B;&#x7BC4;&#x4F8B; Runner &#x5F8C;&#x4F86;&#x88AB;&#x6211;&#x522A;&#x9664;&#x4E86;)&#x3002;<br>
+<strong>&#x6CE8;&#x610F;&#xFF1A;Gitlab v15 &#x4EE5;&#x524D;&#x662F;&#x4F7F;&#x7528; registration token&#xFF0C;registration token &#x5C07;&#x5728; Gitlab v18 &#x4EE5;&#x5F8C;&#x88AB;&#x68C4;&#x7528;&#xFF0C;&#x8A73;&#x60C5;&#x8ACB;&#x898B; <a href="https://docs.gitlab.com/ee/ci/runners/new_creation_workflow.html" target="_blank">&#x9019;&#x88E1;</a>&#x3002;</strong><br></p>
+</li>
+<li><p><strong><em>executor</em></strong>: &#x5448;&#x4E0A;&#x6240;&#x8FF0;&#xFF0C;&#x56E0;&#x70BA;&#x6211;&#x7684;&#x5C08;&#x6848;&#x5DF2;&#x7D93;&#x6709;<code>docker-compose</code>&#x6240;&#x4EE5;&#x6211;&#x9019;&#x908A;&#x76F4;&#x63A5;&#x9078;&#x64C7; <strong>Shell</strong>&#xFF0C;&#x5982;&#x679C;&#x9078;&#x64C7; <strong>docker</strong> &#x8ACB;&#x8A18;&#x5F97;&#x7D66;&#x4E00;&#x500B;&#x9810;&#x8A2D;&#x7684; docker-image&#x3002;</p>
+</li>
+</ul>
+<p>&#x5176;&#x4ED6;&#x9078;&#x9805;&#x70BA; optional&#xFF0C;&#x53EF;&#x8DF3;&#x904E;&#x3002;&#x8F38;&#x5165;&#x4E4B;&#x5F8C;&#x4F60;&#x53EF;&#x4EE5;:</p>
+<pre><code class="lang-bash">gitlab-runner run
+</code></pre>
+<p>&#x6210;&#x529F;&#x5C31;&#x4EE3;&#x8868;&#x4F60;&#x5B8C;&#x6210;&#x8A3B;&#x518A; gitlab-runner &#x4E86; &#x1F389;&#xFF01;&#x7576;&#x7136;&#xFF0C;&#x5225;&#x5FD8;&#x4E86;&#x6253;&#x958B;<code>/etc/gitlab-runner/config.toml</code>&#x770B;&#x770B;&#x4E0A;&#x9762;&#x9019;&#x4E9B;&#x53C3;&#x6578;&#x662F;&#x5426;&#x8A2D;&#x5B9A;&#x6B63;&#x78BA;&#x5594;~<br></p>
+<p>&#x9019;&#x4E9B;&#x8A2D;&#x5B9A;&#x5982;&#x679C;&#x65E5;&#x5F8C;&#x60F3;&#x66F4;&#x6539;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x6539; <code>config.toml</code>&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x8A3B;&#x518A;&#x3002;</p>
+<blockquote>
+<p>&#x88DC;&#x5145;&#x4E00;&#x500B;&#x6211;&#x5728;&#x516C;&#x53F8;&#x5167;&#x7DB2;&#x8E29;&#x904E;&#x7684;&#x5751;&#xFF1A;&#x4F7F;&#x7528; docker executor &#x7684;&#x6642;&#x5019;&#xFF0C;&#x82E5;&#x6709;&#x5C07; <code>etc/hosts</code> &#x8A2D;&#x5B9A;&#x50B3;&#x5165; container &#x7684;&#x9700;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;<code>/etc/gitlab-runner/config.toml</code>&#x5167;&#x52A0;&#x4E0A;<code>extra_hosts = [&quot;example.com:x.x.x.x&quot;]</code>&#xFF0C;&#x901A;&#x5E38;&#x516C;&#x53F8;&#x6709;&#x81EA;&#x67B6; DNS server &#x7684;&#x6642;&#x5019;&#x6703;&#x9047;&#x5230;&#x3002;</p>
+</blockquote>
+<h3 id="&#x7D50;&#x8A9E;">&#x7D50;&#x8A9E;</h3>
+<p>&#x9019;&#x500B;&#x6642;&#x5019;&#x4F60;&#x7684; gitlab-runner &#x5DF2;&#x7D93;&#x6E96;&#x5099;&#x5C31;&#x7DD2;&#xFF0C;&#x63A5;&#x8457;&#x5C31;&#x53EF;&#x4EE5;&#x4F86;&#x6B63;&#x5F0F;&#x64B0;&#x5BEB;<code>.gitlab-ci.yml</code>&#x4E86;&#xFF0C;&#x6211;&#x5011;&#x4E0B;&#x6B21;&#x898B; &#x1F44B;&#xFF01;</p>
+<p><strong>&#x95DC;&#x65BC;&#x5982;&#x4F55;&#x64B0;&#x5BEB; CI &#x53EF;&#x53C3;&#x8003;&#xFF1A;</strong></p>
+<ul>
+<li><a href="https://yuanwu0000.github.io/zachary-gitbook/articles/devops/gitlab-ci/gitlab-ci.html" target="_blank">&#x89E3;&#x653E;&#x5DE5;&#x7A0B;&#x5E2B;&#x7684;&#x96D9;&#x624B;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x597D;&#x7684; CI/CD &#x2500; &#x641E;&#x5B9A; gitlab-ci + &#x74B0;&#x5883;&#x8B8A;&#x6578;</a></li>
+</ul>
+<h3 id="references">References</h3>
+<p><a href="https://chengweichen.com/2021/03/gitlab-ci-executor.html" target="_blank">GitLab CI &#x4E4B; Runner &#x7684; Executor &#x8A72;&#x5982;&#x4F55;&#x9078;&#x64C7;&#xFF1F;</a><br>
+<a href="https://pin-yi.me/blog/git-or-cicd/gitlab-cicd/#%e8%87%aa%e6%9e%b6-runner-specific-runners" target="_blank">&#x5982;&#x4F55;&#x5F9E;&#x982D;&#x6253;&#x9020;&#x5C08;&#x5C6C;&#x7684; GitLab CI/CD</a><br>
+<a href="https://docs.gitlab.com/runner/install/linux-manually.html" target="_blank">Install GitLab Runner manually on GNU/Linux</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../monitor-container.html" class="navigation navigation-prev " aria-label="Previous page: 我的服務還好嗎？監控容器的小撇步">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="gitlab-ci.html" class="navigation navigation-next " aria-label="Next page: 解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor","level":"1.6.4","depth":2,"next":{"title":"解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數","level":"1.6.5","depth":2,"path":"articles/devops/gitlab-ci/gitlab-ci.md","ref":"./articles/devops/gitlab-ci/gitlab-ci.md","articles":[]},"previous":{"title":"我的服務還好嗎？監控容器的小撇步","level":"1.6.3","depth":2,"path":"articles/devops/monitor-container.md","ref":"./articles/devops/monitor-container.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","copy-code-button","ga","-sharing","sharing-plus@^0.0.2","my-toolbar","expandable-chapters"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"printLog":false,"multipleH1":false,"mode":"float","showGoTop":true,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"my-toolbar":{"buttons":[{"label":"Github","icon":"fa fa-github","url":"https://github.com/YuAnWu0000","position":"right","text":"Github","target":"_blank"},{"label":"LinkedIn","icon":"fa fa-linkedin","url":"https://www.linkedin.com/in/yu-an-wu-486ab5160/","position":"right","text":"LinkedIn","target":"_blank"}]},"copy-code-button":{},"ga":{"configuration":"auto","token":""},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"edit-link":{"label":"Edit This Page","base":"https://yuanwu0000.github.io/zachary-gitbook"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{}},"gitbook":"*"},"file":{"path":"articles/devops/gitlab-ci/gitlab-runner.md","mtime":"2025-03-05T09:14:54.861Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-03-05T09:15:20.469Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-my-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

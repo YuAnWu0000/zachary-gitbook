@@ -1,0 +1,725 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Cannot resolve url() ─ CRA 用 url() 引入圖片的坑 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="env.html" />
+    
+    
+    <link rel="prev" href="react.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    關於我
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../vue/vue.html">
+            
+                <a href="../vue/vue.html">
+            
+                    
+                    Vue the world differently
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="react.html">
+            
+                <a href="react.html">
+            
+                    
+                    React with surprise
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="cra-url-issue.html">
+            
+                <a href="cra-url-issue.html">
+            
+                    
+                    Cannot resolve url() ─ CRA 用 url() 引入圖片的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="env.html">
+            
+                <a href="env.html">
+            
+                    
+                    常常在VM裡面改東改西? 你需要的是.env
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../js/js.html">
+            
+                <a href="../js/js.html">
+            
+                    
+                    Don't skip javascript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../js/forEach-async-await.html">
+            
+                <a href="../js/forEach-async-await.html">
+            
+                    
+                    async / await 在 forEach 裡面不起作用？你是否搞錯了什麼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../js/var-let-const/basics.html">
+            
+                <a href="../js/var-let-const/basics.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../js/var-let-const/advanced.html">
+            
+                <a href="../js/var-let-const/advanced.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../js/deep-copy/basics.html">
+            
+                <a href="../js/deep-copy/basics.html">
+            
+                    
+                    關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../js/deep-copy/implement.html">
+            
+                <a href="../js/deep-copy/implement.html">
+            
+                    
+                    面試官：前面講了這麼多，還是你直接實作一個深拷貝給我看看？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../css/css.html">
+            
+                <a href="../css/css.html">
+            
+                    
+                    Success of css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                <a href="../css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../css/atomic-cssInJs-cssModule/atomic.html">
+            
+                <a href="../css/atomic-cssInJs-cssModule/atomic.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談體驗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../css/atomic-cssInJs-cssModule/scalability.html">
+            
+                <a href="../css/atomic-cssInJs-cssModule/scalability.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談擴展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../css/atomic-cssInJs-cssModule/performance.html">
+            
+                <a href="../css/atomic-cssInJs-cssModule/performance.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談效能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../css/how-to-make-a-marquee.html">
+            
+                <a href="../css/how-to-make-a-marquee.html">
+            
+                    
+                    製作跑馬燈一點都不難，你只需要知道這些小訣竅
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../devops/devops.html">
+            
+                <a href="../devops/devops.html">
+            
+                    
+                    Dive into the world of DevOps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../devops/deploy-your-project.html">
+            
+                <a href="../devops/deploy-your-project.html">
+            
+                    
+                    搞定 Docker 跟 Nginx，輕鬆部署你的專案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../devops/add-ssl.html">
+            
+                <a href="../devops/add-ssl.html">
+            
+                    
+                    讓你的網站更安全，加上 SSL 憑證吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../devops/monitor-container.html">
+            
+                <a href="../devops/monitor-container.html">
+            
+                    
+                    我的服務還好嗎？監控容器的小撇步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../devops/gitlab-ci/gitlab-runner.html">
+            
+                <a href="../devops/gitlab-ci/gitlab-runner.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../devops/gitlab-ci/gitlab-ci.html">
+            
+                <a href="../devops/gitlab-ci/gitlab-ci.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../others/others.html">
+            
+                <a href="../others/others.html">
+            
+                    
+                    Others
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../others/my-first-oidc-research.html">
+            
+                <a href="../others/my-first-oidc-research.html">
+            
+                    
+                    初探 OIDC ─ 揭開我們每天都在使用，卻不了解的黑盒子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../others/cypress.html">
+            
+                <a href="../others/cypress.html">
+            
+                    
+                    Cypress ─ 一款超強大的 E2E test framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Cannot resolve url() ─ CRA 用 url() 引入圖片的坑</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="cannot-resolve-url-&#x2500;-cra-&#x7528;-url-&#x5F15;&#x5165;&#x5716;&#x7247;&#x7684;&#x5751;">Cannot resolve url() &#x2500; CRA &#x7528; url() &#x5F15;&#x5165;&#x5716;&#x7247;&#x7684;&#x5751;</h1>
+<p><img src="../../images/cra-url-Issue/meme.png" width="450"></p>
+<h3 id="&#x5C08;&#x6848;&#x4F7F;&#x7528;-create-react-app--tailwind-css&#xFF0C;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x5BEB;&#x6CD5;&#x6642;&#x9047;&#x5230;&#x8DEF;&#x5F91;&#x7121;&#x6CD5;&#x89E3;&#x6790;&#x7684;&#x554F;&#x984C;">&#x5C08;&#x6848;&#x4F7F;&#x7528; create-react-app + Tailwind CSS&#xFF0C;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x5BEB;&#x6CD5;&#x6642;&#x9047;&#x5230;&#x8DEF;&#x5F91;&#x7121;&#x6CD5;&#x89E3;&#x6790;&#x7684;&#x554F;&#x984C;</h3>
+<p><code>&lt;div className=&quot;bg-[url(&apos;/images/cat.jpg&apos;)]&quot;&gt;</code></p>
+<p>&#x63A8;&#x6E2C;&#x539F;&#x56E0;&#x61C9;&#x8A72;&#x8DDF; CRA &#x9810;&#x8A2D;&#x7684; webpack &#x8A2D;&#x5B9A;&#x6709;&#x95DC;&#xFF0C;&#x6211;&#x5728;&#x7DB2;&#x4E0A;&#x627E;&#x5230;&#x9019;&#x6A23;&#x4E00;&#x500B; issue&#xFF0C;&#x5E95;&#x4E0B;&#x54C0;&#x9D3B;&#x904D;&#x91CE;&#xFF1A;
+<a href="https://github.com/facebook/create-react-app/issues/9937" target="_blank">https://github.com/facebook/create-react-app/issues/9937</a></p>
+<p>&#x5927;&#x5BB6;&#x90FD;&#x8868;&#x793A;&#x628A;&#x5716;&#x7247;&#x653E;&#x5728; public &#x88E1;&#x9762;&#x6703;&#x8B80;&#x4E0D;&#x5230;&#xFF0C;&#x5C31;&#x5728;&#x7FA4;&#x773E;&#x4E00;&#x7247;&#x7126;&#x982D;&#x721B;&#x984D;&#x6642;<br></p>
+<p>&#x6211;&#x770B;&#x5230;&#x5728; issue &#x4E2D;&#x6709;&#x4EBA;&#x5EFA;&#x8B70;&#xFF0C;&#x5C07;&#x4F60;&#x7684;&#x8DEF;&#x5F91;&#x6539;&#x70BA;&#x9019;&#x6A23;&#xFF1A;</p>
+<p><code>&lt;div className=&quot;bg-[url(&apos;~/public/images/cat.jpg&apos;)]&quot;&gt;</code></p>
+<p>&#x99AC;&#x4E0A;&#x4F86;&#x770B;&#x770B;&#x9019;&#x7A2E;&#x89E3;&#x6CD5;&#x662F;&#x5426;&#x53EF;&#x884C;<br>
+<img src="../../images/cra-url-issue/noPublic.png" alt="public"></p>
+<p>&#x53EF;&#x4EE5;&#x8036;&#xFF01;&#x5716;&#x7247;&#x6210;&#x529F;&#x51FA;&#x73FE;&#x4E86;&#xFF01;&#x6253;&#x5B8C;&#x6536;&#x5DE5;&#xFF1F;<br>
+<strong>&#x54A6;&#xFF1F;&#x7B49;&#x7B49;.......&#x8DEF;&#x5F91;&#x70BA;&#x4EC0;&#x9EBC;&#x602A;&#x602A;&#x7684;&#xFF1F;</strong></p>
+<h3 id="&#x9019;&#x6642;&#x5019;&#x4F60;&#x6709;&#x5169;&#x500B;&#x9078;&#x64C7;&#xFF0C;&#x8FFD;&#x6839;&#x7A76;&#x67E2;&#x6291;&#x6216;&#x662F;&#x5F97;&#x904E;&#x4E14;&#x904E;">&#x9019;&#x6642;&#x5019;&#x4F60;&#x6709;&#x5169;&#x500B;&#x9078;&#x64C7;&#xFF0C;&#x8FFD;&#x6839;&#x7A76;&#x67E2;&#x6291;&#x6216;&#x662F;&#x5F97;&#x904E;&#x4E14;&#x904E;</h3>
+<p>&#x56E0;&#x70BA;&#x6211;&#x5BE6;&#x5728;&#x662F;&#x592A;&#x597D;&#x5947;&#x4E86;&#xFF0C;&#x65BC;&#x662F;&#x7E7C;&#x7E8C;&#x5F80;&#x4E0B;&#x6ED1; issue&#xFF0C;&#x76F4;&#x81F3;&#x770B;&#x5230;&#x9019;&#x500B;&#x8A55;&#x8AD6;&#xFF1A;</p>
+<p><img src="../../images/cra-url-issue/seo_issue.png" width="1000" height=""></p>
+<p>&#x5927;&#x610F;&#x662F;&#x8AAA;&#x4E0A;&#x9762;&#x90A3;&#x7A2E;&#x65B9;&#x5F0F;&#xFF0C;&#x662F;&#x7531; <code>webpack</code> &#x5E6B;&#x4F60;&#x628A;&#x7528;&#x5230;&#x7684;&#x5716;&#x7247;&#x6253;&#x5305;&#x9032;&#x5C08;&#x6848;&#xFF0C;&#x4E26;&#x4E14;&#x5C07;&#x8DEF;&#x5F91;&#x8A2D;&#x7F6E;&#x70BA; <code>static/media/cat.{hash}.png</code>&#x4F86;&#x5C0D;&#x61C9;&#xFF0C;&#x96D6;&#x7136;&#x4E00;&#x6A23;&#x53EF;&#x4EE5;&#x8F09;&#x5165;&#x5716;&#x7247;&#xFF0C;&#x9019;&#x6A23;&#x6703;&#x5C0E;&#x81F4;&#x6BCF;&#x6B21; build &#x5B8C;&#x90FD;&#x6709;&#x4E0D;&#x540C;&#x7684; hash &#x503C;&#xFF0C;<strong>&#x9019;&#x6703;&#x4EE4; google &#x722C;&#x87F2;&#x722C;&#x4E0D;&#x5230;&#x7A69;&#x5B9A;&#x7684;&#x5716;&#x7247;&#x4F86;&#x6E90;&#xFF0C;&#x56E0;&#x800C;&#x964D;&#x4F4E;&#x7DB2;&#x7AD9; SEO&#x3002;</strong></p>
+<p>&#x65BC;&#x662F;&#x6211;&#x5BE6;&#x969B; build &#x4E86;&#x4E00;&#x4E0B;&#x525B;&#x525B;&#x7684;&#x5C08;&#x6848;&#xFF0C;&#x767C;&#x73FE;&#xFF1A;<br>
+<img src="../../images/cra-url-issue/noPublicBuild.png" alt="no public build"></p>
+<p>&#x78BA;&#x5BE6;&#x5982;&#x4ED6;&#x6240;&#x8AAA;&#x6703;&#x5B58;&#x9032; <code>static/media/</code>&#xFF0C;&#x4E26;&#x4E14;&#x7531;&#x65BC;&#x539F;&#x672C;&#x6211;&#x5011;&#x662F;&#x628A;&#x5716;&#x7247;&#x5B58;&#x5728; <code>public/images</code> &#x88E1;&#x9762;&#xFF0C;&#x56E0;&#x6B64; <code>webpack</code> &#x4E5F;&#x6703;&#x5E6B;&#x4F60;&#x984D;&#x5916;&#x8907;&#x88FD;&#x4E00;&#x4EFD;&#x51FA;&#x4F86;&#xFF0C;&#x5C0E;&#x81F4;&#x6700;&#x7D42; build &#x51FA;&#x4F86;&#x7684;&#x6A94;&#x6848;&#x88E1;&#x7ADF;&#x7136;&#x6709;&#x5169;&#x5F35;&#x4E00;&#x6A23;&#x7684;&#x5716;&#x7247;&#x3002;</p>
+<h3 id="&#x9019;&#x7A2E;&#x7121;&#x8B02;&#x589E;&#x52A0;-bundle-size-&#x7684;&#x4F5C;&#x6CD5;&#x61C9;&#x8A72;&#x8981;&#x60F3;&#x8FA6;&#x6CD5;&#x907F;&#x514D;&#xFF01;&#x6176;&#x5E78;&#x81EA;&#x5DF1;&#x525B;&#x525B;&#x9078;&#x64C7;&#x4E86;&#x8FFD;&#x6839;&#x7A76;&#x67E2;&#xFF01;">&#x9019;&#x7A2E;&#x7121;&#x8B02;&#x589E;&#x52A0; bundle size &#x7684;&#x4F5C;&#x6CD5;&#x61C9;&#x8A72;&#x8981;&#x60F3;&#x8FA6;&#x6CD5;&#x907F;&#x514D;&#xFF01;&#x6176;&#x5E78;&#x81EA;&#x5DF1;&#x525B;&#x525B;&#x9078;&#x64C7;&#x4E86;&#x8FFD;&#x6839;&#x7A76;&#x67E2;&#xFF01;</h3>
+<p><img src="../../images/cra-url-issue/commit.png" width="1000" height=""></p>
+<p>&#x6211;&#x7E7C;&#x7E8C;&#x722C;&#x5B8C;&#x4E86; issue&#xFF0C;&#x767C;&#x73FE;&#x6574;&#x4EF6;&#x4E8B;&#x7684;&#x8D77;&#x56E0;&#x662F;&#x6709;&#x500B; contributor &#x767C;&#x4E86;&#x500B; PR&#xFF0C;&#x900F;&#x904E; <code>resolve-url-loader</code> &#x5957;&#x4EF6;&#x628A;&#x6240;&#x6709;<code>url()</code>&#x7684;&#x6839;&#x76EE;&#x9304;&#x5F9E;<code>public/</code>&#x6539;&#x70BA;<code>src/</code>&#xFF0C;&#x6240;&#x4EE5;&#x624D;&#x6709;&#x4E86;&#x9019;&#x9EBC;&#x591A;&#x7684;&#x4E8B;&#x60C5; (&#x76F8;&#x95DC;commit&#x770B;<a href="https://github.com/facebook/create-react-app/commit/fa648daca1dedd97aec4fa3bae8752c4dcf37e6f" target="_blank">&#x9019;&#x88E1;</a>)&#x3002;</p>
+<p>&#x9019;&#x500B; breaking change &#x4E26;&#x6C92;&#x6709;&#x7279;&#x5225;&#x5728; CRA &#x7684;&#x5B98;&#x65B9;&#x6587;&#x4EF6;&#x4E2D;&#x63D0;&#x5230;&#xFF0C;&#x56E0;&#x6B64;&#x4E5F;&#x8B93;&#x958B;&#x767C;&#x8005;&#x5011;&#x54C0;&#x9D3B;&#x904D;&#x91CE;&#x3002;</p>
+<p>&#x5C31;&#x5728;&#x7FA4;&#x773E;&#x7126;&#x982D;&#x721B;&#x984D;&#x7684;&#x6642;&#x5019;&#x6551;&#x4E16;&#x4E3B;&#x51FA;&#x73FE;&#x4E86;&#xFF1A;<br>
+<img src="../../images/cra-url-issue/url_webpack.png" width="1000" height=""></p>
+<p>&#x9019;&#x4F4D;&#x5927;&#x795E;&#x63D0;&#x5230;&#x53EF;&#x4EE5;&#x5C07;<code>css-loader</code> &#x5167;&#x90E8;&#x7684; <code>url</code> &#x6539;&#x70BA; <code>false</code> &#x4F86;&#x89E3;&#x6C7A;&#x9019;&#x500B;&#x554F;&#x984C;&#xFF01;</p>
+<p>&#x6211;&#x5011;&#x8D95;&#x5FEB;&#x4F86;&#x770B;&#x770B; <code>css-loader</code> &#x7684; options &#x5B9A;&#x7FA9;&#xFF1A;
+<img src="../../images/cra-url-issue/optionsUrlDef.png" alt="url def"></p>
+<p>&#x5F9E;&#x6587;&#x4EF6;&#x4E2D;&#x53EF;&#x4EE5;&#x767C;&#x73FE;&#xFF1A;<br></p>
+<p>&#x7576; <code>url: true</code>&#xFF08;&#x9810;&#x8A2D;&#x503C;&#xFF09;&#x6642;&#xFF0C;Webpack &#x6703;&#x81EA;&#x52D5;&#x8655;&#x7406;&#x5716;&#x7247;&#x7684;&#x76F8;&#x5C0D;&#x8DEF;&#x5F91;&#xFF0C;&#x4E26;&#x4E14;&#x628A;&#x5B83;&#x5F9E; <code>src/</code> &#x5E95;&#x4E0B;&#x8907;&#x88FD;&#x4E00;&#x4EFD;&#x5230; <code>dist/</code>&#x3002;<br></p>
+<p>&#x7136;&#x800C;&#x7576; <code>url: false</code> &#x6642;&#xFF0C;Webpack &#x6703;&#x5FFD;&#x7565; url() &#x5167;&#x7684;&#x8DEF;&#x5F91;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8AAA;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x662F;&#x9019;&#x6A23;&#x7528;&#xFF1A;<br>
+<code>&lt;div className=&quot;bg-[url(&apos;/images/cat.jpg&apos;)]&quot;&gt;</code><br></p>
+<p>webpack &#x5C31;&#x518D;&#x4E5F;&#x4E0D;&#x6703;&#x81EA;&#x52D5;&#x5E6B;&#x4F60;&#x53BB; <code>src/</code> &#x5E95;&#x4E0B;&#x627E;&#x5716;&#x7247;&#x4E26;&#x4E14;&#x8907;&#x88FD;&#x5230; <code>dist/</code> &#x4E86;&#xFF0C;&#x8B8A;&#x6210;&#x4FDD;&#x7559;&#x4F60;&#x7684;&#x539F;&#x59CB;&#x8DEF;&#x5F91;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x53EA;&#x8981;&#x4F60;&#x6709;&#x628A;&#x5716;&#x7247;&#x653E;&#x9032; <code>public/images</code> &#x5E95;&#x4E0B;&#xFF0C;&#x4F60;&#x7684; <code>dist/</code> &#x88E1;&#x9762;&#x539F;&#x672C;&#x5C31;&#x6703;&#x6709;&#x4E00;&#x5305; <code>images/</code>&#xFF0C;&#x9019;&#x6642;&#x5019;&#x4E0A;&#x9762;&#x7684;&#x7D55;&#x5C0D;&#x8DEF;&#x5F91;&#x5C31;&#x53EF;&#x4EE5;&#x5E6B;&#x4F60;&#x628A;&#x5716;&#x7247;&#x6293;&#x51FA;&#x4F86;&#x3002;</p>
+<h3 id="&#x9019;&#x500B;&#x65B9;&#x6CD5;&#x7684;&#x78BA;&#x53EF;&#x4EE5;&#x89E3;&#x6C7A;&#x6211;&#x5011;&#x7684;&#x554F;&#x984C;&#xFF01;">&#x9019;&#x500B;&#x65B9;&#x6CD5;&#x7684;&#x78BA;&#x53EF;&#x4EE5;&#x89E3;&#x6C7A;&#x6211;&#x5011;&#x7684;&#x554F;&#x984C;&#xFF01;</h3>
+<p>&#x90A3;&#x9EBC;&#x63A5;&#x4E0B;&#x4F86;&#x7684;&#x76EE;&#x5149;&#x61C9;&#x8A72;&#x662F;&#x8981;&#x653E;&#x5728;&#x5982;&#x4F55;&#x66F4;&#x6539; <code>webpack</code> &#x7684;&#x8A2D;&#x5B9A;&#x6A94;&#xFF1A;</p>
+<p>&#x524D;&#x9762;&#x90A3;&#x4F4D;&#x5927;&#x795E;&#x7528;&#x7684;&#x662F; <code>craco</code> &#x64F4;&#x5145; <code>create-react-app</code> &#x9810;&#x8A2D;&#x7684; webpack config&#xFF0C;&#x4F46;&#x6211;&#x770B;&#x4E86;&#x4E00;&#x4E9B;&#x63A8;&#x85A6;&#x6587;&#xFF0C;&#x6700;&#x5F8C;&#x6C7A;&#x5B9A;&#x4F7F;&#x7528; <code>react-app-rewired</code> &#x5957;&#x4EF6;&#x4F86;&#x5E6B;&#x6211;&#x9032;&#x884C;&#x64F4;&#x5145;&#xFF0C;&#x76EE;&#x6A19;&#x662F;&#x628A; <code>css-loader</code> &#x5167;&#x90E8;&#x7684; <code>url</code> &#x6539;&#x70BA; <code>false</code>&#x3002;</p>
+<p>&#x56E0;&#x70BA;&#x53EA;&#x9700;&#x8981;&#x52D5;&#x5230;&#x5C11;&#x90E8;&#x5206;&#x7684; config&#xFF0C;&#x6211;&#x9019;&#x88E1;&#x4E0D;&#x50BE;&#x5411; eject &#x51FA;&#x4F86;&#x7DAD;&#x8B77;&#x6574;&#x500B; webpack config&#xFF0C;<strong>&#x9019;&#x6A23;&#x5982;&#x679C;&#x672A;&#x4F86;&#x5957;&#x4EF6;&#x66F4;&#x65B0;&#x6211;&#x6703;&#x5F88;&#x96E3;&#x5728;&#x672C;&#x5730;&#x7AEF;&#x540C;&#x6B65;&#x3002;</strong></p>
+<p>&#x90A3;&#x9EBC;...&#x8981;&#x600E;&#x9EBC;&#x64F4;&#x5145;&#x5462;&#xFF1F;&#x53EA;&#x80FD;&#x53BB;&#x770B;&#x770B; <code>react-scripts</code> &#x7684; webpack config &#x88E1;&#x9762;&#x90FD;&#x505A;&#x4E86;&#x4E9B;&#x4EC0;&#x9EBC;&#x4E8B;&#x4E86; &#x1F613;...</p>
+<p>(&#x4EE5;&#x4E0B;&#x5FFD;&#x7565;&#x6578;&#x5206;&#x9418;&#x7684; trace code &#x904E;&#x7A0B;...)</p>
+<p>&#x7D42;&#x65BC;&#x8B93;&#x6211;&#x627E;&#x5230;&#x8A2D;&#x5B9A;<code>module.rules</code>&#x7684;&#x5730;&#x65B9;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// react-scripts/config/webpack.config.js</span>
+<span class="hljs-built_in">module</span>: {
+  ...
+  rules: [
+    ...
+    {
+      oneOf: [
+        ...
+        <span class="hljs-comment">// &quot;postcss&quot; loader applies autoprefixer to our CSS.</span>
+        <span class="hljs-comment">// &quot;css&quot; loader resolves paths in CSS and adds assets as dependencies.</span>
+        <span class="hljs-comment">// &quot;style&quot; loader turns CSS into JS modules that inject &lt;style&gt; tags.</span>
+        <span class="hljs-comment">// In production, we use MiniCSSExtractPlugin to extract that CSS</span>
+        <span class="hljs-comment">// to a file, but in development &quot;style&quot; loader enables hot editing</span>
+        <span class="hljs-comment">// of CSS.</span>
+        <span class="hljs-comment">// By default we support CSS Modules with the extension .module.css</span>
+        {
+          test: cssRegex,
+          exclude: cssModuleRegex,
+          use: getStyleLoaders({
+            importLoaders: <span class="hljs-number">1</span>,
+            sourceMap: isEnvProduction
+              ? shouldUseSourceMap
+              : isEnvDevelopment,
+            modules: {
+              mode: <span class="hljs-string">&apos;icss&apos;</span>,
+            },
+          }),
+          <span class="hljs-comment">// Don&apos;t consider CSS imports dead code even if the</span>
+          <span class="hljs-comment">// containing package claims to have no side effects.</span>
+          <span class="hljs-comment">// Remove this when webpack adds a warning or an error for this.</span>
+          <span class="hljs-comment">// See https://github.com/webpack/webpack/issues/6571</span>
+          sideEffects: <span class="hljs-literal">true</span>,
+        },
+      ]
+    }
+  ]
+}
+</code></pre>
+<p>&#x800C;&#x7576;&#x4E2D;&#x6709;&#x4E00;&#x53E5;&#x8A3B;&#x89E3;&#x662F;&#x9019;&#x6A23;&#x5BEB;&#x7684;&#xFF1A;<br>
+<code>&quot;css&quot; loader resolves paths in CSS and adds assets as dependencies.</code><br>
+&#x4E5F;&#x8B49;&#x5BE6;&#x4E86;&#x9019;&#x500B;&#x8A2D;&#x5B9A;&#x78BA;&#x5BE6;&#x5C31;&#x662F;&#x6211;&#x5011;&#x8981;&#x627E;&#x7684;&#x3002;</p>
+<p>&#x7E7C;&#x7E8C;&#x5F80;&#x4E0B;&#x63A2;&#x7D22;&#xFF0C;&#x770B;&#x5230;&#x4E86;&#x9019;&#x500B; function&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// common function to get style loaders</span>
+  <span class="hljs-keyword">const</span> getStyleLoaders = (cssOptions, preProcessor) =&gt; {
+    <span class="hljs-keyword">const</span> loaders = [
+      ...
+      {
+        loader: <span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">&apos;css-loader&apos;</span>),
+        options: cssOptions,
+      },
+      ...
+    ]
+    ...
+    return loaders
+  }
+</code></pre>
+<p><strong>&#x1F52A;&#x300C;Here is Johnny!!!!!&#x300D;</strong><br>
+&#x627E;&#x5230;&#x4E86; <code>css-loader</code>&#xFF0C;&#x770B;&#x8D77;&#x4F86;&#x53EA;&#x8981;&#x628A;&#x5916;&#x90E8;&#x50B3;&#x5165;&#x7684; cssOptions &#x60F3;&#x8FA6;&#x6CD5;&#x52A0;&#x4E0A; <code>url: false</code> &#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF01;</p>
+<p>&#x7D93;&#x904E;&#x4E00;&#x6BB5;&#x6642;&#x9593;&#x7684;&#x6E2C;&#x8A66;&#x5F8C;&#xFF0C;<strong>&#x6211;&#x767C;&#x73FE;&#x9019;&#x7A2E;&#x5BEB;&#x6CD5;&#x53EF;&#x4EE5;&#x9806;&#x5229;&#x8986;&#x5BEB;&#x6211;&#x8981;&#x7684;&#x5C6C;&#x6027;&#xFF0C;&#x4E26;&#x4E14;&#x89E3;&#x6C7A;&#x9019;&#x500B;&#x554F;&#x984C; &#x1F64C;&#xFF1A;</strong></p>
+<pre><code class="lang-js"><span class="hljs-comment">// config-overrides.js</span>
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>);
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">override</span>(<span class="hljs-params">config</span>) </span>{
+  <span class="hljs-keyword">const</span> targetRegex = <span class="hljs-regexp">/\.css$/</span>;
+  <span class="hljs-keyword">const</span> targetPackage = <span class="hljs-regexp">/css-loader/</span>;
+  <span class="hljs-comment">// to make url() in css worked</span>
+  config.module.rules
+    .find((r) =&gt; r.oneOf)
+    .oneOf.find((r) =&gt; r.test.toString() === targetRegex.toString())
+    .use.find(
+      (o) =&gt; o.loader &amp;&amp; targetPackage.test(o.loader)
+    ).options.url = <span class="hljs-literal">false</span>;
+  <span class="hljs-keyword">return</span> config;
+};
+</code></pre>
+<p>&#x7D50;&#x679C;&#xFF1A;<br>
+<img src="../../images/cra-url-issue/solution.png" alt="result">
+<img src="../../images/cra-url-issue/build.png" alt="build result"></p>
+<p>&#x8C93;&#x8C93;&#x5716;&#x7247;&#x6210;&#x529F;&#x51FA;&#x73FE;&#x4E86;&#xFF0C;&#x4E26;&#x4E14; build &#x51FA;&#x4F86;&#x7684;&#x6A94;&#x6848;&#x53EA;&#x6709; public/images &#x5E95;&#x4E0B;&#x7684;&#x90A3;&#x4E00;&#x5F35;&#x5716;&#x7247;&#xFF0C;&#x4E5F;&#x6C92;&#x6709;&#x91CD;&#x8907;&#x7684;&#x554F;&#x984C;&#xFF0C;&#x9019;&#x6B21;&#x771F;&#x7684;&#x53EF;&#x4EE5;&#x6253;&#x5B8C;&#x6536;&#x5DE5;&#x4E86;&#x3002;</p>
+<h3 id="&#x7D50;&#x8A9E;">&#x7D50;&#x8A9E;</h3>
+<p>&#x6C92;&#x60F3;&#x5230;&#x9019;&#x9EBC;&#x5C0F;&#x7684;&#x554F;&#x984C;&#x7ADF;&#x7136;&#x4E5F;&#x96B1;&#x85CF;&#x8457;&#x9019;&#x9EBC;&#x591A;&#x7D30;&#x7BC0;&#xFF0C;&#x70BA;&#x81EA;&#x5DF1;&#x4E0D;&#x7559;&#x6280;&#x8853;&#x50B5;&#x7684;&#x614B;&#x5EA6;&#x8C4E;&#x8D77;&#x4E00;&#x6839;&#x5927;&#x62C7;&#x6307;&#xFF01;&#x1F44D;<br>
+&#x554A;&#xFF01;&#x9806;&#x4FBF;&#x53BB; Github issue &#x5E95;&#x4E0B;&#x7559;&#x500B;&#x8A00;&#xFF0C;&#x770B;&#x80FD;&#x4E0D;&#x80FD;&#x5E6B;&#x52A9;&#x66F4;&#x591A;&#x7684;&#x958B;&#x767C;&#x8005;&#x597D;&#x4E86;&#xFF0C;&#x7562;&#x7ADF;&#x6C92;&#x6709;&#x90A3;&#x4E32; issue &#x6211;&#x53EF;&#x80FD;&#x9084;&#x4E0D;&#x77E5;&#x9053;&#x8A72;&#x600E;&#x9EBC;&#x5B9A;&#x7FA9;&#x554F;&#x984C;&#x5462;&#xFF01;&#x6709;&#x80FD;&#x529B;&#x56DE;&#x994B;&#x793E;&#x7FA4;&#x7684;&#x611F;&#x89BA;&#x771F;&#x597D;&#x3002;<br>
+<a href="https://github.com/facebook/create-react-app/issues/9937" target="_blank">https://github.com/facebook/create-react-app/issues/9937</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="react.html" class="navigation navigation-prev " aria-label="Previous page: React with surprise">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="env.html" class="navigation navigation-next " aria-label="Next page: 常常在VM裡面改東改西? 你需要的是.env">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Cannot resolve url() ─ CRA 用 url() 引入圖片的坑","level":"1.3.1","depth":2,"next":{"title":"常常在VM裡面改東改西? 你需要的是.env","level":"1.3.2","depth":2,"path":"articles/react/env.md","ref":"./articles/react/env.md","articles":[]},"previous":{"title":"React with surprise","level":"1.3","depth":1,"path":"articles/react/react.md","ref":"./articles/react/react.md","articles":[{"title":"Cannot resolve url() ─ CRA 用 url() 引入圖片的坑","level":"1.3.1","depth":2,"path":"articles/react/cra-url-issue.md","ref":"./articles/react/cra-url-issue.md","articles":[]},{"title":"常常在VM裡面改東改西? 你需要的是.env","level":"1.3.2","depth":2,"path":"articles/react/env.md","ref":"./articles/react/env.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","copy-code-button","ga","-sharing","sharing-plus@^0.0.2","my-toolbar","expandable-chapters"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"printLog":false,"multipleH1":false,"mode":"float","showGoTop":true,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"my-toolbar":{"buttons":[{"label":"Github","icon":"fa fa-github","url":"https://github.com/YuAnWu0000","position":"right","text":"Github","target":"_blank"},{"label":"LinkedIn","icon":"fa fa-linkedin","url":"https://www.linkedin.com/in/yu-an-wu-486ab5160/","position":"right","text":"LinkedIn","target":"_blank"}]},"copy-code-button":{},"ga":{"configuration":"auto","token":""},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"edit-link":{"label":"Edit This Page","base":"https://yuanwu0000.github.io/zachary-gitbook"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{}},"gitbook":"*"},"file":{"path":"articles/react/cra-url-issue.md","mtime":"2025-03-05T09:14:54.862Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-03-05T09:15:20.469Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-my-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

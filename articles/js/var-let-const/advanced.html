@@ -1,0 +1,683 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../deep-copy/basics.html" />
+    
+    
+    <link rel="prev" href="basics.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    關於我
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../vue/vue.html">
+            
+                <a href="../../vue/vue.html">
+            
+                    
+                    Vue the world differently
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../react/react.html">
+            
+                <a href="../../react/react.html">
+            
+                    
+                    React with surprise
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../react/cra-url-issue.html">
+            
+                <a href="../../react/cra-url-issue.html">
+            
+                    
+                    Cannot resolve url() ─ CRA 用 url() 引入圖片的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../react/env.html">
+            
+                <a href="../../react/env.html">
+            
+                    
+                    常常在VM裡面改東改西? 你需要的是.env
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../js.html">
+            
+                <a href="../js.html">
+            
+                    
+                    Don't skip javascript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../forEach-async-await.html">
+            
+                <a href="../forEach-async-await.html">
+            
+                    
+                    async / await 在 forEach 裡面不起作用？你是否搞錯了什麼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="basics.html">
+            
+                <a href="basics.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="advanced.html">
+            
+                <a href="advanced.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../deep-copy/basics.html">
+            
+                <a href="../deep-copy/basics.html">
+            
+                    
+                    關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../deep-copy/implement.html">
+            
+                <a href="../deep-copy/implement.html">
+            
+                    
+                    面試官：前面講了這麼多，還是你直接實作一個深拷貝給我看看？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../css/css.html">
+            
+                <a href="../../css/css.html">
+            
+                    
+                    Success of css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../css/atomic-cssInJs-cssModule/atomic.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/atomic.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談體驗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../css/atomic-cssInJs-cssModule/scalability.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/scalability.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談擴展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../css/atomic-cssInJs-cssModule/performance.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/performance.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談效能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../css/how-to-make-a-marquee.html">
+            
+                <a href="../../css/how-to-make-a-marquee.html">
+            
+                    
+                    製作跑馬燈一點都不難，你只需要知道這些小訣竅
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../devops/devops.html">
+            
+                <a href="../../devops/devops.html">
+            
+                    
+                    Dive into the world of DevOps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../devops/deploy-your-project.html">
+            
+                <a href="../../devops/deploy-your-project.html">
+            
+                    
+                    搞定 Docker 跟 Nginx，輕鬆部署你的專案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../devops/add-ssl.html">
+            
+                <a href="../../devops/add-ssl.html">
+            
+                    
+                    讓你的網站更安全，加上 SSL 憑證吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../devops/monitor-container.html">
+            
+                <a href="../../devops/monitor-container.html">
+            
+                    
+                    我的服務還好嗎？監控容器的小撇步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../devops/gitlab-ci/gitlab-runner.html">
+            
+                <a href="../../devops/gitlab-ci/gitlab-runner.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../devops/gitlab-ci/gitlab-ci.html">
+            
+                <a href="../../devops/gitlab-ci/gitlab-ci.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../others/others.html">
+            
+                <a href="../../others/others.html">
+            
+                    
+                    Others
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../others/my-first-oidc-research.html">
+            
+                <a href="../../others/my-first-oidc-research.html">
+            
+                    
+                    初探 OIDC ─ 揭開我們每天都在使用，卻不了解的黑盒子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../others/cypress.html">
+            
+                <a href="../../others/cypress.html">
+            
+                    
+                    Cypress ─ 一款超強大的 E2E test framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x56DE;&#x7B54;&#x4E00;&#x984C;-var--let--const-&#x5C31;&#x9A5A;&#x8277;&#x4F60;&#x7684;&#x9762;&#x8A66;&#x5B98;-&#x2500;-hoisting-&#x7D30;&#x7BC0;&#x7BC7;">&#x56DE;&#x7B54;&#x4E00;&#x984C; var / let / const &#x5C31;&#x9A5A;&#x8277;&#x4F60;&#x7684;&#x9762;&#x8A66;&#x5B98; &#x2500; hoisting &#x7D30;&#x7BC0;&#x7BC7;</h1>
+<p>&#x63A5;&#x7E8C;&#x4E0A;&#x4E00;&#x7BC7;&#x7684;&#x554F;&#x984C;...</p>
+<h3 id="hoisting">Hoisting</h3>
+<blockquote>
+<p>MDN: JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables, classes, or imports to the top of their scope, prior to execution of the code.</p>
+</blockquote>
+<p>&#x7C21;&#x55AE;&#x8AAA;&#xFF0C;<strong>Hoisting = You can access variable before declaration.</strong><br>
+&#x4F46;&#x5C31;&#x662F;&#x9019;&#x9EBC;&#x7C21;&#x55AE;&#x7684;&#x4E00;&#x53E5;&#x8A71;&#xFF0C;&#x537B;&#x5F15;&#x4F86;&#x4E86;&#x8A31;&#x591A;&#x722D;&#x8B70; &#x1F625;&#x3002;<br>
+&#x56E0;&#x70BA;&#xFF0C;hoisting &#x4E26;&#x975E;&#x4E00;&#x500B;&#x5B98;&#x65B9;&#x8A5E;&#x5F59;&#xFF0C;&#x6C92;&#x6709;&#x88AB;&#x5BEB;&#x9032; ECMAScript &#x898F;&#x683C;&#x7576;&#x4E2D;&#xFF0C;&#x5B83;&#x662F;&#x70BA;&#x4E86;&#x65B9;&#x4FBF;&#x6211;&#x5011;&#x9019;&#x4E9B; JS &#x4F7F;&#x7528;&#x8005;&#x7406;&#x89E3;&#x6D41;&#x7A0B;&#x800C;&#x88AB;&#x767C;&#x660E;&#x51FA;&#x4F86;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x5B9A;&#x7FA9;&#x65B9;&#x9762;&#x4E00;&#x76F4;&#x662F;&#x5404;&#x8AAA;&#x5404;&#x8A71;&#x3002;<br></p>
+<blockquote>
+<p><em>MDN: Hoisting is not a term normatively defined in the ECMAScript specification.</em></p>
+</blockquote>
+<p><strong>&#x5F77;&#x5F7F;&#x5728;&#x7A0B;&#x5F0F;&#x7684;&#x4E16;&#x754C;&#x898B;&#x5230;&#x300C;&#x4E00;&#x4E2D;&#x5404;&#x8868;&#x300D;&#x4E00;&#x6A23;&#xFF0C;&#x5728; Javascript &#x7684;&#x4E16;&#x754C;&#x88E1;&#xFF0C;&#x4E5F;&#x6709;&#x8457;&#x300C;&#x4E00;&#x8A5E;&#x63D0;&#x5347;&#xFF0C;&#x5404;&#x81EA;&#x8868;&#x8FF0;&#x300D;&#x7684;&#x6709;&#x8DA3;&#x73FE;&#x8C61;&#x3002;</strong></p>
+<h3 id="&#x8981;&#x80FD;&#x6709;&#x6548;&#x5730;&#x5207;&#x5165;&#x554F;&#x984C;&#x7684;&#x7665;&#x7D50;&#x9EDE;&#xFF0C;&#x6211;&#x8A8D;&#x70BA;&#x53EF;&#x4EE5;&#x628A;&#x8B8A;&#x6578;&#x7684;&#x521D;&#x59CB;&#x5316;&#x5206;&#x6210;&#x4E09;&#x968E;&#x6BB5;&#x4F86;&#x7406;&#x89E3;&#xFF1A;">&#x8981;&#x80FD;&#x6709;&#x6548;&#x5730;&#x5207;&#x5165;&#x554F;&#x984C;&#x7684;&#x7665;&#x7D50;&#x9EDE;&#xFF0C;&#x6211;&#x8A8D;&#x70BA;&#x53EF;&#x4EE5;&#x628A;&#x8B8A;&#x6578;&#x7684;&#x521D;&#x59CB;&#x5316;&#x5206;&#x6210;&#x4E09;&#x968E;&#x6BB5;&#x4F86;&#x7406;&#x89E3;&#xFF1A;</h3>
+<h5 id="1-create">1. create</h5>
+<ul>
+<li>&#x5EFA;&#x7ACB;&#x4F5C;&#x7528;&#x57DF; / &#x7D00;&#x9304;&#x8B8A;&#x6578;&#x540D; / &#x9810;&#x7559;&#x6BCF;&#x500B;&#x8B8A;&#x6578;&#x7684;&#x8A18;&#x61B6;&#x9AD4;&#x7A7A;&#x9593;</li>
+</ul>
+<h5 id="2-initialize">2. initialize</h5>
+<ul>
+<li>&#x70BA;&#x6240;&#x6709;&#x5BA3;&#x544A;&#x7684;&#x8B8A;&#x6578;&#x7B2C;&#x4E00;&#x6B21;&#x6307;&#x5B9A;&#x503C; (&#x6CE8;&#x610F;&#xFF1A;&#x6B64;&#x52D5;&#x4F5C;&#x4E26;&#x975E;&#x8CE6;&#x503C;)&#xFF0C;&#x4E26;&#x4E14;&#x628A;&#x6C92;&#x6709;&#x5728; declaration &#x7D66;&#x503C; (initializer) &#x7684;&#x8B8A;&#x6578;&#x9ED8;&#x8A8D;&#x585E;&#x7D66;&#x4ED6; <code>undefined</code>&#xFF0C;&#x4F8B;&#x5982; <code>var a</code> &#x9810;&#x8A2D; <code>a = undefined</code></li>
+</ul>
+<h5 id="3-assign">3. assign</h5>
+<ul>
+<li>&#x57F7;&#x884C;&#x7A0B;&#x5F0F;&#xFF0C;&#x8655;&#x7406;&#x6240;&#x6709;&#x7684;&#x7A0B;&#x5F0F;&#x78BC;&#x4E2D;&#x8CE6;&#x503C;&#x884C;&#x70BA;</li>
+</ul>
+<blockquote>
+<p>&#x63A5;&#x8457;&#x8B93;&#x6211;&#x5011;&#x4F86;&#x770B;&#x770B;&#x4F8B;&#x5B50;&#xFF1A;</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// undefined</span>
+<span class="hljs-keyword">var</span> a = <span class="hljs-number">123</span>;
+</code></pre>
+<p><code>var</code> &#x4E4B;&#x6240;&#x4EE5;&#x88AB;&#x8A8D;&#x70BA;&#x6709; hoisting &#x662F;&#x56E0;&#x70BA; JS interpreter &#x628A; <strong>create + initialize</strong> &#x90FD;&#x63D0;&#x65E9;&#x505A;&#x5B8C;&#x4E86;&#xFF0C;<strong>So you can
+access &quot;a&quot; before declaration.</strong> (&#x5118;&#x7BA1;&#x53D6;&#x5F97;&#x7684;&#x503C;&#x662F; undefined&#xFF0C;&#x4F46;&#x8D77;&#x78BC;&#x4E0D;&#x6703;&#x5831;&#x932F;)</p>
+<blockquote>
+<p>&#x90A3;&#x9EBC; <code>let</code> &#x5462;&#xFF1F;</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// Uncaught ReferenceError: a is not defined</span>
+<span class="hljs-keyword">let</span> a = <span class="hljs-number">123</span>;
+</code></pre>
+<p>&#x55AE;&#x7D14;&#x770B;&#x9019;&#x500B;&#x7C21;&#x55AE;&#x7684;&#x4F8B;&#x5B50;&#x4F60;&#x6703;&#x8A8D;&#x70BA;<code>let</code>&#x6C92;&#x6709; hoisting&#xFF0C;&#x4F46;&#x8ACB;&#x4F60;&#x770B;&#x770B;&#x63A5;&#x4E0B;&#x4F86;&#x7684;&#x9019;&#x500B;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> a = <span class="hljs-number">123</span>;
+<span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
+  a = <span class="hljs-number">456</span>; <span class="hljs-comment">// Uncaught ReferenceError: Cannot access &apos;a&apos; before initialization at &lt;anonymous&gt;:3:7</span>
+  <span class="hljs-keyword">let</span> a;
+}
+</code></pre>
+<p><strong>&#x5982;&#x679C;&#x771F;&#x7684;&#x6C92;&#x6709;&#x300C;&#x63D0;&#x5347;&#x300D;&#xFF0C;&#x90A3;&#x70BA;&#x4EC0;&#x9EBC;&#x7A0B;&#x5F0F;&#x6703;&#x5728;&#x7B2C;&#x4E09;&#x884C;&#x5831;&#x932F;&#xFF1F;&#x7167;&#x7406;&#x8AAA;&#x61C9;&#x8A72;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x628A;&#x5168;&#x57DF;&#x7684; a &#x8CE6;&#x503C;&#x70BA; 456 &#x624D;&#x5C0D;&#x3002;</strong><br></p>
+<p>&#x56E0;&#x6B64;&#x6211;&#x5011;&#x53EA;&#x80FD;&#x63A8;&#x65B7; JS interpreter &#x5BE6;&#x969B;&#x4E0A;&#x5728;&#x57F7;&#x884C;&#x7A0B;&#x5F0F;&#x78BC;&#x4E4B;&#x524D;&#xFF0C;&#x6709;&#x91DD;&#x5C0D; <code>let</code> &#x7684;&#x5BA3;&#x544A;&#x505A;&#x985E;&#x4F3C; <strong>&#x300C;&#x534A;&#x63D0;&#x5347;&#x300D;</strong> &#x7684;&#x884C;&#x70BA;&#xFF0C;&#x70BA;&#x4EC0;&#x9EBC;&#x6703;&#x8AAA;&#x53EA;&#x505A;&#x4E86;&#x4E00;&#x534A;&#x5462;&#xFF1F;&#x56E0;&#x70BA;&#x8DDF; <code>var</code> &#x76F8;&#x6BD4;&#xFF0C;&#x5B83;&#x53EA;&#x9810;&#x5148;&#x505A;&#x4E86; <strong>create</strong> &#x7684;&#x6B65;&#x9A5F; (&#x4E5F;&#x56E0;&#x6B64;&#x6211;&#x5011;&#x6C92;&#x8FA6;&#x6CD5;&#x53D6;&#x5F97;&#x521D;&#x59CB;&#x5316;&#x5F8C; <code>undefined</code> &#x7684;&#x503C;)&#x3002;&#x4F46;&#x5F9E; TDZ &#x7684;&#x884C;&#x70BA;&#x4F86;&#x5224;&#x65B7;&#xFF0C; <strong>&#x9019;&#x500B; create &#x7684;&#x52D5;&#x4F5C;&#x5DF2;&#x7D93;&#x6703;&#x8B93;&#x6574;&#x500B; block scope &#x90FD;&#x7121;&#x6CD5;&#x518D;&#x4F7F;&#x7528; a &#x8B8A;&#x6578;&#x4E86;&#x3002;</strong></p>
+<blockquote>
+<p>&#x9806;&#x5E36;&#x4E00;&#x63D0;&#x5982;&#x679C;&#x662F; function declaration &#x7684;&#x60C5;&#x6CC1;</p>
+</blockquote>
+<pre><code class="lang-js">catName(<span class="hljs-string">&quot;Chloe&quot;</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">catName</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;My cat&apos;s name is &quot;</span> + name);
+}
+<span class="hljs-comment">/*
+&#x4E0A;&#x9762;&#x7A0B;&#x5F0F;&#x7684;&#x7D50;&#x679C;&#x662F;: &quot;My cat&apos;s name is Chloe&quot;
+*/</span>
+</code></pre>
+<p>&#x5247;&#x662F;&#x5E6B;&#x4F60;&#x628A; <strong>create + initialize + assign</strong> &#x90FD;&#x505A;&#x5B8C;&#x4E86;&#xFF0C;&#x4E5F;&#x56E0;&#x6B64;&#x4F60;&#x53EF;&#x4EE5;&#x5728; scoped &#x5167;&#x7684;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x6B63;&#x5E38;&#x57F7;&#x884C;<code>catName()</code>&#x7684;&#x5167;&#x5BB9;&#x3002;</p>
+<h3 id="&#x6240;&#x4EE5;let-&#x5230;&#x5E95;&#x6709;&#x6C92;&#x6709;-hoisting&#xFF1F;">&#x6240;&#x4EE5;...<code>let</code> &#x5230;&#x5E95;&#x6709;&#x6C92;&#x6709; hoisting&#xFF1F;</h3>
+<p>&#x6211;&#x8A8D;&#x70BA;&#x9019;&#x53D6;&#x6C7A;&#x65BC;&#x4F60;&#x81EA;&#x5DF1;&#x5C0D; hoisting &#x7684;&#x5B9A;&#x7FA9;&#xFF0C;<strong>&#x5982;&#x679C;&#x4F60;&#x8A8D;&#x70BA; hoisting &#x81F3;&#x5C11;&#x5C31;&#x662F;&#x5F97; create + initialize</strong>&#xFF0C;&#x90A3;&#x78BA;&#x5BE6;&#xFF0C;<code>let</code>&#x6C92;&#x6709; hoisting&#xFF0C;&#x56E0;&#x70BA;&#x4ED6;&#x7684;&#x884C;&#x70BA;&#x8DDF;<code>var</code>&#x4E26;&#x4E0D;&#x540C;&#x3002;<br>
+&#x4F46;&#x5982;&#x679C;&#x4F60;&#x7684;&#x7406;&#x89E3;&#x6BD4;&#x8F03;&#x5EE3;&#x7FA9;&#xFF0C;<strong>&#x8A8D;&#x70BA; TDZ &#x672C;&#x8EAB;&#x5C31;&#x662F;&#x4E00;&#x500B; hoisting &#x7684;&#x8B49;&#x660E;</strong>&#xFF0C;&#x6211;&#x4E5F;&#x89BA;&#x5F97;&#x6C92;&#x554F;&#x984C;&#x3002;</p>
+<p>&#x5404;&#x4F4D;&#x554A;&#xFF01;&#x771F;&#x7684;&#x4E0D;&#x662F;&#x6211;&#x6545;&#x610F;&#x6253;&#x592A;&#x6975;&#x4E0D;&#x7D66;&#x500B;&#x660E;&#x78BA;&#x7684;&#x7B54;&#x6848;&#xFF0C;&#x4F60;&#x5011;&#x81EA;&#x5DF1;&#x770B;&#x770B; MDN &#x5728; hoisting &#x7BC7;&#x7AE0;&#x524D;&#x5F8C;&#x5169;&#x6BB5;&#x7684;&#x6587;&#x5B57;&#x5C31;&#x77E5;&#x9053;&#x4ED6;&#x5011;&#x81EA;&#x5DF1;&#x7684;&#x7ACB;&#x5834;&#x4E5F;&#x883B;&#x98C4;&#x5FFD;&#x4E0D;&#x5B9A;&#x7684;&#xFF1A;</p>
+<blockquote>
+<p>However, the temporal dead zone can cause other observable changes in its scope, which suggests there&apos;s some form of hoisting.</p>
+<p>Still, it may be more useful to characterize lexical declarations as non-hoisting, because from a utilitarian perspective, the hoisting of these declarations doesn&apos;t bring any meaningful features.</p>
+</blockquote>
+<p>&#x800C;&#x4E14;&#x6700;&#x5F8C;&#x7AD9;&#x908A; non hoisting &#x7684;&#x7406;&#x7531;&#x7ADF;&#x7136;&#x662F;&#x9019;&#x500B;&#x73FE;&#x8C61;&#x4E26;&#x4E0D;&#x300C;&#x5BE6;&#x7528;&#x300D;&#xFF1F;<strong>&#x7528;&#x7D50;&#x679C;&#x8AD6;&#x4F86;&#x5B9A;&#x7FA9;&#x4E00;&#x500B;&#x70BA;&#x4E86;&#x5E6B;&#x52A9;&#x7406;&#x89E3;&#x904E;&#x7A0B;&#x800C;&#x8A95;&#x751F;&#x7684;&#x8A5E;&#x5F59; &#x2500; Hoisting</strong>&#xFF0C;&#x6211;&#x600E;&#x9EBC;&#x60F3;&#x90FD;&#x89BA;&#x5F97;&#x6709;&#x9EDE;&#x602A;&#x602A;&#x7684; &#x1F615;&#x3002;</p>
+<h3 id="&#x5982;&#x679C;&#x6211;&#x662F;&#x9762;&#x8A66;&#x5B98;">&#x5982;&#x679C;&#x6211;&#x662F;&#x9762;&#x8A66;&#x5B98;</h3>
+<p>&#x5404;&#x4F4D;&#x53EF;&#x4EE5;&#x767C;&#x73FE;&#xFF0C;&#x9019;&#x500B;&#x554F;&#x984C;&#x5DF2;&#x7D93;&#x6F38;&#x6F38;&#x7684;&#x5F9E;&#x662F;&#x975E;&#x984C;&#x8B8A;&#x6210;&#x4E86;&#x7533;&#x8AD6;&#x984C;&#xFF0C;&#x6BCF;&#x500B;&#x4EBA;&#x90FD;&#x6709;&#x4ED6;&#x5404;&#x81EA;&#x7684;&#x7ACB;&#x5834;&#x3002;&#x5982;&#x679C;&#x6211;&#x662F;&#x9762;&#x8A66;&#x5B98;&#xFF0C;&#x5176;&#x5BE6;&#x4E26;&#x4E0D;&#x6703;&#x592A;&#x6CE8;&#x91CD;&#x4F60;&#x7684;&#x6700;&#x7D42;&#x7B54;&#x6848;&#x662F; hoisting or non-hoisting&#xFF0C;&#x800C;&#x662F;&#x5F9E;&#x4F60;&#x5206;&#x6790;&#x7684;&#x904E;&#x7A0B;&#x4E0B;&#x53BB;&#x89C0;&#x5BDF;&#x4F60;&#x662F;&#x5982;&#x4F55;<strong>&#x5B9A;&#x7FA9;&#x554F;&#x984C;</strong>&#x3001;<strong>&#x67B6;&#x69CB;&#x908F;&#x8F2F;</strong>&#x3001;<strong>&#x8868;&#x9054;&#x7ACB;&#x5834;</strong>&#x7684;&#xFF0C;&#x9019;&#x4E9B;&#xFF0C;&#x624D;&#x662F;&#x4E00;&#x500B;&#x5DE5;&#x7A0B;&#x5E2B;&#x4E0D;&#x53EF;&#x6216;&#x7F3A;&#x7684;&#x8EDF;&#x5BE6;&#x529B;&#x3002;</p>
+<p>&#x9806;&#x5E36;&#x4E00;&#x63D0;&#xFF0C;&#x500B;&#x4EBA;&#x89BA;&#x5F97;&#x73FE;&#x5728;&#x7684;&#x9762;&#x8A66;&#x8003;&#x984C;&#x4F3C;&#x4E4E;&#x6F38;&#x6F38;&#x6DEA;&#x70BA;&#x6B7B;&#x80CC;&#x786C;&#x8A18;&#xFF0C;&#x53EF;&#x662F;&#x504F;&#x504F;&#x5DE5;&#x7A0B;&#x5E2B;&#x7684;&#x5DE5;&#x4F5C;&#x5167;&#x5BB9;&#x5E38;&#x5E38;&#x6C92;&#x6709;&#x6B63;&#x78BA;&#x89E3;&#x7B54;&#xFF0C;<strong>&#x6709;&#x7684;&#x53EA;&#x662F; trade off &#x8DDF;&#x65B9;&#x6848;&#x5229;&#x5F0A;&#x5206;&#x6790;</strong>&#xFF0C;&#x65E2;&#x7136;&#x8981;&#x60F3;&#x8FA6;&#x6CD5;&#x91CF;&#x5316;&#x5DE5;&#x7A0B;&#x5E2B;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x90A3;&#x5C31;&#x61C9;&#x8A72;&#x900F;&#x904E;&#x6BD4;&#x8F03;&#x8CBC;&#x8FD1;&#x5DE5;&#x4F5C;&#x7684;&#x65B9;&#x5F0F;&#x4F86;&#x8003;&#x6838;&#x624D;&#x5C0D;&#x3002;<br></p>
+<p>&#x6BD4;&#x5982;&#x9019;&#x984C;&#x6211;&#x6703;&#x9019;&#x6A23;&#x554F;&#xFF1A;<br></p>
+<ol>
+<li>&#x4F60;&#x89BA;&#x5F97; ES6 &#x70BA;&#x4EC0;&#x9EBC;&#x8981;&#x65B0;&#x589E; let / const&#xFF1F; &#x4ED6;&#x5011;&#x7684;&#x51FA;&#x73FE;&#x89E3;&#x6C7A;&#x4E86; var &#x7684;&#x4EC0;&#x9EBC;&#x554F;&#x984C;&#xFF1F;</li>
+<li>&#x4F60;&#x525B;&#x525B;&#x6709;&#x63D0;&#x5230; function scope / block scope&#xFF0C;&#x90A3;&#x4F60;&#x53EF;&#x4EE5;&#x89E3;&#x91CB;&#x770B;&#x770B; let &#x5728; for &#x5E95;&#x4E0B;&#x7684;&#x4F5C;&#x7528;&#x8DDF; var &#x6709;&#x4EC0;&#x9EBC;&#x4E0D;&#x540C;&#x55CE;&#xFF1F;</li>
+<li>&#x4F60;&#x525B;&#x525B;&#x6709;&#x63D0;&#x5230;&#x5B9A;&#x7FA9;&#x5E38;&#x6578;&#x7684;&#x6642;&#x5019;&#x4F7F;&#x7528; const&#xFF0C;&#x90A3;&#x8ACB;&#x554F;&#x70BA;&#x4EC0;&#x9EBC;&#x8B8A;&#x66F4;&#x9663;&#x5217;&#x5167;&#x5BB9;&#x6216;&#x7269;&#x4EF6;&#x5C6C;&#x6027;&#x6642;&#x4E0D;&#x6703;&#x5831;&#x932F;&#xFF1F; (by reference? by value?)</li>
+<li>&#x4F60;&#x8AAA;&#x4F60;&#x8A8D;&#x70BA; let &#x6C92;&#x6709; hoisting&#xFF0C;&#x90A3;&#x4F60;&#x53EF;&#x4EE5;&#x89E3;&#x91CB;&#x9019;&#x500B;&#x4F8B;&#x5B50;&#x55CE; (&#x9019;&#x7BC7;&#x6587;&#x7AE0;&#x7684;&#x4F8B;&#x5B50;)&#xFF1F;&#x53E6;&#x5916;&#x4F60;&#x89BA;&#x5F97; JS interpreter &#x5C0D; let &#x505A;&#x4E86;&#x4EC0;&#x9EBC;&#x984D;&#x5916;&#x8655;&#x7406;?</li>
+</ol>
+<p>&#x9019;&#x7A2E;&#x6839;&#x64DA;&#x56DE;&#x7B54;&#x4F86;&#x5EF6;&#x4F38;&#x554F;&#x984C;&#x7684;&#x65B9;&#x5F0F;&#x6BD4;&#x8F03;&#x53EF;&#x4EE5;&#x5F15;&#x5C0E;&#x9762;&#x8A66;&#x8005;&#x8868;&#x73FE;&#x51FA;&#x6DF1;&#x5EA6;&#x7684;<strong>&#x6280;&#x8853;&#x601D;&#x7DAD;</strong>&#x8DDF;<strong>&#x601D;&#x8003;&#x8108;&#x7D61;</strong>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5EFA;&#x7ACB;&#x8D77;&#x9762;&#x8A66;&#x7684;<strong>&#x96D9;&#x5411;&#x56DE;&#x994B;</strong>&#xFF0C;&#x500B;&#x4EBA;&#x89BA;&#x5F97;&#x8981;&#x6BD4;&#x8D77;&#x300C;&#x4F60;&#x89BA;&#x5F97; var / let / const &#x7684;&#x5DEE;&#x5225;&#x662F;...?&#x300D;&#x300C;&#x9084;&#x6709;&#x55CE;&#xFF1F;&#x9084;&#x6709;&#x4EC0;&#x9EBC;&#xFF1F;&#x6709;&#x4E00;&#x500B;&#x4F60;&#x6C92;&#x8B1B;&#x5230;&#x3002;&#x300D;&#x9019;&#x7A2E;&#x516B;&#x80A1;&#x6587;&#x8003;&#x8A66;&#x8981;&#x597D;&#x7684;&#x591A;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="basics.html" class="navigation navigation-prev " aria-label="Previous page: 回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../deep-copy/basics.html" class="navigation navigation-next " aria-label="Next page: 關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇","level":"1.4.3","depth":2,"next":{"title":"關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？","level":"1.4.4","depth":2,"path":"articles/js/deep-copy/basics.md","ref":"./articles/js/deep-copy/basics.md","articles":[]},"previous":{"title":"回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇","level":"1.4.2","depth":2,"path":"articles/js/var-let-const/basics.md","ref":"./articles/js/var-let-const/basics.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","copy-code-button","ga","-sharing","sharing-plus@^0.0.2","my-toolbar","expandable-chapters"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"printLog":false,"multipleH1":false,"mode":"float","showGoTop":true,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"my-toolbar":{"buttons":[{"label":"Github","icon":"fa fa-github","url":"https://github.com/YuAnWu0000","position":"right","text":"Github","target":"_blank"},{"label":"LinkedIn","icon":"fa fa-linkedin","url":"https://www.linkedin.com/in/yu-an-wu-486ab5160/","position":"right","text":"LinkedIn","target":"_blank"}]},"copy-code-button":{},"ga":{"configuration":"auto","token":""},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"edit-link":{"label":"Edit This Page","base":"https://yuanwu0000.github.io/zachary-gitbook"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{}},"gitbook":"*"},"file":{"path":"articles/js/var-let-const/advanced.md","mtime":"2025-03-05T09:14:54.862Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-03-05T09:15:20.469Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-my-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

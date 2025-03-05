@@ -1,0 +1,751 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？ · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="implement.html" />
+    
+    
+    <link rel="prev" href="../var-let-const/advanced.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    關於我
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../vue/vue.html">
+            
+                <a href="../../vue/vue.html">
+            
+                    
+                    Vue the world differently
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../react/react.html">
+            
+                <a href="../../react/react.html">
+            
+                    
+                    React with surprise
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../react/cra-url-issue.html">
+            
+                <a href="../../react/cra-url-issue.html">
+            
+                    
+                    Cannot resolve url() ─ CRA 用 url() 引入圖片的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../react/env.html">
+            
+                <a href="../../react/env.html">
+            
+                    
+                    常常在VM裡面改東改西? 你需要的是.env
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../js.html">
+            
+                <a href="../js.html">
+            
+                    
+                    Don't skip javascript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../forEach-async-await.html">
+            
+                <a href="../forEach-async-await.html">
+            
+                    
+                    async / await 在 forEach 裡面不起作用？你是否搞錯了什麼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../var-let-const/basics.html">
+            
+                <a href="../var-let-const/basics.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../var-let-const/advanced.html">
+            
+                <a href="../var-let-const/advanced.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.4" data-path="basics.html">
+            
+                <a href="basics.html">
+            
+                    
+                    關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="implement.html">
+            
+                <a href="implement.html">
+            
+                    
+                    面試官：前面講了這麼多，還是你直接實作一個深拷貝給我看看？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../css/css.html">
+            
+                <a href="../../css/css.html">
+            
+                    
+                    Success of css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/cssModule-vs-cssInJs.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../css/atomic-cssInJs-cssModule/atomic.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/atomic.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談體驗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../css/atomic-cssInJs-cssModule/scalability.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/scalability.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談擴展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../css/atomic-cssInJs-cssModule/performance.html">
+            
+                <a href="../../css/atomic-cssInJs-cssModule/performance.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談效能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../css/how-to-make-a-marquee.html">
+            
+                <a href="../../css/how-to-make-a-marquee.html">
+            
+                    
+                    製作跑馬燈一點都不難，你只需要知道這些小訣竅
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../devops/devops.html">
+            
+                <a href="../../devops/devops.html">
+            
+                    
+                    Dive into the world of DevOps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../devops/deploy-your-project.html">
+            
+                <a href="../../devops/deploy-your-project.html">
+            
+                    
+                    搞定 Docker 跟 Nginx，輕鬆部署你的專案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../devops/add-ssl.html">
+            
+                <a href="../../devops/add-ssl.html">
+            
+                    
+                    讓你的網站更安全，加上 SSL 憑證吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../devops/monitor-container.html">
+            
+                <a href="../../devops/monitor-container.html">
+            
+                    
+                    我的服務還好嗎？監控容器的小撇步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../devops/gitlab-ci/gitlab-runner.html">
+            
+                <a href="../../devops/gitlab-ci/gitlab-runner.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../devops/gitlab-ci/gitlab-ci.html">
+            
+                <a href="../../devops/gitlab-ci/gitlab-ci.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../others/others.html">
+            
+                <a href="../../others/others.html">
+            
+                    
+                    Others
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../others/my-first-oidc-research.html">
+            
+                <a href="../../others/my-first-oidc-research.html">
+            
+                    
+                    初探 OIDC ─ 揭開我們每天都在使用，卻不了解的黑盒子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../others/cypress.html">
+            
+                <a href="../../others/cypress.html">
+            
+                    
+                    Cypress ─ 一款超強大的 E2E test framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x95DC;&#x65BC;&#x6DF1;&#x6DFA;&#x62F7;&#x8C9D;&#x7684;&#x524D;&#x5099;&#x77E5;&#x8B58;&#xFF1A;&#x4F60;&#x77E5;&#x9053;&#x4EC0;&#x9EBC;&#x662F;-call-by-sharing-&#x55CE;&#xFF1F;">&#x95DC;&#x65BC;&#x6DF1;&#x6DFA;&#x62F7;&#x8C9D;&#x7684;&#x524D;&#x5099;&#x77E5;&#x8B58;&#xFF1A;&#x4F60;&#x77E5;&#x9053;&#x4EC0;&#x9EBC;&#x662F; call by sharing &#x55CE;&#xFF1F;</h1>
+<p><img src="../../../images/deep-copy/basics/meme.png" width="500"></p>
+<p>&#x8EAB;&#x70BA;&#x524D;&#x7AEF;&#x5DE5;&#x7A0B;&#x5E2B;&#xFF0C;&#x6211;&#x60F3;&#x4F60;&#x4E00;&#x5B9A;&#x5728;&#x9762;&#x8A66;&#x6642;&#x9047;&#x904E;&#x9019;&#x6A23;&#x7684;&#x554F;&#x984C;&#xFF1A;<br></p>
+<p>&#x300C;&#x8ACB;&#x89E3;&#x91CB;&#x6DF1;&#x6DFA;&#x62F7;&#x8C9D;&#x7684;&#x4E0D;&#x540C;&#xFF1F;&#x300D;<br>
+&#x300C;&#x54E6;~&#x5C31;&#x662F;&#x6709;&#x6C92;&#x6709;&#x5171;&#x7528;&#x8A18;&#x61B6;&#x9AD4;&#x7684;&#x5340;&#x5225;&#x5440;&#xFF01;&#x300D;<br>
+&#x300C;&#x90A3;&#x4F60;&#x89BA;&#x5F97;&#x5BE6;&#x52D9;&#x4E0A;&#x4EC0;&#x9EBC;&#x6642;&#x5019;&#x6703;&#x51FA;&#x73FE;&#x6DFA;&#x62F7;&#x8C9D;&#xFF1F;&#x975E;&#x539F;&#x59CB;&#x578B;&#x5225;&#x5728; assign &#x7684;&#x6642;&#x5019;&#x6703;&#x51FA;&#x73FE;&#x4EC0;&#x9EBC;&#x884C;&#x70BA;&#xFF1F;&#x50B3;&#x905E;&#x7684;&#x6642;&#x5019;&#x53C8;&#x6703;&#x51FA;&#x73FE;&#x4EC0;&#x9EBC;&#x884C;&#x70BA;&#xFF1F;&#x539F;&#x7406;&#x662F;&#x4EC0;&#x9EBC;&#xFF1F;&#x300D;<br>
+&#x300C;Hmmm......&#x300D;<br></p>
+<p>&#x6211;&#x8A8D;&#x70BA;&#x9019;&#x662F;&#x4E00;&#x984C;&#x53EF;&#x4EE5;&#x5F9E; junior &#x554F;&#x5230; senior &#x7684;&#x554F;&#x984C;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x7684;&#x4EBA;&#x90FD;&#x80FD;&#x7B54;&#x51FA;&#x5DEE;&#x5225;&#x5728;&#x8A18;&#x61B6;&#x9AD4;&#x5171;&#x7528;&#xFF0C;&#x4F46;&#x80FD;&#x8A73;&#x7D30;&#x5C55;&#x958B;&#x7684;&#x4EBA;&#x537B;&#x4E0D;&#x591A;&#xFF0C;&#x6211;&#x60F3;&#x9019;&#x5C31;&#x662F;&#x9019;&#x984C;&#x7684;&#x9451;&#x5225;&#x5EA6;&#x6240;&#x5728;&#x4E86;&#x3002;<br></p>
+<p>&#x62D2;&#x7D55;&#x6B7B;&#x80CC;&#x786C;&#x8A18;&#xFF0C;&#x4ECA;&#x5929;&#x6211;&#x5011;&#x4F86;&#x63ED;&#x958B;&#x6240;&#x6709;&#x4E00;&#x77E5;&#x534A;&#x89E3;&#x7684;&#x89C0;&#x5FF5;&#x5427;&#xFF01;&#x5DE5;&#x7A0B;&#x5E2B;&#x561B;&#xFF01;&#x5F97;&#x6642;&#x523B;&#x4FDD;&#x6301;&#x8457;&#x6C42;&#x77E5;&#x6B32;&#x624D;&#x80FD;&#x4E0D;&#x88AB;&#x6642;&#x4EE3;&#x6DD8;&#x6C70;&#x3002;</p>
+<h3 id="&#x4E00;&#x500B;&#x7C21;&#x55AE;&#x7684;&#x7BC4;&#x4F8B;&#xFF1A;">&#x4E00;&#x500B;&#x7C21;&#x55AE;&#x7684;&#x7BC4;&#x4F8B;&#xFF1A;</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> testA = { a: <span class="hljs-number">1</span> };
+<span class="hljs-keyword">let</span> testB = testA;
+testB.a = <span class="hljs-number">2</span>;
+<span class="hljs-built_in">console</span>.log(testA); <span class="hljs-comment">// { a: 2 }</span>
+</code></pre>
+<p>&#x56E0;&#x70BA;&#x7269;&#x4EF6;&#x7684; assignment &#x5728; javascript &#x88E1;&#x9762;&#x7B49;&#x65BC;&#x5C07;<strong>&#x8A18;&#x61B6;&#x9AD4;&#x4F4D;&#x5740;</strong> pass &#x7D66;&#x53E6;&#x4E00;&#x500B;&#x8B8A;&#x6578;&#xFF0C;&#x4E5F;&#x662F;&#x6240;&#x8B02;&#x7684; <strong>call by reference</strong> (&#x6CE8;&#x610F;&#xFF1A;&#x9019;&#x500B;&#x7528;&#x8A5E;&#x53EF;&#x80FD;&#x4E0D;&#x5920;<strong>&#x7CBE;&#x78BA;</strong>&#xFF0C;&#x5F8C;&#x9762;&#x6703;&#x63D0;&#x5230;)&#xFF0C;&#x6240;&#x4EE5; testB &#x8DDF; testA &#x5BE6;&#x969B;&#x4E0A;&#x662F;<strong>&#x540C;&#x4E00;&#x500B;&#x7269;&#x4EF6;</strong>&#xFF0C;&#x66F4;&#x6539; testB &#x7684;&#x5C6C;&#x6027;&#x7576;&#x7136;&#x4E5F;&#x5C31;&#x6703;&#x6539;&#x5230; testA&#x3002;<br></p>
+<p>junior &#x7A0B;&#x5EA6;&#x7684;&#x5DE5;&#x7A0B;&#x5E2B;&#x80FD;&#x5920;&#x89E3;&#x91CB;&#x5230;&#x9019;&#x88E1;&#x57FA;&#x672C;&#x4E0A;&#x5C31;&#x904E;&#x95DC;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#xFF0C;&#x8ACB;&#x7E7C;&#x7E8C;&#x5F80;&#x4E0B;&#x770B;...</p>
+<h3 id="&#x518D;&#x4E00;&#x500B;&#x7C21;&#x55AE;&#x7684;&#x7BC4;&#x4F8B;&#xFF1A;">&#x518D;&#x4E00;&#x500B;&#x7C21;&#x55AE;&#x7684;&#x7BC4;&#x4F8B;&#xFF1A;</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> testA = { a: <span class="hljs-number">1</span> };
+<span class="hljs-keyword">let</span> testB = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">let</span> testC = { c: <span class="hljs-number">1</span> };
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">change</span>(<span class="hljs-params"></span>) </span>{
+  testA = { a: <span class="hljs-number">2</span> };
+  testB = <span class="hljs-number">3</span>;
+  testC.c = <span class="hljs-number">2</span>;
+}
+change();
+<span class="hljs-built_in">console</span>.log(testA, testB, testC); <span class="hljs-comment">// {a: 2} 3 {c: 2}</span>
+</code></pre>
+<p>&#x9019;&#x908A;&#x6211;&#x5011;&#x5728;&#x51FD;&#x6578;&#x88E1;&#x9762;<strong>&#x76F4;&#x63A5;&#x64CD;&#x4F5C;&#x5916;&#x90E8;&#x8B8A;&#x6578;</strong>&#xFF0C;&#x4E00;&#x5207;&#x90FD;&#x662F;&#x90A3;&#x9EBC;&#x7B26;&#x5408;&#x9810;&#x671F;&#xFF0C;&#x76F4;&#x5230;...</p>
+<h3 id="&#x4E00;&#x500B;&#x4E0D;&#x90A3;&#x9EBC;&#x7C21;&#x55AE;&#x7684;&#x7BC4;&#x4F8B;&#xFF1A;">&#x4E00;&#x500B;&#x4E0D;&#x90A3;&#x9EBC;&#x7C21;&#x55AE;&#x7684;&#x7BC4;&#x4F8B;&#xFF1A;</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> testA = { a: <span class="hljs-number">1</span> };
+<span class="hljs-keyword">let</span> testB = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">let</span> testC = { c: <span class="hljs-number">1</span> };
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">change</span>(<span class="hljs-params">testA, testB, testC</span>) </span>{
+  testA = { a: <span class="hljs-number">2</span> };
+  testB = <span class="hljs-number">3</span>;
+  testC.c = <span class="hljs-number">2</span>;
+}
+change(testA, testB, testC);
+<span class="hljs-built_in">console</span>.log(testA, testB, testC); <span class="hljs-comment">// {a: 1} 1 {c: 2}</span>
+</code></pre>
+<p>&#x6CE8;&#x610F;&#x5230;&#x4E86;&#x55CE;&#xFF1F;&#x7576;&#x6211;&#x5011;&#x628A;&#x5916;&#x90E8;&#x8B8A;&#x6578;&#x7576;&#x6210;&#x53C3;&#x6578;&#x50B3;&#x905E;&#x9032; <code>function</code> &#x7684;&#x6642;&#x5019;&#xFF0C;&#x6703;&#x8DDF;&#x6211;&#x5011;&#x76F4;&#x63A5;&#x5728;&#x51FD;&#x6578;&#x5167;&#x64CD;&#x4F5C;&#x5916;&#x90E8;&#x8B8A;&#x6578;&#x6709;&#x5F88;&#x5927;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x800C;&#x5176;&#x4E2D;&#x7684;&#x95DC;&#x9375;&#x9EDE;&#x5C31;&#x5728;&quot;<strong>&#x50B3;&#x905E;</strong>&quot;&#xFF0C;javascript &#x7684;&#x50B3;&#x905E;&#x884C;&#x70BA;&#x6709;&#x8C93;&#x81A9;&#xFF01;&#x6216;&#x662F;&#x8AAA;&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x6211;&#x5011;&#x4E86;&#x89E3;&#x4E0D;&#x5920;&#x900F;&#x5FB9;&#x7684;&#x5730;&#x65B9;&#x3002;</p>
+<h3 id="&#x5929;&#x7AFA;&#x53D6;&#x7D93;">&#x5929;&#x7AFA;&#x53D6;&#x7D93;</h3>
+<p>&#x5510;&#x50E7;&#x4E00;&#x884C;&#x4EBA;&#x70BA;&#x4E86;&#x5C0B;&#x6C42;&#x5927;&#x4E58;&#x4F5B;&#x6CD5;&#x524D;&#x5F80;&#x897F;&#x65B9;&#x53D6;&#x7D93;&#xFF0C;&#x904E;&#x7A0B;&#x6975;&#x5176;&#x8271;&#x8F9B;&#x3002;&#x5982;&#x4ECA;&#xFF0C;&#x6211;&#x70BA;&#x4E86;&#x66F4;&#x52A0;&#x4E86;&#x89E3; Javascript &#x7684;&#x5BE6;&#x4F5C;&#x539F;&#x7406;&#xFF0C;&#x4E5F;&#x6C7A;&#x5B9A;&#x9060;&#x8D74;&#x96FB;&#x5B50;&#x7D72;&#x8DEF;&#x53D6;&#x7D93;&#xFF0C;&#x53EA;&#x6C42;&#x80FD;&#x7372;&#x5F97;&#x771F;&#x7406;&#x81F4;&#x9053;&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x80FD;&#x6703;&#x60F3;&#x554F;&#xFF0C;&#x5BA3;&#x63DA;&#x4F5B;&#x6CD5;&#x6709;&#x7121;&#x4E0A;&#x771F;&#x7D93;&#xFF0C;&#x90A3;&#x7406;&#x89E3; javascript &#x53C8;&#x6709;&#x4EC0;&#x9EBC;&#xFF1F;&#x6211;&#x60F3;&#xFF0C;&#x90A3;&#x5C31;&#x53EA;&#x80FD;&#x662F;<strong>ECMA-262</strong>&#x4E86;&#x3002;</p>
+<blockquote>
+<p>ECMAScript &#x662F;&#x4E00;&#x7A2E;&#x7531; Ecma &#x570B;&#x969B;&#xFF08;&#x524D;&#x8EAB;&#x70BA;&#x6B50;&#x6D32;&#x96FB;&#x8166;&#x88FD;&#x9020;&#x5546;&#x5354;&#x6703;&#xFF09;&#x5728;&#x6A19;&#x6E96; ECMA-262 &#x4E2D;&#x5B9A;&#x7FA9;&#x7684;&#x624B;&#x7A3F;&#x8A9E;&#x8A00;&#x898F;&#x7BC4;&#x3002;&#x9019;&#x7A2E;&#x8A9E;&#x8A00;&#x5728;&#x5168;&#x7403;&#x8CC7;&#x8A0A;&#x7DB2;&#x4E0A;&#x61C9;&#x7528;&#x5EE3;&#x6CDB;&#xFF0C;&#x5B83;&#x5F80;&#x5F80;&#x88AB;&#x7A31;&#x70BA; JavaScript &#x6216; JScript&#xFF0C;&#x4F46;&#x5BE6;&#x969B;&#x4E0A;&#x5F8C;&#x5169;&#x8005;&#x662F; ECMA-262 &#x6A19;&#x6E96;&#x7684;&#x5BE6;&#x4F5C;&#x548C;&#x64F4;&#x5145;&#x3002;</p>
+</blockquote>
+<p>&#x8207;&#x7121;&#x4E0A;&#x771F;&#x7D93;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;ECMA <strong>&#x6BCF;&#x5E74;&#x90FD;&#x6703;&#x6709;&#x6240;&#x66F4;&#x65B0;</strong>&#xFF0C;&#x4EE5;&#x4E0B;&#x6240;&#x63D0;&#x5230;&#x7684;&#x898F;&#x7BC4;&#x90FD;&#x6703;&#x662F; <a href="https://262.ecma-international.org/15.0/index.html#sec-intro" target="_blank">ECMA-262 15th edition, June 2024</a> &#x7684;&#x5167;&#x5BB9;&#x3002;</p>
+<p>&#x90A3;&#x9EBC;&#x5C31;&#x8B93;&#x6211;&#x5011;&#x8E0F;&#x4E0A;&#x65C5;&#x9014;&#x5427;&#xFF01;</p>
+<h3 id="&#x9996;&#x5148;&#x6211;&#x597D;&#x5947;&#xFF0C;-javascript-&#x662F;&#x5982;&#x4F55;&#x70BA;&#x8B8A;&#x6578;&#x8CE6;&#x503C;&#x7684;">&#x9996;&#x5148;&#x6211;&#x597D;&#x5947;&#xFF0C; javascript &#x662F;&#x5982;&#x4F55;&#x70BA;&#x8B8A;&#x6578;&#x8CE6;&#x503C;&#x7684;</h3>
+<p>&#x77E5;&#x66C9;&#x4E86;&#x9019;&#x500B;&#xFF0C;&#x4FBF;&#x77E5;&#x9053;&#x70BA;&#x4EC0;&#x9EBC;&#x6703;&#x6709;&#x8A18;&#x61B6;&#x9AD4;&#x5171;&#x7528;&#x7684;&#x60C5;&#x5F62;&#x7522;&#x751F;&#x3002;</p>
+<p>&#x6211;&#x770B;&#x5230; ECMA &#x5176;&#x4E2D;&#x7684;<a href="https://262.ecma-international.org/15.0/index.html#sec-assignment-operators-runtime-semantics-evaluation" target="_blank">&#x9019;&#x500B;</a>&#x7AE0;&#x7BC0;&#x8A73;&#x7D30;&#x5B9A;&#x7FA9;&#x4E86; javascript &#x5982;&#x4F55;&#x8655;&#x7406; variable assignment&#x3002;</p>
+<p><img src="../../../images/deep-copy/basics/assignment.PNG" width="1000"></p>
+<p>&#x4EE5;&#x524D;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4F86;&#x8AAA;&#xFF1A;
+<code>let testA = { a: 1 }</code></p>
+<p><em>LeftHandSideExpression</em> = <code>let testA</code><br>
+<em>AssignmentExpression</em> = <code>{ a: 1 }</code><br></p>
+<blockquote>
+<ol>
+<li>If <em>LeftHandSideExpression</em> is neither an ObjectLiteral nor an ArrayLiteral, then</li>
+</ol>
+</blockquote>
+<p>&#x5224;&#x65B7;&#x5DE6;&#x908A;&#x6709;&#x6C92;&#x6709;&#x89E3;&#x69CB;&#x7684;&#x5BA3;&#x544A;&#x5982;&#xFF1A;<code>let { a } = obj</code>&#xFF0C;&#x5728;&#x9019;&#x908A;&#x986F;&#x7136;&#x662F;&#x6C92;&#x6709;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6D41;&#x7A0B;&#x9032;&#x5165; 1.a&#x3002;</p>
+<blockquote>
+<p>1.a. Let lref be ? Evaluation of <em>LeftHandSideExpression</em>.</p>
+</blockquote>
+<p>&#x628A; <code>let testA</code> &#x4F5C; <code>eval()</code> &#x7684;&#x7D50;&#x679C;&#x653E;&#x9032; lref &#x4E2D;&#x3002;</p>
+<blockquote>
+<p>1.b. If IsAnonymousFunctionDefinition(<em>AssignmentExpression</em>) and IsIdentifierRef of <em>LeftHandSideExpression</em> are both true...</p>
+</blockquote>
+<p>&#x9019;&#x88E1;&#x6C92;&#x6709;&#x533F;&#x540D;&#x51FD;&#x6578;&#xFF0C;&#x6240;&#x4EE5;&#x5224;&#x65B7;&#x4E0D;&#x6210;&#x7ACB;&#xFF0C;&#x8DF3;&#x904E;&#x3002;</p>
+<blockquote>
+<p>1.c.i. Let rref be ? Evaluation of <em>AssignmentExpression</em>.<br>
+1.c.ii. Let rval be ? GetValue(rref).</p>
+</blockquote>
+<p>&#x5148;&#x628A; <code>{ a: 1 }</code> &#x4F5C; <code>eval()</code> &#x518D;&#x653E;&#x9032; rref &#x4E2D;&#xFF0C;<strong>&#x518D;&#x7528; GetValue() &#x53D6;&#x5F97; rref &#x7684;&#x503C;</strong>&#x3002;</p>
+<blockquote>
+<h3 id="&#x65BC;&#x662F;&#x554F;&#x984C;&#x4F86;&#x4E86;&#xFF0C;getvalue-&#x662F;&#x4EC0;&#x9EBC;&#xFF1F;">&#x65BC;&#x662F;&#x554F;&#x984C;&#x4F86;&#x4E86;&#xFF0C;<code>GetValue()</code> &#x662F;&#x4EC0;&#x9EBC;&#xFF1F;</h3>
+</blockquote>
+<p><img src="../../../images/deep-copy/basics/getValue.PNG" width="1000"></p>
+<p>&#x7531;&#x5B9A;&#x7FA9;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;<code>GetValue()</code> &#x53EF;&#x4EE5;&#x53D6;&#x5F97;&#x8A72;&#x8B8A;&#x6578;&#x5C0D;&#x61C9;&#x7684;&#x5BE6;&#x969B;&quot;&#x503C;&quot;&#xFF0C;&#x6B65;&#x9A5F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<ol>
+<li>If V is not a <code>Reference Record</code>, return V.</li>
+</ol>
+<h3 id="&#x99AC;&#x4E0A;&#x8FCE;&#x4F86;&#x4E0B;&#x500B;&#x554F;&#x984C;&#xFF0C;&#x90A3;-reference-record-&#x53C8;&#x662F;&#x4EC0;&#x9EBC;&#xFF1F;">&#x99AC;&#x4E0A;&#x8FCE;&#x4F86;&#x4E0B;&#x500B;&#x554F;&#x984C;&#xFF0C;&#x90A3; <code>Reference Record</code> &#x53C8;&#x662F;&#x4EC0;&#x9EBC;&#xFF1F;</h3>
+</blockquote>
+<h3 id="reference-record">Reference Record</h3>
+<p><img src="../../../images/deep-copy/basics/referenceRecord.PNG" width="1000"></p>
+<blockquote>
+<p>The Reference Record type is used to explain the behaviour of such operators as delete, typeof, the assignment operators, the super keyword and other language features. For example, the left-hand operand of an assignment is expected to produce a Reference Record.</p>
+</blockquote>
+<p>&#x7B2C;&#x4E00;&#x6BB5;&#x8A71;&#x5C31;&#x76F8;&#x7576;&#x91CD;&#x8981;&#xFF0C;&#x5728;&#x898F;&#x7BC4;&#x4E2D;&#x5BEB;&#x660E;&#xFF0C;<strong><em>Reference Record</em> &#x662F;&#x4E00;&#x7A2E;&#x70BA;&#x4E86;&#x89E3;&#x91CB;&#x8A9E;&#x8A00;&#x5E95;&#x5C64;&#x539F;&#x7406;&#x800C;&#x88AB;&#x767C;&#x660E;&#x7684;&#x578B;&#x5225;&#xFF0C;&#x4E26;&#x4E0D;&#x5B58;&#x5728;&#x65BC;&#x5BE6;&#x4F5C;&#x7576;&#x4E2D;</strong>&#xFF0C;&#x7279;&#x5225;&#x9019;&#x908A;&#x8209;&#x7684;&#x4F8B;&#x5B50;&#x525B;&#x597D;&#x5C31;&#x662F; assignment &#x7684;&#x60C5;&#x6CC1;&#x3002;&#x64DA;&#x4ED6;&#x6240;&#x8A00;&#xFF0C;<code>let testA</code> &#x7D93;&#x904E; <code>eval()</code> &#x7684;&#x7D50;&#x679C;&#x5C31;&#x6703;&#x662F;&#x4E00;&#x500B; <em>Reference Record</em>&#x3002;</p>
+<p><em>Reference Record</em> &#x5177;&#x9AD4;&#x5305;&#x542B;&#x4E86;&#x4EE5;&#x4E0B;&#x56DB;&#x500B;&#x90E8;&#x5206;&#xFF1A;</p>
+<ul>
+<li><code>[[Base]]</code>: &#x53EF;&#x4EE5;&#x7C21;&#x55AE;&#x7406;&#x89E3;&#x70BA; context&#xFF0C;&#x6307;&#x7684;&#x662F;&#x7D81;&#x5B9A;&#x8A72;&#x8B8A;&#x6578;&#x7684;<strong>&#x57F7;&#x884C;&#x74B0;&#x5883;</strong>&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x57FA;&#x672C;&#x578B;&#x5225;&#x6216;&#x662F; <em>EnvironmentRecord</em>&#x3002;</li>
+<li><code>[[ReferencedName]]</code>: &#x8A72;&#x8B8A;&#x6578;&#x540D;&#x7A31;&#x3002;</li>
+<li><code>[[Strict]]</code>: Boolean &#x503C;&#x7D00;&#x9304;&#x662F;&#x5426;&#x70BA;&#x56B4;&#x683C;&#x6A21;&#x5F0F;&#x3002;</li>
+<li><code>[[ThisValue]]</code>: &#x8DDF; <code>super</code> &#x6709;&#x95DC;&#xFF0C;&#x5728;&#x9019;&#x5148;&#x4E0D;&#x8A0E;&#x8AD6;&#x3002;</li>
+</ul>
+<blockquote>
+<p>&#x4EFB;&#x4F55;&#x8AAA;&#x660E;&#x90FD;&#x6C92;&#x6709;&#x76F4;&#x63A5;&#x770B;&#x7BC4;&#x4F8B;&#x4F86;&#x7684;&#x597D;&#x7406;&#x89E3;&#xFF0C;&#x4EE5;&#x524D;&#x9762;&#x7684;&#x7BC4;&#x4F8B;&#x4F86;&#x8AAA;...</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> testA = { a: <span class="hljs-number">1</span> }
+<span class="hljs-comment">// testA &#x7D93;&#x904E; eval() &#x5F8C;&#x5C0D;&#x61C9;&#x7684; Reference Record</span>
+{
+  base: EnvironmentRecord,
+  name: <span class="hljs-string">&apos;testA&apos;</span>,
+  strict: <span class="hljs-literal">false</span>
+}
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x9762;&#x9019;&#x500B;&#x4F8B;&#x5B50;&#x4F86;&#x8AAA;&#xFF0C;<em>EnvironmentRecord</em> &#x5C31;&#x662F; <code>window</code>&#xFF0C;<code>window</code> &#x5132;&#x5B58;&#x4E86; testA &#x8DDF;&#x5176;&#x4ED6;&#x6240;&#x6709;&#x5168;&#x57DF;&#x8B8A;&#x6578;&#x7684;&#x7D81;&#x5B9A;&#x3002;<br>
+&#x4F60;&#x53EF;&#x80FD;&#x6703;&#x60F3;&#x554F;&#xFF0C;&#x90A3;&#x4EC0;&#x9EBC;&#x6642;&#x5019; <code>[[Base]]</code> &#x4E0D;&#x6703;&#x662F; <em>EnvironmentRecord</em> &#x5462;&#xFF1F;</p>
+<blockquote>
+<p>&#x6211;&#x5011;&#x518D;&#x4F86;&#x8209;&#x500B;&#x4F8B;&#x5B50; &#x1F330;&#xFF1A;</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> testA = {
+  a: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">let</span> b = { c: <span class="hljs-number">1</span> }
+    <span class="hljs-keyword">return</span> b
+  }
+}
+<span class="hljs-built_in">console</span>.log(testA.a()) <span class="hljs-comment">// { c: 1 }</span>
+<span class="hljs-comment">// a &#x5C0D;&#x61C9;&#x7684; Reference Record</span>
+{
+  base: testA, <span class="hljs-comment">// object</span>
+  name: <span class="hljs-string">&apos;a&apos;</span>,
+  strict: <span class="hljs-literal">false</span>
+}
+<span class="hljs-comment">// b &#x5C0D;&#x61C9;&#x7684; Reference Record</span>
+{
+  base: EnvironmentRecord, <span class="hljs-comment">// Function Environment Record</span>
+  name: <span class="hljs-string">&apos;b&apos;</span>,
+  strict: <span class="hljs-literal">false</span>
+}
+</code></pre>
+<p>&#x76F8;&#x4FE1;&#x5404;&#x4F4D;&#x61C9;&#x8A72;&#x53EF;&#x4EE5;&#x4E86;&#x89E3;&#x70BA;&#x4EC0;&#x9EBC;&#x898F;&#x7BC4;&#x4E2D;&#x5BEB; <code>[[Base]]</code> &#x53EF;&#x4EE5;&#x662F; <em>EnvironmentRecord</em> &#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x57FA;&#x672C;&#x578B;&#x5225;&#x4E86;&#x5427;&#xFF01;&#x56E0;&#x70BA;&#x4E0A;&#x8FF0;&#x7684;&#x4F8B;&#x5B50; <code>a</code> &#x7684; base &#x503C;&#x5C31;&#x662F; <code>testA</code> &#x9019;&#x500B; object (<strong>&#x56E0;&#x70BA; testA.a &#x9019;&#x6642;&#x5019; a &#x7684; context &#x662F; textA</strong>&#xFF0C;&#x9019;&#x500B;&#x89C0;&#x5FF5;&#x5C0D;&#x65BC;&#x8981;&#x7406;&#x89E3; <code>this</code> &#x4E5F;&#x662F;&#x5F88;&#x53D7;&#x7528;&#x7684;)&#x3002;</p>
+<p>&#x7576;&#x7136;&#xFF0C;base &#x540C;&#x6A23;&#x4E5F;&#x53EF;&#x4EE5;&#x662F; number or string&#xFF0C;&#x6BD4;&#x5982; <code>&quot;hello world&quot;.toUpperCase()</code> &#x9019;&#x6642;&#x5019; <code>toUpperCase</code> &#x7684; base &#x503C;&#x5C31;&#x662F; <code>&quot;hello world&quot;</code> &#x9019;&#x500B; string&#x3002;</p>
+<h3 id="bottom-up">Bottom-up!</h3>
+<p>&#x7406;&#x89E3;&#x5B8C;&#x4E86; <em>Reference Record</em>&#xFF0C;&#x662F;&#x6642;&#x5019;&#x8A72;&#x56DE;&#x53BB;&#x770B;&#x770B; <em>GetValue()</em> &#x8DDF; <em>Assignment operator</em> &#x7684;&#x5B9A;&#x7FA9;&#x4E86;&#xFF0C;&#x9084;&#x8A18;&#x5F97;&#x55CE;&#xFF1F;&#x6211;&#x5011;&#x5230;&#x525B;&#x525B;&#x70BA;&#x6B62;&#x7684;&#x7814;&#x7A76;&#x90FD;&#x662F;&#x70BA;&#x4E86;&#x7406;&#x89E3;&#x7B49;&#x865F;&#x5169;&#x908A;&#x5230;&#x5E95;&#x90FD;&#x4F5C;&#x4E86;&#x4E9B;&#x4EC0;&#x9EBC;&#x4E8B;&#x3002;</p>
+<h3 id="&#x5F62;&#x53C3;-parameter-&#x8207;&#x5BE6;&#x53C3;-argument">&#x5F62;&#x53C3; (Parameter) &#x8207;&#x5BE6;&#x53C3; (Argument)</h3>
+<p>&#x5F62;&#x53C3;&#x76F8;&#x7576;&#x65BC;&#x51FD;&#x6578;&#x4E2D;&#x5B9A;&#x7FA9;&#x7684;&#x8B8A;&#x6578;&#xFF0C;&#x8ABF;&#x7528;&#x51FD;&#x6578;&#x50B3;&#x905E;&#x53C3;&#x6578;&#x7684;&#x904E;&#x7A0B;&#x76F8;&#x7576;&#x65BC;&#x5B9A;&#x7FA9;&#x5F62;&#x53C3;&#x8B8A;&#x6578;&#x4E26;&#x4E14;&#x7528;&#x5BE6;&#x53C3;&#x7684;&#x503C;&#x4F86;&#x521D;&#x59CB;&#x5316;&#x3002;</p>
+<h3 id="references">References</h3>
+<p><a href="http://dmitrysoshnikov.com/ecmascript/chapter-8-evaluation-strategy/" target="_blank">ECMA-262-3 in detail. Chapter 8. Evaluation strategy</a><br>
+<a href="https://github.com/mqyqingfeng/Blog/issues/7" target="_blank">JavaScript &#x6DF1;&#x5165;&#x4E4B;&#x4ECE; ECMAScript &#x89C4;&#x8303;&#x89E3;&#x8BFB; this</a><br>
+<a href="https://github.com/mqyqingfeng/Blog/issues/10" target="_blank">JavaScript &#x6DF1;&#x5165;&#x4E4B;&#x53C2;&#x6570;&#x6309;&#x503C;&#x4F20;&#x9012;</a><br>
+<a href="https://blog.techbridge.cc/2018/06/23/javascript-call-by-value-or-reference/" target="_blank">&#x6DF1;&#x5165;&#x63A2;&#x8A0E; JavaScript &#x4E2D;&#x7684;&#x53C3;&#x6578;&#x50B3;&#x905E;&#xFF1A;call by value &#x9084;&#x662F; reference&#xFF1F;</a><br></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../var-let-const/advanced.html" class="navigation navigation-prev " aria-label="Previous page: 回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="implement.html" class="navigation navigation-next " aria-label="Next page: 面試官：前面講了這麼多，還是你直接實作一個深拷貝給我看看？">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？","level":"1.4.4","depth":2,"next":{"title":"面試官：前面講了這麼多，還是你直接實作一個深拷貝給我看看？","level":"1.4.5","depth":2,"path":"articles/js/deep-copy/implement.md","ref":"./articles/js/deep-copy/implement.md","articles":[]},"previous":{"title":"回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇","level":"1.4.3","depth":2,"path":"articles/js/var-let-const/advanced.md","ref":"./articles/js/var-let-const/advanced.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","copy-code-button","ga","-sharing","sharing-plus@^0.0.2","my-toolbar","expandable-chapters"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"printLog":false,"multipleH1":false,"mode":"float","showGoTop":true,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"my-toolbar":{"buttons":[{"label":"Github","icon":"fa fa-github","url":"https://github.com/YuAnWu0000","position":"right","text":"Github","target":"_blank"},{"label":"LinkedIn","icon":"fa fa-linkedin","url":"https://www.linkedin.com/in/yu-an-wu-486ab5160/","position":"right","text":"LinkedIn","target":"_blank"}]},"copy-code-button":{},"ga":{"configuration":"auto","token":""},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"edit-link":{"label":"Edit This Page","base":"https://yuanwu0000.github.io/zachary-gitbook"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{}},"gitbook":"*"},"file":{"path":"articles/js/deep-copy/basics.md","mtime":"2025-03-05T09:14:54.862Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-03-05T09:15:20.469Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-my-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

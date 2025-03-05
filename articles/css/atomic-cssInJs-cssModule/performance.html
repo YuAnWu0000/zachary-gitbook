@@ -1,0 +1,642 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CSS Framework 到底該怎麼選? ─ 談效能 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../how-to-make-a-marquee.html" />
+    
+    
+    <link rel="prev" href="scalability.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    關於我
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../vue/vue.html">
+            
+                <a href="../../vue/vue.html">
+            
+                    
+                    Vue the world differently
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../react/react.html">
+            
+                <a href="../../react/react.html">
+            
+                    
+                    React with surprise
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../react/cra-url-issue.html">
+            
+                <a href="../../react/cra-url-issue.html">
+            
+                    
+                    Cannot resolve url() ─ CRA 用 url() 引入圖片的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../react/env.html">
+            
+                <a href="../../react/env.html">
+            
+                    
+                    常常在VM裡面改東改西? 你需要的是.env
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../js/js.html">
+            
+                <a href="../../js/js.html">
+            
+                    
+                    Don't skip javascript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../js/forEach-async-await.html">
+            
+                <a href="../../js/forEach-async-await.html">
+            
+                    
+                    async / await 在 forEach 裡面不起作用？你是否搞錯了什麼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../js/var-let-const/basics.html">
+            
+                <a href="../../js/var-let-const/basics.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ 語法特性篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../js/var-let-const/advanced.html">
+            
+                <a href="../../js/var-let-const/advanced.html">
+            
+                    
+                    回答一題 var / let / const 就驚艷你的面試官 ─ hoisting 細節篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../js/deep-copy/basics.html">
+            
+                <a href="../../js/deep-copy/basics.html">
+            
+                    
+                    關於深淺拷貝的前備知識：你知道什麼是 call by sharing 嗎？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../js/deep-copy/implement.html">
+            
+                <a href="../../js/deep-copy/implement.html">
+            
+                    
+                    面試官：前面講了這麼多，還是你直接實作一個深拷貝給我看看？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../css.html">
+            
+                <a href="../css.html">
+            
+                    
+                    Success of css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="cssModule-vs-cssInJs.html">
+            
+                <a href="cssModule-vs-cssInJs.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="atomic.html">
+            
+                <a href="atomic.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談體驗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="scalability.html">
+            
+                <a href="scalability.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談擴展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.4" data-path="performance.html">
+            
+                <a href="performance.html">
+            
+                    
+                    CSS Framework 到底該怎麼選? ─ 談效能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../how-to-make-a-marquee.html">
+            
+                <a href="../how-to-make-a-marquee.html">
+            
+                    
+                    製作跑馬燈一點都不難，你只需要知道這些小訣竅
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../devops/devops.html">
+            
+                <a href="../../devops/devops.html">
+            
+                    
+                    Dive into the world of DevOps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../devops/deploy-your-project.html">
+            
+                <a href="../../devops/deploy-your-project.html">
+            
+                    
+                    搞定 Docker 跟 Nginx，輕鬆部署你的專案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../devops/add-ssl.html">
+            
+                <a href="../../devops/add-ssl.html">
+            
+                    
+                    讓你的網站更安全，加上 SSL 憑證吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../devops/monitor-container.html">
+            
+                <a href="../../devops/monitor-container.html">
+            
+                    
+                    我的服務還好嗎？監控容器的小撇步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../devops/gitlab-ci/gitlab-runner.html">
+            
+                <a href="../../devops/gitlab-ci/gitlab-runner.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-runner + executor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../devops/gitlab-ci/gitlab-ci.html">
+            
+                <a href="../../devops/gitlab-ci/gitlab-ci.html">
+            
+                    
+                    解放工程師的雙手，你需要好的 CI/CD ─ 搞定 gitlab-ci + 環境變數
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../others/others.html">
+            
+                <a href="../../others/others.html">
+            
+                    
+                    Others
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../others/my-first-oidc-research.html">
+            
+                <a href="../../others/my-first-oidc-research.html">
+            
+                    
+                    初探 OIDC ─ 揭開我們每天都在使用，卻不了解的黑盒子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../others/cypress.html">
+            
+                <a href="../../others/cypress.html">
+            
+                    
+                    Cypress ─ 一款超強大的 E2E test framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >CSS Framework 到底該怎麼選? ─ 談效能</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="css-framework-&#x5230;&#x5E95;&#x600E;&#x9EBC;&#x9078;&#xFF1F;tailwind-css--styled-components--css-module--4-&#x2500;-&#x8AC7;&#x6548;&#x80FD;">CSS Framework &#x5230;&#x5E95;&#x600E;&#x9EBC;&#x9078;&#xFF1F;Tailwind CSS ? styled components ? CSS Module ? (4) &#x2500; &#x8AC7;&#x6548;&#x80FD;</h1>
+<h3 id="&#x6DFA;&#x8AC7;&#x6548;&#x80FD;-&#x23F3;">&#x6DFA;&#x8AC7;&#x6548;&#x80FD; &#x23F3;</h3>
+<p>&#x8AC7;&#x5230;&#x524D;&#x7AEF;&#x6548;&#x80FD;&#x7121;&#x5916;&#x4E4E;&#x5C31;&#x662F;&#x4EE5;&#x4E0B;&#x5169;&#x9EDE;&#xFF1A;</p>
+<ol>
+<li>Bundle size</li>
+<li>Run time</li>
+</ol>
+<h5 id="1-bundle-size">1. Bundle size</h5>
+<p>Atomic css &#x7684;&#x7279;&#x9EDE;&#x5C31;&#x662F;&#x6BCF;&#x500B;&#x5C6C;&#x6027;&#x503C;&#x90FD;&#x53EA;&#x6703;&#x6709;&#x4E00;&#x500B; utility class&#xFF0C;&#x56E0;&#x6B64;&#x4E00;&#x500B;&#x5C08;&#x6848;&#x5C31;&#x7B97;&#x7528;&#x5230; 50 &#x500B; <code>display: flex</code>&#xFF0C;&#x4E5F;&#x53EA;&#x662F;&#x91CD;&#x8907;&#x4F7F;&#x7528; <code>flex</code> &#x9019;&#x500B; class&#xFF0C;&#x76F8;&#x6BD4;&#x50B3;&#x7D71;&#x7684; css module &#x628A;&#x6BCF;&#x500B;&#x7BC0;&#x9EDE;&#x90FD;&#x91CF;&#x8EAB;&#x5B9A;&#x7FA9;&#x4E00;&#x500B; class&#xFF0C;<strong>Atomic &#x7684;&#x4F5C;&#x6CD5;&#x6E1B;&#x5C11;&#x4E86;&#x975E;&#x5E38;&#x591A;&#x7684;&#x6A23;&#x5F0F;&#x91CD;&#x8907;&#x5B9A;&#x7FA9;&#xFF0C;&#x56E0;&#x6B64;&#x6709;&#x6548;&#x964D;&#x4F4E;&#x4E86; css bundle size&#x3002;</strong><br>
+&#x53E6;&#x5916;&#xFF0C;css module &#x5728;&#x958B;&#x767C;&#x6642;&#x9084;&#x9700;&#x8981;&#x7279;&#x5225;&#x95DC;&#x6CE8;&#x6B0A;&#x91CD;&#x8DDF;&#x8986;&#x84CB;&#x6027;&#x7684;&#x554F;&#x984C;&#xFF0C;&#x5728;&#x5C08;&#x6848;&#x529F;&#x80FD;&#x8D8A;&#x505A;&#x8D8A;&#x8907;&#x96DC;&#x7684;&#x60C5;&#x6CC1;&#x4E0B;&#xFF0C;&#x96E3;&#x514D;&#x6703;&#x51FA;&#x73FE;&#x4E00;&#x4E9B; zombie styles&#xFF0C;&#x9019;&#x4E9B;&#x6C92;&#x6709;&#x88AB;&#x4F7F;&#x7528;&#x5230;&#x7684; class &#x6703;&#x5C0E;&#x81F4; bundle size &#x7684;&#x589E;&#x52A0;&#xFF0C;&#x9700;&#x8981;&#x958B;&#x767C;&#x8005;&#x984D;&#x5916;&#x5C0F;&#x5FC3;&#x6CE8;&#x610F;&#x3002;<br>
+&#x81F3;&#x65BC; css-in-js &#x7684;&#x89E3;&#x6C7A;&#x65B9;&#x6848;&#x5982; Emotion &#xFF0C;bundle size &#x53EA;&#x6709; 7.9 KB&#xFF0C;&#x4E0D;&#x7B97;&#x4EC0;&#x9EBC;&#x592A;&#x5927;&#x554F;&#x984C;&#x3002;</p>
+<h5 id="2-run-time">2. Run time</h5>
+<p>&#x76F8;&#x4FE1;&#x5927;&#x5BB6;&#x90FD;&#x6709;&#x4E00;&#x500B;&#x5171;&#x8B58;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x5728; run time &#x6210;&#x672C;&#x4E0A;&#xFF0C;<strong>&#x8D8A;&#x8CBC;&#x8FD1;&#x539F;&#x751F;&#x700F;&#x89BD;&#x5668;&#x7684;&#x4F5C;&#x6CD5;&#x5C31;&#x8D8A;&#x5FEB; &#x1F685;&#x3002;</strong><br>
+&#x7531;&#x65BC; scss &#x7B49; css module &#x89E3;&#x6C7A;&#x65B9;&#x6848;&#x90FD;&#x662F;&#x5728; compile time &#x505A;&#x975C;&#x614B;&#x5206;&#x6790;&#x4E26;&#x5C07;&#x6A23;&#x5F0F;&#x7DE8;&#x8B6F;&#x70BA; pure css&#xFF0C;&#x6240;&#x4EE5; run time &#x6642;&#x5019;&#x5176;&#x5BE6;&#x8DDF;&#x539F;&#x751F;&#x6C92;&#x6709;&#x592A;&#x5927;&#x5340;&#x5225;&#x3002;<br>
+Tailwind css &#x6709;&#x6642;&#x9700;&#x8981;&#x4F7F;&#x7528; <code>tw-merge</code> &#x4F86;&#x9032;&#x884C;&#x5B57;&#x4E32;&#x5408;&#x4F75;&#xFF0C;&#x56E0;&#x6B64;&#x591A;&#x4E86;&#x4E00;&#x4E9B;&#x5B57;&#x4E32;&#x6BD4;&#x5C0D;&#x8DDF;&#x67E5;&#x627E;&#x7684;&#x984D;&#x5916; run time &#x6210;&#x672C;&#xFF0C;&#x4F46;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#x4E26;&#x6C92;&#x6709;&#x5176;&#x4ED6;&#x592A;&#x5927;&#x7684;&#x8CA0;&#x64D4;&#x3002;<br>
+css-in-js &#x5927;&#x6982;&#x662F; run time &#x6210;&#x672C;&#x6700;&#x9AD8;&#x7684;&#x4E00;&#x7A2E;&#x89E3;&#x6C7A;&#x65B9;&#x6848;&#xFF0C;&#x56E0;&#x70BA;&#x6240;&#x6709;&#x7684;&#x6A23;&#x5F0F;&#x90FD;&#x5B9A;&#x7FA9;&#x5728; js &#x7576;&#x4E2D;&#xFF0C;&#x5BE6;&#x969B;&#x7A0B;&#x5F0F;&#x5728;&#x8DD1;&#x7684;&#x6642;&#x5019;&#x9700;&#x8981;&#x52D5;&#x614B;&#x7D44;&#x5408;&#x6A23;&#x5F0F;&#x4E26;&#x7522;&#x751F;&#x5C0D;&#x61C9;&#x7684; class &#x6700;&#x5F8C;&#x624D; binding &#x5230;&#x6A21;&#x677F;&#x4E0A;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;<strong>&#x9762;&#x5C0D;&#x983B;&#x7E41;&#x62BD;&#x63DB; style &#x7684;&#x60C5;&#x5883;&#x6709;&#x53EF;&#x80FD;&#x6703;&#x51FA;&#x73FE;&#x6548;&#x80FD;&#x4E0A;&#x7684;&#x554F;&#x984C; &#x1F480;&#x3002;</strong>&#x7DE8;&#x8B6F;&#x51FA;&#x4F86;&#x7684;&#x7D50;&#x679C;&#x5247;&#x662F;&#x8DDF; CSS module &#x985E;&#x4F3C;&#xFF1A; <code>classname-{hash}</code>&#xFF0C;&#x4F46;&#x76F8;&#x5C0D;&#x4F86;&#x8AAA; zombie styles &#x8981;&#x5C11;&#x5F97;&#x591A;&#xFF0C;&#x7562;&#x7ADF;&#x4E0D;&#x9700;&#x8981;&#x592A;&#x904E;&#x95DC;&#x6CE8;&#x6B0A;&#x91CD;&#x7684;&#x554F;&#x984C;&#xFF0C;JS &#x6703;&#x5E6B;&#x4F60; handle &#x4E00;&#x5207;&#x3002;</p>
+<h3 id="&#x7D50;&#x8AD6;">&#x7D50;&#x8AD6;</h3>
+<p><strong>&#x4EE5;&#x5B78;&#x7FD2;&#x66F2;&#x7DDA;&#x4F86;&#x8AAA;&#xFF1A;</strong> CSS module &gt; Emotion &gt; Tailwind<br>
+<strong>&#x4EE5;&#x958B;&#x767C;&#x8005;&#x9AD4;&#x9A57;&#x4F86;&#x8AAA;&#xFF1A;</strong> Tailwind &gt; CSS module &gt; Emotion<br>
+<strong>&#x4EE5;&#x5075;&#x932F;&#x9AD4;&#x9A57;&#x4F86;&#x8AAA;&#xFF1A;</strong> CSS module &gt; Emotion &gt; Tailwind<br>
+<strong>&#x4EE5;&#x64F4;&#x5C55;&#x6027;&#x4F86;&#x8AAA;&#xFF1A;</strong> Emotion &gt; Tailwind &gt; CSS module<br>
+<strong>&#x4EE5;&#x6548;&#x80FD;&#x4F86;&#x8AAA;&#xFF1A;</strong> Tailwind &gt;= CSS module &gt; Emotion<br></p>
+<p>&#x4E0A;&#x8FF0;&#x7684;&#x6BD4;&#x8F03;&#x7D14;&#x5C6C;&#x500B;&#x4EBA;&#x770B;&#x6CD5;&#xFF0C;&#x6295;&#x8CC7;&#x6846;&#x67B6;&#x6709;&#x8CFA;&#x6709;&#x8CE0;&#xFF0C;&#x4F7F;&#x7528;&#x524D;&#x61C9;&#x8A73;&#x95B1;&#x516C;&#x958B;&#x8AAA;&#x660E;&#x66F8;&#x3002;<br>
+&#x6211;&#x8A8D;&#x70BA;&#x91CD;&#x9EDE;&#x9084;&#x662F;&#x8981;&#x77E5;&#x9053;&#x81EA;&#x5DF1;&#x70BA;&#x4EC0;&#x9EBC;&#x9078;&#x64C7;&#x7576;&#x524D;&#x7684; CSS framework&#xFF0C;<strong>&#x4E26;&#x4E14;&#x77E5;&#x9053;&#x624B;&#x4E0A;&#x7684;&#x5DE5;&#x5177;&#x6709;&#x4EC0;&#x9EBC;&#x77ED;&#x7248; &#x1F528;&#xFF1A;</strong><br></p>
+<p>&#x6BD4;&#x5982;&#x4F60;&#x559C;&#x6B61; css-in-js &#x63D0;&#x65E9;&#x62BD;&#x8C61;&#x5316;&#x7684;&#x5BEB;&#x6CD5;&#xFF0C;&#x4F46;&#x53C8;&#x64D4;&#x5FC3;&#x6709; performance bottleneck&#xFF0C;&#x90A3;&#x9EBC;&#x4E5F;&#x8A31;&#x4F60;&#x53EF;&#x4EE5;&#x63A1;&#x7528; Zero-Runtime &#x7684;&#x89E3;&#x6C7A;&#x65B9;&#x6848;&#x5982;&#xFF1A;</p>
+<ul>
+<li><a href="https://linaria.dev/" target="_blank">linaria</a></li>
+<li><a href="https://compiledcssinjs.com/" target="_blank">Compiled</a></li>
+</ul>
+<p>&#x53C8;&#x6216;&#x8005;&#x4F60;&#x4F7F;&#x7528; CSS module&#x3001;Tailwind &#x4F46;&#x537B;&#x60F3;&#x8981;&#x66F4;&#x5927;&#x7684;&#x53EF;&#x64F4;&#x5C55;&#x6027;&#xFF0C;&#x90A3;&#x53EF;&#x4EE5;&#x8A66;&#x8457;&#x7528; <a href="https://www.npmjs.com/package/classnames" target="_blank">classnames</a> &#x4F86;&#x5E6B;&#x52A9;&#x4F60;&#x9054;&#x6210;&#xFF01;</p>
+<blockquote>
+<h3 id="&#x5DE5;&#x7A0B;&#x5E2B;&#x5584;&#x7528;&#x624B;&#x4E0A;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8FAF;&#x8B77;&#x624B;&#x4E0A;&#x7684;&#x5DE5;&#x5177;-&#x1F44A;">&#x5DE5;&#x7A0B;&#x5E2B;&#x5584;&#x7528;&#x624B;&#x4E0A;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8FAF;&#x8B77;&#x624B;&#x4E0A;&#x7684;&#x5DE5;&#x5177; &#x1F44A;</h3>
+</blockquote>
+<p><strong>&#x5728;&#x524D;&#x7AEF;&#x9818;&#x57DF;&#x6BCF;&#x5929;&#x90FD;&#x6709;&#x65B0;&#x6280;&#x8853;&#x51FA;&#x73FE;&#xFF0C;&#x8EAB;&#x70BA;&#x5DE5;&#x7A0B;&#x5E2B;&#x61C9;&#x8A72;&#x8981;&#x64C1;&#x62B1;&#x6539;&#x8B8A;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x754F;&#x61FC;&#x6539;&#x8B8A;&#xFF0C;&#x7562;&#x7ADF;&#x4E16;&#x754C;&#x9700;&#x8981;&#x6211;&#x5011;&#x8D70;&#x5728;&#x524D;&#x7AEF;:)</strong></p>
+<p>&#x5230;&#x9019;&#x908A;&#xFF0C;CSS Framework &#x7CFB;&#x5217;&#x6587;&#x7D50;&#x675F;&#x5566;&#xFF0C;&#x6211;&#x7528;&#x4E86;&#x56DB;&#x7BC7;&#x6587;&#x7AE0;&#x8AC7;&#x4E86; <strong><em>&#x5BE6;&#x4F5C;&#x6848;&#x4F8B;</em></strong>&#x3001;<strong><em>&#x958B;&#x767C;&#x8005;&#x9AD4;&#x9A57;</em></strong>&#x3001;<strong><em>&#x53EF;&#x64F4;&#x5C55;&#x6027;</em></strong> &#x53CA; <strong><em>&#x6548;&#x80FD;</em></strong> &#x7684;&#x5DEE;&#x7570;&#xFF0C;&#x5E0C;&#x671B;&#x6709;&#x8B93;&#x8B80;&#x8005;&#x66F4;&#x6E05;&#x695A;&#x8981;&#x9078;&#x64C7;&#x54EA;&#x4E00;&#x500B;&#x6846;&#x67B6;&#x4F86;&#x61C9;&#x5C0D;&#x5C08;&#x6848;&#x9700;&#x6C42;&#x3002;</p>
+<p>&#x5F88;&#x611F;&#x8B1D;&#x770B;&#x5230;&#x9019;&#x7684;&#x4F60;&#x5011;&#xFF0C;&#x5982;&#x679C;&#x5C0D;&#x9019;&#x7BC7;&#x6587;&#x7AE0;&#x6709;&#x5176;&#x4ED6;&#x60F3;&#x6CD5;&#x6216;&#x610F;&#x898B;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x958B; Github issue &#x6216;&#x79C1;&#x8A0A;&#x6211;&#x7684; LinkedIn&#xFF0C;&#x76F8;&#x4FE1;&#x6211;&#x5011;&#x5F88;&#x5FEB;&#x5C31;&#x80FD;&#x958B;&#x555F;&#x6109;&#x5FEB;&#x7684;&#x6280;&#x8853;&#x8A0E;&#x8AD6;&#xFF01;</p>
+<p>&#x6700;&#x5F8C;&#x5C31;&#x795D;&#x5927;&#x5BB6;<br>
+Happy <del>debating</del> coding&#xFF01;&#x1F609;</p>
+<h3 id="references">References</h3>
+<p><a href="https://dev.to/srmagura/why-were-breaking-up-wiht-css-in-js-4g9b" target="_blank">https://dev.to/srmagura/why-were-breaking-up-wiht-css-in-js-4g9b</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="scalability.html" class="navigation navigation-prev " aria-label="Previous page: CSS Framework 到底該怎麼選? ─ 談擴展">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../how-to-make-a-marquee.html" class="navigation navigation-next " aria-label="Next page: 製作跑馬燈一點都不難，你只需要知道這些小訣竅">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CSS Framework 到底該怎麼選? ─ 談效能","level":"1.5.4","depth":2,"next":{"title":"製作跑馬燈一點都不難，你只需要知道這些小訣竅","level":"1.5.5","depth":2,"path":"articles/css/how-to-make-a-marquee.md","ref":"./articles/css/how-to-make-a-marquee.md","articles":[]},"previous":{"title":"CSS Framework 到底該怎麼選? ─ 談擴展","level":"1.5.3","depth":2,"path":"articles/css/atomic-cssInJs-cssModule/scalability.md","ref":"./articles/css/atomic-cssInJs-cssModule/scalability.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","copy-code-button","ga","-sharing","sharing-plus@^0.0.2","my-toolbar","expandable-chapters"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"printLog":false,"multipleH1":false,"mode":"float","showGoTop":true,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"my-toolbar":{"buttons":[{"label":"Github","icon":"fa fa-github","url":"https://github.com/YuAnWu0000","position":"right","text":"Github","target":"_blank"},{"label":"LinkedIn","icon":"fa fa-linkedin","url":"https://www.linkedin.com/in/yu-an-wu-486ab5160/","position":"right","text":"LinkedIn","target":"_blank"}]},"copy-code-button":{},"ga":{"configuration":"auto","token":""},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"edit-link":{"label":"Edit This Page","base":"https://yuanwu0000.github.io/zachary-gitbook"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{}},"gitbook":"*"},"file":{"path":"articles/css/atomic-cssInJs-cssModule/performance.md","mtime":"2025-03-05T09:14:54.861Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-03-05T09:15:20.469Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-my-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
